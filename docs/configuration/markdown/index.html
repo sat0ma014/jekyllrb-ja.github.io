@@ -1,0 +1,484 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link type="application/atom+xml" rel="alternate" href="http://jekyllrb-ja.github.io/feed.xml" title="Jekyll • シンプルで、ブログのような、静的サイト" />
+  <link type="application/atom+xml" rel="alternate" href="/feed/release.xml" title="Jekyll releases posts" />
+  <link rel="alternate" type="application/atom+xml" title="Recent commits to Jekyll’s master branch" href="https://github.com/jekyll/jekyll/commits/master.atom">
+  <link rel="preload" href="/fonts/lato-v14-latin-300.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/lato-v14-latin-700.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/css/screen.css" as="style">
+  <link rel="stylesheet" href="/css/screen.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Markdownオプション | Jekyll • シンプルで、ブログのような、静的サイト</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Markdownオプション" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="プレーンテキストを静的サイトやブログに変えましょう" />
+<meta property="og:description" content="プレーンテキストを静的サイトやブログに変えましょう" />
+<link rel="canonical" href="http://jekyllrb-ja.github.io/docs/configuration/markdown/" />
+<meta property="og:url" content="http://jekyllrb-ja.github.io/docs/configuration/markdown/" />
+<meta property="og:site_name" content="Jekyll • シンプルで、ブログのような、静的サイト" />
+<meta property="og:image" content="http://jekyllrb-ja.github.io/img/jekyll-og.png" />
+<script type="application/ld+json">
+{"headline":"Markdownオプション","image":"http://jekyllrb-ja.github.io/img/jekyll-og.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://jekyllrb-ja.github.io/img/logo-2x.png"}},"url":"http://jekyllrb-ja.github.io/docs/configuration/markdown/","description":"プレーンテキストを静的サイトやブログに変えましょう","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <!--[if lt IE 9]>
+  <script src="/js/html5shiv.min.js"></script>
+  <script src="/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body class="wrap"><header>
+  <div class="flexbox">
+    <div class="center-on-mobiles">
+      <h1>
+        <a href="/" class="logo">
+          <span class="sr-only">Jekyll</span>
+          <img src="/img/logo-2x.png" width="140" height="65" alt="Jekyll Logo">
+        </a>
+      </h1>
+    </div>
+    <nav class="main-nav hide-on-mobiles">
+      <ul>
+  <li><a href="/">Home</a></li>
+  <li class="current"><a href="/docs/">Docs</a></li>
+  <li><a href="/resources/">Resources</a></li>
+  <li><a href="/showcase/">Showcase</a></li>
+  <li><a href="/news/">News</a></li>
+  </ul>
+</nav>
+    <div class="search hide-on-mobiles">
+      <input type="text" id="docsearch-input" placeholder="Search the docs…">
+</div>
+    <div class="meta hide-on-mobiles">
+      <ul>
+        <li><a href="https://github.com/jekyll/jekyll/releases/tag/v4.1.1">v4.1.1</a></li>
+        <li><a href="https://github.com/jekyll/jekyll">GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+  <nav class="mobile-nav show-on-mobiles">
+    <ul>
+  <li><a href="/">Home</a></li>
+    <li class="current"><a href="/docs/">Docs</a></li>
+    <li><a href="/resources/">Resources</a></li>
+    <li><a href="/news/">News</a></li>
+    <li><a href="https://github.com/jekyll/jekyll">GitHub</a></li>
+</ul>
+</nav>
+</header>
+  <section class="docs">
+    <div class="grid">
+      <div class="docs-nav-mobile unit whole show-on-mobiles">
+  <select onchange="if (this.value) window.location.href=this.value">
+    <option value="">Navigate the docs…</option>
+    <optgroup label="入門">
+      <option value="/docs/">クイックスタート</option>
+      <option value="/docs/ruby-101/">Ruby基礎</option>
+      <option value="/docs/installation/">インストール</option>
+      <option value="/docs/community/">コミュニティ</option>
+      <option value="/docs/step-by-step/01-setup/">Step by Stepチュートリアル</option>
+    </optgroup>
+    <optgroup label="ビルド">
+      <option value="/docs/usage/">コマンドラインの使い方</option>
+      <option value="/docs/configuration/">構成・設定</option>
+    </optgroup>
+    <optgroup label="コンテンツ">
+      <option value="/docs/pages/">Pages（ページ）</option>
+      <option value="/docs/posts/">Posts（ポスト）</option>
+      <option value="/docs/front-matter/">Front Matter</option>
+      <option value="/docs/collections/">コレクション</option>
+      <option value="/docs/datafiles/">Dataファイル</option>
+      <option value="/docs/assets/">Assets</option>
+      <option value="/docs/static-files/">静的ファイル</option>
+    </optgroup>
+    <optgroup label="サイトの構成">
+      <option value="/docs/structure/">ディレクトリ構成</option>
+      <option value="/docs/liquid/">Liquid</option>
+      <option value="/docs/variables/">変数</option>
+      <option value="/docs/includes/">Includes（インクルード）</option>
+      <option value="/docs/layouts/">レイアウト</option>
+      <option value="/docs/permalinks/">パーマリンク</option>
+      <option value="/docs/themes/">テーマ</option>
+      <option value="/docs/pagination/">Pagination（ページ分け）</option>
+    </optgroup>
+    <optgroup label="ガイド">
+      <option value="/docs/plugins/">プラグイン</option>
+      <option value="/docs/migrations/">ブログの移行</option>
+      <option value="/docs/upgrading/">アップグレード</option>
+      <option value="/docs/deployment/">Deployment</option>
+    </optgroup>
+    </select>
+</div>
+<div class="unit four-fifths">
+        <article>
+          <div class="improve right hide-on-mobiles">
+            <a data-proofer-ignore href="https://github.com/jekyll/jekyll/edit/master/docs/_docs/configuration/markdown.md"><i class="fa fa-pencil"></i>  Improve this page</a>
+          </div>
+          <h1>Markdownオプション</h1>
+          <!-- ---
+title: Markdown Options
+permalink: "/docs/configuration/markdown/"
+--- -->
+
+<p>Jekyllでサポートされている様々なMarkdownレンダラーには、追加のオプションがある場合があります。</p>
+
+<!-- The various Markdown renderers supported by Jekyll sometimes have extra options
+available. -->
+
+<h3 id="kramdown">Kramdown</h3>
+
+<p>KramdownはJekyllのデフォルトMarkdownレンダラーです。以下は現在サポートされているオプションのリストです。</p>
+
+<!-- Kramdown is the default Markdown renderer for Jekyll. Below is a list of the
+currently supported options: -->
+
+<ul>
+  <li>
+<strong>auto_id_prefix</strong> - 自動的に生成された見出しのIDのプレフィックス</li>
+  <li>
+<strong>auto_id_stripping</strong> - 自動ID生成のために見出しテキストからすべてのフォーマットを削除</li>
+  <li>
+<strong>auto_ids</strong> - 自動見出しID生成を使用</li>
+  <li>
+<strong>coderay_bold_every</strong> - 行番号を太字にする頻度を定義</li>
+  <li>
+<strong>coderay_css</strong> - 強調表示されたコードのスタイル設定方法の定義</li>
+  <li>
+<strong>coderay_default_lang</strong> - ハイライトコードブロックのデフォルト言語を設定</li>
+  <li>
+<strong>coderay_line_number_start</strong> - 行番号の開始番号</li>
+  <li>
+<strong>coderay_line_numbers</strong> - 行番号を表示するかの定義</li>
+  <li>
+<strong>coderay_tab_width</strong> - 強調表示されたコードのtabの長さ</li>
+  <li>
+<strong>coderay_wrap</strong> - 強調表示されたコードをどのように折り返すかを定義</li>
+  <li>
+<strong>enable_coderay</strong> - 構文の強調表示にcoderayを使う</li>
+  <li>
+<strong>entity_output</strong> - エンティティの出力方法を定義</li>
+  <li>
+<strong>footnote_backlink</strong> - 脚注のバックリンクに使用するテキストを定義</li>
+  <li>
+<strong>footnote_backlink_inline</strong> - 脚注のバックリンクを常にインラインにするかどうかを指定</li>
+  <li>
+<strong>footnote_nr</strong> - 最初の脚注の番号</li>
+  <li>
+<strong>gfm_quirks</strong> - GFM特有の癖のセットを有効にします</li>
+  <li>
+<strong>hard_wrap</strong> - 改行を文字通りに解釈する</li>
+  <li>
+<strong>header_offset</strong> - ヘッダの出力オフセットを設定します</li>
+  <li>
+<strong>html_to_native</strong> - HTML要素をネイティブ要素に変換する</li>
+  <li>
+<strong>line_width</strong> - 文書を出力するときに使用される線の長さを定義</li>
+  <li>
+<strong>link_defs</strong> - リンク定義を事前定義</li>
+  <li>
+<strong>math_engine</strong> - mathエンジンの設定</li>
+  <li>
+<strong>math_engine_opts</strong> - mathエンジンのオプションを設定</li>
+  <li>
+<strong>parse_block_html</strong> - blockHTMLタグでkramdown構文を処理する</li>
+  <li>
+<strong>parse_span_html</strong> - spanHTMLタグでkramdown構文を処理する</li>
+  <li>
+<strong>smart_quotes</strong> - スマートクォート出力用のHTMLエンティティ名またはコードポイントを定義</li>
+  <li>
+<strong>syntax_highlighter</strong> - シンタックスハイライトの設定</li>
+  <li>
+<strong>syntax_highlighter_opts</strong> - シンタックスハイライトのオプションの設定</li>
+  <li>
+<strong>toc_levels</strong> - 目次に使用されるレベルを定義</li>
+  <li>
+<strong>transliterated_header_ids</strong> - IDを生成する前にヘッダテキストを音訳する</li>
+  <li>
+<strong>typographic_symbols</strong> - 活版印刷シンボルから出力文字へのマッピングを定義</li>
+</ul>
+
+<!-- * **auto_id_prefix** - Prefix used for automatically generated header IDs
+* **auto_id_stripping** - Strip all formatting from header text for automatic ID generation
+* **auto_ids** - Use automatic header ID generation
+* **coderay_bold_every** - Defines how often a line number should be made bold
+* **coderay_css** - Defines how the highlighted code gets styled
+* **coderay_default_lang** - Sets the default language for highlighting code blocks
+* **coderay_line_number_start** - The start value for the line numbers
+* **coderay_line_numbers** - Defines how and if line numbers should be shown
+* **coderay_tab_width** - The tab width used in highlighted code
+* **coderay_wrap** - Defines how the highlighted code should be wrapped
+* **enable_coderay** - Use coderay for syntax highlighting
+* **entity_output** - Defines how entities are output
+* **footnote_backlink** - Defines the text that should be used for the footnote backlinks
+* **footnote_backlink_inline** - Specifies whether the footnote backlink should always be inline
+* **footnote_nr** - The number of the first footnote
+* **gfm_quirks** - Enables a set of GFM specific quirks
+* **hard_wrap** - Interprets line breaks literally
+* **header_offset** - Sets the output offset for headers
+* **html_to_native** - Convert HTML elements to native elements
+* **line_width** - Defines the line width to be used when outputting a document
+* **link_defs** - Pre-defines link definitions
+* **math_engine** - Set the math engine
+* **math_engine_opts** - Set the math engine options
+* **parse_block_html** - Process kramdown syntax in block HTML tags
+* **parse_span_html** - Process kramdown syntax in span HTML tags
+* **smart_quotes** - Defines the HTML entity names or code points for smart quote output
+* **syntax_highlighter** - Set the syntax highlighter
+* **syntax_highlighter_opts** - Set the syntax highlighter options
+* **toc_levels** - Defines the levels that are used for the table of contents
+* **transliterated_header_ids** - Transliterate the header text before generating the ID
+* **typographic_symbols** - Defines a mapping from typographical symbol to output characters -->
+
+<h3 id="使用例">使用例</h3>
+<!-- ### Example Usage -->
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">kramdown</span><span class="pi">:</span>
+  <span class="na">html_to_native</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
+<div class="note warning">
+  <h5>サポートされていないkramdownオプションが2つあります</h5>
+  <!-- <h5>There are two unsupported kramdown options</h5> -->
+  <p>
+    <code>remove_block_html_tags</code>と<code>remove_span_html_tags</code>は、kramdown HTMLコンバータに含まれていないため、現在Jekyllではサポートされていません。
+  </p>
+  <!-- <p>
+    Please note that both <code>remove_block_html_tags</code> and
+    <code>remove_span_html_tags</code> are currently unsupported in Jekyll due
+    to the fact that they are not included within the kramdown HTML converter.
+  </p> -->
+</div>
+
+<p>これらのオプションの詳細は、<a href="https://kramdown.gettalong.org/options.html" target="_blank">Kramdown configuration documentation</a>をご覧ください。</p>
+
+<!-- For more details about these options have a look at the [Kramdown configuration documentation](https://kramdown.gettalong.org/options.html). -->
+
+<h3 id="commonmark">CommonMark</h3>
+
+<p><a href="https://commonmark.org/" target="_blank">CommonMark</a>はMarkdown構文の合理化バージョンであり、Cで実装されているため、Rubyで実装されているデフォルトのKramdownよりも高速です。元のMarkdownとは<a href="https://github.com/commonmark/CommonMark#differences-from-original-markdown" target="_blank">少し異なり</a>、<a href="https://kramdown.gettalong.org/syntax.html#block-ials" target="_blank">Block Inline Attribute Lists</a>のようにKramdownで実装されているすべての構文要素をサポートするわけではありません。</p>
+
+<!-- [CommonMark](https://commonmark.org/) is a rationalized version of Markdown syntax, implemented in C and thus faster than default Kramdown implemented in Ruby. It [slightly differs](https://github.com/commonmark/CommonMark#differences-from-original-markdown) from original Markdown and does not support all the syntax elements implemented in Kramdown, like [Block Inline Attribute Lists](https://kramdown.gettalong.org/syntax.html#block-ials). -->
+
+<p><a href="https://github.com/jekyll/jekyll-commonmark" target="_blank">jekyll-commonmark</a>プラグインを使った基本CommonMarkとGitHub Pagesでサポートされている<a href="https://github.com/github/jekyll-commonmark-ghpages" target="_blank">GitHub Flavored Markdown</a>の2種類があります。</p>
+
+<!-- It comes in two flavors: basic CommonMark with [jekyll-commonmark](https://github.com/jekyll/jekyll-commonmark) plugin and [GitHub Flavored Markdown supported by GitHub Pages](https://github.com/github/jekyll-commonmark-ghpages). -->
+
+<h3 id="redcarpet">Redcarpet</h3>
+
+<p>Redcarpetは、文字列の配列の<code class="language-plaintext highlighter-rouge">extensions</code>サブ設定を提供することによって、設定することができます。 各文字列は、<code class="language-plaintext highlighter-rouge">Redcarpet::Markdown</code>クラスの拡張の名前でなければなりません。配列内に存在する場合は、対応する拡張子を<code class="language-plaintext highlighter-rouge">true</code>に設定します。</p>
+
+<!-- Redcarpet can be configured by providing an `extensions` sub-setting, whose
+value should be an array of strings. Each string should be the name of one of
+the `Redcarpet::Markdown` class's extensions; if present in the array, it will
+set the corresponding extension to `true`. -->
+
+<p>Jekyllは2つの特別なRedcarpet拡張を扱えます。</p>
+
+<!-- Jekyll handles two special Redcarpet extensions: -->
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">no_fenced_code_blocks</code> — デフォルトで、Jekyllは（チルダ3つまたはバッククォート3つでコードブロックを区切るため）<code class="language-plaintext highlighter-rouge">fenced_code_blocks</code>拡張を<code class="language-plaintext highlighter-rouge">true</code>に設定しています。おそらく、GitHubが積極的に採用しており、不可避の設定になってきています。Redcarpetの通常の<code class="language-plaintext highlighter-rouge">fenced_code_blocks</code>はJekyllで使用するときは無効です。——言い換えれば、区切られたコードを無効にするためにこの反転の拡張を使用できます。</li>
+</ul>
+
+<!-- - `no_fenced_code_blocks` --- By default, Jekyll sets the `fenced_code_blocks`
+extension (for delimiting code blocks with triple tildes or triple backticks)
+to `true`, probably because GitHub's eager adoption of them is starting to make
+them inescapable. Redcarpet's normal `fenced_code_blocks` extension is inert
+when used with Jekyll; instead, you can use this inverted version of the
+extension for disabling fenced code. -->
+
+<p>最初の区切り文字の後に言語のハイライトを設定できます。</p>
+
+<!-- Note that you can also specify a language for highlighting after the first
+delimiter: -->
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>```ruby
+# ...ruby code
+```
+</code></pre></div></div>
+
+<p>コードブロックとハイライトは共に有効にできます。これはコードを静的にハイライトします。シンタックスハイライトがない場合は、<code class="language-plaintext highlighter-rouge">&lt;code&gt;</code>要素に <code class="language-plaintext highlighter-rouge">class =" LANGUAGE "</code>属性を追加します。これは様々なJavaScriptコードハイライトライブラリでヒントとして使用できます。</p>
+
+<!-- With both fenced code blocks and highlighter enabled, this will statically
+highlight the code; without any syntax highlighter, it will add a
+`class="LANGUAGE"` attribute to the `<code>` element, which can be used as a
+hint by various JavaScript code highlighting libraries. -->
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">smart</code> — この擬似拡張はSmartyPantsを有効にします。これは、ストレート引用符を中引用符に変換し、ハイフンをem（<code class="language-plaintext highlighter-rouge">---</code>）とen（<code class="language-plaintext highlighter-rouge">--</code>）ダッシュとします。</li>
+</ul>
+
+<!-- - `smart` --- This pseudo-extension turns on SmartyPants, which converts
+  straight quotes to curly quotes and runs of hyphens to em (`---`) and en (`--`) dashes. -->
+
+<p>他のすべての拡張はRedcarpetからの通常の名前を保持しており、Jekyllでは<code class="language-plaintext highlighter-rouge">smart</code>以外のレンダラオプションは指定できません。利用可能な拡張のリストは<a href="https://github.com/vmg/redcarpet/blob/v3.2.2/README.markdown#and-its-like-really-simple-to-use" target="_blank">RedcarpetのREADMEファイル</a>にあります。Redcarpetの正しいバージョンのREADMEを見ていることを確認してください：Jekyllは現在v3.2.xを使っています。 最も一般的に使用されている拡張は次のとおりです。</p>
+
+<!-- All other extensions retain their usual names from Redcarpet, and no renderer
+options aside from `smart` can be specified in Jekyll. [A list of available
+extensions can be found in the Redcarpet README file.](https://github.com/vmg/redcarpet/blob/v3.2.2/README.markdown#and-its-like-really-simple-to-use)
+Make sure you're looking at the README for the right version of
+Redcarpet: Jekyll currently uses v3.2.x. The most commonly used
+extensions are: -->
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">tables</code></li>
+  <li><code class="language-plaintext highlighter-rouge">no_intra_emphasis</code></li>
+  <li><code class="language-plaintext highlighter-rouge">autolink</code></li>
+</ul>
+
+<h3 id="カスタムmarkdownプロセス">カスタムMarkdownプロセス</h3>
+<!-- ### Custom Markdown Processors -->
+
+<p>カスタムmarkdownプロセッサの作成に興味があるなら、あなたは運がいいです！　<code class="language-plaintext highlighter-rouge">Jekyll::Converters::Markdown</code>ネームスペースに新しいクラスを作成します。</p>
+
+<!-- If you're interested in creating a custom markdown processor, you're in luck! Create a new class in the `Jekyll::Converters::Markdown` namespace: -->
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Jekyll::Converters::Markdown::MyCustomProcessor</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+    <span class="nb">require</span> <span class="s1">'funky_markdown'</span>
+    <span class="vi">@config</span> <span class="o">=</span> <span class="n">config</span>
+  <span class="k">rescue</span> <span class="no">LoadError</span>
+    <span class="no">STDERR</span><span class="p">.</span><span class="nf">puts</span> <span class="s1">'You are missing a library required for Markdown. Please run:'</span>
+    <span class="no">STDERR</span><span class="p">.</span><span class="nf">puts</span> <span class="s1">'  $ [sudo] gem install funky_markdown'</span>
+    <span class="k">raise</span> <span class="no">FatalException</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Missing dependency: funky_markdown"</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">convert</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+    <span class="o">::</span><span class="no">FunkyMarkdown</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">content</span><span class="p">).</span><span class="nf">convert</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>一度クラスを作成し、<code class="language-plaintext highlighter-rouge">_plugins</code>フォルダのプラグインかgemとして適切に設定したら、<code class="language-plaintext highlighter-rouge">_config.yml</code>で指定します。</p>
+
+<!-- Once you've created your class and have it properly set up either as a plugin
+in the `_plugins` folder or as a gem, specify it in your `_config.yml`: -->
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">markdown</span><span class="pi">:</span> <span class="s">MyCustomProcessor</span>
+</code></pre></div></div>
+
+        </article>
+      </div>
+      <div class="unit one-fifth hide-on-mobiles">
+  <aside>
+    <h4>入門</h4>
+      <ul>
+        <li><a href="/docs/">クイックスタート</a></li>
+        <li><a href="/docs/ruby-101/">Ruby基礎</a></li>
+        <li><a href="/docs/installation/">インストール</a></li>
+        <li><a href="/docs/community/">コミュニティ</a></li>
+        <li><a href="/docs/step-by-step/01-setup/">Step by Stepチュートリアル</a></li>
+      </ul>
+    <h4>ビルド</h4>
+      <ul>
+        <li><a href="/docs/usage/">コマンドラインの使い方</a></li>
+        <li><a href="/docs/configuration/">構成・設定</a></li>
+      </ul>
+    <h4>コンテンツ</h4>
+      <ul>
+        <li><a href="/docs/pages/">Pages（ページ）</a></li>
+        <li><a href="/docs/posts/">Posts（ポスト）</a></li>
+        <li><a href="/docs/front-matter/">Front Matter</a></li>
+        <li><a href="/docs/collections/">コレクション</a></li>
+        <li><a href="/docs/datafiles/">Dataファイル</a></li>
+        <li><a href="/docs/assets/">Assets</a></li>
+        <li><a href="/docs/static-files/">静的ファイル</a></li>
+      </ul>
+    <h4>サイトの構成</h4>
+      <ul>
+        <li><a href="/docs/structure/">ディレクトリ構成</a></li>
+        <li><a href="/docs/liquid/">Liquid</a></li>
+        <li><a href="/docs/variables/">変数</a></li>
+        <li><a href="/docs/includes/">Includes（インクルード）</a></li>
+        <li><a href="/docs/layouts/">レイアウト</a></li>
+        <li><a href="/docs/permalinks/">パーマリンク</a></li>
+        <li><a href="/docs/themes/">テーマ</a></li>
+        <li><a href="/docs/pagination/">Pagination（ページ分け）</a></li>
+      </ul>
+    <h4>ガイド</h4>
+      <ul>
+        <li><a href="/docs/plugins/">プラグイン</a></li>
+        <li><a href="/docs/migrations/">ブログの移行</a></li>
+        <li><a href="/docs/upgrading/">アップグレード</a></li>
+        <li><a href="/docs/deployment/">Deployment</a></li>
+      </ul>
+    </aside>
+</div>
+<div class="clear"></div>
+    </div>
+  </section>
+<footer>
+  <div class="grid">
+    <div class="unit one-third center-on-mobiles">
+      <p>Jekyllはボランティアの<a href="/team/">コアチーム</a>により愛情を込めて維持されています。</p>
+      <p>このWebサイトのコンテンツは<a href="https://github.com/jekyll/jekyll/blob/master/LICENSE" target="_blank">MIT License</a>に基づきます。© 2020</p>
+      <!-- <p>Jekyll is lovingly maintained by the <a href="/team/">core team</a> of volunteers. </p>
+      <p>The contents of this website are <br />&copy;&nbsp;2020 under the terms of the <a href="https://github.com/jekyll/jekyll/blob/master/LICENSE">MIT&nbsp;License</a>.</p> -->
+    </div>
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>
+        Proudly hosted by
+        <a href="https://github.com">
+          <img src="/img/footer-logo.png" width="100" height="30" alt="GitHub • Social coding">
+        </a>
+      </p>
+    </div>
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>
+        Jekyll is funded thanks to its
+        <a href="https://github.com/jekyll/jekyll#sponsors">
+          sponsors!
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
+<script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<span class=\"sr-only\">Permalink</span><i class=\"fa fa-link\"></i>";
+    anchor.title = "Permalink";
+    return anchor;
+  };
+
+  var linkifyAnchors = function (level, containingElement) {
+    var headers = containingElement.getElementsByTagName("h" + level);
+    for (var h = 0; h < headers.length; h++) {
+      var header = headers[h];
+
+      if (typeof header.id !== "undefined" && header.id !== "") {
+        header.appendChild(anchorForId(header.id));
+      }
+    }
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var contentBlock = document.getElementsByClassName("docs")[0] || document.getElementsByClassName("news")[0];
+      if (!contentBlock) {
+        return;
+      }
+      for (var level = 1; level <= 6; level++) {
+        linkifyAnchors(level, contentBlock);
+      }
+    }
+  };
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script type="text/javascript"> docsearch({
+apiKey: '50fe39c839958dfad797000f33e2ec17',
+indexName: 'jekyllrb',
+inputSelector: '#docsearch-input',
+enhancedSearchInput: true,
+debug: false // Set debug to true if you want to inspect the dropdown
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,374 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link type="application/atom+xml" rel="alternate" href="http://jekyllrb-ja.github.io/feed.xml" title="Jekyll • シンプルで、ブログのような、静的サイト" />
+  <link type="application/atom+xml" rel="alternate" href="/feed/release.xml" title="Jekyll releases posts" />
+  <link rel="alternate" type="application/atom+xml" title="Recent commits to Jekyll’s master branch" href="https://github.com/jekyll/jekyll/commits/master.atom">
+  <link rel="preload" href="/fonts/lato-v14-latin-300.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/lato-v14-latin-700.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/css/screen.css" as="style">
+  <link rel="stylesheet" href="/css/screen.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>レイアウト | Jekyll • シンプルで、ブログのような、静的サイト</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="レイアウト" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="プレーンテキストを静的サイトやブログに変えましょう" />
+<meta property="og:description" content="プレーンテキストを静的サイトやブログに変えましょう" />
+<link rel="canonical" href="http://jekyllrb-ja.github.io/docs/step-by-step/04-layouts/" />
+<meta property="og:url" content="http://jekyllrb-ja.github.io/docs/step-by-step/04-layouts/" />
+<meta property="og:site_name" content="Jekyll • シンプルで、ブログのような、静的サイト" />
+<meta property="og:image" content="http://jekyllrb-ja.github.io/img/jekyll-og.png" />
+<script type="application/ld+json">
+{"headline":"レイアウト","image":"http://jekyllrb-ja.github.io/img/jekyll-og.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://jekyllrb-ja.github.io/img/logo-2x.png"}},"url":"http://jekyllrb-ja.github.io/docs/step-by-step/04-layouts/","description":"プレーンテキストを静的サイトやブログに変えましょう","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <!--[if lt IE 9]>
+  <script src="/js/html5shiv.min.js"></script>
+  <script src="/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body class="wrap"><header>
+  <div class="flexbox">
+    <div class="center-on-mobiles">
+      <h1>
+        <a href="/" class="logo">
+          <span class="sr-only">Jekyll</span>
+          <img src="/img/logo-2x.png" width="140" height="65" alt="Jekyll Logo">
+        </a>
+      </h1>
+    </div>
+    <nav class="main-nav hide-on-mobiles">
+      <ul>
+  <li><a href="/">Home</a></li>
+  <li class="current"><a href="/docs/">Docs</a></li>
+  <li><a href="/resources/">Resources</a></li>
+  <li><a href="/showcase/">Showcase</a></li>
+  <li><a href="/news/">News</a></li>
+  </ul>
+</nav>
+    <div class="search hide-on-mobiles">
+      <input type="text" id="docsearch-input" placeholder="Search the docs…">
+</div>
+    <div class="meta hide-on-mobiles">
+      <ul>
+        <li><a href="https://github.com/jekyll/jekyll/releases/tag/v4.1.1">v4.1.1</a></li>
+        <li><a href="https://github.com/jekyll/jekyll">GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+  <nav class="mobile-nav show-on-mobiles">
+    <ul>
+  <li><a href="/">Home</a></li>
+    <li class="current" ><a href="/docs/">Docs</a></li>
+    <li><a href="/resources/">Resources</a></li>
+    <li><a href="/news/">News</a></li>
+    <li><a href="https://github.com/jekyll/jekyll">GitHub</a></li>
+</ul>
+</nav>
+</header>
+<section class="docs">
+  <div class="grid">
+    <div class="docs-nav-mobile unit whole show-on-mobiles">
+  <select onchange="if (this.value) window.location.href=this.value">
+    <option value="">Navigate the docs…</option>
+    <optgroup label="入門">
+      <option value="/docs/">クイックスタート</option>
+      <option value="/docs/ruby-101/">Ruby基礎</option>
+      <option value="/docs/installation/">インストール</option>
+      <option value="/docs/community/">コミュニティ</option>
+      <option value="/docs/step-by-step/01-setup/">Step by Stepチュートリアル</option>
+    </optgroup>
+    <optgroup label="ビルド">
+      <option value="/docs/usage/">コマンドラインの使い方</option>
+      <option value="/docs/configuration/">構成・設定</option>
+    </optgroup>
+    <optgroup label="コンテンツ">
+      <option value="/docs/pages/">Pages（ページ）</option>
+      <option value="/docs/posts/">Posts（ポスト）</option>
+      <option value="/docs/front-matter/">Front Matter</option>
+      <option value="/docs/collections/">コレクション</option>
+      <option value="/docs/datafiles/">Dataファイル</option>
+      <option value="/docs/assets/">Assets</option>
+      <option value="/docs/static-files/">静的ファイル</option>
+    </optgroup>
+    <optgroup label="サイトの構成">
+      <option value="/docs/structure/">ディレクトリ構成</option>
+      <option value="/docs/liquid/">Liquid</option>
+      <option value="/docs/variables/">変数</option>
+      <option value="/docs/includes/">Includes（インクルード）</option>
+      <option value="/docs/layouts/">レイアウト</option>
+      <option value="/docs/permalinks/">パーマリンク</option>
+      <option value="/docs/themes/">テーマ</option>
+      <option value="/docs/pagination/">Pagination（ページ分け）</option>
+    </optgroup>
+    <optgroup label="ガイド">
+      <option value="/docs/plugins/">プラグイン</option>
+      <option value="/docs/migrations/">ブログの移行</option>
+      <option value="/docs/upgrading/">アップグレード</option>
+      <option value="/docs/deployment/">Deployment</option>
+    </optgroup>
+    </select>
+</div>
+<div class="unit four-fifths">
+      <article>
+        <div class="improve right hide-on-mobiles">
+          <a data-proofer-ignore href="https://github.com/jekyll/jekyll/edit/master/docs/_docs/step-by-step/04-layouts.md"><i class="fa fa-pencil"></i> &nbsp;Improve this page</a>
+        </div>
+          <h1>Step by Step チュートリアル</h1>
+          <!-- <h1>Step by Step Tutorial</h1> -->
+          <h2>4. レイアウト</h2>
+          <!-- ---
+layout: step
+title: Layouts
+position: 4
+--- -->
+
+<p>Webサイトには通常複数のページがあり、このWebサイトでも違いはありません。</p>
+
+<!-- Websites typically have more than one page and this website is no different. -->
+
+<p>JekyllはページのためにHTMLと同様<a href="https://daringfireball.net/projects/markdown/syntax" target="_blank">Markdown</a>もサポートしています。MarkdownはHTMLと比較して少ない要素で済み、（段落とヘッダと画像という）シンプルな構成要素のページには素晴らしい選択です。2つ目のページでは、それに挑戦してみましょう。</p>
+
+<!-- Jekyll supports [Markdown](https://daringfireball.net/projects/markdown/syntax)
+as well as HTML for pages. Markdown is a great choice for pages with a simple
+content structure (just paragraphs, headings and images), as it's less verbose
+than raw HTML. Let's try it out on the next page. -->
+
+<p>rootに<code class="language-plaintext highlighter-rouge">about.md</code>を作成します。</p>
+
+<!-- Create `about.md` in the root. -->
+
+<p>構成は<code class="language-plaintext highlighter-rouge">index.html</code>をコピーして、aboutページになるよう修正します。これを行う際の問題は、重複しているコードがあることです。スタイルシートをサイトに追加したくなったら、各ページの<code class="language-plaintext highlighter-rouge">&lt;head&gt;</code>に指定を追加しなければなりません。2ページだけならそう大変には思えないでしょうが、100ページある場合を想像してみてください。簡単な変更でも、長い時間がかかります。</p>
+
+<!-- For the structure you could copy `index.html` and modify it for the about page.
+The problem with doing this is duplicate code. Let's say you wanted to add a
+stylesheet to your site, you would have to go to each page and add it to the
+`<head>`. It might not sound so bad for a two page site, imagine doing it
+for 100 pages. Even simple changes will take a long time to make. -->
+
+<h2 id="レイアウトを作る">レイアウトを作る</h2>
+<!-- ## Creating a layout -->
+
+<p>レイアウトを使うことは、より良い選択です。レイアウトはコンテンツを包み込むテンプレートです。それらは、<code class="language-plaintext highlighter-rouge">_layouts</code>に入っています。</p>
+
+<!-- Using a layout is a much better choice. Layouts are templates that wrap around
+your content. They live in a directory called `_layouts`. -->
+
+<p>以下の内容で、<code class="language-plaintext highlighter-rouge">_layouts/default.html</code>にあなたの最初のレイアウトを作りましょう。</p>
+
+<!-- Create your first layout at `_layouts/default.html` with the following content: -->
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    <span class="p">{{</span><span class="w"> </span><span class="nv">content</span><span class="w"> </span><span class="p">}}</span>
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">index.html</code>とほとんど同じことに気づいたのではないでしょうか。違いは、front matterが無いことと、ページのコンテンツが<code class="language-plaintext highlighter-rouge">content</code>変数に置き換わっていることです。<code class="language-plaintext highlighter-rouge">content</code>は特別な変数で、ページが読み込まれたときに、そのレンダリングされたコンテンツを持っています。</p>
+
+<!-- You'll notice this is almost identical to `index.html` except there's
+no front matter and the content of the page is replaced with a `content`
+variable. `content` is a special variable which has the value of the rendered
+content of the page it's called on. -->
+
+<p><code class="language-plaintext highlighter-rouge">index.html</code>がこのレイアウトを使う用にするために、front matterに<code class="language-plaintext highlighter-rouge">layout</code>変数をセットします。レイアウトがコンテンツを包み込むため、<code class="language-plaintext highlighter-rouge">index.html</code>に入れる必要があるのは、いかが全てです。</p>
+
+<!-- To have `index.html` use this layout, you can set a `layout` variable in front
+matter. The layout wraps around the content of the page so all you need in
+`index.html` is: -->
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+layout: default
+title: Home
+---
+&lt;h1&gt;<span class="p">{{</span><span class="w"> </span><span class="s2">"Hello World!"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">downcase</span><span class="w"> </span><span class="p">}}</span>&lt;/h1&gt;
+</code></pre></div></div>
+
+<p>これを行ったあと、出力は以前と全く同じになります。レイアウトから、<code class="language-plaintext highlighter-rouge">page</code>のfront matterにアクセスすることができます。今回の場合は、<code class="language-plaintext highlighter-rouge">title</code>がindexページのfront matterで設定されていますが、レイアウトで出力されています。</p>
+
+<!-- After doing this, the output will be exactly the same as before. Note that you
+can access the `page` front matter from the layout. In this case `title` is
+set in the index page's front matter but is output in the layout. -->
+
+<h2 id="aboutページ">Aboutページ</h2>
+<!-- ## About page -->
+
+<p>aboutページに戻り、<code class="language-plaintext highlighter-rouge">index.html</code>からコピーする代わりに、レイアウトを使用することができます。</p>
+
+<!-- Back to the about page, instead of copying from `index.html`, you can use the
+layout. -->
+
+<p><code class="language-plaintext highlighter-rouge">about.md</code>を以下のようにします。</p>
+
+<!-- Add the following to `about.md`: -->
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">default</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s">About</span>
+<span class="nn">---</span>
+<span class="gh"># About page</span>
+
+This page tells you a little bit about me.
+</code></pre></div></div>
+
+<p><a href="http://localhost:4000/about.html" target="_blank" data-proofer-ignore="">http://localhost:4000/about.html</a>をブラウザで開き、新しいページを見てみましょう。</p>
+
+<!-- Open <a href="http://localhost:4000/about.html" target="_blank" data-proofer-ignore>http://localhost:4000/about.html</a>
+in your browser and view your new page. -->
+
+<p>おめでとうございます、2つのページのWebサイトができました！　しかし、どうやってあるページから別のページへナビゲートしましょう？　それを見つけるため、引き続き読み進めてください。</p>
+
+<!-- Congratulations, you now have a two page website! But how do you
+navigate from one page to another? Keep reading to find out. -->
+
+          <div class="section-nav">
+      <div class="left align-right">
+        <a href="/docs/step-by-step/03-front-matter/" class="prev">Back</a>
+        </div>
+      <div class="right align-left">
+      <a href="/docs/step-by-step/05-includes/" class="next">Next</a>
+      </div>
+    </div>
+    <div class="clear"></div>
+    <ol class="step-nav">
+  <li><a href="/docs/step-by-step/01-setup/">セットアップ</a></li>
+  <li><a href="/docs/step-by-step/02-liquid/">Liquid</a></li>
+  <li><a href="/docs/step-by-step/03-front-matter/">Front Matter</a></li>
+  <li class="current"><a href="/docs/step-by-step/04-layouts/">レイアウト</a></li>
+  <li><a href="/docs/step-by-step/05-includes/">Includes（インクルード）</a></li>
+  <li><a href="/docs/step-by-step/06-data-files/">Dataファイル</a></li>
+  <li><a href="/docs/step-by-step/07-assets/">Assets</a></li>
+  <li><a href="/docs/step-by-step/08-blogging/">ブログ</a></li>
+  <li><a href="/docs/step-by-step/09-collections/">コレクション</a></li>
+  <li><a href="/docs/step-by-step/10-deployment/">Deployment</a></li>
+  </ol>
+</article>
+      </div>
+      <div class="unit one-fifth hide-on-mobiles">
+  <aside>
+    <h4>入門</h4>
+      <ul>
+        <li><a href="/docs/">クイックスタート</a></li>
+        <li><a href="/docs/ruby-101/">Ruby基礎</a></li>
+        <li><a href="/docs/installation/">インストール</a></li>
+        <li><a href="/docs/community/">コミュニティ</a></li>
+        <li><a href="/docs/step-by-step/01-setup/">Step by Stepチュートリアル</a></li>
+      </ul>
+    <h4>ビルド</h4>
+      <ul>
+        <li><a href="/docs/usage/">コマンドラインの使い方</a></li>
+        <li><a href="/docs/configuration/">構成・設定</a></li>
+      </ul>
+    <h4>コンテンツ</h4>
+      <ul>
+        <li><a href="/docs/pages/">Pages（ページ）</a></li>
+        <li><a href="/docs/posts/">Posts（ポスト）</a></li>
+        <li><a href="/docs/front-matter/">Front Matter</a></li>
+        <li><a href="/docs/collections/">コレクション</a></li>
+        <li><a href="/docs/datafiles/">Dataファイル</a></li>
+        <li><a href="/docs/assets/">Assets</a></li>
+        <li><a href="/docs/static-files/">静的ファイル</a></li>
+      </ul>
+    <h4>サイトの構成</h4>
+      <ul>
+        <li><a href="/docs/structure/">ディレクトリ構成</a></li>
+        <li><a href="/docs/liquid/">Liquid</a></li>
+        <li><a href="/docs/variables/">変数</a></li>
+        <li><a href="/docs/includes/">Includes（インクルード）</a></li>
+        <li><a href="/docs/layouts/">レイアウト</a></li>
+        <li><a href="/docs/permalinks/">パーマリンク</a></li>
+        <li><a href="/docs/themes/">テーマ</a></li>
+        <li><a href="/docs/pagination/">Pagination（ページ分け）</a></li>
+      </ul>
+    <h4>ガイド</h4>
+      <ul>
+        <li><a href="/docs/plugins/">プラグイン</a></li>
+        <li><a href="/docs/migrations/">ブログの移行</a></li>
+        <li><a href="/docs/upgrading/">アップグレード</a></li>
+        <li><a href="/docs/deployment/">Deployment</a></li>
+      </ul>
+    </aside>
+</div>
+<div class="clear"></div>
+    </div>
+  </section>
+<footer>
+  <div class="grid">
+    <div class="unit one-third center-on-mobiles">
+      <p>Jekyllはボランティアの<a href="/team/">コアチーム</a>により愛情を込めて維持されています。</p>
+      <p>このWebサイトのコンテンツは<a href="https://github.com/jekyll/jekyll/blob/master/LICENSE" target="_blank">MIT&nbsp;License</a>に基づきます。&copy;&nbsp;2020</p>
+      <!-- <p>Jekyll is lovingly maintained by the <a href="/team/">core team</a> of volunteers. </p>
+      <p>The contents of this website are <br />&copy;&nbsp;2020 under the terms of the <a href="https://github.com/jekyll/jekyll/blob/master/LICENSE">MIT&nbsp;License</a>.</p> -->
+    </div>
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>
+        Proudly hosted by
+        <a href="https://github.com">
+          <img src="/img/footer-logo.png" width="100" height="30" alt="GitHub • Social coding">
+        </a>
+      </p>
+    </div>
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>
+        Jekyll is funded thanks to its
+        <a href="https://github.com/jekyll/jekyll#sponsors">
+          sponsors!
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
+<script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<span class=\"sr-only\">Permalink</span><i class=\"fa fa-link\"></i>";
+    anchor.title = "Permalink";
+    return anchor;
+  };
+
+  var linkifyAnchors = function (level, containingElement) {
+    var headers = containingElement.getElementsByTagName("h" + level);
+    for (var h = 0; h < headers.length; h++) {
+      var header = headers[h];
+
+      if (typeof header.id !== "undefined" && header.id !== "") {
+        header.appendChild(anchorForId(header.id));
+      }
+    }
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var contentBlock = document.getElementsByClassName("docs")[0] || document.getElementsByClassName("news")[0];
+      if (!contentBlock) {
+        return;
+      }
+      for (var level = 1; level <= 6; level++) {
+        linkifyAnchors(level, contentBlock);
+      }
+    }
+  };
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script type="text/javascript"> docsearch({
+apiKey: '50fe39c839958dfad797000f33e2ec17',
+indexName: 'jekyllrb',
+inputSelector: '#docsearch-input',
+enhancedSearchInput: true,
+debug: false // Set debug to true if you want to inspect the dropdown
+});
+</script>
+</body>
+</html>

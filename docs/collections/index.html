@@ -1,0 +1,728 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link type="application/atom+xml" rel="alternate" href="http://jekyllrb-ja.github.io/feed.xml" title="Jekyll • シンプルで、ブログのような、静的サイト" />
+  <link type="application/atom+xml" rel="alternate" href="/feed/release.xml" title="Jekyll releases posts" />
+  <link rel="alternate" type="application/atom+xml" title="Recent commits to Jekyll’s master branch" href="https://github.com/jekyll/jekyll/commits/master.atom">
+  <link rel="preload" href="/fonts/lato-v14-latin-300.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/lato-v14-latin-700.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/css/screen.css" as="style">
+  <link rel="stylesheet" href="/css/screen.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>コレクション | Jekyll • シンプルで、ブログのような、静的サイト</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="コレクション" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="プレーンテキストを静的サイトやブログに変えましょう" />
+<meta property="og:description" content="プレーンテキストを静的サイトやブログに変えましょう" />
+<link rel="canonical" href="http://jekyllrb-ja.github.io/docs/collections/" />
+<meta property="og:url" content="http://jekyllrb-ja.github.io/docs/collections/" />
+<meta property="og:site_name" content="Jekyll • シンプルで、ブログのような、静的サイト" />
+<meta property="og:image" content="http://jekyllrb-ja.github.io/img/jekyll-og.png" />
+<script type="application/ld+json">
+{"headline":"コレクション","image":"http://jekyllrb-ja.github.io/img/jekyll-og.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://jekyllrb-ja.github.io/img/logo-2x.png"}},"url":"http://jekyllrb-ja.github.io/docs/collections/","description":"プレーンテキストを静的サイトやブログに変えましょう","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <!--[if lt IE 9]>
+  <script src="/js/html5shiv.min.js"></script>
+  <script src="/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body class="wrap"><header>
+  <div class="flexbox">
+    <div class="center-on-mobiles">
+      <h1>
+        <a href="/" class="logo">
+          <span class="sr-only">Jekyll</span>
+          <img src="/img/logo-2x.png" width="140" height="65" alt="Jekyll Logo">
+        </a>
+      </h1>
+    </div>
+    <nav class="main-nav hide-on-mobiles">
+      <ul>
+  <li><a href="/">Home</a></li>
+  <li class="current"><a href="/docs/">Docs</a></li>
+  <li><a href="/resources/">Resources</a></li>
+  <li><a href="/showcase/">Showcase</a></li>
+  <li><a href="/news/">News</a></li>
+  </ul>
+</nav>
+    <div class="search hide-on-mobiles">
+      <input type="text" id="docsearch-input" placeholder="Search the docs…">
+</div>
+    <div class="meta hide-on-mobiles">
+      <ul>
+        <li><a href="https://github.com/jekyll/jekyll/releases/tag/v4.1.1">v4.1.1</a></li>
+        <li><a href="https://github.com/jekyll/jekyll">GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+  <nav class="mobile-nav show-on-mobiles">
+    <ul>
+  <li><a href="/">Home</a></li>
+    <li class="current" ><a href="/docs/">Docs</a></li>
+    <li><a href="/resources/">Resources</a></li>
+    <li><a href="/news/">News</a></li>
+    <li><a href="https://github.com/jekyll/jekyll">GitHub</a></li>
+</ul>
+</nav>
+</header>
+  <section class="docs">
+    <div class="grid">
+      <div class="docs-nav-mobile unit whole show-on-mobiles">
+  <select onchange="if (this.value) window.location.href=this.value">
+    <option value="">Navigate the docs…</option>
+    <optgroup label="入門">
+      <option value="/docs/">クイックスタート</option>
+      <option value="/docs/ruby-101/">Ruby基礎</option>
+      <option value="/docs/installation/">インストール</option>
+      <option value="/docs/community/">コミュニティ</option>
+      <option value="/docs/step-by-step/01-setup/">Step by Stepチュートリアル</option>
+    </optgroup>
+    <optgroup label="ビルド">
+      <option value="/docs/usage/">コマンドラインの使い方</option>
+      <option value="/docs/configuration/">構成・設定</option>
+    </optgroup>
+    <optgroup label="コンテンツ">
+      <option value="/docs/pages/">Pages（ページ）</option>
+      <option value="/docs/posts/">Posts（ポスト）</option>
+      <option value="/docs/front-matter/">Front Matter</option>
+      <option value="/docs/collections/">コレクション</option>
+      <option value="/docs/datafiles/">Dataファイル</option>
+      <option value="/docs/assets/">Assets</option>
+      <option value="/docs/static-files/">静的ファイル</option>
+    </optgroup>
+    <optgroup label="サイトの構成">
+      <option value="/docs/structure/">ディレクトリ構成</option>
+      <option value="/docs/liquid/">Liquid</option>
+      <option value="/docs/variables/">変数</option>
+      <option value="/docs/includes/">Includes（インクルード）</option>
+      <option value="/docs/layouts/">レイアウト</option>
+      <option value="/docs/permalinks/">パーマリンク</option>
+      <option value="/docs/themes/">テーマ</option>
+      <option value="/docs/pagination/">Pagination（ページ分け）</option>
+    </optgroup>
+    <optgroup label="ガイド">
+      <option value="/docs/plugins/">プラグイン</option>
+      <option value="/docs/migrations/">ブログの移行</option>
+      <option value="/docs/upgrading/">アップグレード</option>
+      <option value="/docs/deployment/">Deployment</option>
+    </optgroup>
+    </select>
+</div>
+<div class="unit four-fifths">
+        <article>
+          <div class="improve right hide-on-mobiles">
+            <a data-proofer-ignore href="https://github.com/jekyll/jekyll/edit/master/docs/_docs/collections.md"><i class="fa fa-pencil"></i> &nbsp;Improve this page</a>
+          </div>
+          <h1>コレクション</h1>
+          <!-- ---
+title: Collections
+permalink: /docs/collections/
+--- -->
+
+<p>コレクションは、チームのメンバーや会議でのトークなどの関連コンテンツをグループ化するのに最適な方法です。</p>
+
+<!-- Collections are a great way to group related content like members of a team or
+talks at a conference. -->
+
+<h2 id="セットアップ">セットアップ</h2>
+<!-- ## Setup -->
+
+<p>コレクションを使用するには、まず<code class="language-plaintext highlighter-rouge">_config.yml</code>で定義します。例として、staff membersのコレクションを作成します。</p>
+
+<!-- To use a Collection you first need to define it in your `_config.yml`. For
+example here's a collection of staff members: -->
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">collections</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">staff_members</span>
+</code></pre></div></div>
+
+<p>この場合、<code class="language-plaintext highlighter-rouge">collections</code>は、各コレクションに追加のメタデータが定義されていないシーケンス（配列）として定義されます。<br />
+オプションでコレクションのメタデータを指定するには、<code class="language-plaintext highlighter-rouge">collections</code>をシーケンスではなくマッピング（ハッシュマップ）として定義し、その中に追加のフィールドを定義します。</p>
+
+<!-- In this case `collections` is defined as a sequence (i.e array) with no additional metadata defined for each collection.  
+You can optionally specify metadata for your collection by defining `collections` as a mapping (i.e hashmap) instead of sequence, and then defining additional fields in it: -->
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">collections</span><span class="pi">:</span>
+  <span class="na">staff_members</span><span class="pi">:</span>
+    <span class="na">people</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
+<div class="note">
+  <p>コレクションをシーケンスとして定義する場合、そのページはデフォルトではレンダリングされません。有効にするには、コレクションのマッピング定義で<code>output：true</code>を指定する必要があります。詳細については、<a href="#output">出力</a>セクションを参照してください</p>
+  <!-- <p>When defining a collection as a sequence, its pages will not be rendered by default. To enable this, <code>output: true</code> must be specified on the collection, which requires defining the collection as a mapping. For more information, see the section <a href="#output">Output</a></p> -->
+</div>
+
+<div class="note">
+  <h5>コレクションをまとめる<span class="version-badge" title="This feature is available starting version 3.7.0">3.7.0</span>
+</h5>
+  <!-- <h5>Gather your collections<span class="version-badge" title="This feature is available starting version 3.7.0">3.7.0</span>
+</h5> -->
+
+  <p><code>collections_dir: my_collections</code>で全てのコレクションをまとめるディレクトリを指定できます。</p>
+  <!-- <p>You can optionally specify a directory to store all your collections in the same place with <code>collections_dir: my_collections</code>.</p> -->
+
+  <p>するとJekyllは、<code>books</code>コレクションを<code>my_collections/_books</code>で、<code>recipes</code>コレクションを<code>my_collections/_recipes</code>で見つけるようになります。</p>
+  <!-- <p>Then Jekyll will look in <code>my_collections/_books</code> for the <code>books</code> collection, and
+  in <code>my_collections/_recipes</code> for the <code>recipes</code> collection.</p> -->
+</div>
+
+<div class="note warning">
+  <h5>ドラフトとポストは必ずカスタムコレクションディレクトリに入れてください</h5>
+  <!-- <h5>Be sure to move drafts and posts into custom collections directory</h5> -->
+  <p><code>collections_dir: my_collections</code>でコレクションをひとまとめにしたなら、<code>_drafts</code>は<code>my_collections/_drafts</code>に、<code>_posts</code>は<code>my_collections/_posts</code>に移動してください。コレクションディレクトリの名前はアンダースコア("_")で始められないことに注意してください。</p>
+  <!-- <p>If you specify a directory to store all your collections in the same place with <code>collections_dir: my_collections</code>, then you will need to move your <code>_drafts</code> and <code>_posts</code> directory to <code>my_collections/_drafts</code> and <code>my_collections/_posts</code>. Note that, the name of your collections directory cannot start with an underscore (`_`).</p> -->
+</div>
+
+<h2 id="コンテンツの追加">コンテンツの追加</h2>
+<!-- ## Add content -->
+
+<p>対応するフォルダ（<code class="language-plaintext highlighter-rouge">&lt;source&gt;/_staff_members</code>など）を作成して、ドキュメントを追加します。front matterがある場合はfront matterが処理され、front matterより後の全部がドキュメントの<code class="language-plaintext highlighter-rouge">content</code>とされます。front matterが無い場合は、Jekyllは<a href="">静的ファイル</a>としてそれ以上コンテンツを処理しません。front matterがある場合は、Jekyllはファイルの内容を処理して期待される出力にします。</p>
+
+<!-- Create a corresponding folder (e.g. `<source>/_staff_members`) and add
+documents. Front matter is processed if the front matter exists, and everything
+after the front matter is pushed into the document's `content` attribute. If no front
+matter is provided, Jekyll will consider it to be a [static file](/docs/static-files/)
+and the contents will not undergo further processing. If front matter is provided,
+Jekyll will process the file contents into the expected output.-->
+
+<p>front matterが存在するかどうかに関係なく、Jekyllは、コレクションのメタデータに<code class="language-plaintext highlighter-rouge">output: true</code>が設定されている場合にのみ、宛先ディレクトリ（例えば、<code class="language-plaintext highlighter-rouge">_site</code>）に書き込みます。</p>
+
+<!-- Regardless of whether front matter exists or not, Jekyll will write to the destination
+directory (e.g. `_site`) only if `output: true` has been set in the collection's
+metadata. -->
+
+<p>上記で設定したコレクションにstaff memberを追加する方法の例です。ファイル名は<code class="language-plaintext highlighter-rouge">./_staff_members/jane.md</code>で、内容は以下の通りです。</p>
+
+<!-- For example here's how you would add a staff member to the collection set above.
+The filename is `./_staff_members/jane.md` with the following content: -->
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">name</span><span class="pi">:</span> <span class="s">Jane Doe</span>
+<span class="na">position</span><span class="pi">:</span> <span class="s">Developer</span>
+<span class="nn">---</span>
+Jane has worked on Jekyll for the past <span class="ge">*five years*</span>.
+</code></pre></div></div>
+
+<p><em>
+内部的にコレクションと見なされていますが、上記は<a href="/docs/posts/">posts</a>には適用されないことに注意してください。有効なファイル名形式の投稿は、front matterが含まれていない場合でも処理対象としてマークされます。
+&lt;/ em&gt;</em></p>
+
+<!-- <em>
+  Do note that in spite of being considered as a collection internally, the above
+  doesn't apply to [posts](/docs/posts/). Posts with a valid filename format will be
+  marked for processing even if they do not contain front matter.
+</em>  -->
+
+<div class="note info">
+  <h5>ディレクトリは正しい名前にしてください</h5>
+  <!-- <h5>Be sure to name your directories correctly</h5> -->
+  <p>
+    フォルダは<code>_config.yml</code>ファイルで定義した名前で、前に<code>_</code>を追加します。
+  </p>
+  <!-- <p>
+The folder must be named identically to the collection you defined in
+your <code>_config.yml</code> file, with the addition of the preceding <code>_</code> character.
+  </p> -->
+</div>
+
+<h2 id="output">出力</h2>
+<!-- ## Output -->
+
+<p>これで<code class="language-plaintext highlighter-rouge">site.staff_members</code>をページで繰り返し処理して、各staff memberの内容を出力できます。ポストと同様、ドキュメント本文には<code class="language-plaintext highlighter-rouge">content</code> 変数を使用してアクセスします。</p>
+
+<!-- Now you can iterate over `site.staff_members` on a page and output the content
+for each staff member. Similar to posts, the body of the document is accessed
+using the `content` variable: -->
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">staff_member</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">site.staff_members</span><span class="w"> </span><span class="p">%}</span>
+  &lt;h2&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">staff_member</span><span class="p">.</span><span class="nv">name</span><span class="w"> </span><span class="p">}}</span> - <span class="p">{{</span><span class="w"> </span><span class="nv">staff_member</span><span class="p">.</span><span class="nv">position</span><span class="w"> </span><span class="p">}}</span>&lt;/h2&gt;
+  &lt;p&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">staff_member</span><span class="p">.</span><span class="nv">content</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">markdownify</span><span class="w"> </span><span class="p">}}</span>&lt;/p&gt;
+<span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+</code></pre></div></div>
+
+<p>コレクションの各ページをJekyllで作成したい場合は、<code class="language-plaintext highlighter-rouge">_config.yml</code>のコレクションのメタデータで<code class="language-plaintext highlighter-rouge">output</code>キーを<code class="language-plaintext highlighter-rouge">true</code>に設定します。</p>
+
+<!-- If you'd like Jekyll to create a rendered page for each document in your
+collection, you can set the `output` key to `true` in your collection
+metadata in `_config.yml`: -->
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">collections</span><span class="pi">:</span>
+  <span class="na">staff_members</span><span class="pi">:</span>
+    <span class="na">output</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">url</code>属性を使用して、ページにリンクを生成できます。</p>
+
+<!-- You can link to the generated page using the `url` attribute: -->
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">staff_member</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">site.staff_members</span><span class="w"> </span><span class="p">%}</span>
+  &lt;h2&gt;
+    &lt;a href="<span class="p">{{</span><span class="w"> </span><span class="nv">staff_member</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">}}</span>"&gt;
+      <span class="p">{{</span><span class="w"> </span><span class="nv">staff_member</span><span class="p">.</span><span class="nv">name</span><span class="w"> </span><span class="p">}}</span> - <span class="p">{{</span><span class="w"> </span><span class="nv">staff_member</span><span class="p">.</span><span class="nv">position</span><span class="w"> </span><span class="p">}}</span>
+    &lt;/a&gt;
+  &lt;/h2&gt;
+  &lt;p&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">staff_member</span><span class="p">.</span><span class="nv">content</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">markdownify</span><span class="w"> </span><span class="p">}}</span>&lt;/p&gt;
+<span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+</code></pre></div></div>
+
+<h2 id="パーマリンク">パーマリンク</h2>
+<!-- ## Permalinks -->
+
+<p>コレクション全体のURLの出力をコントロールするのに役立つ、特別な<a href="/docs/permalinks/">コレクションのパーマリンク変数</a>があります。</p>
+
+<!-- There are special [permalink variables for collections](/docs/permalinks/) to
+help you control the output url for the entire collection. -->
+
+<h2 id="custom-sorting-of-documents">ドキュメントのカスタムソート<span class="version-badge" title="This feature is available starting version 4.0">4.0</span></h2>
+<!-- ## Custom Sorting of Documents<span class="version-badge" title="This feature is available starting version 4.0">4.0</span>
+{: #custom-sorting-of-documents}-->
+
+<p>デフォルトでは、fromt matterに<code class="language-plaintext highlighter-rouge">date</code>キーがある場合はコレクション内のドキュメントは<code class="language-plaintext highlighter-rouge">date</code>でソートされます。ですが、<code class="language-plaintext highlighter-rouge">date</code>キーがない場合はそれぞれのパスでソートされます。</p>
+
+<!-- By default, two documents in a collection are sorted by their `date` attribute when both of them have the `date` key in their front matter. However, if either or both documents do not have the `date` key in their front matter, they are sorted by their respective paths. -->
+
+<p>コレクションのメタデータでソート順を制御することができます。</p>
+
+<!-- You can control this sorting via the collection's metadata. -->
+
+<h3 id="front-matterキーでソート">Front Matterキーでソート</h3>
+<!-- ### Sort By Front Matter Key -->
+
+<p>ドキュメントはfront matterキーでソートすることができます。そのためには、メタデータの<code class="language-plaintext highlighter-rouge">sort_by</code>にfront matterキーを指定します。tutorialsコレクションを<code class="language-plaintext highlighter-rouge">lesson</code>キーでソートする例を、次に示します。</p>
+
+<!-- Documents can be sorted based on a front matter key by setting a `sort_by` metadata to the front matter key string. For example,
+to sort a collection of tutorials based on key `lesson`, the configuration would be: -->
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">collections</span><span class="pi">:</span>
+  <span class="na">tutorials</span><span class="pi">:</span>
+    <span class="na">sort_by</span><span class="pi">:</span> <span class="s">lesson</span>
+</code></pre></div></div>
+
+<p>ドキュメントはキーの値で昇順に並べられます。front matterキーが設定されていない場合は、そのドキュメントはソートの最後に配置されます。複数のドキュメントにfront matterキーが設定されていない場合は、設定されているドキュメントの後に、設定されていないドキュメントが日付やパスでソートされて配置されます。</p>
+
+<!-- The documents are arranged in the increasing order of the key's value. If a document does not have the front matter key defined
+then that document is placed immediately after sorted documents. When multiple documents do not have the front matter key defined,
+those documents are sorted by their dates or paths and then placed immediately after the sorted documents. -->
+
+<h3 id="ドキュメントの手動並び替え">ドキュメントの手動並び替え</h3>
+<!-- ### Manually Ordering Documents -->
+
+<p><code class="language-plaintext highlighter-rouge">order</code>メタデータに<strong>ファイル名のリスト</strong>を並べたい順に設定することで、好きな順序で配置できます。tutorialsコレクションの設定の例を、次に示します。</p>
+
+<!-- You can also manually order the documents by setting an `order` metadata with **the filenames listed** in the desired order.
+For example, a collection of tutorials would be configured as: -->
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">collections</span><span class="pi">:</span>
+  <span class="na">tutorials</span><span class="pi">:</span>
+    <span class="na">order</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">hello-world.md</span>
+      <span class="pi">-</span> <span class="s">introduction.md</span>
+      <span class="pi">-</span> <span class="s">basic-concepts.md</span>
+      <span class="pi">-</span> <span class="s">advanced-concepts.md</span>
+</code></pre></div></div>
+
+<p>リストにないファイル名のドキュメントは、指定されたものの後に配置されます。
+サブカテゴリのドキュメントも、次のようにして含めることができます。</p>
+
+<!-- Any documents with filenames that do not match the list entry simply gets placed after the rearranged documents. If a document is
+nested under subdirectories, include them in entries as well: -->
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">collections</span><span class="pi">:</span>
+  <span class="na">tutorials</span><span class="pi">:</span>
+    <span class="na">order</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">hello-world.md</span>
+      <span class="pi">-</span> <span class="s">introduction.md</span>
+      <span class="pi">-</span> <span class="s">concepts/basics.md</span>
+      <span class="pi">-</span> <span class="s">concepts/advanced.md</span>
+</code></pre></div></div>
+
+<p>どちらのメタデータキーも設定されている場合、<code class="language-plaintext highlighter-rouge">order</code>のリストが優先されます。</p>
+
+<!-- If both metadata keys have been defined properly, `order` list takes precedence. -->
+
+<h2 id="liquid属性">Liquid属性</h2>
+<!-- ## Liquid Attributes -->
+
+<h3 id="コレクション">コレクション</h3>
+<!-- ### Collections -->
+
+<p>コレクションは、<code class="language-plaintext highlighter-rouge">site.collections</code>下に<code class="language-plaintext highlighter-rouge">_config.yml</code>で指定したメタデータを付加することで使用できます。情報を以下に示します。</p>
+
+<!-- Collections are also available under `site.collections`, with the metadata
+you specified in your `_config.yml` (if present) and the following information: -->
+
+<div class="mobile-side-scroller">
+<table>
+  <thead>
+    <tr>
+      <th>変数</th>
+      <th>説明</th>
+      <!-- <th>Variable</th>
+      <th>Description</th> -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <p><code>label</code></p>
+      </td>
+      <td>
+        <p>
+          コレクションの名前。<code>my_collection</code>など。
+        </p>
+        <!-- <p>
+          The name of your collection, e.g. <code>my_collection</code>.
+        </p> -->
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><code>docs</code></p>
+      </td>
+      <td>
+        <p>
+          <a href="#documents">ドキュメント</a>の配列。
+        </p>
+        <!-- <p>
+          An array of <a href="#documents">documents</a>.
+        </p> -->
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><code>files</code></p>
+      </td>
+      <td>
+        <p>
+          コレクションの静的ファイルの配列。
+        </p>
+        <!-- <p>
+          An array of static files in the collection.
+        </p> -->
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><code>relative_directory</code></p>
+      </td>
+      <td>
+        <p>
+          コレクションのディレクトリへの、サイトからの相対パス。
+        </p>
+        <!-- <p>
+          The path to the collection's source directory, relative to the site
+          source.
+        </p> -->
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><code>directory</code></p>
+      </td>
+      <td>
+        <p>
+          コレクションのディレクトリへのフルパス。
+        </p>
+        <!-- <p>
+          The full path to the collections's source directory.
+        </p> -->
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><code>output</code></p>
+      </td>
+      <td>
+        <p>
+          コレクションのドキュメントを個別のファイルとして出力するかどうか。
+        </p>
+        <!-- <p>
+          Whether the collection's documents will be output as individual
+          files.
+        </p> -->
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="note info">
+  <h5>強制コレクション</h5>
+  <!-- <h5>A Hard-Coded Collection</h5> -->
+  <p>あなたが作成したコレクションに加え、Jekyllは<code>posts</code>コレクションを強制的に保持しています。<code>_posts</code>ディレクトリがあるかどうかは、関係ありません。<code>site.collections</code>の反復処理を行う場合は注意してください。フィルタで除外する必要があるかもしれません。</p>
+  <!-- <p>In addition to any collections you create yourself, the
+  <code>posts</code> collection is hard-coded into Jekyll. It exists whether
+  you have a <code>_posts</code> directory or not. This is something to note
+  when iterating through <code>site.collections</code> as you may need to
+  filter it out.</p> -->
+  <p>コレクションを見つけるには、フィルタを使用するのがよいでしょう。
+  <code>{{ site.collections | where: "label", "myCollection" | first }}</code></p>
+  <!-- <p>You may wish to use filters to find your collection:
+  <code>{{ site.collections | where: "label", "myCollection" | first }}</code></p> -->
+</div>
+
+<div class="note info">
+  <h5>コレクションと日時</h5>
+  <!-- <h5>Collections and Time</h5> -->
+  <p><code>posts</code>コレクションのドキュメントを除き、作成した全てのコレクションのドキュメントは、割り当てられた日付の有無に関係なくLiquidでアクセス可能ですので、レンダリング可能です。
+  </p>
+  <!-- <p>Except for documents in hard-coded default collection <code>posts</code>, all documents in collections
+    you create, are accessible via Liquid irrespective of their assigned date, if any, and therefore renderable.
+  </p> -->
+  <p>関連するコレクションのメタデータで<code>output: true</code>が指定されている場合のみ、ドキュメントがディスクに書き込まれます。加えて、未来の日付のドキュメントは<code>site.future</code><em>がtrue</em>の場合だけです。
+  </p>
+  <!-- <p>Documents are attempted to be written to disk only if the concerned collection
+    metadata has <code>output: true</code>. Additionally, future-dated documents are only written if
+    <code>site.future</code> <em>is also true</em>.
+  </p> -->
+  <p>ドキュメントをディスクに書き込むかの更に細かい設定は、front matterで    <code>published: false</code> (デフォルトは<em><code>true</code></em>)を設定することで可能です。
+  </p>
+  <!-- <p>More fine-grained control over documents being written to disk can be exercised by setting
+    <code>published: false</code> (<em><code>true</code> by default</em>) in the document's front matter.
+  </p> -->
+</div>
+
+<h3 id="ドキュメント">ドキュメント<span id="documents"></span></h3>
+<!-- ### Documents -->
+
+<p>各ドキュメントのfront matterで記載されたものに加えて、次の属性を持っています。</p>
+
+<!-- In addition to any front matter provided in the document's corresponding
+file, each document has the following attributes: -->
+
+<div class="mobile-side-scroller">
+<table>
+  <thead>
+    <tr>
+    <th>変数</th>
+    <th>説明</th>
+    <!-- <th>Variable</th>
+    <th>Description</th> -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <p><code>content</code></p>
+      </td>
+      <td>
+        <p>
+          ドキュメントの（レンダリングされていない）コンテンツ。front matterが無い場合、Jekyllはコレクション内のファイルを生成しません。front matterがある場合は、front matter終了の`---`以降の全てです。
+        </p>
+        <!-- <p>
+          The (unrendered) content of the document. If no front matter is
+          provided, Jekyll will not generate the file in your collection. If
+          front matter is used, then this is all the contents of the file
+          after the terminating
+          `---` of the front matter.
+        </p> -->
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><code>output</code></p>
+      </td>
+      <td>
+        <p>
+          <code>content</code>の出力。
+        </p>
+        <!-- <p>
+          The rendered output of the document, based on the
+          <code>content</code>.
+        </p> -->
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><code>path</code></p>
+      </td>
+      <td>
+        <p>
+          ドキュメントのソースファイルへのフルパス。
+        </p>
+        <!-- <p>
+          The full path to the document's source file.
+        </p> -->
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><code>relative_path</code></p>
+      </td>
+      <td>
+        <p>
+          サイトからのドキュメントのソースへの相対パス。
+        </p>
+        <!-- <p>
+          The path to the document's source file relative to the site source.
+        </p> -->
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><code>url</code></p>
+      </td>
+      <td>
+        <p>
+          出力されたコレクションのURL。サイトの設定で<code>output: true</code>が指定されている場合のみファイルが出力されます。
+          </p>
+          <!-- <p>
+            The URL of the rendered collection. The file is only written to the destination when the collection to which it belongs has <code>output: true</code> in the site's configuration.
+            </p> -->
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><code>collection</code></p>
+      </td>
+      <td>
+        <p>
+          ドキュメントのコレクションの名前。
+        </p>
+        <!-- <p>
+          The name of the document's collection.
+        </p> -->
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><code>date</code></p>
+      </td>
+      <td>
+        <p>
+          ドキュメントのコレクションの日付
+        </p>
+        <!-- <p>
+          The date of the document's collection.
+        </p> -->
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+        </article>
+      </div>
+      <div class="unit one-fifth hide-on-mobiles">
+  <aside>
+    <h4>入門</h4>
+      <ul>
+        <li><a href="/docs/">クイックスタート</a></li>
+        <li><a href="/docs/ruby-101/">Ruby基礎</a></li>
+        <li><a href="/docs/installation/">インストール</a></li>
+        <li><a href="/docs/community/">コミュニティ</a></li>
+        <li><a href="/docs/step-by-step/01-setup/">Step by Stepチュートリアル</a></li>
+      </ul>
+    <h4>ビルド</h4>
+      <ul>
+        <li><a href="/docs/usage/">コマンドラインの使い方</a></li>
+        <li><a href="/docs/configuration/">構成・設定</a></li>
+      </ul>
+    <h4>コンテンツ</h4>
+      <ul>
+        <li><a href="/docs/pages/">Pages（ページ）</a></li>
+        <li><a href="/docs/posts/">Posts（ポスト）</a></li>
+        <li><a href="/docs/front-matter/">Front Matter</a></li>
+        <li class="current"><a href="/docs/collections/">コレクション</a></li>
+        <li><a href="/docs/datafiles/">Dataファイル</a></li>
+        <li><a href="/docs/assets/">Assets</a></li>
+        <li><a href="/docs/static-files/">静的ファイル</a></li>
+      </ul>
+    <h4>サイトの構成</h4>
+      <ul>
+        <li><a href="/docs/structure/">ディレクトリ構成</a></li>
+        <li><a href="/docs/liquid/">Liquid</a></li>
+        <li><a href="/docs/variables/">変数</a></li>
+        <li><a href="/docs/includes/">Includes（インクルード）</a></li>
+        <li><a href="/docs/layouts/">レイアウト</a></li>
+        <li><a href="/docs/permalinks/">パーマリンク</a></li>
+        <li><a href="/docs/themes/">テーマ</a></li>
+        <li><a href="/docs/pagination/">Pagination（ページ分け）</a></li>
+      </ul>
+    <h4>ガイド</h4>
+      <ul>
+        <li><a href="/docs/plugins/">プラグイン</a></li>
+        <li><a href="/docs/migrations/">ブログの移行</a></li>
+        <li><a href="/docs/upgrading/">アップグレード</a></li>
+        <li><a href="/docs/deployment/">Deployment</a></li>
+      </ul>
+    </aside>
+</div>
+<div class="clear"></div>
+    </div>
+  </section>
+<footer>
+  <div class="grid">
+    <div class="unit one-third center-on-mobiles">
+      <p>Jekyllはボランティアの<a href="/team/">コアチーム</a>により愛情を込めて維持されています。</p>
+      <p>このWebサイトのコンテンツは<a href="https://github.com/jekyll/jekyll/blob/master/LICENSE" target="_blank">MIT&nbsp;License</a>に基づきます。&copy;&nbsp;2020</p>
+      <!-- <p>Jekyll is lovingly maintained by the <a href="/team/">core team</a> of volunteers. </p>
+      <p>The contents of this website are <br />&copy;&nbsp;2020 under the terms of the <a href="https://github.com/jekyll/jekyll/blob/master/LICENSE">MIT&nbsp;License</a>.</p> -->
+    </div>
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>
+        Proudly hosted by
+        <a href="https://github.com">
+          <img src="/img/footer-logo.png" width="100" height="30" alt="GitHub • Social coding">
+        </a>
+      </p>
+    </div>
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>
+        Jekyll is funded thanks to its
+        <a href="https://github.com/jekyll/jekyll#sponsors">
+          sponsors!
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
+<script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<span class=\"sr-only\">Permalink</span><i class=\"fa fa-link\"></i>";
+    anchor.title = "Permalink";
+    return anchor;
+  };
+
+  var linkifyAnchors = function (level, containingElement) {
+    var headers = containingElement.getElementsByTagName("h" + level);
+    for (var h = 0; h < headers.length; h++) {
+      var header = headers[h];
+
+      if (typeof header.id !== "undefined" && header.id !== "") {
+        header.appendChild(anchorForId(header.id));
+      }
+    }
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var contentBlock = document.getElementsByClassName("docs")[0] || document.getElementsByClassName("news")[0];
+      if (!contentBlock) {
+        return;
+      }
+      for (var level = 1; level <= 6; level++) {
+        linkifyAnchors(level, contentBlock);
+      }
+    }
+  };
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script type="text/javascript"> docsearch({
+apiKey: '50fe39c839958dfad797000f33e2ec17',
+indexName: 'jekyllrb',
+inputSelector: '#docsearch-input',
+enhancedSearchInput: true,
+debug: false // Set debug to true if you want to inspect the dropdown
+});
+</script>
+</body>
+</html>

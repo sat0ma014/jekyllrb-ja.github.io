@@ -1,0 +1,411 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link type="application/atom+xml" rel="alternate" href="http://jekyllrb-ja.github.io/feed.xml" title="Jekyll • シンプルで、ブログのような、静的サイト" />
+  <link type="application/atom+xml" rel="alternate" href="/feed/release.xml" title="Jekyll releases posts" />
+  <link rel="alternate" type="application/atom+xml" title="Recent commits to Jekyll’s master branch" href="https://github.com/jekyll/jekyll/commits/master.atom">
+  <link rel="preload" href="/fonts/lato-v14-latin-300.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/lato-v14-latin-700.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/css/screen.css" as="style">
+  <link rel="stylesheet" href="/css/screen.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Jekyll on macOS | Jekyll • シンプルで、ブログのような、静的サイト</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Jekyll on macOS" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="コマンドラインツールのインストール" />
+<meta property="og:description" content="コマンドラインツールのインストール" />
+<link rel="canonical" href="http://jekyllrb-ja.github.io/docs/installation/macos/" />
+<meta property="og:url" content="http://jekyllrb-ja.github.io/docs/installation/macos/" />
+<meta property="og:site_name" content="Jekyll • シンプルで、ブログのような、静的サイト" />
+<meta property="og:image" content="http://jekyllrb-ja.github.io/img/jekyll-og.png" />
+<script type="application/ld+json">
+{"headline":"Jekyll on macOS","image":"http://jekyllrb-ja.github.io/img/jekyll-og.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://jekyllrb-ja.github.io/img/logo-2x.png"}},"url":"http://jekyllrb-ja.github.io/docs/installation/macos/","description":"コマンドラインツールのインストール","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <!--[if lt IE 9]>
+  <script src="/js/html5shiv.min.js"></script>
+  <script src="/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body class="wrap"><header>
+  <div class="flexbox">
+    <div class="center-on-mobiles">
+      <h1>
+        <a href="/" class="logo">
+          <span class="sr-only">Jekyll</span>
+          <img src="/img/logo-2x.png" width="140" height="65" alt="Jekyll Logo">
+        </a>
+      </h1>
+    </div>
+    <nav class="main-nav hide-on-mobiles">
+      <ul>
+  <li><a href="/">Home</a></li>
+  <li class="current"><a href="/docs/">Docs</a></li>
+  <li><a href="/resources/">Resources</a></li>
+  <li><a href="/showcase/">Showcase</a></li>
+  <li><a href="/news/">News</a></li>
+  </ul>
+</nav>
+    <div class="search hide-on-mobiles">
+      <input type="text" id="docsearch-input" placeholder="Search the docs…">
+</div>
+    <div class="meta hide-on-mobiles">
+      <ul>
+        <li><a href="https://github.com/jekyll/jekyll/releases/tag/v4.1.1">v4.1.1</a></li>
+        <li><a href="https://github.com/jekyll/jekyll">GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+  <nav class="mobile-nav show-on-mobiles">
+    <ul>
+  <li><a href="/">Home</a></li>
+    <li class="current" ><a href="/docs/">Docs</a></li>
+    <li><a href="/resources/">Resources</a></li>
+    <li><a href="/news/">News</a></li>
+    <li><a href="https://github.com/jekyll/jekyll">GitHub</a></li>
+</ul>
+</nav>
+</header>
+  <section class="docs">
+    <div class="grid">
+      <div class="docs-nav-mobile unit whole show-on-mobiles">
+  <select onchange="if (this.value) window.location.href=this.value">
+    <option value="">Navigate the docs…</option>
+    <optgroup label="入門">
+      <option value="/docs/">クイックスタート</option>
+      <option value="/docs/ruby-101/">Ruby基礎</option>
+      <option value="/docs/installation/">インストール</option>
+      <option value="/docs/community/">コミュニティ</option>
+      <option value="/docs/step-by-step/01-setup/">Step by Stepチュートリアル</option>
+    </optgroup>
+    <optgroup label="ビルド">
+      <option value="/docs/usage/">コマンドラインの使い方</option>
+      <option value="/docs/configuration/">構成・設定</option>
+    </optgroup>
+    <optgroup label="コンテンツ">
+      <option value="/docs/pages/">Pages（ページ）</option>
+      <option value="/docs/posts/">Posts（ポスト）</option>
+      <option value="/docs/front-matter/">Front Matter</option>
+      <option value="/docs/collections/">コレクション</option>
+      <option value="/docs/datafiles/">Dataファイル</option>
+      <option value="/docs/assets/">Assets</option>
+      <option value="/docs/static-files/">静的ファイル</option>
+    </optgroup>
+    <optgroup label="サイトの構成">
+      <option value="/docs/structure/">ディレクトリ構成</option>
+      <option value="/docs/liquid/">Liquid</option>
+      <option value="/docs/variables/">変数</option>
+      <option value="/docs/includes/">Includes（インクルード）</option>
+      <option value="/docs/layouts/">レイアウト</option>
+      <option value="/docs/permalinks/">パーマリンク</option>
+      <option value="/docs/themes/">テーマ</option>
+      <option value="/docs/pagination/">Pagination（ページ分け）</option>
+    </optgroup>
+    <optgroup label="ガイド">
+      <option value="/docs/plugins/">プラグイン</option>
+      <option value="/docs/migrations/">ブログの移行</option>
+      <option value="/docs/upgrading/">アップグレード</option>
+      <option value="/docs/deployment/">Deployment</option>
+    </optgroup>
+    </select>
+</div>
+<div class="unit four-fifths">
+        <article>
+          <div class="improve right hide-on-mobiles">
+            <a data-proofer-ignore href="https://github.com/jekyll/jekyll/edit/master/docs/_docs/installation/macos.md"><i class="fa fa-pencil"></i> &nbsp;Improve this page</a>
+          </div>
+          <h1>Jekyll on macOS</h1>
+          <h2 id="コマンドラインツールのインストール">コマンドラインツールのインストール</h2>
+<!-- ## Install Command Line Tools -->
+
+<p>最初に、ネイティブエクステンションをコンパイルできるようにするために、コマンドラインツールをインストールします。ターミナルを開いて、実行します。</p>
+
+<!-- First, you need to install the command-line tools to be able to compile native extensions, open a terminal and run: -->
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xcode-select <span class="nt">--install</span>
+</code></pre></div></div>
+
+<h2 id="rubyのインストール">Rubyのインストール</h2>
+<h2 id="install-ruby">Install Ruby</h2>
+
+<p>Jekyllは<strong>Ruby &gt; 2.5.0</strong>が必須です。
+macOS Catalina 10.15にはruby 2.6.3が付属しています。
+以前のmacOS利用している場合、Rubyの新しいバージョンをインストールする必要があります。</p>
+
+<!-- Jekyll requires **Ruby > 2.5.0**.
+macOS Catalina 10.15 comes with ruby 2.6.3, so you're fine. 
+If you're running a previous macOS system, you'll have to install a newer version of Ruby. -->
+
+<h3 id="brew">With Homebrew</h3>
+
+<p>最新のRubyバージョンを実行するには、<a href="https://brew.sh" target="_blank">Homebrew</a>を通じてインストールする必要があります。</p>
+
+<!-- To run the latest Ruby version you need to install it through [Homebrew](https://brew.sh). -->
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Install Homebrew</span>
+/usr/bin/ruby <span class="nt">-e</span> <span class="s2">"</span><span class="si">$(</span>curl <span class="nt">-fsSL</span> https://raw.githubusercontent.com/Homebrew/install/master/install<span class="si">)</span><span class="s2">"</span>
+
+brew <span class="nb">install </span>ruby
+</code></pre></div></div>
+
+<p>brew Rubyパスをshell configに追加してください。</p>
+
+<!-- Add the brew ruby path to your shell config: -->
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s1">'export PATH="/usr/local/opt/ruby/bin:$PATH"'</span> <span class="o">&gt;&gt;</span> ~/.bash_profile
+</code></pre></div></div>
+
+<p>ターミナルを再起動し、Rubyのセットアップの更新を確認します。</p>
+
+<!-- Then relaunch your terminal and check your updated Ruby setup: -->
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>which ruby
+<span class="c"># /usr/local/opt/ruby/bin/ruby</span>
+
+ruby <span class="nt">-v</span>
+ruby 2.7.1p83 <span class="o">(</span>2020-03-31 revision a0c7c23c9c<span class="o">)</span>
+</code></pre></div></div>
+
+<p>現在の安定版Rubyを実行できるようになりました。</p>
+
+<!-- Yay, we are now running current stable Ruby! -->
+
+<h3 id="rbenv">With rbenv</h3>
+
+<p>複数のRubyバージョンを管理するために、<a href="https://github.com/rbenv/rbenv" target="_blank">rbenv</a>を使用することもあります。これは、プロジェクトで特定のRubyバージョンを実行する必要がある場合には、とても便利です。</p>
+
+<!-- People often use [rbenv](https://github.com/rbenv/rbenv) to manage multiple
+Ruby versions. This is very useful when you need to be able to run a given Ruby version on a project. -->
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Install Homebrew</span>
+/usr/bin/ruby <span class="nt">-e</span> <span class="s2">"</span><span class="si">$(</span>curl <span class="nt">-fsSL</span> https://raw.githubusercontent.com/Homebrew/install/master/install<span class="si">)</span><span class="s2">"</span>
+
+<span class="c"># Install rbenv and ruby-build</span>
+brew <span class="nb">install </span>rbenv
+
+<span class="c"># Set up rbenv integration with your shell</span>
+rbenv init
+
+<span class="c"># Check your installation</span>
+curl <span class="nt">-fsSL</span> https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash
+</code></pre></div></div>
+
+<p>変更を有効にするために、ターミナルを再起動します。これで、選択したRubyバージョンをインストールできます。最新の安定版Rubyを使ってみましょう。</p>
+
+<!-- Restart your terminal for changes to take effect.
+Now you can install the Ruby version of our choice, let's go with current latest stable Ruby: -->
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rbenv <span class="nb">install </span>2.7.1
+rbenv global 2.7.1
+ruby <span class="nt">-v</span>
+ruby 2.7.1p83 <span class="o">(</span>2020-03-31 revision a0c7c23c9c<span class="o">)</span>
+</code></pre></div></div>
+
+<p>以上です。<a href="https://github.com/rbenv/rbenv#command-reference" target="_blank">rbenv command references</a>を読んで、プロジェクトでの異なるRubyバージョンの使い方を学んでください。</p>
+
+<!-- That's it! Head over [rbenv command references](https://github.com/rbenv/rbenv#command-reference) to learn how to use different versions of Ruby in your projects. -->
+
+<h2 id="jekyllのインストール">Jekyllのインストール</h2>
+<!-- ## Install Jekyll -->
+
+<p>後は、<a href="/docs/ruby-101/#bundler">Bundler</a>)とJekyllをインストールするだけです。</p>
+
+<!-- Now all that is left is installing [Bundler](/docs/ruby-101/#bundler)) and Jekyll. -->
+
+<h3 id="ローカルインストール">ローカルインストール</h3>
+<!-- ### Local Install -->
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem <span class="nb">install</span> <span class="nt">--user-install</span> bundler jekyll
+</code></pre></div></div>
+
+<p>それからRubyのバージョンを取得します。</p>
+
+<!-- and then get your Ruby version using -->
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ruby <span class="nt">-v</span>
+ruby 2.7.1p83 <span class="o">(</span>2020-03-31 revision a0c7c23c9c<span class="o">)</span>
+</code></pre></div></div>
+
+<p>それから、パスファイルに以下を追加します。<code class="language-plaintext highlighter-rouge">X.X</code>には、あなたのRubyバージョンの最初の2桁を入れてください。</p>
+
+<!-- Then append your path file with the following, replacing the `X.X` with the first two digits of your Ruby version. -->
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s1">'export PATH="$HOME/.gem/ruby/X.X.0/bin:$PATH"'</span> <span class="o">&gt;&gt;</span> ~/.bash_profile
+</code></pre></div></div>
+
+<p>gemパスがホームディレクトリを指していることを確認するには、次のコマンドを実行します。</p>
+
+<!-- To check that your gem paths point to your home directory run: -->
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem <span class="nb">env</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">GEM PATHS:</code>がホームディレクトリを指していることを確認してください。</p>
+
+<!-- And check that `GEM PATHS:` points to a path in your home directory -->
+
+<p class="note info">最初の2桁が異なるRubyバージョンに更新する度に、パスもあわせて更新する必要があります。</p>
+
+<!-- {: .note .info}
+Every time you update Ruby to a version with a different first two digits, you will need to update your path to match. -->
+
+<h3 id="グローバルインストール">グローバルインストール</h3>
+<!-- ### Global Install -->
+
+<p class="note warning">ファイルのパーミッションの問題を解決し、<code class="language-plaintext highlighter-rouge">sudo</code>を使用するためにRuby Gemsをグローバル環境にインストールすることを、強く推奨します。</p>
+
+<!-- {: .note .warning}
+We strongly recommend against installing Ruby gems globally to avoid file permissions problems and using `sudo`. -->
+
+<h4 id="mojave1014の場合">Mojave(10.14)の場合</h4>
+<!-- #### On Mojave (10.14) -->
+
+<p>MojaveのSIPプロテクションのため、以下を実行しなければなりません。</p>
+
+<!-- Because of SIP Protections in Mojave, you must run: -->
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>gem <span class="nb">install </span>bundler
+<span class="nb">sudo </span>gem <span class="nb">install</span> <span class="nt">-n</span> /usr/local/bin/ jekyll
+</code></pre></div></div>
+
+<h4 id="mojave以前1014">Mojave以前（&lt;10.14）</h4>
+<!-- #### Before Mojave (<10.14) -->
+
+<p>次を実行するだけです。</p>
+
+<!-- You only have to run: -->
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>gem <span class="nb">install </span>bundler jekyll
+</code></pre></div></div>
+
+<h2 id="問題が発生しましたか">問題が発生しましたか？</h2>
+<!-- ## Problems? -->
+
+<p><a href="/docs/troubleshooting/">トラブルシューティング</a>ページを確認したり、<a href="https://talk.jekyllrb.com" target="_blank">フォーラムで助けを求めて</a>ください。</p>
+
+<!-- Check out the [troubleshooting](/docs/troubleshooting/) page or [ask for help on our forum](https://talk.jekyllrb.com). -->
+
+        </article>
+      </div>
+      <div class="unit one-fifth hide-on-mobiles">
+  <aside>
+    <h4>入門</h4>
+      <ul>
+        <li><a href="/docs/">クイックスタート</a></li>
+        <li><a href="/docs/ruby-101/">Ruby基礎</a></li>
+        <li><a href="/docs/installation/">インストール</a></li>
+        <li><a href="/docs/community/">コミュニティ</a></li>
+        <li><a href="/docs/step-by-step/01-setup/">Step by Stepチュートリアル</a></li>
+      </ul>
+    <h4>ビルド</h4>
+      <ul>
+        <li><a href="/docs/usage/">コマンドラインの使い方</a></li>
+        <li><a href="/docs/configuration/">構成・設定</a></li>
+      </ul>
+    <h4>コンテンツ</h4>
+      <ul>
+        <li><a href="/docs/pages/">Pages（ページ）</a></li>
+        <li><a href="/docs/posts/">Posts（ポスト）</a></li>
+        <li><a href="/docs/front-matter/">Front Matter</a></li>
+        <li><a href="/docs/collections/">コレクション</a></li>
+        <li><a href="/docs/datafiles/">Dataファイル</a></li>
+        <li><a href="/docs/assets/">Assets</a></li>
+        <li><a href="/docs/static-files/">静的ファイル</a></li>
+      </ul>
+    <h4>サイトの構成</h4>
+      <ul>
+        <li><a href="/docs/structure/">ディレクトリ構成</a></li>
+        <li><a href="/docs/liquid/">Liquid</a></li>
+        <li><a href="/docs/variables/">変数</a></li>
+        <li><a href="/docs/includes/">Includes（インクルード）</a></li>
+        <li><a href="/docs/layouts/">レイアウト</a></li>
+        <li><a href="/docs/permalinks/">パーマリンク</a></li>
+        <li><a href="/docs/themes/">テーマ</a></li>
+        <li><a href="/docs/pagination/">Pagination（ページ分け）</a></li>
+      </ul>
+    <h4>ガイド</h4>
+      <ul>
+        <li><a href="/docs/plugins/">プラグイン</a></li>
+        <li><a href="/docs/migrations/">ブログの移行</a></li>
+        <li><a href="/docs/upgrading/">アップグレード</a></li>
+        <li><a href="/docs/deployment/">Deployment</a></li>
+      </ul>
+    </aside>
+</div>
+<div class="clear"></div>
+    </div>
+  </section>
+<footer>
+  <div class="grid">
+    <div class="unit one-third center-on-mobiles">
+      <p>Jekyllはボランティアの<a href="/team/">コアチーム</a>により愛情を込めて維持されています。</p>
+      <p>このWebサイトのコンテンツは<a href="https://github.com/jekyll/jekyll/blob/master/LICENSE" target="_blank">MIT&nbsp;License</a>に基づきます。&copy;&nbsp;2020</p>
+      <!-- <p>Jekyll is lovingly maintained by the <a href="/team/">core team</a> of volunteers. </p>
+      <p>The contents of this website are <br />&copy;&nbsp;2020 under the terms of the <a href="https://github.com/jekyll/jekyll/blob/master/LICENSE">MIT&nbsp;License</a>.</p> -->
+    </div>
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>
+        Proudly hosted by
+        <a href="https://github.com">
+          <img src="/img/footer-logo.png" width="100" height="30" alt="GitHub • Social coding">
+        </a>
+      </p>
+    </div>
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>
+        Jekyll is funded thanks to its
+        <a href="https://github.com/jekyll/jekyll#sponsors">
+          sponsors!
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
+<script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<span class=\"sr-only\">Permalink</span><i class=\"fa fa-link\"></i>";
+    anchor.title = "Permalink";
+    return anchor;
+  };
+
+  var linkifyAnchors = function (level, containingElement) {
+    var headers = containingElement.getElementsByTagName("h" + level);
+    for (var h = 0; h < headers.length; h++) {
+      var header = headers[h];
+
+      if (typeof header.id !== "undefined" && header.id !== "") {
+        header.appendChild(anchorForId(header.id));
+      }
+    }
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var contentBlock = document.getElementsByClassName("docs")[0] || document.getElementsByClassName("news")[0];
+      if (!contentBlock) {
+        return;
+      }
+      for (var level = 1; level <= 6; level++) {
+        linkifyAnchors(level, contentBlock);
+      }
+    }
+  };
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script type="text/javascript"> docsearch({
+apiKey: '50fe39c839958dfad797000f33e2ec17',
+indexName: 'jekyllrb',
+inputSelector: '#docsearch-input',
+enhancedSearchInput: true,
+debug: false // Set debug to true if you want to inspect the dropdown
+});
+</script>
+</body>
+</html>

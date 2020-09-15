@@ -1,0 +1,365 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link type="application/atom+xml" rel="alternate" href="http://jekyllrb-ja.github.io/feed.xml" title="Jekyll • シンプルで、ブログのような、静的サイト" />
+  <link type="application/atom+xml" rel="alternate" href="/feed/release.xml" title="Jekyll releases posts" />
+  <link rel="alternate" type="application/atom+xml" title="Recent commits to Jekyll’s master branch" href="https://github.com/jekyll/jekyll/commits/master.atom">
+  <link rel="preload" href="/fonts/lato-v14-latin-300.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/lato-v14-latin-700.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/css/screen.css" as="style">
+  <link rel="stylesheet" href="/css/screen.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Generators（ジェネレータ） | Jekyll • シンプルで、ブログのような、静的サイト</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Generators（ジェネレータ）" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="プレーンテキストを静的サイトやブログに変えましょう" />
+<meta property="og:description" content="プレーンテキストを静的サイトやブログに変えましょう" />
+<link rel="canonical" href="http://jekyllrb-ja.github.io/docs/plugins/generators/" />
+<meta property="og:url" content="http://jekyllrb-ja.github.io/docs/plugins/generators/" />
+<meta property="og:site_name" content="Jekyll • シンプルで、ブログのような、静的サイト" />
+<meta property="og:image" content="http://jekyllrb-ja.github.io/img/jekyll-og.png" />
+<script type="application/ld+json">
+{"headline":"Generators（ジェネレータ）","image":"http://jekyllrb-ja.github.io/img/jekyll-og.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://jekyllrb-ja.github.io/img/logo-2x.png"}},"url":"http://jekyllrb-ja.github.io/docs/plugins/generators/","description":"プレーンテキストを静的サイトやブログに変えましょう","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <!--[if lt IE 9]>
+  <script src="/js/html5shiv.min.js"></script>
+  <script src="/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body class="wrap"><header>
+  <div class="flexbox">
+    <div class="center-on-mobiles">
+      <h1>
+        <a href="/" class="logo">
+          <span class="sr-only">Jekyll</span>
+          <img src="/img/logo-2x.png" width="140" height="65" alt="Jekyll Logo">
+        </a>
+      </h1>
+    </div>
+    <nav class="main-nav hide-on-mobiles">
+      <ul>
+  <li><a href="/">Home</a></li>
+  <li class="current"><a href="/docs/">Docs</a></li>
+  <li><a href="/resources/">Resources</a></li>
+  <li><a href="/showcase/">Showcase</a></li>
+  <li><a href="/news/">News</a></li>
+  </ul>
+</nav>
+    <div class="search hide-on-mobiles">
+      <input type="text" id="docsearch-input" placeholder="Search the docs…">
+</div>
+    <div class="meta hide-on-mobiles">
+      <ul>
+        <li><a href="https://github.com/jekyll/jekyll/releases/tag/v4.1.1">v4.1.1</a></li>
+        <li><a href="https://github.com/jekyll/jekyll">GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+  <nav class="mobile-nav show-on-mobiles">
+    <ul>
+  <li><a href="/">Home</a></li>
+    <li class="current"><a href="/docs/">Docs</a></li>
+    <li><a href="/resources/">Resources</a></li>
+    <li><a href="/news/">News</a></li>
+    <li><a href="https://github.com/jekyll/jekyll">GitHub</a></li>
+</ul>
+</nav>
+</header>
+  <section class="docs">
+    <div class="grid">
+      <div class="docs-nav-mobile unit whole show-on-mobiles">
+  <select onchange="if (this.value) window.location.href=this.value">
+    <option value="">Navigate the docs…</option>
+    <optgroup label="入門">
+      <option value="/docs/">クイックスタート</option>
+      <option value="/docs/ruby-101/">Ruby基礎</option>
+      <option value="/docs/installation/">インストール</option>
+      <option value="/docs/community/">コミュニティ</option>
+      <option value="/docs/step-by-step/01-setup/">Step by Stepチュートリアル</option>
+    </optgroup>
+    <optgroup label="ビルド">
+      <option value="/docs/usage/">コマンドラインの使い方</option>
+      <option value="/docs/configuration/">構成・設定</option>
+    </optgroup>
+    <optgroup label="コンテンツ">
+      <option value="/docs/pages/">Pages（ページ）</option>
+      <option value="/docs/posts/">Posts（ポスト）</option>
+      <option value="/docs/front-matter/">Front Matter</option>
+      <option value="/docs/collections/">コレクション</option>
+      <option value="/docs/datafiles/">Dataファイル</option>
+      <option value="/docs/assets/">Assets</option>
+      <option value="/docs/static-files/">静的ファイル</option>
+    </optgroup>
+    <optgroup label="サイトの構成">
+      <option value="/docs/structure/">ディレクトリ構成</option>
+      <option value="/docs/liquid/">Liquid</option>
+      <option value="/docs/variables/">変数</option>
+      <option value="/docs/includes/">Includes（インクルード）</option>
+      <option value="/docs/layouts/">レイアウト</option>
+      <option value="/docs/permalinks/">パーマリンク</option>
+      <option value="/docs/themes/">テーマ</option>
+      <option value="/docs/pagination/">Pagination（ページ分け）</option>
+    </optgroup>
+    <optgroup label="ガイド">
+      <option value="/docs/plugins/">プラグイン</option>
+      <option value="/docs/migrations/">ブログの移行</option>
+      <option value="/docs/upgrading/">アップグレード</option>
+      <option value="/docs/deployment/">Deployment</option>
+    </optgroup>
+    </select>
+</div>
+<div class="unit four-fifths">
+        <article>
+          <div class="improve right hide-on-mobiles">
+            <a data-proofer-ignore href="https://github.com/jekyll/jekyll/edit/master/docs/_docs/plugins/generators.md"><i class="fa fa-pencil"></i>  Improve this page</a>
+          </div>
+          <h1>Generators（ジェネレータ）</h1>
+          <!-- ---
+title: Generators
+permalink: /docs/plugins/generators/
+--- -->
+
+<p>あなた自身のルールに基づいた追加コンテンツがJekyllに必要なら、ジェネレータを作ることができます。</p>
+
+<!-- You can create a generator when you need Jekyll to create additional content
+based on your own rules. -->
+
+<p>ジェネレータは<code class="language-plaintext highlighter-rouge">generate</code>メソッドを定義する<code class="language-plaintext highlighter-rouge">Jekyll::Generator</code>のサブクラスです。<a href="https://github.com/jekyll/jekyll/blob/master/lib/jekyll/site.rb" target="_blank"><code class="language-plaintext highlighter-rouge">Jekyll::Site</code></a>のインスタンスを受け取ります。<code class="language-plaintext highlighter-rouge">generate</code>が返す値は無視されます。</p>
+
+<!-- A generator is a subclass of `Jekyll::Generator` that defines a `generate`
+method, which receives an instance of
+[`Jekyll::Site`](https://github.com/jekyll/jekyll/blob/master/lib/jekyll/site.rb). The
+return value of `generate` is ignored. -->
+
+<p>ジェネレータは、Jekyllが既存のコンテンツのインベントリを作成した後、サイトが生成される前に実行されます。front matterのあるページは<a href="https://github.com/jekyll/jekyll/blob/master/lib/jekyll/page.rb" target="_blank"><code class="language-plaintext highlighter-rouge">Jekyll::Page</code></a>インスタンスとして保管され、<code class="language-plaintext highlighter-rouge">site.pages</code>で使用可能です。静的ファイルは<a href="https://github.com/jekyll/jekyll/blob/master/lib/jekyll/static_file.rb" target="_blank"><code class="language-plaintext highlighter-rouge">Jekyll::StaticFile</code></a>インスタンスになり、<code class="language-plaintext highlighter-rouge">site.static_files</code>で使用可能です。詳細は<a href="/docs/variables/">ドキュメンテーションの変数ページ</a>と<a href="https://github.com/jekyll/jekyll/blob/master/lib/jekyll/site.rb" target="_blank"><code class="language-plaintext highlighter-rouge">Jekyll::Site</code></a>を見てください。</p>
+
+<!-- Generators run after Jekyll has made an inventory of the existing content, and
+before the site is generated. Pages with front matter are stored as
+instances of
+[`Jekyll::Page`](https://github.com/jekyll/jekyll/blob/master/lib/jekyll/page.rb)
+and are available via `site.pages`. Static files become instances of
+[`Jekyll::StaticFile`](https://github.com/jekyll/jekyll/blob/master/lib/jekyll/static_file.rb)
+and are available via `site.static_files`. See
+[the Variables documentation page](/docs/variables/) and
+[`Jekyll::Site`](https://github.com/jekyll/jekyll/blob/master/lib/jekyll/site.rb)
+for details. -->
+
+<p>例えば、ジェネレータはテンプレート変数に構築時に計算された値を代入することができます。以下の例では、<code class="language-plaintext highlighter-rouge">reading.html</code>テンプレートに<code class="language-plaintext highlighter-rouge">ongoing</code>と<code class="language-plaintext highlighter-rouge">done</code>の2つの変数をジェネレータから書き込んでいます。</p>
+
+<!-- For instance, a generator can inject values computed at build time for template
+variables. In the following example, the template `reading.html` has two
+variables `ongoing` and `done` that are filled in the generator: -->
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span> <span class="nn">Reading</span>
+  <span class="k">class</span> <span class="nc">Generator</span> <span class="o">&lt;</span> <span class="no">Jekyll</span><span class="o">::</span><span class="no">Generator</span>
+    <span class="k">def</span> <span class="nf">generate</span><span class="p">(</span><span class="n">site</span><span class="p">)</span>
+      <span class="n">ongoing</span><span class="p">,</span> <span class="n">done</span> <span class="o">=</span> <span class="no">Book</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">partition</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:ongoing?</span><span class="p">)</span>
+
+      <span class="n">reading</span> <span class="o">=</span> <span class="n">site</span><span class="p">.</span><span class="nf">pages</span><span class="p">.</span><span class="nf">detect</span> <span class="p">{</span><span class="o">|</span><span class="n">page</span><span class="o">|</span> <span class="n">page</span><span class="p">.</span><span class="nf">name</span> <span class="o">==</span> <span class="s1">'reading.html'</span><span class="p">}</span>
+      <span class="n">reading</span><span class="p">.</span><span class="nf">data</span><span class="p">[</span><span class="s1">'ongoing'</span><span class="p">]</span> <span class="o">=</span> <span class="n">ongoing</span>
+      <span class="n">reading</span><span class="p">.</span><span class="nf">data</span><span class="p">[</span><span class="s1">'done'</span><span class="p">]</span> <span class="o">=</span> <span class="n">done</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>以下の例は新しいページを生成するより複雑なジェネレータです。この例は、<code class="language-plaintext highlighter-rouge">categories</code>ディレクトリにそのカテゴリのポスト一覧のカテゴリページを<code class="language-plaintext highlighter-rouge">category_index.html</code>レイアウトを使用して作成します。</p>
+
+<!-- The following example is a more complex generator that generates new pages. In this example, the generator will create a series of files under the `categories` directory for each category, listing the posts in each category using the `category_index.html` layout. -->
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span> <span class="nn">Jekyll</span>
+  <span class="k">class</span> <span class="nc">CategoryPageGenerator</span> <span class="o">&lt;</span> <span class="no">Generator</span>
+    <span class="n">safe</span> <span class="kp">true</span>
+
+    <span class="k">def</span> <span class="nf">generate</span><span class="p">(</span><span class="n">site</span><span class="p">)</span>
+      <span class="k">if</span> <span class="n">site</span><span class="p">.</span><span class="nf">layouts</span><span class="p">.</span><span class="nf">key?</span> <span class="s1">'category_index'</span>
+        <span class="n">dir</span> <span class="o">=</span> <span class="n">site</span><span class="p">.</span><span class="nf">config</span><span class="p">[</span><span class="s1">'category_dir'</span><span class="p">]</span> <span class="o">||</span> <span class="s1">'categories'</span>
+        <span class="n">site</span><span class="p">.</span><span class="nf">categories</span><span class="p">.</span><span class="nf">each_key</span> <span class="k">do</span> <span class="o">|</span><span class="n">category</span><span class="o">|</span>
+          <span class="n">site</span><span class="p">.</span><span class="nf">pages</span> <span class="o">&lt;&lt;</span> <span class="no">CategoryPage</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">site</span><span class="p">,</span> <span class="n">site</span><span class="p">.</span><span class="nf">source</span><span class="p">,</span> <span class="no">File</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">dir</span><span class="p">,</span> <span class="n">category</span><span class="p">),</span> <span class="n">category</span><span class="p">)</span>
+        <span class="k">end</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+
+  <span class="c1"># A Page subclass used in the `CategoryPageGenerator`</span>
+  <span class="k">class</span> <span class="nc">CategoryPage</span> <span class="o">&lt;</span> <span class="no">Page</span>
+    <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">site</span><span class="p">,</span> <span class="n">base</span><span class="p">,</span> <span class="n">dir</span><span class="p">,</span> <span class="n">category</span><span class="p">)</span>
+      <span class="vi">@site</span> <span class="o">=</span> <span class="n">site</span>
+      <span class="vi">@base</span> <span class="o">=</span> <span class="n">base</span>
+      <span class="vi">@dir</span>  <span class="o">=</span> <span class="n">dir</span>
+      <span class="vi">@name</span> <span class="o">=</span> <span class="s1">'index.html'</span>
+
+      <span class="nb">self</span><span class="p">.</span><span class="nf">process</span><span class="p">(</span><span class="vi">@name</span><span class="p">)</span>
+      <span class="nb">self</span><span class="p">.</span><span class="nf">read_yaml</span><span class="p">(</span><span class="no">File</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="s1">'_layouts'</span><span class="p">),</span> <span class="s1">'category_index.html'</span><span class="p">)</span>
+      <span class="nb">self</span><span class="p">.</span><span class="nf">data</span><span class="p">[</span><span class="s1">'category'</span><span class="p">]</span> <span class="o">=</span> <span class="n">category</span>
+
+      <span class="n">category_title_prefix</span> <span class="o">=</span> <span class="n">site</span><span class="p">.</span><span class="nf">config</span><span class="p">[</span><span class="s1">'category_title_prefix'</span><span class="p">]</span> <span class="o">||</span> <span class="s1">'Category: '</span>
+      <span class="nb">self</span><span class="p">.</span><span class="nf">data</span><span class="p">[</span><span class="s1">'title'</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"</span><span class="si">#{</span><span class="n">category_title_prefix</span><span class="si">}#{</span><span class="n">category</span><span class="si">}</span><span class="s2">"</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>ジェネレータには一つだけのメソッドの実装が必要です。</p>
+
+<!-- Generators need to implement only one method: -->
+
+<div class="mobile-side-scroller">
+<table>
+  <thead>
+    <tr>
+      <th>メソッド</th>
+      <th>説明</th>
+    </tr>
+    <!-- <tr>
+      <th>Method</th>
+      <th>Description</th>
+    </tr> -->
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <p><code>generate</code></p>
+      </td>
+      <td>
+        <p>サイドエフェクトとしてコンテンツを生成する。</p>
+        <!-- <p>Generates content as a side-effect.</p> -->
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>ジェネレータが単一のファイル内に収まっている場合、任意の名前を付けることができますが、拡張子は <code class="language-plaintext highlighter-rouge">.rb</code>にする必要があります。ジェネレータが複数のファイルに分割されている場合は、https：//rubygems.org/で公開するRubygemとしてパッケージ化する必要があります。この場合、2つのgemが同じ名前を持つことはできないため、gemの名前はそのサイトに基づく名前を設定する必要があります。</p>
+
+<!-- If your generator is contained within a single file, it can be named whatever you want but it should have an `.rb` extension. If your generator is split across multiple files, it should be packaged as a Rubygem to be published at https://rubygems.org/. In this case, the name of the gem depends on the availability of the name at that site because no two gems can have the same name. -->
+
+<p>デフォルトでは、Jekyllは<code class="language-plaintext highlighter-rouge">_plugins</code>ディレクトリでジェネレータを探します。しかし、設定ファイルで<code class="language-plaintext highlighter-rouge">plugins_dir</code>キーでプラグインのディレクトリを指定できます。</p>
+
+<!-- By default, Jekyll looks for generators in the `_plugins` directory. However, you can change the default directory by assigning the desired name to the key `plugins_dir` in the config file. -->
+
+        </article>
+      </div>
+      <div class="unit one-fifth hide-on-mobiles">
+  <aside>
+    <h4>入門</h4>
+      <ul>
+        <li><a href="/docs/">クイックスタート</a></li>
+        <li><a href="/docs/ruby-101/">Ruby基礎</a></li>
+        <li><a href="/docs/installation/">インストール</a></li>
+        <li><a href="/docs/community/">コミュニティ</a></li>
+        <li><a href="/docs/step-by-step/01-setup/">Step by Stepチュートリアル</a></li>
+      </ul>
+    <h4>ビルド</h4>
+      <ul>
+        <li><a href="/docs/usage/">コマンドラインの使い方</a></li>
+        <li><a href="/docs/configuration/">構成・設定</a></li>
+      </ul>
+    <h4>コンテンツ</h4>
+      <ul>
+        <li><a href="/docs/pages/">Pages（ページ）</a></li>
+        <li><a href="/docs/posts/">Posts（ポスト）</a></li>
+        <li><a href="/docs/front-matter/">Front Matter</a></li>
+        <li><a href="/docs/collections/">コレクション</a></li>
+        <li><a href="/docs/datafiles/">Dataファイル</a></li>
+        <li><a href="/docs/assets/">Assets</a></li>
+        <li><a href="/docs/static-files/">静的ファイル</a></li>
+      </ul>
+    <h4>サイトの構成</h4>
+      <ul>
+        <li><a href="/docs/structure/">ディレクトリ構成</a></li>
+        <li><a href="/docs/liquid/">Liquid</a></li>
+        <li><a href="/docs/variables/">変数</a></li>
+        <li><a href="/docs/includes/">Includes（インクルード）</a></li>
+        <li><a href="/docs/layouts/">レイアウト</a></li>
+        <li><a href="/docs/permalinks/">パーマリンク</a></li>
+        <li><a href="/docs/themes/">テーマ</a></li>
+        <li><a href="/docs/pagination/">Pagination（ページ分け）</a></li>
+      </ul>
+    <h4>ガイド</h4>
+      <ul>
+        <li><a href="/docs/plugins/">プラグイン</a></li>
+        <li><a href="/docs/migrations/">ブログの移行</a></li>
+        <li><a href="/docs/upgrading/">アップグレード</a></li>
+        <li><a href="/docs/deployment/">Deployment</a></li>
+      </ul>
+    </aside>
+</div>
+<div class="clear"></div>
+    </div>
+  </section>
+<footer>
+  <div class="grid">
+    <div class="unit one-third center-on-mobiles">
+      <p>Jekyllはボランティアの<a href="/team/">コアチーム</a>により愛情を込めて維持されています。</p>
+      <p>このWebサイトのコンテンツは<a href="https://github.com/jekyll/jekyll/blob/master/LICENSE" target="_blank">MIT License</a>に基づきます。© 2020</p>
+      <!-- <p>Jekyll is lovingly maintained by the <a href="/team/">core team</a> of volunteers. </p>
+      <p>The contents of this website are <br />&copy;&nbsp;2020 under the terms of the <a href="https://github.com/jekyll/jekyll/blob/master/LICENSE">MIT&nbsp;License</a>.</p> -->
+    </div>
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>
+        Proudly hosted by
+        <a href="https://github.com">
+          <img src="/img/footer-logo.png" width="100" height="30" alt="GitHub • Social coding">
+        </a>
+      </p>
+    </div>
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>
+        Jekyll is funded thanks to its
+        <a href="https://github.com/jekyll/jekyll#sponsors">
+          sponsors!
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
+<script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<span class=\"sr-only\">Permalink</span><i class=\"fa fa-link\"></i>";
+    anchor.title = "Permalink";
+    return anchor;
+  };
+
+  var linkifyAnchors = function (level, containingElement) {
+    var headers = containingElement.getElementsByTagName("h" + level);
+    for (var h = 0; h < headers.length; h++) {
+      var header = headers[h];
+
+      if (typeof header.id !== "undefined" && header.id !== "") {
+        header.appendChild(anchorForId(header.id));
+      }
+    }
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var contentBlock = document.getElementsByClassName("docs")[0] || document.getElementsByClassName("news")[0];
+      if (!contentBlock) {
+        return;
+      }
+      for (var level = 1; level <= 6; level++) {
+        linkifyAnchors(level, contentBlock);
+      }
+    }
+  };
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script type="text/javascript"> docsearch({
+apiKey: '50fe39c839958dfad797000f33e2ec17',
+indexName: 'jekyllrb',
+inputSelector: '#docsearch-input',
+enhancedSearchInput: true,
+debug: false // Set debug to true if you want to inspect the dropdown
+});
+</script>
+</body>
+</html>

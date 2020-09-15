@@ -1,0 +1,415 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link type="application/atom+xml" rel="alternate" href="http://jekyllrb-ja.github.io/feed.xml" title="Jekyll • シンプルで、ブログのような、静的サイト" />
+  <link type="application/atom+xml" rel="alternate" href="/feed/release.xml" title="Jekyll releases posts" />
+  <link rel="alternate" type="application/atom+xml" title="Recent commits to Jekyll’s master branch" href="https://github.com/jekyll/jekyll/commits/master.atom">
+  <link rel="preload" href="/fonts/lato-v14-latin-300.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/lato-v14-latin-700.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/css/screen.css" as="style">
+  <link rel="stylesheet" href="/css/screen.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>解釈の順番 | Jekyll • シンプルで、ブログのような、静的サイト</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="解釈の順番" />
+<meta name="author" content="tomjoht" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="プレーンテキストを静的サイトやブログに変えましょう" />
+<meta property="og:description" content="プレーンテキストを静的サイトやブログに変えましょう" />
+<link rel="canonical" href="http://jekyllrb-ja.github.io/tutorials/orderofinterpretation/" />
+<meta property="og:url" content="http://jekyllrb-ja.github.io/tutorials/orderofinterpretation/" />
+<meta property="og:site_name" content="Jekyll • シンプルで、ブログのような、静的サイト" />
+<meta property="og:image" content="http://jekyllrb-ja.github.io/img/jekyll-og.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-01-30T05:45:03+00:00" />
+<script type="application/ld+json">
+{"headline":"解釈の順番","dateModified":"2017-01-30T05:45:03+00:00","datePublished":"2017-01-30T05:45:03+00:00","image":"http://jekyllrb-ja.github.io/img/jekyll-og.png","author":{"@type":"Person","name":"tomjoht"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://jekyllrb-ja.github.io/tutorials/orderofinterpretation/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://jekyllrb-ja.github.io/img/logo-2x.png"},"name":"tomjoht"},"url":"http://jekyllrb-ja.github.io/tutorials/orderofinterpretation/","description":"プレーンテキストを静的サイトやブログに変えましょう","@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <!--[if lt IE 9]>
+  <script src="/js/html5shiv.min.js"></script>
+  <script src="/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body class="wrap"><header>
+  <div class="flexbox">
+    <div class="center-on-mobiles">
+      <h1>
+        <a href="/" class="logo">
+          <span class="sr-only">Jekyll</span>
+          <img src="/img/logo-2x.png" width="140" height="65" alt="Jekyll Logo">
+        </a>
+      </h1>
+    </div>
+    <nav class="main-nav hide-on-mobiles">
+      <ul>
+  <li><a href="/">Home</a></li>
+  <li><a href="/docs/">Docs</a></li>
+  <li><a href="/resources/">Resources</a></li>
+  <li><a href="/showcase/">Showcase</a></li>
+  <li><a href="/news/">News</a></li>
+  </ul>
+</nav>
+    <div class="search hide-on-mobiles">
+      <input type="text" id="docsearch-input" placeholder="Search the docs…">
+</div>
+    <div class="meta hide-on-mobiles">
+      <ul>
+        <li><a href="https://github.com/jekyll/jekyll/releases/tag/v4.1.1">v4.1.1</a></li>
+        <li><a href="https://github.com/jekyll/jekyll">GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+  <nav class="mobile-nav show-on-mobiles">
+    <ul>
+  <li><a href="/">Home</a></li>
+    <li><a href="/docs/">Docs</a></li>
+    <li><a href="/resources/">Resources</a></li>
+    <li><a href="/news/">News</a></li>
+    <li><a href="https://github.com/jekyll/jekyll">GitHub</a></li>
+</ul>
+</nav>
+</header>
+<section class="docs">
+  <div class="grid"><div class="docs-nav-mobile unit whole show-on-mobiles">
+  <select onchange="if (this.value) window.location.href=this.value">
+    <option value="">Navigate the tutorials…</option>
+    <optgroup label="Tutorials">
+      <option value="/tutorials/home/">チュートリアル</option>
+      <option value="/tutorials/video-walkthroughs/">動画での解説</option>
+      <option value="/tutorials/navigation/">ナビゲーション</option>
+      <option value="/tutorials/orderofinterpretation/">解釈の順番</option>
+      <option value="/tutorials/custom-404-page/">カスタム404ページ</option>
+      <option value=""></option>
+      <option value="/tutorials/using-jekyll-with-bundler/">BundlerでJekyllを使う</option>
+      <option value="/tutorials/csv-to-table/">CSVデータをテーブル化</option>
+      </optgroup>
+    </select>
+</div>
+<div class="unit four-fifths">
+      <article>
+        <header class="tutorial-header">
+          <div class="improve right hide-on-mobiles">
+            <a href="https://github.com/jekyll/jekyll/edit/master/docs/_tutorials/orderofinterpretation.md"><i
+               class="fa fa-pencil"></i> &nbsp;Improve this page</a>
+          </div>
+          <h1 class="tutorial-title">解釈の順番</h1>
+          
+          
+            <div class="tutorial-meta">
+              <span class="tutorial-date">
+               30 January 2017
+              </span>
+              <a href="https://github.com/tomjoht" class="tutorial-author">
+                <img class="avatar avatar-small" alt="tomjoht" width="24" height="24" data-proofer-ignore="true" src="https://avatars1.githubusercontent.com/tomjoht?v=3&s=24" srcset="https://avatars1.githubusercontent.com/tomjoht?v=3&s=24 1x, https://avatars1.githubusercontent.com/tomjoht?v=3&s=48 2x, https://avatars1.githubusercontent.com/tomjoht?v=3&s=72 3x, https://avatars1.githubusercontent.com/tomjoht?v=3&s=96 4x" />
+                <span class="author-name">tomjoht</span>
+              </a>
+            </div>
+          
+        </header><!-- ---
+title: Order of interpretation
+author: tomjoht
+date: 2017-01-29 21:45:03 -0800
+--- -->
+
+<p>Jekyllの主な仕事は、あなたのテキストファイルを静的Webサイトに変換することです。LiquidやMarkdown、その他の変換を行い、静的HTMLを作成し出力します。</p>
+
+<!-- Jekyll's main job is to convert your raw text files into a static website. It does this by rendering Liquid, Markdown, and other transforms as it generates the static HTML output. -->
+
+<p>この変換プロセス中の、Jekyllの解釈の順番を理解することは重要です。「解釈の順番」は、何がレンダリングされるのか、どのような順序でレンダリングされるのか、そしてコンテンツの変換にどのような規則が適用されるのかを意味します。</p>
+
+<!-- In this conversion process, it's important to understand Jekyll's order of interpretation. By "order of interpretation," we mean what gets rendered, in what order, and what rules get applied in converting content. -->
+
+<p>要素が変換されない場合は、解釈の順番を分析して問題を解決できます。</p>
+
+<!-- If an element isn't converting, you can troubleshoot the problem by analyzing the order of interpretation. -->
+
+<h2 id="解釈の順番">解釈の順番</h2>
+<!-- ## Order of interpretations -->
+
+<p>Jekyllは以下の順番でサイトを作成します。</p>
+
+<!-- Jekyll converts your site in the following order: -->
+
+<ol>
+  <li><strong>サイト変数</strong> Jekyllはファイルを調べて<code class="language-plaintext highlighter-rouge">site</code>, <code class="language-plaintext highlighter-rouge">page</code>, <code class="language-plaintext highlighter-rouge">post</code>やコレクションオブジェクトといった<a href="/docs/variables/">サイト変数</a>を設定します。（これらから、パーマリンク、タグ、カテゴリなど詳細の値を決定します）</li>
+  <li><strong>Liquid</strong> <a href="/docs/front-matter/">front matter</a>を含むページの<a href="https://github.com/Shopify/liquid" target="_blank">Liquid</a>フォーマットを処理します。次のようにLiquidを識別できます。
+    <ul>
+      <li><strong>Liquid タグ</strong> <code class="language-plaintext highlighter-rouge">{%</code>から<code class="language-plaintext highlighter-rouge">%}</code>まで。例えば、<code class="language-plaintext highlighter-rouge">{% highlight %}</code>や<code class="language-plaintext highlighter-rouge">{% seo %}</code>タグはブロックを定義することもインラインにすることもできます。 ブロック定義タグには対応する終了タグも付きます — <code class="language-plaintext highlighter-rouge">{% endhighlight %}</code>など。</li>
+      <li><strong>Liquid 変数</strong> 2つの中括弧で囲まれた部分。例えば、<code class="language-plaintext highlighter-rouge">{{ site.myvariable }}</code>や<code class="language-plaintext highlighter-rouge">{{ content }}</code>。</li>
+      <li><strong>Liquid フィルタ</strong> <strong>Liquid 変数</strong>内でのみ使用できる、変数名の文字列の後で縦棒（<code class="language-plaintext highlighter-rouge">|</code>）から始まる部分。例えば、<code class="language-plaintext highlighter-rouge">{{ "css/main.css" | relative_url }}</code>中の<code class="language-plaintext highlighter-rouge">relative_url</code>フィルタ。</li>
+    </ul>
+  </li>
+  <li><strong>Markdown</strong> 設定ファイルで指定されたMarkdownフィルタを用いてJekyllはMerkdownをHTMLに変換します。Jekyllがファイルを変換するためには、ファイルにMarkdownファイル拡張子とfront matterが必要です。</li>
+  <li><strong>レイアウト</strong> （設定ファイルや）ページのfront matterで指定されたレイアウトに、コンテンツを押し込みます。コンテンツはレイアウト内の<code class="language-plaintext highlighter-rouge">{{ content }}</code>タグ部に入ります。</li>
+  <li><strong>ファイル</strong> 生成されたコンテンツを<code class="language-plaintext highlighter-rouge">_site</code>のディレクトリ構造内のファイルに書き込みます。 ページ、ポスト、およびコレクションは、パーマリンクの設定に基づいて構造化されます。<code class="language-plaintext highlighter-rouge">_</code>で始まるディレクトリ（<code class="language-plaintext highlighter-rouge">_includes</code>や<code class="language-plaintext highlighter-rouge">_data</code>など）は通常、出力時には隠されます。</li>
+</ol>
+
+<!-- 1. **Site variables**. Jekyll looks across your files and populates [site variables](/docs/variables/), such as `site`, `page`, `post`, and collection objects. (From these objects, Jekyll determines the values for permalinks, tags, categories, and other details.) -->
+
+<!-- 2. **Liquid**. Jekyll processes any [Liquid](https://github.com/Shopify/liquid) formatting in pages that contain [front matter](/docs/front-matter/). You can identify Liquid as follows:
+   * **Liquid tags** start with `{%` and end with a `%}`. For example: `{% highlight %}` or `{% seo %}`. Tags can define blocks or be inline. Block-defining tags will also come with a corresponding end tag &mdash; for example, `{% endhighlight %}`.
+   * **Liquid variables** start and end with double curly braces. For example: `{{ site.myvariable }}` or `{{ content }}`.
+   * **Liquid filters** start with a pipe character (`|`) and can only be used within **Liquid variables** after the variable string. For example: the `relative_url` filter in `{{ "css/main.css" | relative_url }}`. -->
+
+<!-- 3. **Markdown**. Jekyll converts Markdown to HTML using the Markdown filter specified in your config file. Files must have a Markdown file extension and front matter in order for Jekyll to convert them. -->
+
+<!-- 4. **Layout**. Jekyll pushes content into the layouts specified by the page's front matter (or as specified in the config file). The content from each page gets pushed into the `{{ content }}` tags within the layouts. -->
+
+<!-- 5. **Files**. Jekyll writes the generated content into files in the [directory structure](/docs/structure/) in `_site`. Pages, posts, and collections get structured based on their [permalink](/docs/permalinks/) setting. Directories that begin with `_` (such as `_includes` and `_data`) are usually hidden in the output. -->
+
+<h2 id="誤った構成が問題を引き起こすシナリオ">誤った構成が問題を引き起こすシナリオ</h2>
+<!-- ## Scenarios where incorrect configurations create problems -->
+
+<p>Jekyllサイトの構築で、多くの場合は解釈の順番を考える必要はありません。レンダリングが上手くいかない場合にこれらの詳細が重要になります。</p>
+
+<!-- For the most part, you don't have to think about the order of interpretation when building your Jekyll site. These details only become important to know when something isn't rendering. -->
+
+<p>以下のシナリオでは、発生する可能性がある潜在的な問題を強調しています。これらの問題は解釈の順番の誤解から来ており、簡単に修正することができます。</p>
+
+<!-- The following scenarios highlight potential problems you might encounter. These problems come from misunderstanding the order of interpretation and can be easily fixed. -->
+
+<h3 id="レイアウト上で割り当てられた変数はページ上ではレンダリングされません">レイアウト上で割り当てられた変数はページ上ではレンダリングされません</h3>
+<!-- ### Variable on page not rendered because variable is assigned in layout -->
+
+<p>レイアウトファイル（<code class="language-plaintext highlighter-rouge">_layouts/default.html</code>）で変数を割り当てたとします。</p>
+
+<!-- In your layout file (`_layouts/default.html`), suppose you have a variable assigned: -->
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">myvar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"joe"</span><span class="w"> </span><span class="p">%}</span>
+</code></pre></div></div>
+
+<p>レイアウトを使用するページで、その変数を参照します。</p>
+
+<!-- On a page that uses the layout, you reference that variable: -->
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{{</span><span class="w"> </span><span class="nv">myvar</span><span class="w"> </span><span class="p">}}</span>
+</code></pre></div></div>
+
+<p>変数はレンダリングされません。なぜなら、まずLiquidをレンダリングしてからレイアウトのプロセスに移行するという順番で解釈するためです。Liquidがレンダリングされる時点では、変数はまだ割り当てられていません。</p>
+
+<!-- The variable won't render because the page's order of interpretation is to render Liquid first and later process the Layout. When the Liquid rendering happens, the variable assignment isn't available. -->
+
+<p>このコードを動かすためには、変数の割り当てをページのfront matterで行います。</p>
+
+<!-- To make the code work, you could put the variable assignment into the page's front matter. -->
+
+<h3 id="インクルードファイルのmarkdownは処理されません">インクルードファイルのMarkdownは処理されません</h3>
+<!-- ### Markdown in include file not processed -->
+
+<p><code class="language-plaintext highlighter-rouge">_includes/mycontent.md</code>というMarkdownファイルがあるとします。Markdownファイルでは、Markdownのフォーマットで書かれています。</p>
+
+<!-- Suppose you have a Markdown file at `_includes/mycontent.md`. In the Markdown file, you have some Markdown formatting: -->
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>This is a list:
+<span class="p">*</span> first item
+<span class="p">*</span> second item
+</code></pre></div></div>
+
+<p>以下のように、HTMLファイルに先ほどのファイルをインクルードします。</p>
+
+<!-- You include the file into an HTML file as follows: -->
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span>mycontent.md<span class="w"> </span><span class="p">%}</span>
+</code></pre></div></div>
+
+<p>Markdownは処理されません。なぜなら、Liquid（<code class="language-plaintext highlighter-rouge">include</code>）タグがまず処理され、<code class="language-plaintext highlighter-rouge">mycontent.md</code>がHTMLファイルに挿入されるためです。Markdownは<em>それから</em>処理されることになります。</p>
+
+<!-- The Markdown is not processed because first the Liquid (`include` tag) gets processed, inserting `mycontent.md` into the HTML file. *Then* the Markdown would get processed. -->
+
+<p>ですが、<em>HTML</em>ページに挿入したため、Markdownは処理されません。Markdownの変換プロセスは、Markdownファイルでのみ行われます。</p>
+
+<!-- But because the content is included into an *HTML* page, the Markdown isn't rendered. The Markdown filter processes content only in Markdown files. -->
+
+<p>コードを動かすためには、HTMLファイルにインクルードするファイルはHTML形式にします。</p>
+
+<!-- To make the code work, use HTML formatting in includes that are inserted into HTML files. -->
+
+<p><code class="language-plaintext highlighter-rouge">highlight</code>タグはMarkdownの処理を必要としません。以下のインクルードコンテンツがあるとします。</p>
+
+<!-- Note that `highlight` tags don't require Markdown to process. Suppose your include contains the following: -->
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">highlight</span><span class="w"> </span>javascript<span class="w"> </span><span class="p">%}</span>
+console.log('alert');
+<span class="p">{%</span><span class="w"> </span><span class="nt">endhighlight</span><span class="w"> </span><span class="p">%}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">highlight</code>タグはLiquidです。（Liquidはコンテンツを構文強調表示のためにRougeに渡します。）その結果、このコードはHTMLにシンタックスハイライト処理され変換されます。Jekyllは<code class="language-plaintext highlighter-rouge">highlight</code>タグにMarkdown処理のプロセスを必要としません。</p>
+
+<!-- The `highlight` tag *is* Liquid. (Liquid passes the content to Rouge for syntax highlighting.) As a result, this code will actually convert to HTML with syntax highlighting. Jekyll does not need the Markdown filter to process `highlight` tags. -->
+
+<h3 id="liquidとjavascriptを混合するとレンダリングされません">LiquidとJavaScriptを混合するとレンダリングされません</h3>
+<!-- ### Liquid mixed with JavaScript isn't rendered -->
+
+<p>Liquidの<code class="language-plaintext highlighter-rouge">assign</code>タグをJavaScriptで使おうとしているとします。</p>
+
+<!-- Suppose you try to mix Liquid's `assign` tag with JavaScript, like this: -->
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onclick</span><span class="o">=</span><span class="dl">"</span><span class="s2">someFunction()</span><span class="dl">"</span><span class="o">&gt;</span><span class="nx">Click</span> <span class="nx">me</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>
+<span class="o">&lt;</span><span class="nx">p</span> <span class="nx">id</span><span class="o">=</span><span class="dl">"</span><span class="s2">intro</span><span class="dl">"</span><span class="o">&gt;&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>
+<span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+<span class="p">{</span><span class="o">%</span> <span class="nx">assign</span> <span class="nx">someContent</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">This is some content</span><span class="dl">"</span> <span class="o">%</span><span class="p">}</span>
+<span class="kd">function</span> <span class="nx">someFunction</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">intro</span><span class="dl">"</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">someContent</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">assign</code>タグはサイトのLiquidレンダリング中のみ使用可能ですので、これは動きません。このJavaScriptの例では、HTMLページでユーザーがボタン（”Click me”）をクリックしたときに実行されます。Liquidロジックはもはや有効ではなく、<code class="language-plaintext highlighter-rouge">assign</code>タグは何も返しません。</p>
+
+<!-- This won't work because the `assign` tag is only available during the Liquid rendering phase of the site. In this JavaScript example, the script executes when a user clicks a button ("Click me") on the HTML page. At that time, the Liquid logic is no longer available, so the `assign` tag wouldn't return anything. -->
+
+<p>しかしながら、Jekyllサイトの変数やLiquidを、後からスクリプト実行時に<em>渡す</em>事もできます。例えば、<code class="language-plaintext highlighter-rouge">someContent: "This is some content"</code>のfront matterプロパティがあるとします。次のようにできます。</p>
+
+<!-- However, you can use Jekyll's site variables or Liquid to *populate* a script that is executed at a later time. For example, suppose you have the following property in your front matter: `someContent: "This is some content"`. You could do this: -->
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onclick</span><span class="o">=</span><span class="dl">"</span><span class="s2">someFunction()</span><span class="dl">"</span><span class="o">&gt;</span><span class="nx">Click</span> <span class="nx">me</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>
+<span class="o">&lt;</span><span class="nx">p</span> <span class="nx">id</span><span class="o">=</span><span class="dl">"</span><span class="s2">intro</span><span class="dl">"</span><span class="o">&gt;&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>
+<span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+
+<span class="kd">function</span> <span class="nx">someFunction</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">intro</span><span class="dl">"</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">{{ page.someContent }}</span><span class="dl">"</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<p>Jekyllがビルドするときに、<code class="language-plaintext highlighter-rouge">someContent</code>プロパティをスクリプトの値に渡し、<code class="language-plaintext highlighter-rouge">{{ page.someContent }}</code>を<code class="language-plaintext highlighter-rouge">"This is some content"</code>に変換します。</p>
+
+<!-- When Jekyll builds the site, this `someContent` property populates the script's values, converting `{{ page.someContent }}` to `"This is some content"`. -->
+
+<p>JekyllがビルドするときにLiquidをレンダリングすることを覚えておいてください。Liquidはブラウザで実行時のユーザーイベントでは利用できません。</p>
+
+<!-- The key to remember is that Liquid renders when Jekyll builds your site. Liquid is not available at run-time in the browser when a user executes an event. -->
+
+<h2 id="yamlでのliquid使用についてのメモ">YAMLでのLiquid使用についてのメモ</h2>
+<!-- ## Note about using Liquid in YAML -->
+
+<p>LiquidはYAMLやfront matterではレンダリングされないことを覚えておいてください。（これは解釈の順番とは関係ありませんが、要素のレンダリングに関する一般的な問題ですので、言及する価値があります。）</p>
+
+<!-- There's one more detail to remember: Liquid does not render when embedded in YAML files or front matter. (This isn't related to order of interpretation, but it's worth mentioning because it's a common question about element rendering.) -->
+
+<p>例えば、<code class="language-plaintext highlighter-rouge">highlight</code>タグを<code class="language-plaintext highlighter-rouge">_data/mydata.yml</code>ファイルで使用したい場合を考えます。</p>
+
+<!-- For example, suppose you have a `highlight` tag in your `_data/mydata.yml` file: -->
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>myvalue: &gt;
+  <span class="p">{%</span><span class="w"> </span><span class="nt">highlight</span><span class="w"> </span>javascript<span class="w"> </span><span class="p">%}</span>
+  console.log('alert');
+  <span class="p">{%</span><span class="w"> </span><span class="nt">endhighlight</span><span class="w"> </span><span class="p">%}</span>
+</code></pre></div></div>
+
+<p>ページにこの値を挿入します。</p>
+
+<!-- On a page, you try to insert the value: -->
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{{</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">data</span><span class="p">.</span><span class="nv">mydata</span><span class="p">.</span><span class="nv">myvalue</span><span class="w"> </span><span class="p">}}</span>
+</code></pre></div></div>
+
+<p>これは、構文を強調表示するコードサンプルではなく、文字列として表示されます。 コードをレンダリングするには、代わりにインクルードを使用することを検討してください。</p>
+
+<!-- This would render only as a string rather than a code sample with syntax highlighting. To make the code render, consider using an include instead. -->
+<div class="section-nav">
+    <div class="left align-right">
+        <a href="/tutorials/navigation/" class="prev">Back</a>
+        </div>
+    <div class="right align-left">
+        <a href="/tutorials/custom-404-page/" class="next">Next</a>
+        </div>
+  </div>
+  <div class="clear"></div>
+  </article>
+    </div><div class="unit one-fifth hide-on-mobiles">
+  <aside>
+    <h4>Tutorials</h4>
+      <ul>
+      <li><a href="/tutorials/home/">チュートリアル</a></li>
+      <li><a href="/tutorials/video-walkthroughs/">動画での解説</a></li>
+      <li><a href="/tutorials/navigation/">ナビゲーション</a></li>
+      <li class="current"><a href="/tutorials/orderofinterpretation/">解釈の順番</a></li>
+      <li><a href="/tutorials/custom-404-page/">カスタム404ページ</a></li>
+      <li><a href=""></a></li>
+      <li><a href="/tutorials/using-jekyll-with-bundler/">BundlerでJekyllを使う</a></li>
+      <li><a href="/tutorials/csv-to-table/">CSVデータをテーブル化</a></li>
+      </ul>
+    </aside>
+</div>
+<div class="clear"></div>
+  </div>
+</section>
+<footer>
+  <div class="grid">
+    <div class="unit one-third center-on-mobiles">
+      <p>Jekyllはボランティアの<a href="/team/">コアチーム</a>により愛情を込めて維持されています。</p>
+      <p>このWebサイトのコンテンツは<a href="https://github.com/jekyll/jekyll/blob/master/LICENSE" target="_blank">MIT&nbsp;License</a>に基づきます。&copy;&nbsp;2020</p>
+      <!-- <p>Jekyll is lovingly maintained by the <a href="/team/">core team</a> of volunteers. </p>
+      <p>The contents of this website are <br />&copy;&nbsp;2020 under the terms of the <a href="https://github.com/jekyll/jekyll/blob/master/LICENSE">MIT&nbsp;License</a>.</p> -->
+    </div>
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>
+        Proudly hosted by
+        <a href="https://github.com">
+          <img src="/img/footer-logo.png" width="100" height="30" alt="GitHub • Social coding">
+        </a>
+      </p>
+    </div>
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>
+        Jekyll is funded thanks to its
+        <a href="https://github.com/jekyll/jekyll#sponsors">
+          sponsors!
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
+<script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<span class=\"sr-only\">Permalink</span><i class=\"fa fa-link\"></i>";
+    anchor.title = "Permalink";
+    return anchor;
+  };
+
+  var linkifyAnchors = function (level, containingElement) {
+    var headers = containingElement.getElementsByTagName("h" + level);
+    for (var h = 0; h < headers.length; h++) {
+      var header = headers[h];
+
+      if (typeof header.id !== "undefined" && header.id !== "") {
+        header.appendChild(anchorForId(header.id));
+      }
+    }
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var contentBlock = document.getElementsByClassName("docs")[0] || document.getElementsByClassName("news")[0];
+      if (!contentBlock) {
+        return;
+      }
+      for (var level = 1; level <= 6; level++) {
+        linkifyAnchors(level, contentBlock);
+      }
+    }
+  };
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script type="text/javascript"> docsearch({
+apiKey: '50fe39c839958dfad797000f33e2ec17',
+indexName: 'jekyllrb',
+inputSelector: '#docsearch-input',
+enhancedSearchInput: true,
+debug: false // Set debug to true if you want to inspect the dropdown
+});
+</script>
+</body>
+</html>

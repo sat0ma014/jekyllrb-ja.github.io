@@ -1,0 +1,421 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link type="application/atom+xml" rel="alternate" href="http://jekyllrb-ja.github.io/feed.xml" title="Jekyll • シンプルで、ブログのような、静的サイト" />
+  <link type="application/atom+xml" rel="alternate" href="/feed/release.xml" title="Jekyll releases posts" />
+  <link rel="alternate" type="application/atom+xml" title="Recent commits to Jekyll’s master branch" href="https://github.com/jekyll/jekyll/commits/master.atom">
+  <link rel="preload" href="/fonts/lato-v14-latin-300.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/lato-v14-latin-700.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/css/screen.css" as="style">
+  <link rel="stylesheet" href="/css/screen.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>0.xから2.xへのアップグレード | Jekyll • シンプルで、ブログのような、静的サイト</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="0.xから2.xへのアップグレード" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="プレーンテキストを静的サイトやブログに変えましょう" />
+<meta property="og:description" content="プレーンテキストを静的サイトやブログに変えましょう" />
+<link rel="canonical" href="http://jekyllrb-ja.github.io/docs/upgrading/0-to-2/" />
+<meta property="og:url" content="http://jekyllrb-ja.github.io/docs/upgrading/0-to-2/" />
+<meta property="og:site_name" content="Jekyll • シンプルで、ブログのような、静的サイト" />
+<meta property="og:image" content="http://jekyllrb-ja.github.io/img/jekyll-og.png" />
+<script type="application/ld+json">
+{"headline":"0.xから2.xへのアップグレード","image":"http://jekyllrb-ja.github.io/img/jekyll-og.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://jekyllrb-ja.github.io/img/logo-2x.png"}},"url":"http://jekyllrb-ja.github.io/docs/upgrading/0-to-2/","description":"プレーンテキストを静的サイトやブログに変えましょう","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <!--[if lt IE 9]>
+  <script src="/js/html5shiv.min.js"></script>
+  <script src="/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body class="wrap"><header>
+  <div class="flexbox">
+    <div class="center-on-mobiles">
+      <h1>
+        <a href="/" class="logo">
+          <span class="sr-only">Jekyll</span>
+          <img src="/img/logo-2x.png" width="140" height="65" alt="Jekyll Logo">
+        </a>
+      </h1>
+    </div>
+    <nav class="main-nav hide-on-mobiles">
+      <ul>
+  <li><a href="/">Home</a></li>
+  <li class="current"><a href="/docs/">Docs</a></li>
+  <li><a href="/resources/">Resources</a></li>
+  <li><a href="/showcase/">Showcase</a></li>
+  <li><a href="/news/">News</a></li>
+  </ul>
+</nav>
+    <div class="search hide-on-mobiles">
+      <input type="text" id="docsearch-input" placeholder="Search the docs…">
+</div>
+    <div class="meta hide-on-mobiles">
+      <ul>
+        <li><a href="https://github.com/jekyll/jekyll/releases/tag/v4.1.1">v4.1.1</a></li>
+        <li><a href="https://github.com/jekyll/jekyll">GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+  <nav class="mobile-nav show-on-mobiles">
+    <ul>
+  <li><a href="/">Home</a></li>
+    <li class="current" ><a href="/docs/">Docs</a></li>
+    <li><a href="/resources/">Resources</a></li>
+    <li><a href="/news/">News</a></li>
+    <li><a href="https://github.com/jekyll/jekyll">GitHub</a></li>
+</ul>
+</nav>
+</header>
+  <section class="docs">
+    <div class="grid">
+      <div class="docs-nav-mobile unit whole show-on-mobiles">
+  <select onchange="if (this.value) window.location.href=this.value">
+    <option value="">Navigate the docs…</option>
+    <optgroup label="入門">
+      <option value="/docs/">クイックスタート</option>
+      <option value="/docs/ruby-101/">Ruby基礎</option>
+      <option value="/docs/installation/">インストール</option>
+      <option value="/docs/community/">コミュニティ</option>
+      <option value="/docs/step-by-step/01-setup/">Step by Stepチュートリアル</option>
+    </optgroup>
+    <optgroup label="ビルド">
+      <option value="/docs/usage/">コマンドラインの使い方</option>
+      <option value="/docs/configuration/">構成・設定</option>
+    </optgroup>
+    <optgroup label="コンテンツ">
+      <option value="/docs/pages/">Pages（ページ）</option>
+      <option value="/docs/posts/">Posts（ポスト）</option>
+      <option value="/docs/front-matter/">Front Matter</option>
+      <option value="/docs/collections/">コレクション</option>
+      <option value="/docs/datafiles/">Dataファイル</option>
+      <option value="/docs/assets/">Assets</option>
+      <option value="/docs/static-files/">静的ファイル</option>
+    </optgroup>
+    <optgroup label="サイトの構成">
+      <option value="/docs/structure/">ディレクトリ構成</option>
+      <option value="/docs/liquid/">Liquid</option>
+      <option value="/docs/variables/">変数</option>
+      <option value="/docs/includes/">Includes（インクルード）</option>
+      <option value="/docs/layouts/">レイアウト</option>
+      <option value="/docs/permalinks/">パーマリンク</option>
+      <option value="/docs/themes/">テーマ</option>
+      <option value="/docs/pagination/">Pagination（ページ分け）</option>
+    </optgroup>
+    <optgroup label="ガイド">
+      <option value="/docs/plugins/">プラグイン</option>
+      <option value="/docs/migrations/">ブログの移行</option>
+      <option value="/docs/upgrading/">アップグレード</option>
+      <option value="/docs/deployment/">Deployment</option>
+    </optgroup>
+    </select>
+</div>
+<div class="unit four-fifths">
+        <article>
+          <div class="improve right hide-on-mobiles">
+            <a data-proofer-ignore href="https://github.com/jekyll/jekyll/edit/master/docs/_docs/upgrading/0-to-2.md"><i class="fa fa-pencil"></i> &nbsp;Improve this page</a>
+          </div>
+          <h1>0.xから2.xへのアップグレード</h1>
+          <!-- ---
+title: Upgrading from 0.x to 2.x
+permalink: /docs/upgrading/0-to-2/
+--- -->
+
+<p>Jekyllの古いバージョンからのアップグレードですか？　知っておいた方がいい変更点がJekyll 1.0や2.0にはいくつかあります。</p>
+
+<!-- Upgrading from an older version of Jekyll? A few things have changed in 1.0
+and 2.0 that you'll want to know about. -->
+
+<p>まずは先に進み、Jekyllの最新版を入手します。</p>
+
+<!-- Before we dive in, go ahead and fetch the latest version of Jekyll: -->
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem update jekyll
+</code></pre></div></div>
+
+<div class="note feature">
+  <h5>飛び込みましょう</h5>
+  <!-- <h5 markdown="1">Diving in</h5> -->
+  <p>早くJekyllサイトを始めたいですか？　<code>jekyll new SITENAME</code>を実行するだけで、Jekyllサイトの骨格が入った新しいフォルダが作成されます。</p>
+  <!-- <p markdown="1">Want to get a new Jekyll site up and running quickly? Simply
+   run <code>jekyll new SITENAME</code> to create a new folder with a bare bones
+   Jekyll site.</p> -->
+</div>
+
+<h3 id="jekyll-コマンド">Jekyll コマンド</h3>
+<!-- ### The Jekyll Command -->
+
+<p>分かりやすくするために、jekyllは<code class="language-plaintext highlighter-rouge">build</code>と<code class="language-plaintext highlighter-rouge">serve</code>コマンドを受け入れるようになりました。以前はサイト生成にはシンプルに<code class="language-plaintext highlighter-rouge">jekyll</code>コマンドを、ローカルで見るには<code class="language-plaintext highlighter-rouge">jekyll --server</code>コマンドを実行していました。v2.0（以降）では、生成には<code class="language-plaintext highlighter-rouge">jekyll build</code>、プレビューには<code class="language-plaintext highlighter-rouge">jekyll serve</code>のサブコマンドを使用します。</p>
+
+<!-- For better clarity, Jekyll now accepts the commands `build` and `serve`.
+Whereas before you might simply run the command `jekyll` to generate a site
+and `jekyll --server` to view it locally, in v2.0 (and later) you should
+use the subcommands `jekyll build` and `jekyll serve` to build and preview
+your site. -->
+
+<div class="note info">
+  <h5>Watching と Serving</h5>
+  <!-- <h5>Watching and Serving</h5> -->
+  <p>新しいサブコマンドで、サイトのローカルプレビューの方法が少し変わりました。サイトの設定ファイルで<code class="language-plaintext highlighter-rouge">server: true</code>を指定する代わりに<code class="language-plaintext highlighter-rouge">jekyll serve</code>を使用します。<code class="language-plaintext highlighter-rouge">watch: true</code>も同様です。代わりに<code class="language-plaintext highlighter-rouge">jekyll serve</code>や<code class="language-plaintext highlighter-rouge">jekyll build</code>に<code class="language-plaintext highlighter-rouge">--watch</code>フラグを使用します。</p>
+    <!-- <p markdown="1">With the new subcommands, the way sites are previewed locally
+     changed a bit. Instead of specifying `server: true` in the site's
+     configuration file, use `jekyll serve`. The same holds true for
+     `watch: true`. Instead, use the `--watch` flag with either `jekyll serve`
+      or `jekyll build`.</p> -->
+</div>
+
+<h3 id="絶対パーマリンク">絶対パーマリンク</h3>
+<!-- ### Absolute Permalinks -->
+
+<p>Jekyll v1.0では、サブディレクトリのページに絶対パーマリンクを導入しました。v2.0以降、絶対パーマリンクはオプトアウトされています。つまり、Jekyllはデフォルトで相対パーマリンクではなく絶対パーマリンクを使用します。相対パーマリンク後方互換性はv3.0で削除されました。</p>
+
+<!-- In Jekyll v1.0, we introduced absolute permalinks for pages in
+subdirectories. Starting with v2.0, absolute permalinks are opt-out,
+meaning Jekyll will default to using absolute permalinks instead of
+relative permalinks. Relative permalink backwards-compatibility was removed in v3.0. -->
+
+<div class="note warning" id="absolute-permalinks-warning">
+  <h5>絶対パーマリンクはv3.0以降必要です</h5>
+  <!-- <h5 markdown="1">Absolute permalinks will be required in v3.0 and on</h5> -->
+  <p>
+    Jekyll v3.0から、相対パーマリンク機能は削除され、使用できなくなります。
+  </p>
+  <p>
+    &lt;!– Starting with Jekyll v3.0, relative permalinks functionality will be removed and thus unavailable for use.
+  </p> --&gt;
+</div>
+
+<h3 id="ドラフトポスト">ドラフトポスト</h3>
+<!-- ### Draft Posts -->
+
+<p>Jekyllはドラフトポストを書くことを可能にし、公開前の外観を簡単にプレビューすることができるようになりました。下書きを開始するには、サイトのソースディレクトリに<code class="language-plaintext highlighter-rouge">_drafts</code>という名前のフォルダを（<code class="language-plaintext highlighter-rouge">_posts</code>と並んで）作成し、そこに新しいマークダウンファイルを追加します。新しい投稿をプレビューするには、<code class="language-plaintext highlighter-rouge">jekyll serve</code>コマンドに<code class="language-plaintext highlighter-rouge">--drafts</code>フラグを付けて実行します。</p>
+
+<!-- Jekyll now lets you write draft posts, and allows you to easily preview how
+they will look prior to publishing. To start a draft, create a folder
+called `_drafts` in your site's source directory (e.g., alongside `_posts`),
+and add a new markdown file to it. To preview your new post, run the
+`jekyll serve` command with the `--drafts` flag. -->
+
+<div class="note info">
+  <h5>ドラフトには日付がありません</h5>
+  <!-- <h5 markdown="1">Drafts don't have dates</h5> -->
+  <p>
+    ポストと違い、ドラフトには公開されるまで日付はありません。ドラフトには<code class="language-plaintext highlighter-rouge">2013-07-01-my-draft-post.md</code>の様な名前ではなく、単にポストのタイトルになる部分だけで名付けます。この場合は<code class="language-plaintext highlighter-rouge">my-draft-post.md</code>です。 Rather than naming your draft something like</p>
+</div>
+<!-- <p markdown="1">
+  Unlike posts, drafts don't have a date, since they haven't
+  been published yet. Rather than naming your draft something like
+  `2013-07-01-my-draft-post.md`, simply name the file what you'd like your
+  post to eventually be titled, here `my-draft-post.md`.</p>
+</div> -->
+
+<h3 id="カスタム設定ファイル">カスタム設定ファイル</h3>
+<!-- ### Custom Config File -->
+
+<p>コマンドラインから個々のフラグを渡すのではなく、カスタムのJekyll設定ファイルから全体を渡すことができます。これは環境を区別するのに役立ちますし、またはユーザー指定のデフォルトをプログラム的にオーバーライドすることを可能にします。<code class="language-plaintext highlighter-rouge">jekyll</code>コマンドに<code class="language-plaintext highlighter-rouge">--config</code>フラグを追加し、その後に1つ以上の設定ファイルへのパスを続けます（カンマ区切り、スペースなし）。</p>
+
+<!-- Rather than passing individual flags via the command line, you can now pass
+an entire custom Jekyll config file. This helps to distinguish between
+environments, or lets you programmatically override user-specified
+defaults. Add the `--config` flag to the `jekyll` command, followed
+by the path to one or more config files (comma-delimited, no spaces). -->
+
+<h4 id="その結果以下のコマンドラインフラグが廃止予定となりました">その結果、以下のコマンドラインフラグが廃止予定となりました。</h4>
+<!-- #### As a result, the following command line flags are now deprecated: -->
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">--no-server</code></li>
+  <li><code class="language-plaintext highlighter-rouge">--no-auto</code> (now <code class="language-plaintext highlighter-rouge">--no-watch</code>)</li>
+  <li><code class="language-plaintext highlighter-rouge">--auto</code> (now <code class="language-plaintext highlighter-rouge">--watch</code>)</li>
+  <li><code class="language-plaintext highlighter-rouge">--server</code></li>
+  <li><code class="language-plaintext highlighter-rouge">--url=</code></li>
+  <li><code class="language-plaintext highlighter-rouge">--maruku</code>, <code class="language-plaintext highlighter-rouge">--rdiscount</code>, and <code class="language-plaintext highlighter-rouge">--redcarpet</code></li>
+  <li><code class="language-plaintext highlighter-rouge">--pygments</code></li>
+  <li><code class="language-plaintext highlighter-rouge">--permalink=</code></li>
+  <li><code class="language-plaintext highlighter-rouge">--paginate</code></li>
+</ul>
+
+<div class="note info">
+  <h5>configフラグはあなたの設定ファイルを明示的に指定します</h5>
+  <!-- <h5>The config flag explicitly specifies your configuration file(s)</h5> -->
+  <p><code class="language-plaintext highlighter-rouge">--config</code>フラグを使用すると、Jekyllはあなたの<code class="language-plaintext highlighter-rouge">_config.yml</code>ファイルを無視します。カスタム設定を通常の設定とマージしたいですか？　問題ありません。Jekyllはコマンドラインから複数のカスタム設定ファイルを受け付けます。設定ファイルは右から左へカスケードされます。<code class="language-plaintext highlighter-rouge">jekyll serve --config _config.yml,_config-dev.yml</code>を実行すると、両方に同じキーが含まれていた場合、右側の設定ファイル（<code class="language-plaintext highlighter-rouge">_config-dev.yml</code>）の値が左側(<code class="language-plaintext highlighter-rouge">_config.yml</code>）の値を上書きします。</p>
+    <!-- <p markdown="1">If you use the `--config` flag, Jekyll will ignore your
+      `_config.yml` file. Want to merge a custom configuration with the normal
+      configuration? No problem. Jekyll will accept more than one custom config
+      file via the command line. Config files cascade from right to left, such
+      that if I run `jekyll serve --config _config.yml,_config-dev.yml`,
+      the values in the config files on the right (`_config-dev.yml`) overwrite
+      those on the left (`_config.yml`) when both contain the same key.</p> -->
+</div>
+
+<h3 id="新しい設定ファイルオプション">新しい設定ファイルオプション</h3>
+<!-- ### New Config File Options -->
+
+<p>Jekyll 1.0はいくつかの新しい設定ファイルオプションを導入しました。アップグレードする前に、1.0より前の設定ファイルにこれらのいずれかが存在するかを確認し、存在する場合は、正しく使用していることを確認してください。</p>
+
+<!-- Jekyll 1.0 introduced several new config file options. Before you upgrade,
+you should check to see if any of these are present in your pre-1.0 config
+file, and if so, make sure that you're using them properly: -->
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">excerpt_separator</code></li>
+  <li><code class="language-plaintext highlighter-rouge">host</code></li>
+  <li><code class="language-plaintext highlighter-rouge">include</code></li>
+  <li><code class="language-plaintext highlighter-rouge">keep_files</code></li>
+  <li><code class="language-plaintext highlighter-rouge">layouts</code></li>
+  <li><code class="language-plaintext highlighter-rouge">show_drafts</code></li>
+  <li><code class="language-plaintext highlighter-rouge">timezone</code></li>
+  <li><code class="language-plaintext highlighter-rouge">url</code></li>
+</ul>
+
+<h3 id="baseurl">Baseurl</h3>
+
+<p>多くの場合、GitHubページにプッシュする前にローカルでプレビューするなど、Jekyllサイトを複数の場所で実行できるようにする必要があります。Jekyll 1.0は新しい<code class="language-plaintext highlighter-rouge">--baseurl</code>フラグでそれをより簡単にします。この機能を利用するには、まずサイトの<code class="language-plaintext highlighter-rouge">_config.yml</code>ファイルに<code class="language-plaintext highlighter-rouge">baseurl</code>構成を追加します。次に、サイト全体で、相対URLの先頭に<code class="language-plaintext highlighter-rouge">{{ site.baseurl }}</code>を付けます。サイトをローカルでプレビューする準備ができたら、<code class="language-plaintext highlighter-rouge">--baseurl</code>フラグをローカルのbaseurl（多くは<code class="language-plaintext highlighter-rouge">/</code>）と一緒に<code class="language-plaintext highlighter-rouge">jekyll serve</code>に渡すと、Jekyllは全てを入れ替えるので、両方の環境でリンクがきちんと動くことが期待できます。</p>
+
+<!-- Often, you'll want the ability to run a Jekyll site in multiple places,
+such as previewing locally before pushing to GitHub Pages. Jekyll 1.0 makes
+that easier with the new `--baseurl` flag. To take advantage of this
+feature, first add the production `baseurl` to your site's `_config.yml`
+file. Then, throughout the site, prefix relative URLs
+with `{{ site.baseurl }}`.
+When you're ready to preview your site locally, pass along the `--baseurl`
+flag with your local baseurl (most likely `/`) to `jekyll serve` and Jekyll
+will swap in whatever you've passed along, ensuring all your links work as
+you'd expect in both environments. -->
+
+<div class="note warning">
+  <h5>全てのページとポストのURLはスラッシュから始まります。</h5>
+  <!-- <h5 markdown="1">All page and post URLs contain leading slashes</h5> -->
+  <p>上記の方法を使用する場合は、全てのポストとページのURLの先頭にスラッシュが含まれていることを忘れないでください。そのため、<code class="language-plaintext highlighter-rouge">site.baseurl = /</code>と<code class="language-plaintext highlighter-rouge">post.url = /2013/06/05/my-fun-post/</code>のように、サイトのbaseurlとポストやページのURLを連結すると、リンクが切れてしまいます。したがって、<code class="language-plaintext highlighter-rouge">baseurl</code>がデフォルトの<code class="language-plaintext highlighter-rouge">/</code>以外のものである場合にのみ、<code class="language-plaintext highlighter-rouge">site.baseurl</code>をプレフィックスとして使用することをお勧めします。</p>
+  <!-- <p markdown="1">If you use the method described above, please remember
+  that the URLs for all posts and pages contain a leading slash. Therefore,
+  concatenating the site baseurl and the post/page url where
+  `site.baseurl = /` and `post.url = /2013/06/05/my-fun-post/` will
+  result in two leading slashes, which will break links. It is thus
+  suggested that prefixing with `site.baseurl` only be used when the
+  `baseurl` is something other than the default of `/`.</p> -->
+</div>
+
+        </article>
+      </div>
+      <div class="unit one-fifth hide-on-mobiles">
+  <aside>
+    <h4>入門</h4>
+      <ul>
+        <li><a href="/docs/">クイックスタート</a></li>
+        <li><a href="/docs/ruby-101/">Ruby基礎</a></li>
+        <li><a href="/docs/installation/">インストール</a></li>
+        <li><a href="/docs/community/">コミュニティ</a></li>
+        <li><a href="/docs/step-by-step/01-setup/">Step by Stepチュートリアル</a></li>
+      </ul>
+    <h4>ビルド</h4>
+      <ul>
+        <li><a href="/docs/usage/">コマンドラインの使い方</a></li>
+        <li><a href="/docs/configuration/">構成・設定</a></li>
+      </ul>
+    <h4>コンテンツ</h4>
+      <ul>
+        <li><a href="/docs/pages/">Pages（ページ）</a></li>
+        <li><a href="/docs/posts/">Posts（ポスト）</a></li>
+        <li><a href="/docs/front-matter/">Front Matter</a></li>
+        <li><a href="/docs/collections/">コレクション</a></li>
+        <li><a href="/docs/datafiles/">Dataファイル</a></li>
+        <li><a href="/docs/assets/">Assets</a></li>
+        <li><a href="/docs/static-files/">静的ファイル</a></li>
+      </ul>
+    <h4>サイトの構成</h4>
+      <ul>
+        <li><a href="/docs/structure/">ディレクトリ構成</a></li>
+        <li><a href="/docs/liquid/">Liquid</a></li>
+        <li><a href="/docs/variables/">変数</a></li>
+        <li><a href="/docs/includes/">Includes（インクルード）</a></li>
+        <li><a href="/docs/layouts/">レイアウト</a></li>
+        <li><a href="/docs/permalinks/">パーマリンク</a></li>
+        <li><a href="/docs/themes/">テーマ</a></li>
+        <li><a href="/docs/pagination/">Pagination（ページ分け）</a></li>
+      </ul>
+    <h4>ガイド</h4>
+      <ul>
+        <li><a href="/docs/plugins/">プラグイン</a></li>
+        <li><a href="/docs/migrations/">ブログの移行</a></li>
+        <li><a href="/docs/upgrading/">アップグレード</a></li>
+        <li><a href="/docs/deployment/">Deployment</a></li>
+      </ul>
+    </aside>
+</div>
+<div class="clear"></div>
+    </div>
+  </section>
+<footer>
+  <div class="grid">
+    <div class="unit one-third center-on-mobiles">
+      <p>Jekyllはボランティアの<a href="/team/">コアチーム</a>により愛情を込めて維持されています。</p>
+      <p>このWebサイトのコンテンツは<a href="https://github.com/jekyll/jekyll/blob/master/LICENSE" target="_blank">MIT&nbsp;License</a>に基づきます。&copy;&nbsp;2020</p>
+      <!-- <p>Jekyll is lovingly maintained by the <a href="/team/">core team</a> of volunteers. </p>
+      <p>The contents of this website are <br />&copy;&nbsp;2020 under the terms of the <a href="https://github.com/jekyll/jekyll/blob/master/LICENSE">MIT&nbsp;License</a>.</p> -->
+    </div>
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>
+        Proudly hosted by
+        <a href="https://github.com">
+          <img src="/img/footer-logo.png" width="100" height="30" alt="GitHub • Social coding">
+        </a>
+      </p>
+    </div>
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>
+        Jekyll is funded thanks to its
+        <a href="https://github.com/jekyll/jekyll#sponsors">
+          sponsors!
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
+<script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<span class=\"sr-only\">Permalink</span><i class=\"fa fa-link\"></i>";
+    anchor.title = "Permalink";
+    return anchor;
+  };
+
+  var linkifyAnchors = function (level, containingElement) {
+    var headers = containingElement.getElementsByTagName("h" + level);
+    for (var h = 0; h < headers.length; h++) {
+      var header = headers[h];
+
+      if (typeof header.id !== "undefined" && header.id !== "") {
+        header.appendChild(anchorForId(header.id));
+      }
+    }
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var contentBlock = document.getElementsByClassName("docs")[0] || document.getElementsByClassName("news")[0];
+      if (!contentBlock) {
+        return;
+      }
+      for (var level = 1; level <= 6; level++) {
+        linkifyAnchors(level, contentBlock);
+      }
+    }
+  };
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script type="text/javascript"> docsearch({
+apiKey: '50fe39c839958dfad797000f33e2ec17',
+indexName: 'jekyllrb',
+inputSelector: '#docsearch-input',
+enhancedSearchInput: true,
+debug: false // Set debug to true if you want to inspect the dropdown
+});
+</script>
+</body>
+</html>

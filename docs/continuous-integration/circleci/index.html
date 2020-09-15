@@ -1,0 +1,416 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link type="application/atom+xml" rel="alternate" href="http://jekyllrb-ja.github.io/feed.xml" title="Jekyll • シンプルで、ブログのような、静的サイト" />
+  <link type="application/atom+xml" rel="alternate" href="/feed/release.xml" title="Jekyll releases posts" />
+  <link rel="alternate" type="application/atom+xml" title="Recent commits to Jekyll’s master branch" href="https://github.com/jekyll/jekyll/commits/master.atom">
+  <link rel="preload" href="/fonts/lato-v14-latin-300.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/lato-v14-latin-700.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/css/screen.css" as="style">
+  <link rel="stylesheet" href="/css/screen.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>CircleCI | Jekyll • シンプルで、ブログのような、静的サイト</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="CircleCI" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Jekyllによって生成されたWebサイトの構築、テスト、およびデプロイは、継続的な統合および配信ツールであるCircleCIを使用して素早く実行できます。CircleCIはGitHubとBitbucketをサポートしており、オープンソースまたはプライベートのリポジトリを使って無料で始めることができます。" />
+<meta property="og:description" content="Jekyllによって生成されたWebサイトの構築、テスト、およびデプロイは、継続的な統合および配信ツールであるCircleCIを使用して素早く実行できます。CircleCIはGitHubとBitbucketをサポートしており、オープンソースまたはプライベートのリポジトリを使って無料で始めることができます。" />
+<link rel="canonical" href="http://jekyllrb-ja.github.io/docs/continuous-integration/circleci/" />
+<meta property="og:url" content="http://jekyllrb-ja.github.io/docs/continuous-integration/circleci/" />
+<meta property="og:site_name" content="Jekyll • シンプルで、ブログのような、静的サイト" />
+<meta property="og:image" content="http://jekyllrb-ja.github.io/img/jekyll-og.png" />
+<script type="application/ld+json">
+{"headline":"CircleCI","image":"http://jekyllrb-ja.github.io/img/jekyll-og.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://jekyllrb-ja.github.io/img/logo-2x.png"}},"url":"http://jekyllrb-ja.github.io/docs/continuous-integration/circleci/","description":"Jekyllによって生成されたWebサイトの構築、テスト、およびデプロイは、継続的な統合および配信ツールであるCircleCIを使用して素早く実行できます。CircleCIはGitHubとBitbucketをサポートしており、オープンソースまたはプライベートのリポジトリを使って無料で始めることができます。","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <!--[if lt IE 9]>
+  <script src="/js/html5shiv.min.js"></script>
+  <script src="/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body class="wrap"><header>
+  <div class="flexbox">
+    <div class="center-on-mobiles">
+      <h1>
+        <a href="/" class="logo">
+          <span class="sr-only">Jekyll</span>
+          <img src="/img/logo-2x.png" width="140" height="65" alt="Jekyll Logo">
+        </a>
+      </h1>
+    </div>
+    <nav class="main-nav hide-on-mobiles">
+      <ul>
+  <li><a href="/">Home</a></li>
+  <li class="current"><a href="/docs/">Docs</a></li>
+  <li><a href="/resources/">Resources</a></li>
+  <li><a href="/showcase/">Showcase</a></li>
+  <li><a href="/news/">News</a></li>
+  </ul>
+</nav>
+    <div class="search hide-on-mobiles">
+      <input type="text" id="docsearch-input" placeholder="Search the docs…">
+</div>
+    <div class="meta hide-on-mobiles">
+      <ul>
+        <li><a href="https://github.com/jekyll/jekyll/releases/tag/v4.1.1">v4.1.1</a></li>
+        <li><a href="https://github.com/jekyll/jekyll">GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+  <nav class="mobile-nav show-on-mobiles">
+    <ul>
+  <li><a href="/">Home</a></li>
+    <li class="current" ><a href="/docs/">Docs</a></li>
+    <li><a href="/resources/">Resources</a></li>
+    <li><a href="/news/">News</a></li>
+    <li><a href="https://github.com/jekyll/jekyll">GitHub</a></li>
+</ul>
+</nav>
+</header>
+  <section class="docs">
+    <div class="grid">
+      <div class="docs-nav-mobile unit whole show-on-mobiles">
+  <select onchange="if (this.value) window.location.href=this.value">
+    <option value="">Navigate the docs…</option>
+    <optgroup label="入門">
+      <option value="/docs/">クイックスタート</option>
+      <option value="/docs/ruby-101/">Ruby基礎</option>
+      <option value="/docs/installation/">インストール</option>
+      <option value="/docs/community/">コミュニティ</option>
+      <option value="/docs/step-by-step/01-setup/">Step by Stepチュートリアル</option>
+    </optgroup>
+    <optgroup label="ビルド">
+      <option value="/docs/usage/">コマンドラインの使い方</option>
+      <option value="/docs/configuration/">構成・設定</option>
+    </optgroup>
+    <optgroup label="コンテンツ">
+      <option value="/docs/pages/">Pages（ページ）</option>
+      <option value="/docs/posts/">Posts（ポスト）</option>
+      <option value="/docs/front-matter/">Front Matter</option>
+      <option value="/docs/collections/">コレクション</option>
+      <option value="/docs/datafiles/">Dataファイル</option>
+      <option value="/docs/assets/">Assets</option>
+      <option value="/docs/static-files/">静的ファイル</option>
+    </optgroup>
+    <optgroup label="サイトの構成">
+      <option value="/docs/structure/">ディレクトリ構成</option>
+      <option value="/docs/liquid/">Liquid</option>
+      <option value="/docs/variables/">変数</option>
+      <option value="/docs/includes/">Includes（インクルード）</option>
+      <option value="/docs/layouts/">レイアウト</option>
+      <option value="/docs/permalinks/">パーマリンク</option>
+      <option value="/docs/themes/">テーマ</option>
+      <option value="/docs/pagination/">Pagination（ページ分け）</option>
+    </optgroup>
+    <optgroup label="ガイド">
+      <option value="/docs/plugins/">プラグイン</option>
+      <option value="/docs/migrations/">ブログの移行</option>
+      <option value="/docs/upgrading/">アップグレード</option>
+      <option value="/docs/deployment/">Deployment</option>
+    </optgroup>
+    </select>
+</div>
+<div class="unit four-fifths">
+        <article>
+          <div class="improve right hide-on-mobiles">
+            <a data-proofer-ignore href="https://github.com/jekyll/jekyll/edit/master/docs/_docs/continuous-integration/circleci.md"><i class="fa fa-pencil"></i> &nbsp;Improve this page</a>
+          </div>
+          <h1>CircleCI</h1>
+          <p>Jekyllによって生成されたWebサイトの構築、テスト、およびデプロイは、継続的な統合および配信ツールである<a href="https://circleci.com/">CircleCI</a>を使用して素早く実行できます。CircleCIは<a href="https://github.com/">GitHub</a>と<a href="https://bitbucket.org/">Bitbucket</a>をサポートしており、オープンソースまたはプライベートのリポジトリを使って無料で始めることができます。</p>
+
+<!-- Building, testing, and deploying your Jekyll-generated website can quickly be done with [CircleCI][0], a continuous integration & delivery tool. CircleCI supports [GitHub][1] and [Bitbucket][2], and you can get started for free using an open-source or private repository. -->
+
+<h2 id="1-circleciでプロジェクトをフォローする">1. CircleCIでプロジェクトをフォローする</h2>
+<!-- ## 1. Follow Your Project on CircleCI -->
+
+<p>CircleCIでプロジェクトの構築を開始するには、CircleCIのWebサイトからプロジェクトを’follow’するだけです。</p>
+
+<!-- To start building your project on CircleCI, all you need to do is 'follow' your project from CircleCI's website: -->
+
+<ol>
+  <li>‘Add Projects’ページへ行きます</li>
+  <li>左のGitHubかBitbucketタブから、ユーザーか組織を選択します。</li>
+  <li>リストからプロジェクトを見つけ出し、右の’Build project’をクリックします。</li>
+  <li>最初のビルドはそれ自身で始まります。リポジトリのrootに<a href="https://circleci.com/docs/configuration/">circle.yml</a>ファイルを作成することで、CircleCIにプロジェクトのビルド方法を指示することができます。</li>
+</ol>
+
+<!-- 1. Visit the 'Add Projects' page
+1. From the GitHub or Bitbucket tab on the left, choose a user or organization.
+1. Find your project in the list and click 'Build project' on the right.
+1. The first build will start on its own. You can start telling CircleCI how to build your project by creating a [circle.yml][3] file in the root of your repository. -->
+
+<h2 id="2-依存関係">2. 依存関係</h2>
+<!-- ## 2. Dependencies -->
+
+<p>（CircleCIの利用に関係なく）Jekyllプロジェクトの依存関係管理の最も簡単な方法は、<a href="http://bundler.io/gemfile.html">Gemfile</a>の利用です。<code class="language-plaintext highlighter-rouge">Gemfile</code>でJekyll、Jekyllプラグイン、<a href="#html-proofer">HTML Proofer</a>、その他のgemを使用することをお勧めします。<code class="language-plaintext highlighter-rouge">Gemfile.lock</code>のバージョンも忘れないでください。こちらが<code class="language-plaintext highlighter-rouge">Gemfile</code>の例です。</p>
+
+<!-- The easiest way to manage dependencies for a Jekyll project (with or without CircleCI) is via a [Gemfile][4]. You'd want to have Jekyll, any Jekyll plugins, [HTML Proofer](#html-proofer), and any other gems that you are using in the `Gemfile`. Don't forget to version `Gemfile.lock` as well. Here's an example `Gemfile`: -->
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">source</span> <span class="s1">'https://rubygems.org'</span>
+
+<span class="n">ruby</span> <span class="s1">'2.4.0'</span>
+
+<span class="n">gem</span> <span class="s1">'jekyll'</span>
+<span class="n">gem</span> <span class="s1">'html-proofer'</span>
+</code></pre></div></div>
+
+<p>CircleCIは、<code class="language-plaintext highlighter-rouge">Gemfile</code>が存在することを検出し、<code class="language-plaintext highlighter-rouge">dependencies</code>フェーズで自動的に<code class="language-plaintext highlighter-rouge">bundle install</code>を実行します。</p>
+
+<!-- CircleCI detects when `Gemfile` is present and will automatically run `bundle install` for you in the `dependencies` phase. -->
+
+<h2 id="3-テスト">3. テスト</h2>
+<!-- ## 3. Testing -->
+
+<p>最も基本的なテストは、<code class="language-plaintext highlighter-rouge">jekyll build</code>がきちんと動くかを確認することです。これは、生成されたサイトで他のテストを実行するためのブロッカーであり、あなたがそうするなら依存関係です。そのため、<code class="language-plaintext highlighter-rouge">dependencies</code>フェーズでBundler経由でJekyllを実行します。</p>
+
+<!-- The most basic test that can be run is seeing if `jekyll build` actually works. This is a blocker, a dependency if you will, for other tests you might run on the generate site. So we'll run Jekyll, via Bundler, in the `dependencies` phase. -->
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">dependencies</span><span class="pi">:</span>
+  <span class="na">post</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">bundle exec jekyll build</span>
+</code></pre></div></div>
+
+<h3 id="html-proofer">HTML Proofer</h3>
+
+<p>サイトを構築したら、有効なHTML、リンク切れなどを確認するためのテストを実行すると便利です。それにはいくつかのツールがありますが、<a href="https://github.com/gjtorikian/html-proofer">HTML Proofer</a>はJekyllユーザーの間で人気があります。いくつかの優先フラグを付けて<code class="language-plaintext highlighter-rouge">test</code>フェーズで実行します。利用可能な全フラグについては、<code class="language-plaintext highlighter-rouge">html-proofer</code> <a href="https://github.com/gjtorikian/html-proofer/blob/master/README.md#configuration">README</a>をチェックするか、または<code class="language-plaintext highlighter-rouge">htmlproofer --help</code>をローカルで実行してください。</p>
+
+<!-- With your site built, it's useful to run tests to check for valid HTML, broken links, etc. There's a few tools out there but [HTML Proofer][5] is popular amongst Jekyll users. We'll run it in the `test` phase with a few preferred flags. Check out the `html-proofer` [README][6] for all available flags, or run `htmlproofer --help` locally. -->
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">test</span><span class="pi">:</span>
+  <span class="na">post</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">bundle exec htmlproofer ./_site --check-html --disable-external</span>
+</code></pre></div></div>
+
+<h2 id="circleymlファイルの例">circle.ymlファイルの例</h2>
+<!-- ## Complete Example circle.yml File -->
+
+<h3 id="circleci-v1">CircleCI v1</h3>
+
+<p>まとめると、こちらは<code class="language-plaintext highlighter-rouge">circle.yml</code>ファイルがv1でどのように見えるかの例です。</p>
+
+<!-- When you put it all together, here's an example of what that `circle.yml` file could look like in v1: -->
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">machine</span><span class="pi">:</span>
+  <span class="na">environment</span><span class="pi">:</span>
+    <span class="na">NOKOGIRI_USE_SYSTEM_LIBRARIES</span><span class="pi">:</span> <span class="no">true</span> <span class="c1"># speeds up installation of html-proofer</span>
+
+<span class="na">dependencies</span><span class="pi">:</span>
+  <span class="na">post</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">bundle exec jekyll build</span>
+
+<span class="na">test</span><span class="pi">:</span>
+  <span class="na">post</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">bundle exec htmlproofer ./_site --allow-hash-href --check-favicon --check-html --disable-external</span>
+
+<span class="na">deployment</span><span class="pi">:</span>
+  <span class="na">prod</span><span class="pi">:</span>
+    <span class="na">branch</span><span class="pi">:</span> <span class="s">master</span>
+    <span class="na">commands</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">rsync -va --delete ./_site username@my-website:/var/html</span>
+</code></pre></div></div>
+
+<h3 id="circleci-v2">CircleCI v2</h3>
+
+<p>CircleCI v2はDockerベースのシステムです。以下の<code class="language-plaintext highlighter-rouge">circle.yml</code>の例は、JekyllプロジェクトのAWSへのデプロイ方法のデモです。これを機能させるには、まず<code class="language-plaintext highlighter-rouge">S3_BUCKET_NAME</code> <a href="https://circleci.com/docs/2.0/env-vars/" target="_blank">環境変数</a>を設定する必要があります。</p>
+
+<!-- CircleCI v2 is a Docker-based system. The example `circle.yml` below demonstrates how to
+deploy your Jekyll project to AWS. In order for this to work you would first have to set the
+`S3_BUCKET_NAME` [environment variable](https://circleci.com/docs/2.0/env-vars/). -->
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">defaults</span><span class="pi">:</span> <span class="nl">&amp;defaults</span>
+  <span class="na">working_directory</span><span class="pi">:</span> <span class="s">~/repo</span>
+<span class="na">version</span><span class="pi">:</span> <span class="m">2</span>
+<span class="na">jobs</span><span class="pi">:</span>
+  <span class="na">build</span><span class="pi">:</span>
+    <span class="s">&lt;&lt;</span><span class="pi">:</span> <span class="nv">*defaults</span>
+    <span class="na">docker</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">image</span><span class="pi">:</span> <span class="s">circleci/ruby:2.5</span>
+    <span class="na">environment</span><span class="pi">:</span>
+      <span class="na">BUNDLE_PATH</span><span class="pi">:</span> <span class="s">~/repo/vendor/bundle</span>
+    <span class="na">steps</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">checkout</span>
+      <span class="pi">-</span> <span class="na">restore_cache</span><span class="pi">:</span>
+          <span class="na">keys</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="s">rubygems-v1-{{ checksum "Gemfile.lock" }}</span>
+            <span class="pi">-</span> <span class="s">rubygems-v1-fallback</span>
+      <span class="pi">-</span> <span class="na">run</span><span class="pi">:</span>
+          <span class="na">name</span><span class="pi">:</span> <span class="s">Bundle Install</span>
+          <span class="na">command</span><span class="pi">:</span> <span class="s">bundle check || bundle install</span>
+      <span class="pi">-</span> <span class="na">save_cache</span><span class="pi">:</span>
+          <span class="na">key</span><span class="pi">:</span> <span class="s">rubygems-v1-{{ checksum "Gemfile.lock" }}</span>
+          <span class="na">paths</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="s">vendor/bundle</span>
+      <span class="pi">-</span> <span class="na">run</span><span class="pi">:</span>
+          <span class="na">name</span><span class="pi">:</span> <span class="s">Jekyll build</span>
+          <span class="na">command</span><span class="pi">:</span> <span class="s">bundle exec jekyll build</span>
+      <span class="pi">-</span> <span class="na">run</span><span class="pi">:</span>
+          <span class="na">name</span><span class="pi">:</span> <span class="s">HTMLProofer tests</span>
+          <span class="na">command</span><span class="pi">:</span> <span class="pi">|</span>
+            <span class="s">bundle exec htmlproofer ./_site \</span>
+              <span class="s">--allow-hash-href \</span>
+              <span class="s">--check-favicon  \</span>
+              <span class="s">--check-html \</span>
+              <span class="s">--disable-external</span>
+      <span class="pi">-</span> <span class="na">persist_to_workspace</span><span class="pi">:</span>
+          <span class="na">root</span><span class="pi">:</span> <span class="s">./</span>
+          <span class="na">paths</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="s">_site</span>
+  <span class="na">deploy</span><span class="pi">:</span>
+    <span class="s">&lt;&lt;</span><span class="pi">:</span> <span class="nv">*defaults</span>
+    <span class="na">docker</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">image</span><span class="pi">:</span> <span class="s">circleci/python:3.6.3</span>
+    <span class="na">environment</span><span class="pi">:</span>
+      <span class="na">S3_BUCKET_NAME</span><span class="pi">:</span> <span class="s">&lt;&lt;YOUR BUCKET NAME HERE&gt;&gt;</span>
+    <span class="na">steps</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">attach_workspace</span><span class="pi">:</span>
+          <span class="na">at</span><span class="pi">:</span> <span class="s">./</span>
+      <span class="pi">-</span> <span class="na">run</span><span class="pi">:</span>
+          <span class="na">name</span><span class="pi">:</span> <span class="s">Install AWS CLI</span>
+          <span class="na">command</span><span class="pi">:</span> <span class="s">pip install awscli --upgrade --user</span>
+      <span class="pi">-</span> <span class="na">run</span><span class="pi">:</span>
+          <span class="na">name</span><span class="pi">:</span> <span class="s">Upload to s3</span>
+          <span class="na">command</span><span class="pi">:</span> <span class="s">~/.local/bin/aws s3 sync ./_site s3://$S3_BUCKET_NAME/ --delete --acl public-read</span>
+<span class="na">workflows</span><span class="pi">:</span>
+  <span class="na">version</span><span class="pi">:</span> <span class="m">2</span>
+  <span class="na">test-deploy</span><span class="pi">:</span>
+    <span class="na">jobs</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">build</span>
+      <span class="pi">-</span> <span class="na">deploy</span><span class="pi">:</span>
+          <span class="na">requires</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="s">build</span>
+          <span class="na">filters</span><span class="pi">:</span>
+            <span class="na">branches</span><span class="pi">:</span>
+              <span class="na">only</span><span class="pi">:</span> <span class="s">master</span>
+</code></pre></div></div>
+
+<h2 id="疑問がありますか">疑問がありますか？</h2>
+<!-- ## Questions? -->
+
+<p>このガイドはオープンソースです。修正がある場合は<a href="https://github.com/jekyll/jekyll/edit/master/docs/_docs/continuous-integration/circleci.md">編集</a>を、トラブルがあり助けが必要な場合は<a href="https://jekyllrb.com/help/">助けを求めて</a>ください。CircleCIには、助けになる<a href="https://discuss.circleci.com">オンラインコミュニティー</a>もあります。</p>
+
+<!-- This entire guide is open-source. Go ahead and [edit it][7] if you have a fix or [ask for help][8] if you run into trouble and need some help. CircleCI also has an [online community][9] for help. -->
+
+
+        </article>
+      </div>
+      <div class="unit one-fifth hide-on-mobiles">
+  <aside>
+    <h4>入門</h4>
+      <ul>
+        <li><a href="/docs/">クイックスタート</a></li>
+        <li><a href="/docs/ruby-101/">Ruby基礎</a></li>
+        <li><a href="/docs/installation/">インストール</a></li>
+        <li><a href="/docs/community/">コミュニティ</a></li>
+        <li><a href="/docs/step-by-step/01-setup/">Step by Stepチュートリアル</a></li>
+      </ul>
+    <h4>ビルド</h4>
+      <ul>
+        <li><a href="/docs/usage/">コマンドラインの使い方</a></li>
+        <li><a href="/docs/configuration/">構成・設定</a></li>
+      </ul>
+    <h4>コンテンツ</h4>
+      <ul>
+        <li><a href="/docs/pages/">Pages（ページ）</a></li>
+        <li><a href="/docs/posts/">Posts（ポスト）</a></li>
+        <li><a href="/docs/front-matter/">Front Matter</a></li>
+        <li><a href="/docs/collections/">コレクション</a></li>
+        <li><a href="/docs/datafiles/">Dataファイル</a></li>
+        <li><a href="/docs/assets/">Assets</a></li>
+        <li><a href="/docs/static-files/">静的ファイル</a></li>
+      </ul>
+    <h4>サイトの構成</h4>
+      <ul>
+        <li><a href="/docs/structure/">ディレクトリ構成</a></li>
+        <li><a href="/docs/liquid/">Liquid</a></li>
+        <li><a href="/docs/variables/">変数</a></li>
+        <li><a href="/docs/includes/">Includes（インクルード）</a></li>
+        <li><a href="/docs/layouts/">レイアウト</a></li>
+        <li><a href="/docs/permalinks/">パーマリンク</a></li>
+        <li><a href="/docs/themes/">テーマ</a></li>
+        <li><a href="/docs/pagination/">Pagination（ページ分け）</a></li>
+      </ul>
+    <h4>ガイド</h4>
+      <ul>
+        <li><a href="/docs/plugins/">プラグイン</a></li>
+        <li><a href="/docs/migrations/">ブログの移行</a></li>
+        <li><a href="/docs/upgrading/">アップグレード</a></li>
+        <li><a href="/docs/deployment/">Deployment</a></li>
+      </ul>
+    </aside>
+</div>
+<div class="clear"></div>
+    </div>
+  </section>
+<footer>
+  <div class="grid">
+    <div class="unit one-third center-on-mobiles">
+      <p>Jekyllはボランティアの<a href="/team/">コアチーム</a>により愛情を込めて維持されています。</p>
+      <p>このWebサイトのコンテンツは<a href="https://github.com/jekyll/jekyll/blob/master/LICENSE" target="_blank">MIT&nbsp;License</a>に基づきます。&copy;&nbsp;2020</p>
+      <!-- <p>Jekyll is lovingly maintained by the <a href="/team/">core team</a> of volunteers. </p>
+      <p>The contents of this website are <br />&copy;&nbsp;2020 under the terms of the <a href="https://github.com/jekyll/jekyll/blob/master/LICENSE">MIT&nbsp;License</a>.</p> -->
+    </div>
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>
+        Proudly hosted by
+        <a href="https://github.com">
+          <img src="/img/footer-logo.png" width="100" height="30" alt="GitHub • Social coding">
+        </a>
+      </p>
+    </div>
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>
+        Jekyll is funded thanks to its
+        <a href="https://github.com/jekyll/jekyll#sponsors">
+          sponsors!
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
+<script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<span class=\"sr-only\">Permalink</span><i class=\"fa fa-link\"></i>";
+    anchor.title = "Permalink";
+    return anchor;
+  };
+
+  var linkifyAnchors = function (level, containingElement) {
+    var headers = containingElement.getElementsByTagName("h" + level);
+    for (var h = 0; h < headers.length; h++) {
+      var header = headers[h];
+
+      if (typeof header.id !== "undefined" && header.id !== "") {
+        header.appendChild(anchorForId(header.id));
+      }
+    }
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var contentBlock = document.getElementsByClassName("docs")[0] || document.getElementsByClassName("news")[0];
+      if (!contentBlock) {
+        return;
+      }
+      for (var level = 1; level <= 6; level++) {
+        linkifyAnchors(level, contentBlock);
+      }
+    }
+  };
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script type="text/javascript"> docsearch({
+apiKey: '50fe39c839958dfad797000f33e2ec17',
+indexName: 'jekyllrb',
+inputSelector: '#docsearch-input',
+enhancedSearchInput: true,
+debug: false // Set debug to true if you want to inspect the dropdown
+});
+</script>
+</body>
+</html>

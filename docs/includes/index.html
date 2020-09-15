@@ -1,0 +1,424 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link type="application/atom+xml" rel="alternate" href="http://jekyllrb-ja.github.io/feed.xml" title="Jekyll • シンプルで、ブログのような、静的サイト" />
+  <link type="application/atom+xml" rel="alternate" href="/feed/release.xml" title="Jekyll releases posts" />
+  <link rel="alternate" type="application/atom+xml" title="Recent commits to Jekyll’s master branch" href="https://github.com/jekyll/jekyll/commits/master.atom">
+  <link rel="preload" href="/fonts/lato-v14-latin-300.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/lato-v14-latin-700.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/css/screen.css" as="style">
+  <link rel="stylesheet" href="/css/screen.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Includes（インクルード） | Jekyll • シンプルで、ブログのような、静的サイト</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Includes（インクルード）" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="プレーンテキストを静的サイトやブログに変えましょう" />
+<meta property="og:description" content="プレーンテキストを静的サイトやブログに変えましょう" />
+<link rel="canonical" href="http://jekyllrb-ja.github.io/docs/includes/" />
+<meta property="og:url" content="http://jekyllrb-ja.github.io/docs/includes/" />
+<meta property="og:site_name" content="Jekyll • シンプルで、ブログのような、静的サイト" />
+<meta property="og:image" content="http://jekyllrb-ja.github.io/img/jekyll-og.png" />
+<script type="application/ld+json">
+{"headline":"Includes（インクルード）","image":"http://jekyllrb-ja.github.io/img/jekyll-og.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://jekyllrb-ja.github.io/img/logo-2x.png"}},"url":"http://jekyllrb-ja.github.io/docs/includes/","description":"プレーンテキストを静的サイトやブログに変えましょう","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <!--[if lt IE 9]>
+  <script src="/js/html5shiv.min.js"></script>
+  <script src="/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body class="wrap"><header>
+  <div class="flexbox">
+    <div class="center-on-mobiles">
+      <h1>
+        <a href="/" class="logo">
+          <span class="sr-only">Jekyll</span>
+          <img src="/img/logo-2x.png" width="140" height="65" alt="Jekyll Logo">
+        </a>
+      </h1>
+    </div>
+    <nav class="main-nav hide-on-mobiles">
+      <ul>
+  <li><a href="/">Home</a></li>
+  <li class="current"><a href="/docs/">Docs</a></li>
+  <li><a href="/resources/">Resources</a></li>
+  <li><a href="/showcase/">Showcase</a></li>
+  <li><a href="/news/">News</a></li>
+  </ul>
+</nav>
+    <div class="search hide-on-mobiles">
+      <input type="text" id="docsearch-input" placeholder="Search the docs…">
+</div>
+    <div class="meta hide-on-mobiles">
+      <ul>
+        <li><a href="https://github.com/jekyll/jekyll/releases/tag/v4.1.1">v4.1.1</a></li>
+        <li><a href="https://github.com/jekyll/jekyll">GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+  <nav class="mobile-nav show-on-mobiles">
+    <ul>
+  <li><a href="/">Home</a></li>
+    <li class="current" ><a href="/docs/">Docs</a></li>
+    <li><a href="/resources/">Resources</a></li>
+    <li><a href="/news/">News</a></li>
+    <li><a href="https://github.com/jekyll/jekyll">GitHub</a></li>
+</ul>
+</nav>
+</header>
+  <section class="docs">
+    <div class="grid">
+      <div class="docs-nav-mobile unit whole show-on-mobiles">
+  <select onchange="if (this.value) window.location.href=this.value">
+    <option value="">Navigate the docs…</option>
+    <optgroup label="入門">
+      <option value="/docs/">クイックスタート</option>
+      <option value="/docs/ruby-101/">Ruby基礎</option>
+      <option value="/docs/installation/">インストール</option>
+      <option value="/docs/community/">コミュニティ</option>
+      <option value="/docs/step-by-step/01-setup/">Step by Stepチュートリアル</option>
+    </optgroup>
+    <optgroup label="ビルド">
+      <option value="/docs/usage/">コマンドラインの使い方</option>
+      <option value="/docs/configuration/">構成・設定</option>
+    </optgroup>
+    <optgroup label="コンテンツ">
+      <option value="/docs/pages/">Pages（ページ）</option>
+      <option value="/docs/posts/">Posts（ポスト）</option>
+      <option value="/docs/front-matter/">Front Matter</option>
+      <option value="/docs/collections/">コレクション</option>
+      <option value="/docs/datafiles/">Dataファイル</option>
+      <option value="/docs/assets/">Assets</option>
+      <option value="/docs/static-files/">静的ファイル</option>
+    </optgroup>
+    <optgroup label="サイトの構成">
+      <option value="/docs/structure/">ディレクトリ構成</option>
+      <option value="/docs/liquid/">Liquid</option>
+      <option value="/docs/variables/">変数</option>
+      <option value="/docs/includes/">Includes（インクルード）</option>
+      <option value="/docs/layouts/">レイアウト</option>
+      <option value="/docs/permalinks/">パーマリンク</option>
+      <option value="/docs/themes/">テーマ</option>
+      <option value="/docs/pagination/">Pagination（ページ分け）</option>
+    </optgroup>
+    <optgroup label="ガイド">
+      <option value="/docs/plugins/">プラグイン</option>
+      <option value="/docs/migrations/">ブログの移行</option>
+      <option value="/docs/upgrading/">アップグレード</option>
+      <option value="/docs/deployment/">Deployment</option>
+    </optgroup>
+    </select>
+</div>
+<div class="unit four-fifths">
+        <article>
+          <div class="improve right hide-on-mobiles">
+            <a data-proofer-ignore href="https://github.com/jekyll/jekyll/edit/master/docs/_docs/includes.md"><i class="fa fa-pencil"></i> &nbsp;Improve this page</a>
+          </div>
+          <h1>Includes（インクルード）</h1>
+          <!-- ---
+title: Includes
+permalink: /docs/includes/
+--- -->
+
+<p><code class="language-plaintext highlighter-rouge">include</code>タグは、<code class="language-plaintext highlighter-rouge">_includes</code>フォルダの他のファイルを入れ込む事を可能にします。</p>
+
+<!-- The `include` tag allows you to include the content from another file stored in the `_includes` folder: -->
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span>footer.html<span class="w"> </span><span class="p">%}</span>
+</code></pre></div></div>
+
+<p>Jekyllはソースディレクトリのrootにある<code class="language-plaintext highlighter-rouge">_includes</code>ディレクトリのファイル（この場合は<code class="language-plaintext highlighter-rouge">footer.html</code>）を探し、コンテンツに挿入します。</p>
+
+<!-- Jekyll will look for the referenced file (in this case, `footer.html`) in the `_includes` directory at the root of your source directory and insert its contents. -->
+
+<h3 id="相対的な他のファイルをインクルードする">相対的な他のファイルをインクルードする</h3>
+<!-- ### Including files relative to another file -->
+
+<p><code class="language-plaintext highlighter-rouge">include_relative</code>タグを使用することで、現在のファイルから相対的な位置のファイルを挿入することもできます。</p>
+
+<!-- You can choose to include file fragments relative to the current file by using the `include_relative` tag: -->
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">include_relative</span><span class="w"> </span>somedir/footer.html<span class="w"> </span><span class="p">%}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">_includes</code>ディレクトリに挿入するコンテンツを置いておく必要はありません。タグを使用するファイルから、挿入したいファイルを相対パスで指定します。例えば、<code class="language-plaintext highlighter-rouge">_posts/2014-09-03-my-file.markdown</code>で<code class="language-plaintext highlighter-rouge">include_relative</code>を使用すると、<code class="language-plaintext highlighter-rouge">_posts</code>ディレクトリのファイルやそのサブディレクトリのファイルを挿入できます。</p>
+
+<!-- You won't need to place your included content within the `_includes` directory. Instead,
+the inclusion is specifically relative to the file where the tag is being used. For example,
+if `_posts/2014-09-03-my-file.markdown` uses the `include_relative` tag, the included file
+must be within the `_posts` directory or one of its subdirectories. -->
+
+<p><code class="language-plaintext highlighter-rouge">../</code>は使用できませんので、上位のディレクトリのファイルは挿入できないことに注意してください。</p>
+
+<!-- Note that you cannot use the `../` syntax to specify an include location that refers to a higher-level directory. -->
+
+<p><code class="language-plaintext highlighter-rouge">include</code>タグの変数など全ての機能は、<code class="language-plaintext highlighter-rouge">include_relative</code>でも使用できます。</p>
+
+<!-- All the other capabilities of the `include` tag are available to the `include_relative` tag,
+such as variables. -->
+
+<h3 id="インクルードファイルを変数で指定する">インクルードファイルを変数で指定する</h3>
+<!-- ### Using variables names for the include file -->
+
+<p>埋め込むファイルの名前は、実際のファイル名の代わりに変数として指定できます。例えば、ページのfront matterに次のように変数を定義したとします。</p>
+
+<!-- The name of the file you want to embed can be specified as a variable instead of an actual file name. For example, suppose you defined a variable in your page's front matter like this: -->
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s">My page</span>
+<span class="na">my_variable</span><span class="pi">:</span> <span class="s">footer_company_a.html</span>
+<span class="nn">---</span>
+</code></pre></div></div>
+
+<p>そうすれば、その変数をincludeで参照できます。</p>
+
+<!-- You could then reference that variable in your include: -->
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">my_variable</span><span class="w"> </span><span class="p">%}</span>
+  <span class="p">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span><span class="p">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">my_variable</span><span class="w"> </span><span class="p">}}</span><span class="w"> </span><span class="p">%}</span>
+<span class="p">{%</span><span class="w"> </span><span class="kr">endif</span><span class="w"> </span><span class="p">%}</span>
+</code></pre></div></div>
+
+<p>この例では、<code class="language-plaintext highlighter-rouge">_includes</code>ディレクトリの<code class="language-plaintext highlighter-rouge">footer_company_a.html</code>ファイルが挿入されます。</p>
+
+<!-- In this example, the include would insert the file `footer_company_a.html` from the `_includes/footer_company_a.html` directory. -->
+
+<h3 id="インクルードにパラメータを渡す">インクルードにパラメータを渡す</h3>
+<!-- ### Passing parameters to includes -->
+
+<p>インクルードにパラメータを渡すこともできます。例えば、<code class="language-plaintext highlighter-rouge">_includes</code>フォルダの<code class="language-plaintext highlighter-rouge">note.html</code>ファイルに次の記載があるとします。</p>
+
+<!-- You can also pass parameters to an include. For example, suppose you have a file called `note.html` in your `_includes` folder that contains this formatting: -->
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div markdown="span" class="alert alert-info" role="alert"&gt;
+&lt;i class="fa fa-info-circle"&gt;&lt;/i&gt; &lt;b&gt;Note:&lt;/b&gt;
+<span class="p">{{</span><span class="w"> </span><span class="nv">include</span><span class="p">.</span><span class="nv">content</span><span class="w"> </span><span class="p">}}</span>
+&lt;/div&gt;
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">{{ include.content }}</code>はincludeでそのパラメータの値を指定した時に入力される変数です。指定は次のように行います。</p>
+
+<!-- The `{{ include.content }}` is a parameter that gets populated when you call the include and specify a value for that parameter, like this: -->
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span>note.html<span class="w"> </span><span class="na">content</span><span class="o">=</span><span class="s2">"This is my sample note."</span><span class="w"> </span><span class="p">%}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">content</code>の値（今回は<code class="language-plaintext highlighter-rouge">This is my sample note</code>）が<code class="language-plaintext highlighter-rouge">{{ include.content }}</code>に挿入されます。</p>
+
+<!-- The value of `content` (which is `This is my sample note`) will be inserted into the `{{ include.content }}` parameter. -->
+
+<p>インクルードにパラメータを渡すのは、Markdownコンテンツから複雑な部分を隠したいときに役立ちます。</p>
+
+<!-- Passing parameters to includes is especially helpful when you want to hide away complex formatting from your Markdown content. -->
+
+<p>例えば、画像を特別なフォーマットで使用しようと思っていて、著者にこの複雑なフォーマットを覚えさせたくない場合です。一つの方法として、includeとパラメータを使用して、シンプルにします。以下にincludeを使用したいと思うようなフォーマットの例を示します。</p>
+
+<!-- For example, suppose you have a special image syntax with complex formatting, and you don't want your authors to remember the complex formatting. As a result, you decide to simplify the formatting by using an include with parameters. Here's an example of the special image syntax you might want to populate with an include: -->
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;figure&gt;</span>
+   <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"http://jekyllrb.com"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"logo.png"</span> <span class="na">style=</span><span class="s">"max-width: 200px;"</span>
+      <span class="na">alt=</span><span class="s">"Jekyll logo"</span> <span class="nt">/&gt;</span>
+   <span class="nt">&lt;/a&gt;</span>
+   <span class="nt">&lt;figcaption&gt;</span>This is the Jekyll logo<span class="nt">&lt;/figcaption&gt;</span>
+<span class="nt">&lt;/figure&gt;</span>
+</code></pre></div></div>
+
+<p>これを、インクルードとパラメータを使用して、次のようにテンプレート化することができます。</p>
+
+<!-- You could templatize this content in your include and make each value available as a parameter, like this: -->
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;figure&gt;
+   &lt;a href="<span class="p">{{</span><span class="w"> </span><span class="nv">include</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">}}</span>"&gt;
+   &lt;img src="<span class="p">{{</span><span class="w"> </span><span class="nv">include</span><span class="p">.</span><span class="nv">file</span><span class="w"> </span><span class="p">}}</span>" style="max-width: <span class="p">{{</span><span class="w"> </span><span class="nv">include</span><span class="p">.</span><span class="nv">max-width</span><span class="w"> </span><span class="p">}}</span>;"
+      alt="<span class="p">{{</span><span class="w"> </span><span class="nv">include</span><span class="p">.</span><span class="nv">alt</span><span class="w"> </span><span class="p">}}</span>"/&gt;
+   &lt;/a&gt;
+   &lt;figcaption&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">include</span><span class="p">.</span><span class="nv">caption</span><span class="w"> </span><span class="p">}}</span>&lt;/figcaption&gt;
+&lt;/figure&gt;
+</code></pre></div></div>
+
+<p>このインクルードの内容には5つのパラメータがあります。</p>
+
+<!-- This include contains 5 parameters: -->
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">url</code></li>
+  <li><code class="language-plaintext highlighter-rouge">max-width</code></li>
+  <li><code class="language-plaintext highlighter-rouge">file</code></li>
+  <li><code class="language-plaintext highlighter-rouge">alt</code></li>
+  <li><code class="language-plaintext highlighter-rouge">caption</code></li>
+</ul>
+
+<p>このinclude（ファイル名は<code class="language-plaintext highlighter-rouge">image.html</code>とします）に全てのパラメータを渡す例です。</p>
+
+<!-- Here's an example that passes all the parameters to this include (the include file is named `image.html`): -->
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span>image.html<span class="w"> </span><span class="na">url</span><span class="o">=</span><span class="s2">"http://jekyllrb.com"</span><span class="err">
+</span><span class="na">max-width</span><span class="o">=</span><span class="s2">"200px"</span><span class="w"> </span><span class="na">file</span><span class="o">=</span><span class="s2">"logo.png"</span><span class="w"> </span><span class="na">alt</span><span class="o">=</span><span class="s2">"Jekyll logo"</span><span class="err">
+</span><span class="na">caption</span><span class="o">=</span><span class="s2">"This is the Jekyll logo."</span><span class="w"> </span><span class="p">%}</span>
+</code></pre></div></div>
+
+<p>これで、出力されるHTMLは最初に示したものになります。</p>
+
+<!-- The result is the original HTML code shown earlier. -->
+
+<p>ユーザーがパラメータを指定しない状況への対策として、<a href="https://shopify.github.io/liquid/filters/default/" target="_blank">Liquid’s default filter</a>を使用できます。</p>
+
+<!-- To safeguard situations where users don't supply a value for the parameter, you can use [Liquid's default filter](https://shopify.github.io/liquid/filters/default/). -->
+
+<p>全体として、オーディオクリップやビデオクリップの挿入、アラート、特別なフォーマットなど、さまざまな用途のテンプレートとして機能するインクルードを作成できます。あまりにも多くのインクルードを使うことは避けるようにしてください。サイトの構築時間が遅くなります。例えば、画像を挿入する度にインクルードを使うのは避けるべきです。（上記のテクニックは特別な画像のための例です。）</p>
+
+<!-- Overall, you can create includes that act as templates for a variety of uses &mdash; inserting audio or video clips, alerts, special formatting, and more. Note that you should avoid using too many includes, as this will slow down the build time of your site. For example, don't use includes every time you insert an image. (The above technique shows a use case for special images.) -->
+
+<h3 id="インクルードにパラメータ変数を渡す">インクルードにパラメータ変数を渡す</h3>
+<!-- ### Passing parameter variables to includes -->
+
+<p>インクルードに渡したいパラメータが、文字列ではなく変数である場合もあるでしょう。例えば実際の製品の名前ではなく、<code class="language-plaintext highlighter-rouge">{{ site.product_name }}</code>を使用して製品の全てのインスタンスを参照している場合です。（この場合、<code class="language-plaintext highlighter-rouge">_config.yml</code>ファイルで<code class="language-plaintext highlighter-rouge">product_name</code>キーに製品名が設定されています）</p>
+
+<!-- Suppose the parameter you want to pass to the include is a variable rather than a string. For example, you might be using `{{ site.product_name }}` to refer to every instance of your product rather than the actual hard-coded name. (In this case, your `_config.yml` file would have a key called `product_name` with a value of your product's name.) -->
+
+<p>インクルードに渡すパラメータの値に中括弧は使用できません。例えば、<code class="language-plaintext highlighter-rouge">"The latest version of {{ site.product_name }} is now available."</code>の値のパラメータは渡せません。</p>
+
+<!-- The string you pass to your include parameter can't contain curly braces. For example, you can't pass a parameter that contains this: `"The latest version of {{ site.product_name }} is now available."` -->
+
+<p>インクルードに渡す値に変数を含める場合は、その前に全体を変数として格納する必要があります。<code class="language-plaintext highlighter-rouge">capture</code>タグを使用して変数を作成します。</p>
+
+<!-- If you want to include this variable in your parameter that you pass to an include, you need to store the entire parameter as a variable before passing it to the include. You can use `capture` tags to create the variable: -->
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">capture</span><span class="w"> </span><span class="nv">download_note</span><span class="w"> </span><span class="p">%}</span>
+The latest version of <span class="p">{{</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">product_name</span><span class="w"> </span><span class="p">}}</span> is now available.
+<span class="p">{%</span><span class="w"> </span><span class="nt">endcapture</span><span class="w"> </span><span class="p">%}</span>
+</code></pre></div></div>
+
+<p>captureした変数をインクルードのパラメータとして渡します。文字列ではなくなったので、変数名を引用符で囲まないでください。</p>
+
+<!-- Then pass this captured variable into the parameter for the include. Omit the quotation marks around the parameter content because it's no longer a string (it's a variable): -->
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span>note.html<span class="w"> </span><span class="na">content</span><span class="o">=</span><span class="nv">download_note</span><span class="w"> </span><span class="p">%}</span>
+</code></pre></div></div>
+
+
+        </article>
+      </div>
+      <div class="unit one-fifth hide-on-mobiles">
+  <aside>
+    <h4>入門</h4>
+      <ul>
+        <li><a href="/docs/">クイックスタート</a></li>
+        <li><a href="/docs/ruby-101/">Ruby基礎</a></li>
+        <li><a href="/docs/installation/">インストール</a></li>
+        <li><a href="/docs/community/">コミュニティ</a></li>
+        <li><a href="/docs/step-by-step/01-setup/">Step by Stepチュートリアル</a></li>
+      </ul>
+    <h4>ビルド</h4>
+      <ul>
+        <li><a href="/docs/usage/">コマンドラインの使い方</a></li>
+        <li><a href="/docs/configuration/">構成・設定</a></li>
+      </ul>
+    <h4>コンテンツ</h4>
+      <ul>
+        <li><a href="/docs/pages/">Pages（ページ）</a></li>
+        <li><a href="/docs/posts/">Posts（ポスト）</a></li>
+        <li><a href="/docs/front-matter/">Front Matter</a></li>
+        <li><a href="/docs/collections/">コレクション</a></li>
+        <li><a href="/docs/datafiles/">Dataファイル</a></li>
+        <li><a href="/docs/assets/">Assets</a></li>
+        <li><a href="/docs/static-files/">静的ファイル</a></li>
+      </ul>
+    <h4>サイトの構成</h4>
+      <ul>
+        <li><a href="/docs/structure/">ディレクトリ構成</a></li>
+        <li><a href="/docs/liquid/">Liquid</a></li>
+        <li><a href="/docs/variables/">変数</a></li>
+        <li class="current"><a href="/docs/includes/">Includes（インクルード）</a></li>
+        <li><a href="/docs/layouts/">レイアウト</a></li>
+        <li><a href="/docs/permalinks/">パーマリンク</a></li>
+        <li><a href="/docs/themes/">テーマ</a></li>
+        <li><a href="/docs/pagination/">Pagination（ページ分け）</a></li>
+      </ul>
+    <h4>ガイド</h4>
+      <ul>
+        <li><a href="/docs/plugins/">プラグイン</a></li>
+        <li><a href="/docs/migrations/">ブログの移行</a></li>
+        <li><a href="/docs/upgrading/">アップグレード</a></li>
+        <li><a href="/docs/deployment/">Deployment</a></li>
+      </ul>
+    </aside>
+</div>
+<div class="clear"></div>
+    </div>
+  </section>
+<footer>
+  <div class="grid">
+    <div class="unit one-third center-on-mobiles">
+      <p>Jekyllはボランティアの<a href="/team/">コアチーム</a>により愛情を込めて維持されています。</p>
+      <p>このWebサイトのコンテンツは<a href="https://github.com/jekyll/jekyll/blob/master/LICENSE" target="_blank">MIT&nbsp;License</a>に基づきます。&copy;&nbsp;2020</p>
+      <!-- <p>Jekyll is lovingly maintained by the <a href="/team/">core team</a> of volunteers. </p>
+      <p>The contents of this website are <br />&copy;&nbsp;2020 under the terms of the <a href="https://github.com/jekyll/jekyll/blob/master/LICENSE">MIT&nbsp;License</a>.</p> -->
+    </div>
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>
+        Proudly hosted by
+        <a href="https://github.com">
+          <img src="/img/footer-logo.png" width="100" height="30" alt="GitHub • Social coding">
+        </a>
+      </p>
+    </div>
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>
+        Jekyll is funded thanks to its
+        <a href="https://github.com/jekyll/jekyll#sponsors">
+          sponsors!
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
+<script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<span class=\"sr-only\">Permalink</span><i class=\"fa fa-link\"></i>";
+    anchor.title = "Permalink";
+    return anchor;
+  };
+
+  var linkifyAnchors = function (level, containingElement) {
+    var headers = containingElement.getElementsByTagName("h" + level);
+    for (var h = 0; h < headers.length; h++) {
+      var header = headers[h];
+
+      if (typeof header.id !== "undefined" && header.id !== "") {
+        header.appendChild(anchorForId(header.id));
+      }
+    }
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var contentBlock = document.getElementsByClassName("docs")[0] || document.getElementsByClassName("news")[0];
+      if (!contentBlock) {
+        return;
+      }
+      for (var level = 1; level <= 6; level++) {
+        linkifyAnchors(level, contentBlock);
+      }
+    }
+  };
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script type="text/javascript"> docsearch({
+apiKey: '50fe39c839958dfad797000f33e2ec17',
+indexName: 'jekyllrb',
+inputSelector: '#docsearch-input',
+enhancedSearchInput: true,
+debug: false // Set debug to true if you want to inspect the dropdown
+});
+</script>
+</body>
+</html>

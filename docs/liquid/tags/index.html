@@ -1,0 +1,430 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link type="application/atom+xml" rel="alternate" href="http://jekyllrb-ja.github.io/feed.xml" title="Jekyll • シンプルで、ブログのような、静的サイト" />
+  <link type="application/atom+xml" rel="alternate" href="/feed/release.xml" title="Jekyll releases posts" />
+  <link rel="alternate" type="application/atom+xml" title="Recent commits to Jekyll’s master branch" href="https://github.com/jekyll/jekyll/commits/master.atom">
+  <link rel="preload" href="/fonts/lato-v14-latin-300.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/lato-v14-latin-700.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/css/screen.css" as="style">
+  <link rel="stylesheet" href="/css/screen.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>タグフィルタ | Jekyll • シンプルで、ブログのような、静的サイト</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="タグフィルタ" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="プレーンテキストを静的サイトやブログに変えましょう" />
+<meta property="og:description" content="プレーンテキストを静的サイトやブログに変えましょう" />
+<link rel="canonical" href="http://jekyllrb-ja.github.io/docs/liquid/tags/" />
+<meta property="og:url" content="http://jekyllrb-ja.github.io/docs/liquid/tags/" />
+<meta property="og:site_name" content="Jekyll • シンプルで、ブログのような、静的サイト" />
+<meta property="og:image" content="http://jekyllrb-ja.github.io/img/jekyll-og.png" />
+<script type="application/ld+json">
+{"headline":"タグフィルタ","image":"http://jekyllrb-ja.github.io/img/jekyll-og.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://jekyllrb-ja.github.io/img/logo-2x.png"}},"url":"http://jekyllrb-ja.github.io/docs/liquid/tags/","description":"プレーンテキストを静的サイトやブログに変えましょう","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <!--[if lt IE 9]>
+  <script src="/js/html5shiv.min.js"></script>
+  <script src="/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body class="wrap"><header>
+  <div class="flexbox">
+    <div class="center-on-mobiles">
+      <h1>
+        <a href="/" class="logo">
+          <span class="sr-only">Jekyll</span>
+          <img src="/img/logo-2x.png" width="140" height="65" alt="Jekyll Logo">
+        </a>
+      </h1>
+    </div>
+    <nav class="main-nav hide-on-mobiles">
+      <ul>
+  <li><a href="/">Home</a></li>
+  <li class="current"><a href="/docs/">Docs</a></li>
+  <li><a href="/resources/">Resources</a></li>
+  <li><a href="/showcase/">Showcase</a></li>
+  <li><a href="/news/">News</a></li>
+  </ul>
+</nav>
+    <div class="search hide-on-mobiles">
+      <input type="text" id="docsearch-input" placeholder="Search the docs…">
+</div>
+    <div class="meta hide-on-mobiles">
+      <ul>
+        <li><a href="https://github.com/jekyll/jekyll/releases/tag/v4.1.1">v4.1.1</a></li>
+        <li><a href="https://github.com/jekyll/jekyll">GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+  <nav class="mobile-nav show-on-mobiles">
+    <ul>
+  <li><a href="/">Home</a></li>
+    <li class="current"><a href="/docs/">Docs</a></li>
+    <li><a href="/resources/">Resources</a></li>
+    <li><a href="/news/">News</a></li>
+    <li><a href="https://github.com/jekyll/jekyll">GitHub</a></li>
+</ul>
+</nav>
+</header>
+  <section class="docs">
+    <div class="grid">
+      <div class="docs-nav-mobile unit whole show-on-mobiles">
+  <select onchange="if (this.value) window.location.href=this.value">
+    <option value="">Navigate the docs…</option>
+    <optgroup label="入門">
+      <option value="/docs/">クイックスタート</option>
+      <option value="/docs/ruby-101/">Ruby基礎</option>
+      <option value="/docs/installation/">インストール</option>
+      <option value="/docs/community/">コミュニティ</option>
+      <option value="/docs/step-by-step/01-setup/">Step by Stepチュートリアル</option>
+    </optgroup>
+    <optgroup label="ビルド">
+      <option value="/docs/usage/">コマンドラインの使い方</option>
+      <option value="/docs/configuration/">構成・設定</option>
+    </optgroup>
+    <optgroup label="コンテンツ">
+      <option value="/docs/pages/">Pages（ページ）</option>
+      <option value="/docs/posts/">Posts（ポスト）</option>
+      <option value="/docs/front-matter/">Front Matter</option>
+      <option value="/docs/collections/">コレクション</option>
+      <option value="/docs/datafiles/">Dataファイル</option>
+      <option value="/docs/assets/">Assets</option>
+      <option value="/docs/static-files/">静的ファイル</option>
+    </optgroup>
+    <optgroup label="サイトの構成">
+      <option value="/docs/structure/">ディレクトリ構成</option>
+      <option value="/docs/liquid/">Liquid</option>
+      <option value="/docs/variables/">変数</option>
+      <option value="/docs/includes/">Includes（インクルード）</option>
+      <option value="/docs/layouts/">レイアウト</option>
+      <option value="/docs/permalinks/">パーマリンク</option>
+      <option value="/docs/themes/">テーマ</option>
+      <option value="/docs/pagination/">Pagination（ページ分け）</option>
+    </optgroup>
+    <optgroup label="ガイド">
+      <option value="/docs/plugins/">プラグイン</option>
+      <option value="/docs/migrations/">ブログの移行</option>
+      <option value="/docs/upgrading/">アップグレード</option>
+      <option value="/docs/deployment/">Deployment</option>
+    </optgroup>
+    </select>
+</div>
+<div class="unit four-fifths">
+        <article>
+          <div class="improve right hide-on-mobiles">
+            <a data-proofer-ignore href="https://github.com/jekyll/jekyll/edit/master/docs/_docs/liquid/tags.md"><i class="fa fa-pencil"></i>  Improve this page</a>
+          </div>
+          <h1>タグフィルタ</h1>
+          <!-- ---
+title: Tags Filters
+permalink: "/docs/liquid/tags/"
+--- -->
+
+<p>標準のLiquid<a href="https://shopify.github.io/liquid/tags/control-flow/" target="_blank">タグ</a>は全てサポートされています。Jekyllはサイト構築のためにいくつかの組み込みタグを用意しています。また、あなた自身のタグを<a href="/docs/plugins/">プラグイン</a>を使用して作成することもできます。</p>
+
+<!-- All of the standard Liquid
+[tags](https://shopify.github.io/liquid/tags/control-flow/) are supported.
+Jekyll has a few built in tags to help you build your site. You can also create
+your own tags using [plugins](/docs/plugins/). -->
+
+<h2 id="includes">Includes</h2>
+
+<p>サイトに渡り、繰り返すページ構文がある場合は、<a href="/docs/includes/">include</a>は管理面からもよい方法です。</p>
+
+<!-- If you have page snippets that you use repeatedly across your site, an
+[include](/docs/includes/) is the perfect way to make this more maintainable. -->
+
+<h2 id="コードの構文ハイライト">コードの構文ハイライト</h2>
+<!-- ## Code snippet highlighting -->
+
+<p>Jekyllは<a href="http://rouge.jneen.net" target="_blank">Rouge</a>のおかげで100言語以上のシンタックスハイライトを組み込みサポートしています。RougeはJekyll 3以上のデフォルトのハイライターです。</p>
+
+<!-- Jekyll has built in support for syntax highlighting of over 100 languages
+thanks to [Rouge](http://rouge.jneen.net). Rouge is the default highlighter
+in Jekyll 3 and above.  -->
+
+<p class="note warning">Pygmentsの使用は推奨されず、Jekyll 4ではサポートされていません。<code>highlighter: pygments</code>の設定は、Pygmentsのスタイルシートと100%互換のRubyで書かれた<em>Rouge</em>の使用に、自動的に変更されます。</p>
+
+<p><!-- {: .note .warning}
+  Using Pygments has been deprecated and is not supported in
+  Jekyll 4; the configuration setting <code>highlighter: pygments</code>
+  now automatically falls back to using <em>Rouge</em> which is written in Ruby
+  and 100% compatible with stylesheets for Pygments. --></p>
+
+<p>コードブロックのシンタックスハイライトのレンダリングは、以下のようにコードを囲みます。</p>
+
+<!-- To render a code block with syntax highlighting, surround your code as follows: -->
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">highlight</span><span class="w"> </span>ruby<span class="w"> </span><span class="p">%}</span>
+def foo
+  puts 'foo'
+end
+<span class="p">{%</span><span class="w"> </span><span class="nt">endhighlight</span><span class="w"> </span><span class="p">%}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">highlight</code>タグの引数（上記の例では<code class="language-plaintext highlighter-rouge">ruby</code>）は言語の識別子です。ハイライトしたい言語の適切な識別子は<a href="https://github.com/jayferd/rouge/wiki/List-of-supported-languages-and-lexers" target="_blank">Rouge
+wiki</a>から“short name”を探してください。</p>
+
+<!-- The argument to the `highlight` tag (`ruby` in the example above) is the
+language identifier. To find the appropriate identifier to use for the language
+you want to highlight, look for the “short name” on the [Rouge
+wiki](https://github.com/jayferd/rouge/wiki/List-of-supported-languages-and-lexers). -->
+
+<div class="note">
+  <h5>Jekyllはコードブロックに全てのLiquidフィルタを適用します</h5>
+  <!-- <h5>Jekyll processes all Liquid filters in code blocks</h5> -->
+  <p>使用する言語に中括弧がある場合、<code>{% raw %}</code>と<code>{% endraw %}</code>でコードを囲む必要があります。Jekyll<span class="version-badge" title="This feature is available starting version 4.0">4.0</span>
+以降、front matterに<code>render_with_liquid: false</code>を追加することで、特定のドキュメントに対してLiquidを完全に無効にできます。</p>
+    <!-- <p>If you are using a language that contains curly braces, you
+      will likely need to place <code>{&#37; raw &#37;}</code> and
+      <code>{&#37; endraw &#37;}</code> tags around your code.
+      Since Jekyll<span class="version-badge" title="This feature is available starting version 4.0">4.0</span>
+ you can add <code>render_with_liquid: false</code> in your front matter to disable Liquid entirely for a particular document.</p> -->
+</div>
+
+<h3 id="行番号">行番号</h3>
+<!-- ### Line numbers -->
+
+<p><code class="language-plaintext highlighter-rouge">linenos</code>という<code class="language-plaintext highlighter-rouge">highlight</code>の2番目の引数はオプションです。<code class="language-plaintext highlighter-rouge">linenos</code>引数を含む場合、ハイライトコードは強制的に行番号を含みます。例えば、以下のコードブロックは各行に行番号が振られます。</p>
+
+<!-- There is a second argument to `highlight` called `linenos` that is optional.
+Including the `linenos` argument will force the highlighted code to include line
+numbers. For instance, the following code block would include line numbers next
+to each line: -->
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">highlight</span><span class="w"> </span>ruby<span class="w"> </span>linenos<span class="w"> </span><span class="p">%}</span>
+def foo
+  puts 'foo'
+end
+<span class="p">{%</span><span class="w"> </span><span class="nt">endhighlight</span><span class="w"> </span><span class="p">%}</span>
+</code></pre></div></div>
+
+<h3 id="シンタックスハイライトのスタイルシート">シンタックスハイライトのスタイルシート</h3>
+<!-- ### Stylesheets for syntax highlighting -->
+
+<p>ハイライトを表示するために、ハイライトのスタイルシートを含める必要があります。PygmentsやRougeには、Pygmentsのスタイルシートを使用でき、<a href="https://jwarby.github.io/jekyll-pygments-themes/languages/ruby.html" target="_blank">こちら</a>のギャラリーや<a href="https://github.com/jwarby/jekyll-pygments-themes">そのリポジトリ</a>で見つけることができます。</p>
+
+<!-- In order for the highlighting to show up, you’ll need to include a highlighting
+stylesheet. For Pygments or Rouge you can use a stylesheet for Pygments, you
+can find an example gallery
+[here](https://jwarby.github.io/jekyll-pygments-themes/languages/ruby.html)
+or from [its repository](https://github.com/jwarby/jekyll-pygments-themes).-->
+
+<p>あなたのcssディレクトリにCSSファイル(例えば、<code class="language-plaintext highlighter-rouge">native.css</code>)をコピーし、シンタックスハイライトのスタイルを<code class="language-plaintext highlighter-rouge">main.css</code>にインポートします。</p>
+
+<!--Copy the CSS file (`native.css` for example) into your css directory and import
+the syntax highlighter styles into your `main.css`:-->
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@import</span> <span class="s1">"native.css"</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h2 id="リンク">リンク</h2>
+<!-- ## Links -->
+
+<p class="note">Jekyll <span class="version-badge" title="This feature is available starting version v4.0">v4.0</span>
+以降、<code class="language-plaintext highlighter-rouge">link</code>や<code class="language-plaintext highlighter-rouge">post_url</code>タグの前に<code class="language-plaintext highlighter-rouge">site.baseurl</code>を使用する必要がなくなりました。</p>
+
+<!-- {: .note}
+Since Jekyll <span class="version-badge" title="This feature is available starting version v4.0">v4.0</span>
+ you don't need to prepend `link` and `post_url` tags with `site.baseurl` -->
+
+<h3 id="link">ページのリンク</h3>
+<!-- ### Linking to pages {#link} -->
+
+<p>ポストやページ、コレクションアイテム、ファイルへのリンクは<code class="language-plaintext highlighter-rouge">link</code>タグで指定したパスへのパーマリンクURLを取得生成します。例えば、<code class="language-plaintext highlighter-rouge">mypage.html</code>へのリンクに<code class="language-plaintext highlighter-rouge">link</code>タグを使用した場合、パーマリンクのスタイルを拡張子を含むよう・含まないよう変更したとしても、<code class="language-plaintext highlighter-rouge">link</code>タグで作成したURLは常に有効です。</p>
+
+<!-- To link to a post, a page, collection item, or file, the `link` tag will generate the correct permalink URL for the path you specify. For example, if you use the `link` tag to link to `mypage.html`, even if you change your permalink style to include the file extension or omit it, the URL formed by the `link` tag will always be valid. -->
+
+<p><code class="language-plaintext highlighter-rouge">link</code>タグを使用するときは、ファイルの元々の拡張子を含めなければなりません。以下にいくつか例を示します。</p>
+
+<!-- You must include the file's original extension when using the `link` tag. Here are some examples: -->
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">link</span><span class="w"> </span>_collection/name-of-document.md<span class="w"> </span><span class="p">%}</span>
+<span class="p">{%</span><span class="w"> </span><span class="nt">link</span><span class="w"> </span>_posts/2016-07-26-name-of-post.md<span class="w"> </span><span class="p">%}</span>
+<span class="p">{%</span><span class="w"> </span><span class="nt">link</span><span class="w"> </span>news/index.html<span class="w"> </span><span class="p">%}</span>
+<span class="p">{%</span><span class="w"> </span><span class="nt">link</span><span class="w"> </span>/assets/files/doc.pdf<span class="w"> </span><span class="p">%}</span>
+</code></pre></div></div>
+
+<p>以下のように、Markdownのリンク作成にも<code class="language-plaintext highlighter-rouge">link</code>タグを使用できます。</p>
+
+<!-- You can also use the `link` tag to create a link in Markdown as follows: -->
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[Link to a document](<span class="p">{%</span><span class="w"> </span><span class="nt">link</span><span class="w"> </span>_collection/name-of-document.md<span class="w"> </span><span class="p">%}</span>)
+[Link to a post](<span class="p">{%</span><span class="w"> </span><span class="nt">link</span><span class="w"> </span>_posts/2016-07-26-name-of-post.md<span class="w"> </span><span class="p">%}</span>)
+[Link to a page](<span class="p">{%</span><span class="w"> </span><span class="nt">link</span><span class="w"> </span>news/index.html<span class="w"> </span><span class="p">%}</span>)
+[Link to a file](<span class="p">{%</span><span class="w"> </span><span class="nt">link</span><span class="w"> </span>/assets/files/doc.pdf<span class="w"> </span><span class="p">%}</span>)
+</code></pre></div></div>
+
+<p>ポストやページ、コレクションへのパスは、（設定ファイルのある）rootディレクトリからの相対パスで定義されます。既存のページから他のページへのパスではありません。</p>
+
+<!-- The path to the post, page, or collection is defined as the path relative to the root directory (where your config file is) to the file, not the path from your existing page to the other page. -->
+
+<p>例えば、（<code class="language-plaintext highlighter-rouge">pages/folder1/folder2</code>にある）<code class="language-plaintext highlighter-rouge">page_a.md</code>で、（<code class="language-plaintext highlighter-rouge">pages/folder1</code>にある）<code class="language-plaintext highlighter-rouge">page_b.md</code>へのリンクを作成しているとします。パスは<code class="language-plaintext highlighter-rouge">../page_b.html</code>ではありません。代わりに、<code class="language-plaintext highlighter-rouge">/pages/folder1/page_b.md</code>を使用します。</p>
+
+<!-- For example, suppose you're creating a link in `page_a.md` (stored in `pages/folder1/folder2`) to `page_b.md` (stored in  `pages/folder1`). Your path in the link would not be `../page_b.html`. Instead, it would be `/pages/folder1/page_b.md`. -->
+
+<p>パスが分からない場合、ページに<code class="language-plaintext highlighter-rouge">{{ page.path }}</code>を追加し、パスを表示します。</p>
+
+<!-- If you're unsure of the path, add `{{ page.path }}` to the page and it will display the path. -->
+
+<p><code class="language-plaintext highlighter-rouge">link</code>または<code class="language-plaintext highlighter-rouge"> post_url</code>タグを使用することの一つの大きな利点はリンク検証です。リンクが存在しない場合、Jekyllはあなたのサイトを構築しません。リンクが壊れていることを警告するので、（リンクが壊れたサイトを構築し公開するのではなく）修正することができます。</p>
+
+<!-- One major benefit of using the `link` or `post_url` tag is link validation. If the link doesn't exist, Jekyll won't build your site. This is a good thing, as it will alert you to a broken link so you can fix it (rather than allowing you to build and deploy a site with broken links). -->
+
+<p><code class="language-plaintext highlighter-rouge">link</code>タグにフィルタは追加できませんので注意してください。例えば、<code class="language-plaintext highlighter-rouge">{% link mypage.html | append: "#section1" %}</code>のようにLiquidフィルタで文字列を追加することはできません。ページのセクションへのリンクは、通常のHTMlやMarkdownのリンク方法を使用する必要があります。</p>
+
+<!-- Note you cannot add filters to `link` tags. For example, you cannot append a string using Liquid filters, such as `{% link mypage.html | append: "#section1" %}`. To link to sections on a page, you will need to use regular HTML or Markdown linking techniques. -->
+
+<h3 id="ポストへのリンク">ポストへのリンク</h3>
+<!-- ### Linking to posts -->
+
+<p>サイトのポストへのリンクを行いたい場合、<code class="language-plaintext highlighter-rouge">post_url</code>タグで指定したポストへのリンクを取得生成できます。</p>
+
+<!-- If you want to include a link to a post on your site, the `post_url` tag will generate the correct permalink URL for the post you specify. -->
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">post_url</span><span class="w"> </span><span class="mi">2010</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">21</span><span class="o">-</span>name-of-post<span class="w"> </span><span class="p">%}</span>
+</code></pre></div></div>
+
+<p>ポストをサブディレクトリに整理している場合は、ポストへのパスにサブディレクトリを含めます。</p>
+
+<!-- If you organize your posts in subdirectories, you need to include subdirectory path to the post: -->
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">post_url</span><span class="w"> </span>/subdir/2010-07-21-name-of-post<span class="w"> </span><span class="p">%}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">post_url</code>タグを使用するときは、ファイルの拡張子を含める必要はありません。</p>
+
+<!-- There is no need to include the file extension when using the `post_url` tag. -->
+
+<p>以下のようにMarkdownでのポストへのリンク作成でも、このタグを使用できます。</p>
+
+<!-- You can also use this tag to create a link to a post in Markdown as follows: -->
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[Name of Link](<span class="p">{%</span><span class="w"> </span><span class="nt">post_url</span><span class="w"> </span><span class="mi">2010</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">21</span><span class="o">-</span>name-of-post<span class="w"> </span><span class="p">%}</span>)
+</code></pre></div></div>
+
+
+        </article>
+      </div>
+      <div class="unit one-fifth hide-on-mobiles">
+  <aside>
+    <h4>入門</h4>
+      <ul>
+        <li><a href="/docs/">クイックスタート</a></li>
+        <li><a href="/docs/ruby-101/">Ruby基礎</a></li>
+        <li><a href="/docs/installation/">インストール</a></li>
+        <li><a href="/docs/community/">コミュニティ</a></li>
+        <li><a href="/docs/step-by-step/01-setup/">Step by Stepチュートリアル</a></li>
+      </ul>
+    <h4>ビルド</h4>
+      <ul>
+        <li><a href="/docs/usage/">コマンドラインの使い方</a></li>
+        <li><a href="/docs/configuration/">構成・設定</a></li>
+      </ul>
+    <h4>コンテンツ</h4>
+      <ul>
+        <li><a href="/docs/pages/">Pages（ページ）</a></li>
+        <li><a href="/docs/posts/">Posts（ポスト）</a></li>
+        <li><a href="/docs/front-matter/">Front Matter</a></li>
+        <li><a href="/docs/collections/">コレクション</a></li>
+        <li><a href="/docs/datafiles/">Dataファイル</a></li>
+        <li><a href="/docs/assets/">Assets</a></li>
+        <li><a href="/docs/static-files/">静的ファイル</a></li>
+      </ul>
+    <h4>サイトの構成</h4>
+      <ul>
+        <li><a href="/docs/structure/">ディレクトリ構成</a></li>
+        <li><a href="/docs/liquid/">Liquid</a></li>
+        <li><a href="/docs/variables/">変数</a></li>
+        <li><a href="/docs/includes/">Includes（インクルード）</a></li>
+        <li><a href="/docs/layouts/">レイアウト</a></li>
+        <li><a href="/docs/permalinks/">パーマリンク</a></li>
+        <li><a href="/docs/themes/">テーマ</a></li>
+        <li><a href="/docs/pagination/">Pagination（ページ分け）</a></li>
+      </ul>
+    <h4>ガイド</h4>
+      <ul>
+        <li><a href="/docs/plugins/">プラグイン</a></li>
+        <li><a href="/docs/migrations/">ブログの移行</a></li>
+        <li><a href="/docs/upgrading/">アップグレード</a></li>
+        <li><a href="/docs/deployment/">Deployment</a></li>
+      </ul>
+    </aside>
+</div>
+<div class="clear"></div>
+    </div>
+  </section>
+<footer>
+  <div class="grid">
+    <div class="unit one-third center-on-mobiles">
+      <p>Jekyllはボランティアの<a href="/team/">コアチーム</a>により愛情を込めて維持されています。</p>
+      <p>このWebサイトのコンテンツは<a href="https://github.com/jekyll/jekyll/blob/master/LICENSE" target="_blank">MIT License</a>に基づきます。© 2020</p>
+      <!-- <p>Jekyll is lovingly maintained by the <a href="/team/">core team</a> of volunteers. </p>
+      <p>The contents of this website are <br />&copy;&nbsp;2020 under the terms of the <a href="https://github.com/jekyll/jekyll/blob/master/LICENSE">MIT&nbsp;License</a>.</p> -->
+    </div>
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>
+        Proudly hosted by
+        <a href="https://github.com">
+          <img src="/img/footer-logo.png" width="100" height="30" alt="GitHub • Social coding">
+        </a>
+      </p>
+    </div>
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>
+        Jekyll is funded thanks to its
+        <a href="https://github.com/jekyll/jekyll#sponsors">
+          sponsors!
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
+<script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<span class=\"sr-only\">Permalink</span><i class=\"fa fa-link\"></i>";
+    anchor.title = "Permalink";
+    return anchor;
+  };
+
+  var linkifyAnchors = function (level, containingElement) {
+    var headers = containingElement.getElementsByTagName("h" + level);
+    for (var h = 0; h < headers.length; h++) {
+      var header = headers[h];
+
+      if (typeof header.id !== "undefined" && header.id !== "") {
+        header.appendChild(anchorForId(header.id));
+      }
+    }
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var contentBlock = document.getElementsByClassName("docs")[0] || document.getElementsByClassName("news")[0];
+      if (!contentBlock) {
+        return;
+      }
+      for (var level = 1; level <= 6; level++) {
+        linkifyAnchors(level, contentBlock);
+      }
+    }
+  };
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script type="text/javascript"> docsearch({
+apiKey: '50fe39c839958dfad797000f33e2ec17',
+indexName: 'jekyllrb',
+inputSelector: '#docsearch-input',
+enhancedSearchInput: true,
+debug: false // Set debug to true if you want to inspect the dropdown
+});
+</script>
+</body>
+</html>

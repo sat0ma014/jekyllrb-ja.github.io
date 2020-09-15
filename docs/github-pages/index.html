@@ -1,0 +1,421 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link type="application/atom+xml" rel="alternate" href="http://jekyllrb-ja.github.io/feed.xml" title="Jekyll • シンプルで、ブログのような、静的サイト" />
+  <link type="application/atom+xml" rel="alternate" href="/feed/release.xml" title="Jekyll releases posts" />
+  <link rel="alternate" type="application/atom+xml" title="Recent commits to Jekyll’s master branch" href="https://github.com/jekyll/jekyll/commits/master.atom">
+  <link rel="preload" href="/fonts/lato-v14-latin-300.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/lato-v14-latin-700.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/css/screen.css" as="style">
+  <link rel="stylesheet" href="/css/screen.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>GitHub Pages | Jekyll • シンプルで、ブログのような、静的サイト</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="GitHub Pages" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="GitHub Pagesは、ユーザー、組織、リポジトリの公開Webページで、github.ioかカスタムドメイン名を選択でき、GitHubにホストされています。GitHub PagesはJekyllによって供給されているので、無料でJekyllで運営されているWebサイトをホストするのに最適な方法です。" />
+<meta property="og:description" content="GitHub Pagesは、ユーザー、組織、リポジトリの公開Webページで、github.ioかカスタムドメイン名を選択でき、GitHubにホストされています。GitHub PagesはJekyllによって供給されているので、無料でJekyllで運営されているWebサイトをホストするのに最適な方法です。" />
+<link rel="canonical" href="http://jekyllrb-ja.github.io/docs/github-pages/" />
+<meta property="og:url" content="http://jekyllrb-ja.github.io/docs/github-pages/" />
+<meta property="og:site_name" content="Jekyll • シンプルで、ブログのような、静的サイト" />
+<meta property="og:image" content="http://jekyllrb-ja.github.io/img/jekyll-og.png" />
+<script type="application/ld+json">
+{"headline":"GitHub Pages","image":"http://jekyllrb-ja.github.io/img/jekyll-og.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://jekyllrb-ja.github.io/img/logo-2x.png"}},"url":"http://jekyllrb-ja.github.io/docs/github-pages/","description":"GitHub Pagesは、ユーザー、組織、リポジトリの公開Webページで、github.ioかカスタムドメイン名を選択でき、GitHubにホストされています。GitHub PagesはJekyllによって供給されているので、無料でJekyllで運営されているWebサイトをホストするのに最適な方法です。","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <!--[if lt IE 9]>
+  <script src="/js/html5shiv.min.js"></script>
+  <script src="/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body class="wrap"><header>
+  <div class="flexbox">
+    <div class="center-on-mobiles">
+      <h1>
+        <a href="/" class="logo">
+          <span class="sr-only">Jekyll</span>
+          <img src="/img/logo-2x.png" width="140" height="65" alt="Jekyll Logo">
+        </a>
+      </h1>
+    </div>
+    <nav class="main-nav hide-on-mobiles">
+      <ul>
+  <li><a href="/">Home</a></li>
+  <li class="current"><a href="/docs/">Docs</a></li>
+  <li><a href="/resources/">Resources</a></li>
+  <li><a href="/showcase/">Showcase</a></li>
+  <li><a href="/news/">News</a></li>
+  </ul>
+</nav>
+    <div class="search hide-on-mobiles">
+      <input type="text" id="docsearch-input" placeholder="Search the docs…">
+</div>
+    <div class="meta hide-on-mobiles">
+      <ul>
+        <li><a href="https://github.com/jekyll/jekyll/releases/tag/v4.1.1">v4.1.1</a></li>
+        <li><a href="https://github.com/jekyll/jekyll">GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+  <nav class="mobile-nav show-on-mobiles">
+    <ul>
+  <li><a href="/">Home</a></li>
+    <li class="current"><a href="/docs/">Docs</a></li>
+    <li><a href="/resources/">Resources</a></li>
+    <li><a href="/news/">News</a></li>
+    <li><a href="https://github.com/jekyll/jekyll">GitHub</a></li>
+</ul>
+</nav>
+</header>
+  <section class="docs">
+    <div class="grid">
+      <div class="docs-nav-mobile unit whole show-on-mobiles">
+  <select onchange="if (this.value) window.location.href=this.value">
+    <option value="">Navigate the docs…</option>
+    <optgroup label="入門">
+      <option value="/docs/">クイックスタート</option>
+      <option value="/docs/ruby-101/">Ruby基礎</option>
+      <option value="/docs/installation/">インストール</option>
+      <option value="/docs/community/">コミュニティ</option>
+      <option value="/docs/step-by-step/01-setup/">Step by Stepチュートリアル</option>
+    </optgroup>
+    <optgroup label="ビルド">
+      <option value="/docs/usage/">コマンドラインの使い方</option>
+      <option value="/docs/configuration/">構成・設定</option>
+    </optgroup>
+    <optgroup label="コンテンツ">
+      <option value="/docs/pages/">Pages（ページ）</option>
+      <option value="/docs/posts/">Posts（ポスト）</option>
+      <option value="/docs/front-matter/">Front Matter</option>
+      <option value="/docs/collections/">コレクション</option>
+      <option value="/docs/datafiles/">Dataファイル</option>
+      <option value="/docs/assets/">Assets</option>
+      <option value="/docs/static-files/">静的ファイル</option>
+    </optgroup>
+    <optgroup label="サイトの構成">
+      <option value="/docs/structure/">ディレクトリ構成</option>
+      <option value="/docs/liquid/">Liquid</option>
+      <option value="/docs/variables/">変数</option>
+      <option value="/docs/includes/">Includes（インクルード）</option>
+      <option value="/docs/layouts/">レイアウト</option>
+      <option value="/docs/permalinks/">パーマリンク</option>
+      <option value="/docs/themes/">テーマ</option>
+      <option value="/docs/pagination/">Pagination（ページ分け）</option>
+    </optgroup>
+    <optgroup label="ガイド">
+      <option value="/docs/plugins/">プラグイン</option>
+      <option value="/docs/migrations/">ブログの移行</option>
+      <option value="/docs/upgrading/">アップグレード</option>
+      <option value="/docs/deployment/">Deployment</option>
+    </optgroup>
+    </select>
+</div>
+<div class="unit four-fifths">
+        <article>
+          <div class="improve right hide-on-mobiles">
+            <a data-proofer-ignore href="https://github.com/jekyll/jekyll/edit/master/docs/_docs/github-pages.md"><i class="fa fa-pencil"></i>  Improve this page</a>
+          </div>
+          <h1>GitHub Pages</h1>
+          <p><a href="https://pages.github.com">GitHub Pages</a>は、ユーザー、組織、リポジトリの公開Webページで、<code class="language-plaintext highlighter-rouge">github.io</code>かカスタムドメイン名を選択でき、GitHubにホストされています。GitHub PagesはJekyllによって供給されているので、無料でJekyllで運営されているWebサイトをホストするのに最適な方法です。</p>
+
+<!-- [GitHub Pages](https://pages.github.com) are public web pages for users,
+organizations, and repositories, that are freely hosted on GitHub's `github.io`
+domain or on a custom domain name of your choice. GitHub Pages are powered by
+Jekyll behind the scenes, so they're a great way to host your Jekyll-powered
+website for free. -->
+
+<p>ソースファイルをプッシュすると、GitHub Pagesによりサイトが自動で生成されます。GitHub Pagesは通常のHTMLコンテンツでも同様に機能します。理由は簡単で、Jekyllはfront matterの無いファイルは静的なassetとして扱うためです。生成されたHTMLをプッシュするのでしたら、更なる設定を何もせずに行えばいいです。</p>
+
+<!-- Your site is automatically generated by GitHub Pages when you push your source
+files. Note that GitHub Pages works equally well for regular HTML content,
+simply because Jekyll treats files without front matter as static assets.
+So if you only need to push generated HTML, you're good to go without any
+further setup. -->
+
+<p>GitHub Pagesでサイトを構築するのは初めてですか？　<a href="http://jmcglone.com/guides/github-pages/" target="_blank">Jonathan McGloneによる素晴らしいガイド</a>を見て、行ってみてください。このガイドでは、GitHub Pagesで自身のWebサイトを作るために、GitやGitHub、Jekyllについて知っておくべきことを説明しています。</p>
+
+<!-- Never built a website with GitHub Pages before? [See this marvelous guide by
+Jonathan McGlone](http://jmcglone.com/guides/github-pages/) to get you up and
+running. This guide will teach you what you need to know about Git, GitHub, and
+Jekyll to create your very own website on GitHub Pages. -->
+
+<h2 id="the-github-pages-gem">The github-pages gem</h2>
+
+<p>GitHubの友人たちは、<a href="https://pages.github.com/versions/" target="_blenk">JekyllとそのGitHub Pagesへの依存関係</a>を管理するために使用される<a href="https://github.com/github/pages-gem">github-pages</a>を提供しています。プロジェクトでそれを使うことは、サイトをGitHub Pagesにデプロイするとき、gemの様々なバージョン間の予想外の違いに捕まることはないということを意味します。</p>
+
+<!-- Our friends at GitHub have provided the
+[github-pages](https://github.com/github/pages-gem) gem which is used to manage
+[Jekyll and its dependencies on GitHub Pages](https://pages.github.com/versions/).
+Using it in your projects means that when you deploy your site to GitHub Pages,
+you will not be caught by unexpected differences between various versions of the
+gems. -->
+
+<p>GitHub Pagesは<code class="language-plaintext highlighter-rouge">safe</code>モードで動作し、<a href="https://help.github.com/articles/configuring-jekyll-plugins/#default-plugins" target="_blenk">ホワイトリストに登録されたプラグインのセット</a>のみを許可していることに気をつけてください。</p>
+
+<!-- Note that GitHub Pages runs in `safe` mode and only allows [a set of whitelisted
+plugins](https://help.github.com/articles/configuring-jekyll-plugins/#default-plugins). -->
+
+<p>プロジェクトで現在デプロイされているバージョンのgemを使用するには、<code class="language-plaintext highlighter-rouge">Gemfile</code>に以下を追加します。</p>
+
+<!-- To use the currently-deployed version of the gem in your project, add the
+following to your `Gemfile`: -->
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">source</span> <span class="s2">"https://rubygems.org"</span>
+
+<span class="n">gem</span> <span class="s2">"github-pages"</span><span class="p">,</span> <span class="ss">group: :jekyll_plugins</span>
+</code></pre></div></div>
+
+<p>必ず<code class="language-plaintext highlighter-rouge">bundle update</code>を頻繁に実行してください。</p>
+
+<!-- Be sure to run `bundle update` often. -->
+
+<div class="note">
+  <h5>GitHub Pagesのドキュメンテーションとヘルプ、サポート</h5>
+  <!-- <h5>GitHub Pages Documentation, Help, and Support</h5> -->
+  <p>
+    GitHub Pagesでできることやトラブルシューティングガイドの詳細については、<a href="https://help.github.com/categories/github-pages-basics/" target="_blenk">GitHubのPagesヘルプセクション</a>をご覧ください。 それでもうまくいかない場合は、<a href="https://github.com/contact" target="_blenk">GitHubサポート</a>に連絡してください。
+  </p>
+  <!-- <p>
+    For more information about what you can do with GitHub Pages, as well as for
+    troubleshooting guides, you should check out
+    <a href="https://help.github.com/categories/github-pages-basics/">GitHub’s Pages Help section</a>.
+    If all else fails, you should contact <a href="https://github.com/contact">GitHub Support</a>.
+  </p> -->
+</div>
+
+<h3 id="プロジェクトページのurl構成">プロジェクトページのURL構成</h3>
+<!-- ### Project Page URL Structure -->
+
+<p>GitHubにプッシュする前にJekyllサイトをプレビューした方が良い場合があります。GitHubがプロジェクトページに使用するサブディレクトリのようなURL構造は、URLの適切な解決を複雑にします。あなたのサイトが正しく構築されていることを確認するために、便利な<a href="/docs/liquid/filters/">URLフィルタ</a>を使用してください。</p>
+
+<!-- Sometimes it's nice to preview your Jekyll site before you push your `gh-pages`
+branch to GitHub. The subdirectory-like URL structure GitHub uses for
+Project Pages complicates the proper resolution of URLs. In order to assure your
+site builds properly, use the handy [URL filters](/docs/liquid/filters/): -->
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!-- For styles with static names... --&gt;
+&lt;link href="<span class="p">{{</span><span class="w"> </span><span class="s1">'/assets/css/style.css'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">relative_url</span><span class="w"> </span><span class="p">}}</span>" rel="stylesheet"&gt;
+&lt;!-- For documents/pages whose URLs can change... --&gt;
+[<span class="p">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>]("<span class="p">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">relative_url</span><span class="w"> </span><span class="p">}}</span>")
+</code></pre></div></div>
+
+<p>この方法で、localhost上のサイトrootからローカルでプレビューできます。そして、GitHubがページを生成するときには、全てのURLが正しく解決されます。</p>
+
+<!-- This way you can preview your site locally from the site root on localhost,
+but when GitHub generates your pages from the `gh-pages` branch all the URLs
+will resolve properly. -->
+
+<h2 id="jekyllをgithub-pagesにデプロイ">JekyllをGitHub Pagesにデプロイ</h2>
+<!-- ## Deploying Jekyll to GitHub Pages -->
+
+<p>GitHub PagesはGitHub上のリポジトリの特定のブランチを見ることによって機能します。利用可能な2つの基本的な種類があります：<a href="https://help.github.com/articles/user-organization-and-project-pages/" target="_blenk">user/organization と project pages</a>。これら2種類のサイトを展開する方法は、いくつかの細かい点を除いてほぼ同じです。</p>
+
+<!-- GitHub Pages work by looking at certain branches of repositories on GitHub.
+There are two basic types available: [user/organization and project pages](https://help.github.com/articles/user-organization-and-project-pages/).
+The way to deploy these two types of sites are nearly identical, except for a
+few minor details. -->
+
+<h3 id="userとorganizationページ">UserとOrganizationページ</h3>
+<!-- ### User and Organization Pages -->
+
+<p>UserとOrganizationページは、GitHub Pagesのファイル専用の特別なGitHubリポジトリにあります。このリポジトリは、アカウント名にちなんで命名する必要があります。たとえば、<a href="https://github.com/mojombo/mojombo.github.io" target="_blenk">@mojomboのユーザーページのリポジトリ</a>の名前は<code class="language-plaintext highlighter-rouge">mojombo.github.io</code>です。</p>
+
+<!-- User and organization pages live in a special GitHub repository dedicated to
+only the GitHub Pages files. This repository must be named after the account
+name. For example, [@mojombo’s user page repository](https://github.com/mojombo/mojombo.github.io) has the name
+`mojombo.github.io`. -->
+
+<p>GitHub Pagesサイトの構築と公開には、リポジトリの<code class="language-plaintext highlighter-rouge">master</code>ブランチのコンテンツが使用されます。そのため、Jekyllサイトがそこに格納されていることを確認してください。</p>
+
+<!-- Content from the `master` branch of your repository will be used to build and
+publish the GitHub Pages site, so make sure your Jekyll site is stored there. -->
+
+<div class="note info">
+  <h5>カスタムドメインはリポジトリ名に影響しません</h5>
+  <!-- <h5>Custom domains do not affect repository names</h5> -->
+  <p>
+    GitHub Pagesは、まず<code>username.github.io</code>サブドメインの下に存在するように設定されています。そのため、<strong>カスタムドメインを使用している場合でも</strong>、リポジトリにこのように名前を付ける必要があります。
+  </p>
+  <!-- <p>
+    GitHub Pages are initially configured to live under the
+    <code>username.github.io</code> subdomain, which is why repositories must
+    be named this way <strong>even if a custom domain is being used</strong>.
+  </p> -->
+</div>
+
+<h3 id="project-pages">Project Pages</h3>
+
+<p>UserとOrganizationページとは異なり、プロジェクトページは、目的のプロジェクトと同じリポジトリに保存されます。ただし、Webページのコンテンツは、特別な名前の<code class="language-plaintext highlighter-rouge">gh-pages</code>ブランチ、または<code class="language-plaintext highlighter-rouge">master</code>ブランチの<code class="language-plaintext highlighter-rouge">docs</code>フォルダに格納されているます。コンテンツはJekyllを使用してレンダリングされ、出力は<code class="language-plaintext highlighter-rouge">username.github.io/project</code>などのユーザーページサブドメインのサブパスの下に表示されます（カスタムドメインが指定されていない場合）。</p>
+
+<!-- Unlike user and organization Pages, Project Pages are kept in the same
+repository as the project they are for, except that the website content is
+stored in a specially named `gh-pages` branch or in a `docs` folder on the
+`master` branch. The content will be rendered using Jekyll, and the output
+will become available under a subpath of your user pages subdomain, such as
+`username.github.io/project` (unless a custom domain is specified). -->
+
+<p>Jekyllプロジェクトのリポジトリ自体が、このブランチ構造の完璧な例です。<a href="https://github.com/jekyll/jekyll" target="_blenk">マスターブランチ</a> にはJekyllの実際のソフトウェアプロジェクトが含まれています。現在見ているJekyll Webサイトは、同じリポジトリの<a href="https://github.com/jekyll/jekyll/tree/master/docs" target="_blenk">docsフォルダ</a>にあります。</p>
+
+<!-- The Jekyll project repository itself is a perfect example of this branch
+structure—the [master branch](https://github.com/jekyll/jekyll) contains the
+actual software project for Jekyll, and the Jekyll website that you’re
+looking at right now is contained in the [docs
+folder](https://github.com/jekyll/jekyll/tree/master/docs) of the same repository. -->
+
+<p>より詳細な例については、GitHubの公式ドキュメントの<a href="https://help.github.com/articles/user-organization-and-project-pages/" target="_blenk">user, organization and project pages</a>を参照してください。</p>
+
+<!-- Please refer to GitHub official documentation on
+[user, organization and project pages](https://help.github.com/articles/user-organization-and-project-pages/)
+to see more detailed examples. -->
+
+<div class="note warning">
+  <h5>ソースファイルはrootディレクトリに必要です</h5>
+  <!-- <h5>Source files must be in the root directory</h5> -->
+  <p>
+GitHub Pagesは<a href="/docs/configuration/options/">“Site Source”</a>の設定値を<a href="https://help.github.com/en/github/working-with-github-pages/troubleshooting-jekyll-build-errors-for-github-pages-sites" target="_blank">上書き</a>するため、ファイルをルートディレクトリ以外の場所に配置すると、サイトが正しく構築されない可能性があります。  </p>
+  <!-- <p>
+    GitHub Pages <a href="https://help.github.com/articles/troubleshooting-github-pages-build-failures#source-setting">overrides</a>
+    the <a href="/docs/configuration/options/>“Site Source”</a>
+    configuration value, so if you locate your files anywhere other than the
+    root directory, your site may not build correctly.
+  </p> -->
+</div>
+
+<div class="note info">
+  <h5>Windowsでの<code>github-pages</code> gemのインストール</h5>
+  <!-- <h5>Installing the <code>github-pages</code> gem on Windows</h5> -->
+
+  <p>
+    Windowsは公式にサポートされていませんが、Windows上に<code>github-pages</code> gemをインストールすることは可能です。詳細は<a href="/docs/installation/windows/">Windowsの特別なページ</a>をご覧ください。
+  </p>
+  <!-- <p>
+    While Windows is not officially supported, it is possible
+    to install the <code>github-pages</code> gem on Windows.
+    Special instructions can be found on our
+    <a href="/docs/installation/windows/">Windows-specific docs page</a>.
+  </p> -->
+</div>
+
+        </article>
+      </div>
+      <div class="unit one-fifth hide-on-mobiles">
+  <aside>
+    <h4>入門</h4>
+      <ul>
+        <li><a href="/docs/">クイックスタート</a></li>
+        <li><a href="/docs/ruby-101/">Ruby基礎</a></li>
+        <li><a href="/docs/installation/">インストール</a></li>
+        <li><a href="/docs/community/">コミュニティ</a></li>
+        <li><a href="/docs/step-by-step/01-setup/">Step by Stepチュートリアル</a></li>
+      </ul>
+    <h4>ビルド</h4>
+      <ul>
+        <li><a href="/docs/usage/">コマンドラインの使い方</a></li>
+        <li><a href="/docs/configuration/">構成・設定</a></li>
+      </ul>
+    <h4>コンテンツ</h4>
+      <ul>
+        <li><a href="/docs/pages/">Pages（ページ）</a></li>
+        <li><a href="/docs/posts/">Posts（ポスト）</a></li>
+        <li><a href="/docs/front-matter/">Front Matter</a></li>
+        <li><a href="/docs/collections/">コレクション</a></li>
+        <li><a href="/docs/datafiles/">Dataファイル</a></li>
+        <li><a href="/docs/assets/">Assets</a></li>
+        <li><a href="/docs/static-files/">静的ファイル</a></li>
+      </ul>
+    <h4>サイトの構成</h4>
+      <ul>
+        <li><a href="/docs/structure/">ディレクトリ構成</a></li>
+        <li><a href="/docs/liquid/">Liquid</a></li>
+        <li><a href="/docs/variables/">変数</a></li>
+        <li><a href="/docs/includes/">Includes（インクルード）</a></li>
+        <li><a href="/docs/layouts/">レイアウト</a></li>
+        <li><a href="/docs/permalinks/">パーマリンク</a></li>
+        <li><a href="/docs/themes/">テーマ</a></li>
+        <li><a href="/docs/pagination/">Pagination（ページ分け）</a></li>
+      </ul>
+    <h4>ガイド</h4>
+      <ul>
+        <li><a href="/docs/plugins/">プラグイン</a></li>
+        <li><a href="/docs/migrations/">ブログの移行</a></li>
+        <li><a href="/docs/upgrading/">アップグレード</a></li>
+        <li><a href="/docs/deployment/">Deployment</a></li>
+      </ul>
+    </aside>
+</div>
+<div class="clear"></div>
+    </div>
+  </section>
+<footer>
+  <div class="grid">
+    <div class="unit one-third center-on-mobiles">
+      <p>Jekyllはボランティアの<a href="/team/">コアチーム</a>により愛情を込めて維持されています。</p>
+      <p>このWebサイトのコンテンツは<a href="https://github.com/jekyll/jekyll/blob/master/LICENSE" target="_blank">MIT License</a>に基づきます。© 2020</p>
+      <!-- <p>Jekyll is lovingly maintained by the <a href="/team/">core team</a> of volunteers. </p>
+      <p>The contents of this website are <br />&copy;&nbsp;2020 under the terms of the <a href="https://github.com/jekyll/jekyll/blob/master/LICENSE">MIT&nbsp;License</a>.</p> -->
+    </div>
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>
+        Proudly hosted by
+        <a href="https://github.com">
+          <img src="/img/footer-logo.png" width="100" height="30" alt="GitHub • Social coding">
+        </a>
+      </p>
+    </div>
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>
+        Jekyll is funded thanks to its
+        <a href="https://github.com/jekyll/jekyll#sponsors">
+          sponsors!
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
+<script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<span class=\"sr-only\">Permalink</span><i class=\"fa fa-link\"></i>";
+    anchor.title = "Permalink";
+    return anchor;
+  };
+
+  var linkifyAnchors = function (level, containingElement) {
+    var headers = containingElement.getElementsByTagName("h" + level);
+    for (var h = 0; h < headers.length; h++) {
+      var header = headers[h];
+
+      if (typeof header.id !== "undefined" && header.id !== "") {
+        header.appendChild(anchorForId(header.id));
+      }
+    }
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var contentBlock = document.getElementsByClassName("docs")[0] || document.getElementsByClassName("news")[0];
+      if (!contentBlock) {
+        return;
+      }
+      for (var level = 1; level <= 6; level++) {
+        linkifyAnchors(level, contentBlock);
+      }
+    }
+  };
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script type="text/javascript"> docsearch({
+apiKey: '50fe39c839958dfad797000f33e2ec17',
+indexName: 'jekyllrb',
+inputSelector: '#docsearch-input',
+enhancedSearchInput: true,
+debug: false // Set debug to true if you want to inspect the dropdown
+});
+</script>
+</body>
+</html>

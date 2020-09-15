@@ -1,0 +1,901 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link type="application/atom+xml" rel="alternate" href="http://jekyllrb-ja.github.io/feed.xml" title="Jekyll • シンプルで、ブログのような、静的サイト" />
+  <link type="application/atom+xml" rel="alternate" href="/feed/release.xml" title="Jekyll releases posts" />
+  <link rel="alternate" type="application/atom+xml" title="Recent commits to Jekyll’s master branch" href="https://github.com/jekyll/jekyll/commits/master.atom">
+  <link rel="preload" href="/fonts/lato-v14-latin-300.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/lato-v14-latin-700.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/css/screen.css" as="style">
+  <link rel="stylesheet" href="/css/screen.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Liquidフィルタ | Jekyll • シンプルで、ブログのような、静的サイト</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Liquidフィルタ" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="全ての標準Liquidフィルタはサポートされています（以下をご覧ください）。" />
+<meta property="og:description" content="全ての標準Liquidフィルタはサポートされています（以下をご覧ください）。" />
+<link rel="canonical" href="http://jekyllrb-ja.github.io/docs/liquid/filters/" />
+<meta property="og:url" content="http://jekyllrb-ja.github.io/docs/liquid/filters/" />
+<meta property="og:site_name" content="Jekyll • シンプルで、ブログのような、静的サイト" />
+<meta property="og:image" content="http://jekyllrb-ja.github.io/img/jekyll-og.png" />
+<script type="application/ld+json">
+{"headline":"Liquidフィルタ","image":"http://jekyllrb-ja.github.io/img/jekyll-og.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://jekyllrb-ja.github.io/img/logo-2x.png"}},"url":"http://jekyllrb-ja.github.io/docs/liquid/filters/","description":"全ての標準Liquidフィルタはサポートされています（以下をご覧ください）。","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <!--[if lt IE 9]>
+  <script src="/js/html5shiv.min.js"></script>
+  <script src="/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body class="wrap"><header>
+  <div class="flexbox">
+    <div class="center-on-mobiles">
+      <h1>
+        <a href="/" class="logo">
+          <span class="sr-only">Jekyll</span>
+          <img src="/img/logo-2x.png" width="140" height="65" alt="Jekyll Logo">
+        </a>
+      </h1>
+    </div>
+    <nav class="main-nav hide-on-mobiles">
+      <ul>
+  <li><a href="/">Home</a></li>
+  <li class="current"><a href="/docs/">Docs</a></li>
+  <li><a href="/resources/">Resources</a></li>
+  <li><a href="/showcase/">Showcase</a></li>
+  <li><a href="/news/">News</a></li>
+  </ul>
+</nav>
+    <div class="search hide-on-mobiles">
+      <input type="text" id="docsearch-input" placeholder="Search the docs…">
+</div>
+    <div class="meta hide-on-mobiles">
+      <ul>
+        <li><a href="https://github.com/jekyll/jekyll/releases/tag/v4.1.1">v4.1.1</a></li>
+        <li><a href="https://github.com/jekyll/jekyll">GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+  <nav class="mobile-nav show-on-mobiles">
+    <ul>
+  <li><a href="/">Home</a></li>
+    <li class="current" ><a href="/docs/">Docs</a></li>
+    <li><a href="/resources/">Resources</a></li>
+    <li><a href="/news/">News</a></li>
+    <li><a href="https://github.com/jekyll/jekyll">GitHub</a></li>
+</ul>
+</nav>
+</header>
+  <section class="docs">
+    <div class="grid">
+      <div class="docs-nav-mobile unit whole show-on-mobiles">
+  <select onchange="if (this.value) window.location.href=this.value">
+    <option value="">Navigate the docs…</option>
+    <optgroup label="入門">
+      <option value="/docs/">クイックスタート</option>
+      <option value="/docs/ruby-101/">Ruby基礎</option>
+      <option value="/docs/installation/">インストール</option>
+      <option value="/docs/community/">コミュニティ</option>
+      <option value="/docs/step-by-step/01-setup/">Step by Stepチュートリアル</option>
+    </optgroup>
+    <optgroup label="ビルド">
+      <option value="/docs/usage/">コマンドラインの使い方</option>
+      <option value="/docs/configuration/">構成・設定</option>
+    </optgroup>
+    <optgroup label="コンテンツ">
+      <option value="/docs/pages/">Pages（ページ）</option>
+      <option value="/docs/posts/">Posts（ポスト）</option>
+      <option value="/docs/front-matter/">Front Matter</option>
+      <option value="/docs/collections/">コレクション</option>
+      <option value="/docs/datafiles/">Dataファイル</option>
+      <option value="/docs/assets/">Assets</option>
+      <option value="/docs/static-files/">静的ファイル</option>
+    </optgroup>
+    <optgroup label="サイトの構成">
+      <option value="/docs/structure/">ディレクトリ構成</option>
+      <option value="/docs/liquid/">Liquid</option>
+      <option value="/docs/variables/">変数</option>
+      <option value="/docs/includes/">Includes（インクルード）</option>
+      <option value="/docs/layouts/">レイアウト</option>
+      <option value="/docs/permalinks/">パーマリンク</option>
+      <option value="/docs/themes/">テーマ</option>
+      <option value="/docs/pagination/">Pagination（ページ分け）</option>
+    </optgroup>
+    <optgroup label="ガイド">
+      <option value="/docs/plugins/">プラグイン</option>
+      <option value="/docs/migrations/">ブログの移行</option>
+      <option value="/docs/upgrading/">アップグレード</option>
+      <option value="/docs/deployment/">Deployment</option>
+    </optgroup>
+    </select>
+</div>
+<div class="unit four-fifths">
+        <article>
+          <div class="improve right hide-on-mobiles">
+            <a data-proofer-ignore href="https://github.com/jekyll/jekyll/edit/master/docs/_docs/liquid/filters.md"><i class="fa fa-pencil"></i> &nbsp;Improve this page</a>
+          </div>
+          <h1>Liquidフィルタ</h1>
+          <p>全ての標準Liquid<a href="#standard-liquid-filters">フィルタ</a>はサポートされています（以下をご覧ください）。</p>
+
+<!-- All of the standard Liquid [filters](#standard-liquid-filters) are supported (see below). -->
+
+<p>共通のタスクを簡単にするため、Jekyllはいくらかのフィルタを追加していて、それはこのページに全て掲載しています。また、<a href="/docs/plugins/">プラグイン</a>であなた自身のフィルタを作ることもできます。</p>
+
+<!-- To make common tasks easier, Jekyll even adds a few handy filters of its own,
+all of which you can find on this page. You can also create your own filters
+using [plugins](/docs/plugins/). -->
+
+<div class="mobile-side-scroller">
+<table>
+  <thead>
+    <tr>
+      <th>説明<!-- Description --></th>
+      <th><span class="filter">フィルタ</span>と<span class="output">出力</span><!-- <span class="filter">Filter</span> and <span class="output">Output</span> --></th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>
+          <p id="relative-url" class="name"><strong>Relative URL</strong></p>
+          <p>入力値の前に<code>baseurl</code>を追加する。サイトがrootドメインの場合よりサブパスでホストされている場合に便利です。</p>
+        </td>
+        <td class="align-center">
+            <p><code class="filter">{{ "/assets/style.css" | relative_url }}</code></p>
+            <p><code class="output">/my-baseurl/assets/style.css</code></p>
+          </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <p id="absolute-url" class="name"><strong>Absolute URL</strong></p>
+          <p>入力値の前に<code>url</code>と<code>baseurl</code>を追加する。</p>
+        </td>
+        <td class="align-center">
+            <p><code class="filter">{{ "/assets/style.css" | absolute_url }}</code></p>
+            <p><code class="output">http://example.com/my-baseurl/assets/style.css</code></p>
+          </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <p id="date-to-xml-schema" class="name"><strong>Date to XML Schema</strong></p>
+          <p>DateをXML Schema (ISO 8601)フォーマットに変換する。</p>
+        </td>
+        <td class="align-center">
+            <p><code class="filter">{{ site.time | date_to_xmlschema }}</code></p>
+            <p><code class="output">2008-11-07T13:07:54-08:00</code></p>
+          </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <p id="date-to-rfc-822-format" class="name"><strong>Date to RFC-822 Format</strong></p>
+          <p>DateをRSSフィードで使うthe RFC-822フォーマットに変換する。</p>
+        </td>
+        <td class="align-center">
+            <p><code class="filter">{{ site.time | date_to_rfc822 }}</code></p>
+            <p><code class="output">Mon, 07 Nov 2008 13:07:54 -0800</code></p>
+          </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <p id="date-to-string" class="name"><strong>Date to String</strong></p>
+          <p>dateをshortフォーマットに変換する。</p>
+        </td>
+        <td class="align-center">
+            <p><code class="filter">{{ site.time | date_to_string }}</code></p>
+            <p><code class="output">07 Nov 2008</code></p>
+          </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <p id="date-to-string-in-ordinal-us-style" class="name"><strong>Date to String in ordinal US style</strong></p>
+          <p>Format a date to ordinal, US, short format.
+              <span class="version-badge" title="This filter is available from version 3.8.0">3.8.0</span>
+            </p>
+        </td>
+        <td class="align-center">
+            <p><code class="filter">{{ site.time | date_to_string: "ordinal", "US" }}</code></p>
+            <p><code class="output">Nov 7th, 2008</code></p>
+          </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <p id="date-to-long-string" class="name"><strong>Date to Long String</strong></p>
+          <p>dateをlongフォーマットにする。</p>
+        </td>
+        <td class="align-center">
+            <p><code class="filter">{{ site.time | date_to_long_string }}</code></p>
+            <p><code class="output">07 November 2008</code></p>
+          </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <p id="date-to-long-string-in-ordinal-uk-style" class="name"><strong>Date to Long String in ordinal UK style</strong></p>
+          <p>Format a date to ordinal, UK, long format.
+              <span class="version-badge" title="This filter is available from version 3.8.0">3.8.0</span>
+            </p>
+        </td>
+        <td class="align-center">
+            <p><code class="filter">{{ site.time | date_to_long_string: "ordinal" }}</code></p>
+            <p><code class="output">7th November 2008</code></p>
+          </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <p id="where" class="name"><strong>Where</strong></p>
+          <p>キーで指定した値を持つ配列内のオブジェクトを全て選択する。</p>
+        </td>
+        <td class="align-center">
+            <p><code class="filter">{{ site.members | where:"graduation_year","2014" }}</code></p>
+            
+          </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <p id="where-expression" class="name"><strong>Where Expression</strong></p>
+          <p>式がtrueになる配列内の全てのオブジェクトを選択する。
+              <span class="version-badge" title="This filter is available from version 3.2.0">3.2.0</span>
+            </p>
+        </td>
+        <td class="align-center">
+            <p><code class="filter">{{ site.members | where_exp:"item",
+"item.graduation_year == 2014" }}</code></p>
+            
+          
+            <p><code class="filter">{{ site.members | where_exp:"item",
+"item.graduation_year &lt; 2014" }}</code></p>
+            
+          
+            <p><code class="filter">{{ site.members | where_exp:"item",
+"item.projects contains 'foo'" }}</code></p>
+            
+          </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <p id="find" class="name"><strong>Find</strong></p>
+          <p>指定された属性を持つ配列内の<strong>最初のオブジェクト</strong>を返します。配列内のアイテムが指定された基準を満たさない場合は<code>nil</code>を返します。
+              <span class="version-badge" title="This filter is available from version 4.1.0">4.1.0</span>
+            </p>
+        </td>
+        <td class="align-center">
+            <p><code class="filter">{{ site.members | find: "graduation_year", "2014" }}</code></p>
+            
+          </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <p id="find-expression" class="name"><strong>Find Expression</strong></p>
+          <p>指定された条件を満たすを持つ配列内の<strong>最初のオブジェクト</strong>を返します。配列内のアイテムが指定された条件を満たさない場合は<code>nil</code>を返します。
+              <span class="version-badge" title="This filter is available from version 4.1.0">4.1.0</span>
+            </p>
+        </td>
+        <td class="align-center">
+            <p><code class="filter">{{ site.members | find_exp:"item",
+"item.graduation_year == 2014" }}</code></p>
+            
+          
+            <p><code class="filter">{{ site.members | find_exp:"item",
+"item.graduation_year &lt; 2014" }}</code></p>
+            
+          
+            <p><code class="filter">{{ site.members | find_exp:"item",
+"item.projects contains 'foo'" }}</code></p>
+            
+          </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <p id="group-by" class="name"><strong>Group By</strong></p>
+          <p>指定したプロパティで配列内のアイテムをグループ化する。</p>
+        </td>
+        <td class="align-center">
+            <p><code class="filter">{{ site.members | group_by:"graduation_year" }}</code></p>
+            <p><code class="output">[{"name"=&gt;"2013", "items"=&gt;[...]},
+{"name"=&gt;"2014", "items"=&gt;[...]}]</code></p>
+          </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <p id="group-by-expression" class="name"><strong>Group By Expression</strong></p>
+          <p>Liquidの式を使用して、配列内のアイテムをグループ化する。
+              <span class="version-badge" title="This filter is available from version 3.4.0">3.4.0</span>
+            </p>
+        </td>
+        <td class="align-center">
+            <p><code class="filter">{{ site.members | group_by_exp: "item",
+"item.graduation_year | truncate: 3, ''" }}</code></p>
+            <p><code class="output">[{"name"=&gt;"201", "items"=&gt;[...]},
+{"name"=&gt;"200", "items"=&gt;[...]}]</code></p>
+          </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <p id="xml-escape" class="name"><strong>XML Escape</strong></p>
+          <p>XMLで使用するためにテキストをエスケープする。</p>
+        </td>
+        <td class="align-center">
+            <p><code class="filter">{{ page.content | xml_escape }}</code></p>
+            
+          </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <p id="cgi-escape" class="name"><strong>CGI Escape</strong></p>
+          <p>CGI escapeはURLで使用する文字列をエスケープする。特殊文字を適切な<code>%XX</code>に置き換える。CGI escapeは通常、スペースをプラス<code>+</code>にする。</p>
+        </td>
+        <td class="align-center">
+            <p><code class="filter">{{ "foo, bar; baz?" | cgi_escape }}</code></p>
+            <p><code class="output">foo%2C+bar%3B+baz%3F</code></p>
+          </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <p id="uri-escape" class="name"><strong>URI Escape</strong></p>
+          <p>URI内の特殊文字をパーセントエンコードする。URIエスケープは通常スペースを<code>%20</code>に置き換る。<a href="https://en.wikipedia.org/wiki/Percent-encoding#Types_of_URI_characters" target="_blank">予約文字</a>はエスケープされない。</p>
+        </td>
+        <td class="align-center">
+            <p><code class="filter">{{ "http://foo.com/?q=foo, \bar?" | uri_escape }}</code></p>
+            <p><code class="output">http://foo.com/?q=foo,%20%5Cbar?</code></p>
+          </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <p id="number-of-words" class="name"><strong>Number of Words</strong></p>
+          <p>テキストの単語数を数えます。<br /> <span class="version-badge">v4.1.0</span>以降、このフィルターはオプションの引数を取り、<code>input</code>文字列内のChinese-Japanese-Korean (CJK)文字の処理を制御します。<br />引数として<code>'cjk'</code>を渡すと、空白で区切られているかどうかに関係なく、検出されたすべてのCJK文字が1つの単語としてカウントされます。<br /><code>'auto'</code>（自動検出）を渡す場合、 <code>'cjk'</code>と同様に機能しますが、フィルターがCJK文字を含む場合と含まない場合がある変数文字列で使用される場合は、よりパフォーマンスが高くなります。</p>
+        </td>
+        <td class="align-center">
+            <p><code class="filter">{{ "Hello world!" | number_of_words }}</code></p>
+            <p><code class="output">2</code></p>
+          
+            <p><code class="filter">{{ "你好hello世界world" | number_of_words }}</code></p>
+            <p><code class="output">1</code></p>
+          
+            <p><code class="filter">{{ "你好hello世界world" | number_of_words: "cjk" }}</code></p>
+            <p><code class="output">6</code></p>
+          
+            <p><code class="filter">{{ "你好hello世界world" | number_of_words: "auto" }}</code></p>
+            <p><code class="output">6</code></p>
+          </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <p id="array-to-sentence" class="name"><strong>Array to Sentence</strong></p>
+          <p>配列をセンテンスに変換する。タグのリスト化に便利。オプションで接続文字を指定できる。</p>
+        </td>
+        <td class="align-center">
+            <p><code class="filter">{{ page.tags | array_to_sentence_string }}</code></p>
+            <p><code class="output">foo, bar, and baz</code></p>
+          
+            <p><code class="filter">{{ page.tags | array_to_sentence_string: "or" }}</code></p>
+            <p><code class="output">foo, bar, or baz</code></p>
+          </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <p id="markdownify" class="name"><strong>Markdownify</strong></p>
+          <p>Markdown-formatted stringをHTMLに変換する。</p>
+        </td>
+        <td class="align-center">
+            <p><code class="filter">{{ page.excerpt | markdownify }}</code></p>
+            
+          </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <p id="smartify" class="name"><strong>Smartify</strong></p>
+          <p>"quotes"を&ldquo;smart quotes.&rdquo;に変換する。</p>
+        </td>
+        <td class="align-center">
+            <p><code class="filter">{{ page.title | smartify }}</code></p>
+            
+          </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <p id="converting-sass-scss" class="name"><strong>Converting Sass/SCSS</strong></p>
+          <p>Sass-やSCSS-formatted stringをCSSに変換する。</p>
+        </td>
+        <td class="align-center">
+            <p><code class="filter">{{ some_sass | sassify }}</code></p>
+            
+          
+            <p><code class="filter">{{ some_scss | scssify }}</code></p>
+            
+          </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <p id="slugify" class="name"><strong>Slugify</strong></p>
+          <p>stringを小文字のURL "slug"に変換する。オプションは下記をご覧ください。</p>
+        </td>
+        <td class="align-center">
+            <p><code class="filter">{{ "The _config.yml file" | slugify }}</code></p>
+            <p><code class="output">the-config-yml-file</code></p>
+          
+            <p><code class="filter">{{ "The _config.yml file" | slugify: "pretty" }}</code></p>
+            <p><code class="output">the-_config.yml-file</code></p>
+          
+            <p><code class="filter">{{ "The _cönfig.yml file" | slugify: "ascii" }}</code></p>
+            <p><code class="output">the-c-nfig-yml-file</code></p>
+          
+            <p><code class="filter">{{ "The cönfig.yml file" | slugify: "latin" }}</code></p>
+            <p><code class="output">the-config-yml-file</code></p>
+          </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <p id="data-to-json" class="name"><strong>Data To JSON</strong></p>
+          <p>HashやArrayをJSONに変換。</p>
+        </td>
+        <td class="align-center">
+            <p><code class="filter">{{ site.data.projects | jsonify }}</code></p>
+            
+          </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <p id="normalize-whitespace" class="name"><strong>Normalize Whitespace</strong></p>
+          <p>すべての空白を単一の空白に置き換える。</p>
+        </td>
+        <td class="align-center">
+            <p><code class="filter">{{ "a \n b" | normalize_whitespace }}</code></p>
+            
+          </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <p id="sort" class="name"><strong>Sort</strong></p>
+          <p>配列をソート。ハッシュのオプション引数 1.&nbsp;プロパティ名 2.&nbsp;nils order (<em>first</em>か<em>last</em>).</p>
+        </td>
+        <td class="align-center">
+            <p><code class="filter">{{ page.tags | sort }}</code></p>
+            
+          
+            <p><code class="filter">{{ site.posts | sort: "author" }}</code></p>
+            
+          
+            <p><code class="filter">{{ site.pages | sort: "title", "last" }}</code></p>
+            
+          </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <p id="sample" class="name"><strong>Sample</strong></p>
+          <p>配列からランダムに取得。オプションで複数を取得可能。 </p>
+        </td>
+        <td class="align-center">
+            <p><code class="filter">{{ site.pages | sample }}</code></p>
+            
+          
+            <p><code class="filter">{{ site.pages | sample: 2 }}</code></p>
+            
+          </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <p id="to-integer" class="name"><strong>To Integer</strong></p>
+          <p>stringやbooleanをintegerに変換。</p>
+        </td>
+        <td class="align-center">
+            <p><code class="filter">{{ some_var | to_integer }}</code></p>
+            
+          </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <p id="array-filters" class="name"><strong>Array Filters</strong></p>
+          <p>配列のPush, pop, shift, and unshift属性。これらは<strong>破壊的ではありません</strong>。つまり、配列を変更するのではなく、コピーを作成してそれを変更します。</p>
+        </td>
+        <td class="align-center">
+            <p><code class="filter">{{ page.tags | push: "Spokane" }}</code></p>
+            <p><code class="output">["Seattle", "Tacoma", "Spokane"]</code></p>
+          
+            <p><code class="filter">{{ page.tags | pop }}</code></p>
+            <p><code class="output">["Seattle"]</code></p>
+          
+            <p><code class="filter">{{ page.tags | shift }}</code></p>
+            <p><code class="output">["Tacoma"]</code></p>
+          
+            <p><code class="filter">{{ page.tags | unshift: "Olympia" }}</code></p>
+            <p><code class="output">["Olympia", "Seattle", "Tacoma"]</code></p>
+          </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <p id="inspect" class="name"><strong>Inspect</strong></p>
+          <p>デバッグのためにオブジェクトをそのStringに変換する。</p>
+        </td>
+        <td class="align-center">
+            <p><code class="filter">{{ some_var | inspect }}</code></p>
+            
+          </td>
+      </tr>
+    
+  </tbody>
+</table>
+</div>
+
+<h3 id="slugifyフィルタのオプション"><code class="language-plaintext highlighter-rouge">slugify</code>フィルタのオプション</h3>
+<!-- ### Options for the `slugify` filter -->
+
+<p><code class="language-plaintext highlighter-rouge">slugify</code>フィルタはオプションを受け入れ、それぞれがフィルタが何をするのかを指定します。デフォルトは<code class="language-plaintext highlighter-rouge">default</code>です。以下に（何をフィルタするのかと共に）示します。</p>
+
+<!-- The `slugify` filter accepts an option, each specifying what to filter.
+The default is `default`. They are as follows (with what they filter): -->
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">none</code>: 文字無し</li>
+  <li><code class="language-plaintext highlighter-rouge">raw</code>: スペース</li>
+  <li><code class="language-plaintext highlighter-rouge">default</code>: スペースと、英数字以外の文字</li>
+  <li><code class="language-plaintext highlighter-rouge">pretty</code>: スペースと、<code class="language-plaintext highlighter-rouge">._~!$&amp;'()+,;=@</code>を除く英数字以外の文字</li>
+  <li><code class="language-plaintext highlighter-rouge">ascii</code>: スペース、英数字以外の文字、ASCII以外の文字</li>
+  <li><code class="language-plaintext highlighter-rouge">latin</code>: <code class="language-plaintext highlighter-rouge">default</code>に似ている。ラテン文字以外は最初に音訳される（例えば、<code class="language-plaintext highlighter-rouge">àèïòü</code>は <code class="language-plaintext highlighter-rouge">aeiou</code>に）<span class="version-badge" title="This feature is available starting version 3.7.0">3.7.0</span>
+。</li>
+</ul>
+
+<!-- - `none`: no characters
+- `raw`: spaces
+- `default`: spaces and non-alphanumeric characters
+- `pretty`: spaces and non-alphanumeric characters except for `._~!$&'()+,;=@`
+- `ascii`: spaces, non-alphanumeric, and non-ASCII characters
+- `latin`: like `default`, except Latin characters are first transliterated (e.g. `àèïòü` to `aeiou`)<span class="version-badge" title="This feature is available starting version 3.7.0">3.7.0</span>
+. -->
+
+<h3 id="whereフィルタでのnil値の検出40"><code class="language-plaintext highlighter-rouge">where</code>フィルタでの<code class="language-plaintext highlighter-rouge">nil</code>値の検出<span class="version-badge" title="This feature is available starting version 4.0">4.0</span></h3>
+<!-- ### Detecting `nil` values with `where` filter<span class="version-badge" title="This feature is available starting version 4.0">4.0</span>
+-->
+
+<p>プロパティが<code class="language-plaintext highlighter-rouge">nil</code>や<code class="language-plaintext highlighter-rouge">""</code>のドキュメントやページの検出に<code class="language-plaintext highlighter-rouge">where</code>フィルタを使用できます。例えば、</p>
+
+<!-- You can use the `where` filter to detect documents and pages with properties that are `nil` or `""`. For example, -->
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// `my_prop`が設定されていないか、明示的に`nil`が設定されているポストを選択するために`nil`を使う。
+<span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">filtered_posts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">posts</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">where</span><span class="p">:</span><span class="w"> </span><span class="s1">'my_prop'</span><span class="p">,</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">%}</span>
+</code></pre></div></div>
+
+<!-- 
+```liquid
+// Using `nil` to select posts that either do not have `my_prop` defined or `my_prop` has been set to `nil` explicitly.
+{% assign filtered_posts = site.posts | where: 'my_prop', nil %}
+```
+ -->
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// `my_prop`に空文字が設定されているポストを選択するために、Liquidの特別なリテラル`empty`や`blank`を使う。
+<span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">filtered_posts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">posts</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">where</span><span class="p">:</span><span class="w"> </span><span class="s1">'my_prop'</span><span class="p">,</span><span class="w"> </span><span class="nb">empty</span><span class="w"> </span><span class="p">%}</span>
+</code></pre></div></div>
+
+<!--
+```liquid
+// Using Liquid's special literal `empty` or `blank` to select posts that have `my_prop` set to an empty value.
+{% assign filtered_posts = site.posts | where: 'my_prop', empty %}
+``` 
+-->
+
+<h3 id="where_expフィルタのbinary-operators40"><code class="language-plaintext highlighter-rouge">where_exp</code>フィルタのBinary operators<span class="version-badge" title="This feature is available starting version 4.0">4.0</span></h3>
+<!-- ### Binary operators in `where_exp` filter<span class="version-badge" title="This feature is available starting version 4.0">4.0</span>
+-->
+
+<p>Liquid binary operatorsの<code class="language-plaintext highlighter-rouge">or</code>や<code class="language-plaintext highlighter-rouge">and</code>演算子を使用して、<code class="language-plaintext highlighter-rouge">where_exp</code>フィルタに複数の条件を渡すことができます。</p>
+
+<!-- You can use Liquid binary operators `or` and `and` in the expression passed to the `where_exp` filter to employ multiple
+conditionals in the operation. -->
+
+<p>例えば、英語のホラー映画に関するドキュメントのリストを得るのに、次のスニペットを使用できます。</p>
+
+<!-- For example, to get a list of documents on English horror flicks, one could use the following snippet: -->
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{{</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">movies</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">where_exp</span><span class="p">:</span><span class="w"> </span><span class="s2">"item"</span><span class="p">,</span><span class="w"> </span><span class="s2">"item.genre == 'horror' and item.language == 'English'"</span><span class="w"> </span><span class="p">}}</span>
+</code></pre></div></div>
+
+<p>また、漫画が原作の映画のリストを得るには、次のようにします。</p>
+
+<!-- Or to get a list of comic-book based movies, one may use the following: -->
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{{</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">movies</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">where_exp</span><span class="p">:</span><span class="w"> </span><span class="s2">"item"</span><span class="p">,</span><span class="w"> </span><span class="s2">"item.sub_genre == 'MCU' or item.sub_genre == 'DCEU'"</span><span class="w"> </span><span class="p">}}</span>
+</code></pre></div></div>
+
+<h3 id="standard-liquid-filters">標準のLiquidフィルタ</h3>
+<!-- ### Standard Liquid Filters -->
+
+<p>利便性のため、こちらに全ての<a href="https://shopify.github.io/liquid/filters/">Liquidフィルタ</a>のリストを、公式Liquidドキュメンテーション内の使用例へのリンクと共に掲載しています。</p>
+
+<!-- For your convenience, here is the list of all [Liquid filters](https://shopify.github.io/liquid/filters/) with links to examples in the official Liquid documentation. -->
+
+<ul>
+  <li>
+    <p><a href="https://shopify.github.io/liquid/filters/abs/" target="_blank">abs</a></p>
+  </li>
+  <li>
+    <p><a href="https://shopify.github.io/liquid/filters/append/" target="_blank">append</a></p>
+  </li>
+  <li>
+    <p><a href="https://shopify.github.io/liquid/filters/at_least/" target="_blank">at_least</a></p>
+  </li>
+  <li>
+    <p><a href="https://shopify.github.io/liquid/filters/at_most/" target="_blank">at_most</a></p>
+  </li>
+  <li>
+    <p><a href="https://shopify.github.io/liquid/filters/capitalize/" target="_blank">capitalize</a></p>
+  </li>
+  <li>
+    <p><a href="https://shopify.github.io/liquid/filters/ceil/" target="_blank">ceil</a></p>
+  </li>
+  <li>
+    <p><a href="https://shopify.github.io/liquid/filters/compact/" target="_blank">compact</a></p>
+  </li>
+  <li>
+    <p><a href="https://shopify.github.io/liquid/filters/concat/" target="_blank">concat</a></p>
+  </li>
+  <li>
+    <p><a href="https://shopify.github.io/liquid/filters/date/" target="_blank">date</a></p>
+  </li>
+  <li>
+    <p><a href="https://shopify.github.io/liquid/filters/default/" target="_blank">default</a></p>
+  </li>
+  <li>
+    <p><a href="https://shopify.github.io/liquid/filters/divided_by/" target="_blank">divided_by</a></p>
+  </li>
+  <li>
+    <p><a href="https://shopify.github.io/liquid/filters/downcase/" target="_blank">downcase</a></p>
+  </li>
+  <li>
+    <p><a href="https://shopify.github.io/liquid/filters/escape/" target="_blank">escape</a></p>
+  </li>
+  <li>
+    <p><a href="https://shopify.github.io/liquid/filters/escape_once/" target="_blank">escape_once</a></p>
+  </li>
+  <li>
+    <p><a href="https://shopify.github.io/liquid/filters/first/" target="_blank">first</a></p>
+  </li>
+  <li>
+    <p><a href="https://shopify.github.io/liquid/filters/floor/" target="_blank">floor</a></p>
+  </li>
+  <li>
+    <p><a href="https://shopify.github.io/liquid/filters/join/" target="_blank">join</a></p>
+  </li>
+  <li>
+    <p><a href="https://shopify.github.io/liquid/filters/last/" target="_blank">last</a></p>
+  </li>
+  <li>
+    <p><a href="https://shopify.github.io/liquid/filters/lstrip/" target="_blank">lstrip</a></p>
+  </li>
+  <li>
+    <p><a href="https://shopify.github.io/liquid/filters/map/" target="_blank">map</a></p>
+  </li>
+  <li>
+    <p><a href="https://shopify.github.io/liquid/filters/minus/" target="_blank">minus</a></p>
+  </li>
+  <li>
+    <p><a href="https://shopify.github.io/liquid/filters/modulo/" target="_blank">modulo</a></p>
+  </li>
+  <li>
+    <p><a href="https://shopify.github.io/liquid/filters/newline_to_br/" target="_blank">newline_to_br</a></p>
+  </li>
+  <li>
+    <p><a href="https://shopify.github.io/liquid/filters/plus/" target="_blank">plus</a></p>
+  </li>
+  <li>
+    <p><a href="https://shopify.github.io/liquid/filters/prepend/" target="_blank">prepend</a></p>
+  </li>
+  <li>
+    <p><a href="https://shopify.github.io/liquid/filters/remove/" target="_blank">remove</a></p>
+  </li>
+  <li>
+    <p><a href="https://shopify.github.io/liquid/filters/remove_first/" target="_blank">remove_first</a></p>
+  </li>
+  <li>
+    <p><a href="https://shopify.github.io/liquid/filters/replace/" target="_blank">replace</a></p>
+  </li>
+  <li>
+    <p><a href="https://shopify.github.io/liquid/filters/replace_first/" target="_blank">replace_first</a></p>
+  </li>
+  <li>
+    <p><a href="https://shopify.github.io/liquid/filters/reverse/" target="_blank">reverse</a></p>
+  </li>
+  <li>
+    <p><a href="https://shopify.github.io/liquid/filters/round/" target="_blank">round</a></p>
+  </li>
+  <li>
+    <p><a href="https://shopify.github.io/liquid/filters/rstrip/" target="_blank">rstrip</a></p>
+  </li>
+  <li>
+    <p><a href="https://shopify.github.io/liquid/filters/size/" target="_blank">size</a></p>
+  </li>
+  <li>
+    <p><a href="https://shopify.github.io/liquid/filters/slice/" target="_blank">slice</a></p>
+  </li>
+  <li>
+    <p><a href="https://shopify.github.io/liquid/filters/sort/" target="_blank">sort</a></p>
+  </li>
+  <li>
+    <p><a href="https://shopify.github.io/liquid/filters/sort_natural/" target="_blank">sort_natural</a></p>
+  </li>
+  <li>
+    <p><a href="https://shopify.github.io/liquid/filters/split/" target="_blank">split</a></p>
+  </li>
+  <li>
+    <p><a href="https://shopify.github.io/liquid/filters/strip/" target="_blank">strip</a></p>
+  </li>
+  <li>
+    <p><a href="https://shopify.github.io/liquid/filters/strip_html/" target="_blank">strip_html</a></p>
+  </li>
+  <li>
+    <p><a href="https://shopify.github.io/liquid/filters/strip_newlines/" target="_blank">strip_newlines</a></p>
+  </li>
+  <li>
+    <p><a href="https://shopify.github.io/liquid/filters/times/" target="_blank">times</a></p>
+  </li>
+  <li>
+    <p><a href="https://shopify.github.io/liquid/filters/truncate/" target="_blank">truncate</a></p>
+  </li>
+  <li>
+    <p><a href="https://shopify.github.io/liquid/filters/truncatewords/" target="_blank">truncatewords</a></p>
+  </li>
+  <li>
+    <p><a href="https://shopify.github.io/liquid/filters/uniq/" target="_blank">uniq</a></p>
+  </li>
+  <li>
+    <p><a href="https://shopify.github.io/liquid/filters/upcase/" target="_blank">upcase</a></p>
+  </li>
+  <li>
+    <p><a href="https://shopify.github.io/liquid/filters/url_decode/" target="_blank">url_decode</a></p>
+  </li>
+  <li>
+    <p><a href="https://shopify.github.io/liquid/filters/url_encode/" target="_blank">url_encode</a></p>
+  </li>
+</ul>
+
+
+        </article>
+      </div>
+      <div class="unit one-fifth hide-on-mobiles">
+  <aside>
+    <h4>入門</h4>
+      <ul>
+        <li><a href="/docs/">クイックスタート</a></li>
+        <li><a href="/docs/ruby-101/">Ruby基礎</a></li>
+        <li><a href="/docs/installation/">インストール</a></li>
+        <li><a href="/docs/community/">コミュニティ</a></li>
+        <li><a href="/docs/step-by-step/01-setup/">Step by Stepチュートリアル</a></li>
+      </ul>
+    <h4>ビルド</h4>
+      <ul>
+        <li><a href="/docs/usage/">コマンドラインの使い方</a></li>
+        <li><a href="/docs/configuration/">構成・設定</a></li>
+      </ul>
+    <h4>コンテンツ</h4>
+      <ul>
+        <li><a href="/docs/pages/">Pages（ページ）</a></li>
+        <li><a href="/docs/posts/">Posts（ポスト）</a></li>
+        <li><a href="/docs/front-matter/">Front Matter</a></li>
+        <li><a href="/docs/collections/">コレクション</a></li>
+        <li><a href="/docs/datafiles/">Dataファイル</a></li>
+        <li><a href="/docs/assets/">Assets</a></li>
+        <li><a href="/docs/static-files/">静的ファイル</a></li>
+      </ul>
+    <h4>サイトの構成</h4>
+      <ul>
+        <li><a href="/docs/structure/">ディレクトリ構成</a></li>
+        <li><a href="/docs/liquid/">Liquid</a></li>
+        <li><a href="/docs/variables/">変数</a></li>
+        <li><a href="/docs/includes/">Includes（インクルード）</a></li>
+        <li><a href="/docs/layouts/">レイアウト</a></li>
+        <li><a href="/docs/permalinks/">パーマリンク</a></li>
+        <li><a href="/docs/themes/">テーマ</a></li>
+        <li><a href="/docs/pagination/">Pagination（ページ分け）</a></li>
+      </ul>
+    <h4>ガイド</h4>
+      <ul>
+        <li><a href="/docs/plugins/">プラグイン</a></li>
+        <li><a href="/docs/migrations/">ブログの移行</a></li>
+        <li><a href="/docs/upgrading/">アップグレード</a></li>
+        <li><a href="/docs/deployment/">Deployment</a></li>
+      </ul>
+    </aside>
+</div>
+<div class="clear"></div>
+    </div>
+  </section>
+<footer>
+  <div class="grid">
+    <div class="unit one-third center-on-mobiles">
+      <p>Jekyllはボランティアの<a href="/team/">コアチーム</a>により愛情を込めて維持されています。</p>
+      <p>このWebサイトのコンテンツは<a href="https://github.com/jekyll/jekyll/blob/master/LICENSE" target="_blank">MIT&nbsp;License</a>に基づきます。&copy;&nbsp;2020</p>
+      <!-- <p>Jekyll is lovingly maintained by the <a href="/team/">core team</a> of volunteers. </p>
+      <p>The contents of this website are <br />&copy;&nbsp;2020 under the terms of the <a href="https://github.com/jekyll/jekyll/blob/master/LICENSE">MIT&nbsp;License</a>.</p> -->
+    </div>
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>
+        Proudly hosted by
+        <a href="https://github.com">
+          <img src="/img/footer-logo.png" width="100" height="30" alt="GitHub • Social coding">
+        </a>
+      </p>
+    </div>
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>
+        Jekyll is funded thanks to its
+        <a href="https://github.com/jekyll/jekyll#sponsors">
+          sponsors!
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
+<script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<span class=\"sr-only\">Permalink</span><i class=\"fa fa-link\"></i>";
+    anchor.title = "Permalink";
+    return anchor;
+  };
+
+  var linkifyAnchors = function (level, containingElement) {
+    var headers = containingElement.getElementsByTagName("h" + level);
+    for (var h = 0; h < headers.length; h++) {
+      var header = headers[h];
+
+      if (typeof header.id !== "undefined" && header.id !== "") {
+        header.appendChild(anchorForId(header.id));
+      }
+    }
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var contentBlock = document.getElementsByClassName("docs")[0] || document.getElementsByClassName("news")[0];
+      if (!contentBlock) {
+        return;
+      }
+      for (var level = 1; level <= 6; level++) {
+        linkifyAnchors(level, contentBlock);
+      }
+    }
+  };
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script type="text/javascript"> docsearch({
+apiKey: '50fe39c839958dfad797000f33e2ec17',
+indexName: 'jekyllrb',
+inputSelector: '#docsearch-input',
+enhancedSearchInput: true,
+debug: false // Set debug to true if you want to inspect the dropdown
+});
+</script>
+</body>
+</html>

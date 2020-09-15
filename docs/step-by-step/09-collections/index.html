@@ -1,0 +1,564 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link type="application/atom+xml" rel="alternate" href="http://jekyllrb-ja.github.io/feed.xml" title="Jekyll • シンプルで、ブログのような、静的サイト" />
+  <link type="application/atom+xml" rel="alternate" href="/feed/release.xml" title="Jekyll releases posts" />
+  <link rel="alternate" type="application/atom+xml" title="Recent commits to Jekyll’s master branch" href="https://github.com/jekyll/jekyll/commits/master.atom">
+  <link rel="preload" href="/fonts/lato-v14-latin-300.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/lato-v14-latin-700.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/css/screen.css" as="style">
+  <link rel="stylesheet" href="/css/screen.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>コレクション | Jekyll • シンプルで、ブログのような、静的サイト</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="コレクション" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="プレーンテキストを静的サイトやブログに変えましょう" />
+<meta property="og:description" content="プレーンテキストを静的サイトやブログに変えましょう" />
+<link rel="canonical" href="http://jekyllrb-ja.github.io/docs/step-by-step/09-collections/" />
+<meta property="og:url" content="http://jekyllrb-ja.github.io/docs/step-by-step/09-collections/" />
+<meta property="og:site_name" content="Jekyll • シンプルで、ブログのような、静的サイト" />
+<meta property="og:image" content="http://jekyllrb-ja.github.io/img/jekyll-og.png" />
+<script type="application/ld+json">
+{"headline":"コレクション","image":"http://jekyllrb-ja.github.io/img/jekyll-og.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://jekyllrb-ja.github.io/img/logo-2x.png"}},"url":"http://jekyllrb-ja.github.io/docs/step-by-step/09-collections/","description":"プレーンテキストを静的サイトやブログに変えましょう","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <!--[if lt IE 9]>
+  <script src="/js/html5shiv.min.js"></script>
+  <script src="/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body class="wrap"><header>
+  <div class="flexbox">
+    <div class="center-on-mobiles">
+      <h1>
+        <a href="/" class="logo">
+          <span class="sr-only">Jekyll</span>
+          <img src="/img/logo-2x.png" width="140" height="65" alt="Jekyll Logo">
+        </a>
+      </h1>
+    </div>
+    <nav class="main-nav hide-on-mobiles">
+      <ul>
+  <li><a href="/">Home</a></li>
+  <li class="current"><a href="/docs/">Docs</a></li>
+  <li><a href="/resources/">Resources</a></li>
+  <li><a href="/showcase/">Showcase</a></li>
+  <li><a href="/news/">News</a></li>
+  </ul>
+</nav>
+    <div class="search hide-on-mobiles">
+      <input type="text" id="docsearch-input" placeholder="Search the docs…">
+</div>
+    <div class="meta hide-on-mobiles">
+      <ul>
+        <li><a href="https://github.com/jekyll/jekyll/releases/tag/v4.1.1">v4.1.1</a></li>
+        <li><a href="https://github.com/jekyll/jekyll">GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+  <nav class="mobile-nav show-on-mobiles">
+    <ul>
+  <li><a href="/">Home</a></li>
+    <li class="current" ><a href="/docs/">Docs</a></li>
+    <li><a href="/resources/">Resources</a></li>
+    <li><a href="/news/">News</a></li>
+    <li><a href="https://github.com/jekyll/jekyll">GitHub</a></li>
+</ul>
+</nav>
+</header>
+<section class="docs">
+  <div class="grid">
+    <div class="docs-nav-mobile unit whole show-on-mobiles">
+  <select onchange="if (this.value) window.location.href=this.value">
+    <option value="">Navigate the docs…</option>
+    <optgroup label="入門">
+      <option value="/docs/">クイックスタート</option>
+      <option value="/docs/ruby-101/">Ruby基礎</option>
+      <option value="/docs/installation/">インストール</option>
+      <option value="/docs/community/">コミュニティ</option>
+      <option value="/docs/step-by-step/01-setup/">Step by Stepチュートリアル</option>
+    </optgroup>
+    <optgroup label="ビルド">
+      <option value="/docs/usage/">コマンドラインの使い方</option>
+      <option value="/docs/configuration/">構成・設定</option>
+    </optgroup>
+    <optgroup label="コンテンツ">
+      <option value="/docs/pages/">Pages（ページ）</option>
+      <option value="/docs/posts/">Posts（ポスト）</option>
+      <option value="/docs/front-matter/">Front Matter</option>
+      <option value="/docs/collections/">コレクション</option>
+      <option value="/docs/datafiles/">Dataファイル</option>
+      <option value="/docs/assets/">Assets</option>
+      <option value="/docs/static-files/">静的ファイル</option>
+    </optgroup>
+    <optgroup label="サイトの構成">
+      <option value="/docs/structure/">ディレクトリ構成</option>
+      <option value="/docs/liquid/">Liquid</option>
+      <option value="/docs/variables/">変数</option>
+      <option value="/docs/includes/">Includes（インクルード）</option>
+      <option value="/docs/layouts/">レイアウト</option>
+      <option value="/docs/permalinks/">パーマリンク</option>
+      <option value="/docs/themes/">テーマ</option>
+      <option value="/docs/pagination/">Pagination（ページ分け）</option>
+    </optgroup>
+    <optgroup label="ガイド">
+      <option value="/docs/plugins/">プラグイン</option>
+      <option value="/docs/migrations/">ブログの移行</option>
+      <option value="/docs/upgrading/">アップグレード</option>
+      <option value="/docs/deployment/">Deployment</option>
+    </optgroup>
+    </select>
+</div>
+<div class="unit four-fifths">
+      <article>
+        <div class="improve right hide-on-mobiles">
+          <a data-proofer-ignore href="https://github.com/jekyll/jekyll/edit/master/docs/_docs/step-by-step/09-collections.md"><i class="fa fa-pencil"></i> &nbsp;Improve this page</a>
+        </div>
+          <h1>Step by Step チュートリアル</h1>
+          <!-- <h1>Step by Step Tutorial</h1> -->
+          <h2>9. コレクション</h2>
+          <!-- ---
+layout: step
+title: Collections
+position: 9
+--- -->
+
+<p>著者について肉付けするため、各著者の紹介と公開したポストのページを準備しましょう。</p>
+
+<!-- Let's look at fleshing out authors so each author has their own page with a
+blurb and the posts they've published. -->
+
+<p>それを行うために、コレクションを使用します。コレクションはポストによく似ていますが、日付でグループ化されない点が異なります。</p>
+
+<!-- To do this you'll use collections. Collections are similar to posts except the
+content doesn't have to be grouped by date. -->
+
+<h2 id="設定">設定</h2>
+<!-- ## Configuration -->
+
+<p>コレクションをセットアップするために、Jekyllに教える必要があります。（デフォルトでは）Jekyllの設定は<code class="language-plaintext highlighter-rouge">_config.yml</code>というファイルで行います。</p>
+
+<!-- To set up a collection you need to tell Jekyll about it. Jekyll configuration
+happens in a file called `_config.yml` (by default). -->
+
+<p>以下の内容で<code class="language-plaintext highlighter-rouge">_config.yml</code>を作成します。</p>
+
+<!-- Create `_config.yml` in the root with the following: -->
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">collections</span><span class="pi">:</span>
+  <span class="na">authors</span><span class="pi">:</span>
+</code></pre></div></div>
+
+<p>設定ファイルを（再）読み込みするために、Jekyllサーバーをリスタートします。ターミナルで、<code class="language-plaintext highlighter-rouge">Ctrl</code>+<code class="language-plaintext highlighter-rouge">C</code>を押しサーバーを止めてから、<code class="language-plaintext highlighter-rouge">jekyll serve</code>で再起動します。</p>
+
+<!-- To (re)load the configuration, restart the jekyll server. Press `Ctrl`+`C` in your terminal to stop the server, and then `jekyll serve` to restart it. -->
+
+<h2 id="著者を追加する">著者を追加する</h2>
+<!-- ## Add authors -->
+
+<p>ドキュメント（コレクションのアイテム）は、サイトのrootの<code class="language-plaintext highlighter-rouge">_*collection_name*</code>に入れます。今回の場合は、<code class="language-plaintext highlighter-rouge">_authors</code>です。</p>
+
+<!-- Documents (the items in a collection) live in a folder in the root of the site
+named  `_*collection_name*`. In this case, `_authors`. -->
+
+<p>各著者のドキュメントを作成します。</p>
+
+<!-- Create a document for each author: -->
+
+<p><code class="language-plaintext highlighter-rouge">_authors/jill.md</code>:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">short_name</span><span class="pi">:</span> <span class="s">jill</span>
+<span class="na">name</span><span class="pi">:</span> <span class="s">Jill Smith</span>
+<span class="na">position</span><span class="pi">:</span> <span class="s">Chief Editor</span>
+<span class="nn">---</span>
+Jill is an avid fruit grower based in the south of France.
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">_authors/ted.md</code>:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">short_name</span><span class="pi">:</span> <span class="s">ted</span>
+<span class="na">name</span><span class="pi">:</span> <span class="s">Ted Doe</span>
+<span class="na">position</span><span class="pi">:</span> <span class="s">Writer</span>
+<span class="nn">---</span>
+Ted has been eating fruit since he was baby.
+</code></pre></div></div>
+
+<h2 id="スタッフページ">スタッフページ</h2>
+<!-- ## Staff page -->
+
+<p>サイトの全著者のリストのページを追加しましょう。Jekyllは<code class="language-plaintext highlighter-rouge">site.authors</code>でコレクションを利用可能にします。</p>
+
+<!-- Let's add a page which lists all the authors on the site. Jekyll makes the
+collection available at `site.authors`. -->
+
+<p><code class="language-plaintext highlighter-rouge">staff.html</code>を作り、<code class="language-plaintext highlighter-rouge">site.authors</code>を繰り返し処理して全てのスタッフを出力します。</p>
+
+<!-- Create `staff.html` and iterate over `site.authors` to output all the staff: -->
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+layout: default
+title: Staff
+---
+&lt;h1&gt;Staff&lt;/h1&gt;
+
+&lt;ul&gt;
+  <span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">author</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">site.authors</span><span class="w"> </span><span class="p">%}</span>
+    &lt;li&gt;
+      &lt;h2&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">author</span><span class="p">.</span><span class="nv">name</span><span class="w"> </span><span class="p">}}</span>&lt;/h2&gt;
+      &lt;h3&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">author</span><span class="p">.</span><span class="nv">position</span><span class="w"> </span><span class="p">}}</span>&lt;/h3&gt;
+      &lt;p&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">author</span><span class="p">.</span><span class="nv">content</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">markdownify</span><span class="w"> </span><span class="p">}}</span>&lt;/p&gt;
+    &lt;/li&gt;
+  <span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+&lt;/ul&gt;
+</code></pre></div></div>
+
+<p>contentはmarkdownで書かれていますので、<code class="language-plaintext highlighter-rouge">markdownify</code>フィルタを通す必要があります。レイアウトで<code class="language-plaintext highlighter-rouge">{{ content }}</code>を使用するときは、自動で行われています。</p>
+
+<!-- Since the content is markdown, you need to run it through the
+`markdownify` filter. This happens automatically when outputting using
+`{{ content }}` in a layout. -->
+
+<p>また、メインナビゲーションでこのページに移動できるようにしましょう。<code class="language-plaintext highlighter-rouge">_data/navigation.yml</code>を開き、スタッフページの記述を追加しましょう。</p>
+
+<!-- You also need a way to navigate to this page through the main navigation. Open
+`_data/navigation.yml` and add an entry for the staff page: -->
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Home</span>
+  <span class="na">link</span><span class="pi">:</span> <span class="s">/</span>
+<span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">About</span>
+  <span class="na">link</span><span class="pi">:</span> <span class="s">/about.html</span>
+<span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Blog</span>
+  <span class="na">link</span><span class="pi">:</span> <span class="s">/blog.html</span>
+<span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Staff</span>
+  <span class="na">link</span><span class="pi">:</span> <span class="s">/staff.html</span>
+</code></pre></div></div>
+
+<h2 id="ページの出力">ページの出力</h2>
+<!-- ## Output a page -->
+
+<p>デフォルトでは、コレクションはドキュメントのページを出力しません。今回の場合、各著者のページが必要ですので、コレクションの設定を修正します。</p>
+
+<!-- By default, collections do not output a page for documents. In this case we
+want each author to have their own page so let's tweak the collection
+configuration. -->
+
+<p><code class="language-plaintext highlighter-rouge">_config.yml</code>を開き、authorコレクションの設定に<code class="language-plaintext highlighter-rouge">output: true</code>を追加します。</p>
+
+<!-- Open `_config.yml` and add `output: true` to the author collection
+configuration: -->
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">collections</span><span class="pi">:</span>
+  <span class="na">authors</span><span class="pi">:</span>
+    <span class="na">output</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
+<p>設定の変更を反映するために、Jekyllをリスタートします。</p>
+
+<!-- Restart the jekyll server once more for the configuration changes to take effect.  -->
+
+<p>出力したページへのリンクは、<code class="language-plaintext highlighter-rouge">author.url</code>を使用して行えます。</p>
+
+<!-- You can link to the output page using `author.url`. -->
+
+<p><code class="language-plaintext highlighter-rouge">staff.html</code>ページにリンクを追加します。</p>
+
+<!-- Add the link to the `staff.html` page: -->
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+layout: default
+title: Staff
+---
+&lt;h1&gt;Staff&lt;/h1&gt;
+
+&lt;ul&gt;
+  <span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">author</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">site.authors</span><span class="w"> </span><span class="p">%}</span>
+    &lt;li&gt;
+      &lt;h2&gt;&lt;a href="<span class="p">{{</span><span class="w"> </span><span class="nv">author</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">}}</span>"&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">author</span><span class="p">.</span><span class="nv">name</span><span class="w"> </span><span class="p">}}</span>&lt;/a&gt;&lt;/h2&gt;
+      &lt;h3&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">author</span><span class="p">.</span><span class="nv">position</span><span class="w"> </span><span class="p">}}</span>&lt;/h3&gt;
+      &lt;p&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">author</span><span class="p">.</span><span class="nv">content</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">markdownify</span><span class="w"> </span><span class="p">}}</span>&lt;/p&gt;
+    &lt;/li&gt;
+  <span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+&lt;/ul&gt;
+</code></pre></div></div>
+
+<p>ポストと同じように、著者のレイアウトを作成する必要があります。</p>
+
+<!-- Just like posts you'll need to create a layout for authors. -->
+
+<p>以下の内容で<code class="language-plaintext highlighter-rouge">_layouts/author.html</code>を作成します。</p>
+
+<!-- Create `_layouts/author.html` with the following content: -->
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+layout: default
+---
+&lt;h1&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">name</span><span class="w"> </span><span class="p">}}</span>&lt;/h1&gt;
+&lt;h2&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">position</span><span class="w"> </span><span class="p">}}</span>&lt;/h2&gt;
+
+<span class="p">{{</span><span class="w"> </span><span class="nv">content</span><span class="w"> </span><span class="p">}}</span>
+</code></pre></div></div>
+
+<h2 id="front-matterのデフォルト値">front matterのデフォルト値</h2>
+<!-- ## Front matter defaults -->
+
+<p>次は、著者のドキュメントに<code class="language-plaintext highlighter-rouge">author</code>レイアウトを設定する必要があります。これまでやったように、front matterで設定することができますが、それでは何度も同じ操作が必要です。</p>
+
+<!-- Now you need to configure the author documents to use the `author` layout. You
+could do this in the front matter like we have previously but that's getting
+repetitive. -->
+
+<p>自動でポストはpostレイアウト、著者のページにはauthorレイアウト、その他のページはdefaultレイアウトになるといいですよね。</p>
+
+<!-- What you really want is all posts to automatically have the post
+layout, authors to have author and everything else to use the default. -->
+
+<p><code class="language-plaintext highlighter-rouge">_config.yml</code>で<a href="/docs/configuration/front-matter-defaults/">front matter defaults</a>を使用すれば、できます。デフォルトをscopeに当てはめて、望むfront matterのデフォルト値を設定します。</p>
+
+<!-- You can achieve this by using [front matter defaults](/docs/configuration/front-matter-defaults/)
+in `_config.yml`. You set a scope of what the default applies to, then the
+default front matter you'd like. -->
+
+<p>実際に<code class="language-plaintext highlighter-rouge">_config.yml</code>にレイアウトのデフォルト値を追加してみましょう。</p>
+
+<!-- Add defaults for layouts to your `_config.yml`, -->
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">collections</span><span class="pi">:</span>
+  <span class="na">authors</span><span class="pi">:</span>
+    <span class="na">output</span><span class="pi">:</span> <span class="no">true</span>
+
+<span class="na">defaults</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">scope</span><span class="pi">:</span>
+      <span class="na">path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s2">"</span><span class="s">authors"</span>
+    <span class="na">values</span><span class="pi">:</span>
+      <span class="na">layout</span><span class="pi">:</span> <span class="s2">"</span><span class="s">author"</span>
+  <span class="pi">-</span> <span class="na">scope</span><span class="pi">:</span>
+      <span class="na">path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s2">"</span><span class="s">posts"</span>
+    <span class="na">values</span><span class="pi">:</span>
+      <span class="na">layout</span><span class="pi">:</span> <span class="s2">"</span><span class="s">post"</span>
+  <span class="pi">-</span> <span class="na">scope</span><span class="pi">:</span>
+      <span class="na">path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
+    <span class="na">values</span><span class="pi">:</span>
+      <span class="na">layout</span><span class="pi">:</span> <span class="s2">"</span><span class="s">default"</span>
+</code></pre></div></div>
+
+<p>これで、全てのページやポストのfront matterからレイアウトの指定を省くことができます。<code class="language-plaintext highlighter-rouge">_config.yml</code>を更新した場合は、変更を反映するためにJekyllを再起動する必要があります。</p>
+
+<!-- Now you can remove layout from the front matter of all pages and posts. Note
+that any time you update `_config.yml` you'll need to restart Jekyll for the
+changes to take effect. -->
+
+<h2 id="著者の投稿のリスト">著者の投稿のリスト</h2>
+<!-- ## List author's posts -->
+
+<p>著者のページに公開したポストをリストアップしてみましょう。これには、著者の<code class="language-plaintext highlighter-rouge">short_name</code>とポストの<code class="language-plaintext highlighter-rouge">author</code>を一致させる必要があります。ポストをauthorでフィルタすることで行うことができます。</p>
+
+<!-- Let's list the posts an author has published on their page. To do
+this you need to match the author `short_name` to the post `author`. You
+use this to filter the posts by author. -->
+
+<p>著者のポストを出力するために、<code class="language-plaintext highlighter-rouge">_layouts/author.html</code>のフィルタをかけたリストの繰り返し処理を行います。</p>
+
+<!-- Iterate over this filtered list in `_layouts/author.html` to output the
+author's posts: -->
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+layout: default
+---
+&lt;h1&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">name</span><span class="w"> </span><span class="p">}}</span>&lt;/h1&gt;
+&lt;h2&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">position</span><span class="w"> </span><span class="p">}}</span>&lt;/h2&gt;
+
+<span class="p">{{</span><span class="w"> </span><span class="nv">content</span><span class="w"> </span><span class="p">}}</span>
+
+&lt;h2&gt;Posts&lt;/h2&gt;
+&lt;ul&gt;
+  <span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">filtered_posts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">posts</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">where</span><span class="p">:</span><span class="w"> </span><span class="s1">'author'</span><span class="p">,</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">short_name</span><span class="w"> </span><span class="p">%}</span>
+  <span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">post</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">filtered_posts</span><span class="w"> </span><span class="p">%}</span>
+    &lt;li&gt;&lt;a href="<span class="p">{{</span><span class="w"> </span><span class="nv">post</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">}}</span>"&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">post</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>&lt;/a&gt;&lt;/li&gt;
+  <span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+&lt;/ul&gt;
+</code></pre></div></div>
+
+<h2 id="著者ページへのリンク">著者ページへのリンク</h2>
+<!-- ## Link to authors page -->
+
+<p>ポストでは著者を参照していますので、著者のページへのリンクを貼りましょう。<code class="language-plaintext highlighter-rouge">_layouts/post.html</code>で、先ほどとよく似たフィルタのテクニックを使います。</p>
+
+<!-- The posts have a reference to the author so let's link it to the author's page.
+You can do this using a similar filtering technique in `_layouts/post.html`: -->
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+layout: default
+---
+&lt;h1&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>&lt;/h1&gt;
+
+&lt;p&gt;
+  <span class="p">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">date</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">date_to_string</span><span class="w"> </span><span class="p">}}</span>
+  <span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">author</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">authors</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">where</span><span class="p">:</span><span class="w"> </span><span class="s1">'short_name'</span><span class="p">,</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">author</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">first</span><span class="w"> </span><span class="p">%}</span>
+  <span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">author</span><span class="w"> </span><span class="p">%}</span>
+    - &lt;a href="<span class="p">{{</span><span class="w"> </span><span class="nv">author</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">}}</span>"&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">author</span><span class="p">.</span><span class="nv">name</span><span class="w"> </span><span class="p">}}</span>&lt;/a&gt;
+  <span class="p">{%</span><span class="w"> </span><span class="kr">endif</span><span class="w"> </span><span class="p">%}</span>
+&lt;/p&gt;
+
+<span class="p">{{</span><span class="w"> </span><span class="nv">content</span><span class="w"> </span><span class="p">}}</span>
+</code></pre></div></div>
+
+<p><a href="http://localhost:4000" target="_blank" data-proofer-ignore="">http://localhost:4000</a>を開き、スタッフページやポストの著者のリンクが、きちんと機能していることを確認しましょう。</p>
+
+<!-- Open up <a href="http://localhost:4000" target="_blank" data-proofer-ignore>http://localhost:4000</a> and
+have a look at the staff page and the author links on posts to check everything
+is linked together correctly. -->
+
+<p>次はこのチュートリアルの最後のステップです。サイトに磨きをかけ、作品の配備の準備をします。</p>
+
+<!-- In the next and final step of this tutorial, we'll add polish to the site and
+get it ready for a production deployment. -->
+
+          <div class="section-nav">
+      <div class="left align-right">
+        <a href="/docs/step-by-step/08-blogging/" class="prev">Back</a>
+        </div>
+      <div class="right align-left">
+      <a href="/docs/step-by-step/10-deployment/" class="next">Next</a>
+      </div>
+    </div>
+    <div class="clear"></div>
+    <ol class="step-nav">
+  <li><a href="/docs/step-by-step/01-setup/">セットアップ</a></li>
+  <li><a href="/docs/step-by-step/02-liquid/">Liquid</a></li>
+  <li><a href="/docs/step-by-step/03-front-matter/">Front Matter</a></li>
+  <li><a href="/docs/step-by-step/04-layouts/">レイアウト</a></li>
+  <li><a href="/docs/step-by-step/05-includes/">Includes（インクルード）</a></li>
+  <li><a href="/docs/step-by-step/06-data-files/">Dataファイル</a></li>
+  <li><a href="/docs/step-by-step/07-assets/">Assets</a></li>
+  <li><a href="/docs/step-by-step/08-blogging/">ブログ</a></li>
+  <li class="current"><a href="/docs/step-by-step/09-collections/">コレクション</a></li>
+  <li><a href="/docs/step-by-step/10-deployment/">Deployment</a></li>
+  </ol>
+</article>
+      </div>
+      <div class="unit one-fifth hide-on-mobiles">
+  <aside>
+    <h4>入門</h4>
+      <ul>
+        <li><a href="/docs/">クイックスタート</a></li>
+        <li><a href="/docs/ruby-101/">Ruby基礎</a></li>
+        <li><a href="/docs/installation/">インストール</a></li>
+        <li><a href="/docs/community/">コミュニティ</a></li>
+        <li><a href="/docs/step-by-step/01-setup/">Step by Stepチュートリアル</a></li>
+      </ul>
+    <h4>ビルド</h4>
+      <ul>
+        <li><a href="/docs/usage/">コマンドラインの使い方</a></li>
+        <li><a href="/docs/configuration/">構成・設定</a></li>
+      </ul>
+    <h4>コンテンツ</h4>
+      <ul>
+        <li><a href="/docs/pages/">Pages（ページ）</a></li>
+        <li><a href="/docs/posts/">Posts（ポスト）</a></li>
+        <li><a href="/docs/front-matter/">Front Matter</a></li>
+        <li><a href="/docs/collections/">コレクション</a></li>
+        <li><a href="/docs/datafiles/">Dataファイル</a></li>
+        <li><a href="/docs/assets/">Assets</a></li>
+        <li><a href="/docs/static-files/">静的ファイル</a></li>
+      </ul>
+    <h4>サイトの構成</h4>
+      <ul>
+        <li><a href="/docs/structure/">ディレクトリ構成</a></li>
+        <li><a href="/docs/liquid/">Liquid</a></li>
+        <li><a href="/docs/variables/">変数</a></li>
+        <li><a href="/docs/includes/">Includes（インクルード）</a></li>
+        <li><a href="/docs/layouts/">レイアウト</a></li>
+        <li><a href="/docs/permalinks/">パーマリンク</a></li>
+        <li><a href="/docs/themes/">テーマ</a></li>
+        <li><a href="/docs/pagination/">Pagination（ページ分け）</a></li>
+      </ul>
+    <h4>ガイド</h4>
+      <ul>
+        <li><a href="/docs/plugins/">プラグイン</a></li>
+        <li><a href="/docs/migrations/">ブログの移行</a></li>
+        <li><a href="/docs/upgrading/">アップグレード</a></li>
+        <li><a href="/docs/deployment/">Deployment</a></li>
+      </ul>
+    </aside>
+</div>
+<div class="clear"></div>
+    </div>
+  </section>
+<footer>
+  <div class="grid">
+    <div class="unit one-third center-on-mobiles">
+      <p>Jekyllはボランティアの<a href="/team/">コアチーム</a>により愛情を込めて維持されています。</p>
+      <p>このWebサイトのコンテンツは<a href="https://github.com/jekyll/jekyll/blob/master/LICENSE" target="_blank">MIT&nbsp;License</a>に基づきます。&copy;&nbsp;2020</p>
+      <!-- <p>Jekyll is lovingly maintained by the <a href="/team/">core team</a> of volunteers. </p>
+      <p>The contents of this website are <br />&copy;&nbsp;2020 under the terms of the <a href="https://github.com/jekyll/jekyll/blob/master/LICENSE">MIT&nbsp;License</a>.</p> -->
+    </div>
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>
+        Proudly hosted by
+        <a href="https://github.com">
+          <img src="/img/footer-logo.png" width="100" height="30" alt="GitHub • Social coding">
+        </a>
+      </p>
+    </div>
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>
+        Jekyll is funded thanks to its
+        <a href="https://github.com/jekyll/jekyll#sponsors">
+          sponsors!
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
+<script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<span class=\"sr-only\">Permalink</span><i class=\"fa fa-link\"></i>";
+    anchor.title = "Permalink";
+    return anchor;
+  };
+
+  var linkifyAnchors = function (level, containingElement) {
+    var headers = containingElement.getElementsByTagName("h" + level);
+    for (var h = 0; h < headers.length; h++) {
+      var header = headers[h];
+
+      if (typeof header.id !== "undefined" && header.id !== "") {
+        header.appendChild(anchorForId(header.id));
+      }
+    }
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var contentBlock = document.getElementsByClassName("docs")[0] || document.getElementsByClassName("news")[0];
+      if (!contentBlock) {
+        return;
+      }
+      for (var level = 1; level <= 6; level++) {
+        linkifyAnchors(level, contentBlock);
+      }
+    }
+  };
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script type="text/javascript"> docsearch({
+apiKey: '50fe39c839958dfad797000f33e2ec17',
+indexName: 'jekyllrb',
+inputSelector: '#docsearch-input',
+enhancedSearchInput: true,
+debug: false // Set debug to true if you want to inspect the dropdown
+});
+</script>
+</body>
+</html>

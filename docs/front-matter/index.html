@@ -1,0 +1,508 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link type="application/atom+xml" rel="alternate" href="http://jekyllrb-ja.github.io/feed.xml" title="Jekyll • シンプルで、ブログのような、静的サイト" />
+  <link type="application/atom+xml" rel="alternate" href="/feed/release.xml" title="Jekyll releases posts" />
+  <link rel="alternate" type="application/atom+xml" title="Recent commits to Jekyll’s master branch" href="https://github.com/jekyll/jekyll/commits/master.atom">
+  <link rel="preload" href="/fonts/lato-v14-latin-300.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/lato-v14-latin-700.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/css/screen.css" as="style">
+  <link rel="stylesheet" href="/css/screen.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Front Matter | Jekyll • シンプルで、ブログのような、静的サイト</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Front Matter" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="YAML front matterブロックを含むファイルは全て、Jekyllに特別なファイルとして処理されます。front matterはファイルの最初で3つのダッシュの行に挟まれた有効なYAMLでなければなりません。次は基本的な例です。" />
+<meta property="og:description" content="YAML front matterブロックを含むファイルは全て、Jekyllに特別なファイルとして処理されます。front matterはファイルの最初で3つのダッシュの行に挟まれた有効なYAMLでなければなりません。次は基本的な例です。" />
+<link rel="canonical" href="http://jekyllrb-ja.github.io/docs/front-matter/" />
+<meta property="og:url" content="http://jekyllrb-ja.github.io/docs/front-matter/" />
+<meta property="og:site_name" content="Jekyll • シンプルで、ブログのような、静的サイト" />
+<meta property="og:image" content="http://jekyllrb-ja.github.io/img/jekyll-og.png" />
+<script type="application/ld+json">
+{"headline":"Front Matter","image":"http://jekyllrb-ja.github.io/img/jekyll-og.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://jekyllrb-ja.github.io/img/logo-2x.png"}},"url":"http://jekyllrb-ja.github.io/docs/front-matter/","description":"YAML front matterブロックを含むファイルは全て、Jekyllに特別なファイルとして処理されます。front matterはファイルの最初で3つのダッシュの行に挟まれた有効なYAMLでなければなりません。次は基本的な例です。","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <!--[if lt IE 9]>
+  <script src="/js/html5shiv.min.js"></script>
+  <script src="/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body class="wrap"><header>
+  <div class="flexbox">
+    <div class="center-on-mobiles">
+      <h1>
+        <a href="/" class="logo">
+          <span class="sr-only">Jekyll</span>
+          <img src="/img/logo-2x.png" width="140" height="65" alt="Jekyll Logo">
+        </a>
+      </h1>
+    </div>
+    <nav class="main-nav hide-on-mobiles">
+      <ul>
+  <li><a href="/">Home</a></li>
+  <li class="current"><a href="/docs/">Docs</a></li>
+  <li><a href="/resources/">Resources</a></li>
+  <li><a href="/showcase/">Showcase</a></li>
+  <li><a href="/news/">News</a></li>
+  </ul>
+</nav>
+    <div class="search hide-on-mobiles">
+      <input type="text" id="docsearch-input" placeholder="Search the docs…">
+</div>
+    <div class="meta hide-on-mobiles">
+      <ul>
+        <li><a href="https://github.com/jekyll/jekyll/releases/tag/v4.1.1">v4.1.1</a></li>
+        <li><a href="https://github.com/jekyll/jekyll">GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+  <nav class="mobile-nav show-on-mobiles">
+    <ul>
+  <li><a href="/">Home</a></li>
+    <li class="current" ><a href="/docs/">Docs</a></li>
+    <li><a href="/resources/">Resources</a></li>
+    <li><a href="/news/">News</a></li>
+    <li><a href="https://github.com/jekyll/jekyll">GitHub</a></li>
+</ul>
+</nav>
+</header>
+  <section class="docs">
+    <div class="grid">
+      <div class="docs-nav-mobile unit whole show-on-mobiles">
+  <select onchange="if (this.value) window.location.href=this.value">
+    <option value="">Navigate the docs…</option>
+    <optgroup label="入門">
+      <option value="/docs/">クイックスタート</option>
+      <option value="/docs/ruby-101/">Ruby基礎</option>
+      <option value="/docs/installation/">インストール</option>
+      <option value="/docs/community/">コミュニティ</option>
+      <option value="/docs/step-by-step/01-setup/">Step by Stepチュートリアル</option>
+    </optgroup>
+    <optgroup label="ビルド">
+      <option value="/docs/usage/">コマンドラインの使い方</option>
+      <option value="/docs/configuration/">構成・設定</option>
+    </optgroup>
+    <optgroup label="コンテンツ">
+      <option value="/docs/pages/">Pages（ページ）</option>
+      <option value="/docs/posts/">Posts（ポスト）</option>
+      <option value="/docs/front-matter/">Front Matter</option>
+      <option value="/docs/collections/">コレクション</option>
+      <option value="/docs/datafiles/">Dataファイル</option>
+      <option value="/docs/assets/">Assets</option>
+      <option value="/docs/static-files/">静的ファイル</option>
+    </optgroup>
+    <optgroup label="サイトの構成">
+      <option value="/docs/structure/">ディレクトリ構成</option>
+      <option value="/docs/liquid/">Liquid</option>
+      <option value="/docs/variables/">変数</option>
+      <option value="/docs/includes/">Includes（インクルード）</option>
+      <option value="/docs/layouts/">レイアウト</option>
+      <option value="/docs/permalinks/">パーマリンク</option>
+      <option value="/docs/themes/">テーマ</option>
+      <option value="/docs/pagination/">Pagination（ページ分け）</option>
+    </optgroup>
+    <optgroup label="ガイド">
+      <option value="/docs/plugins/">プラグイン</option>
+      <option value="/docs/migrations/">ブログの移行</option>
+      <option value="/docs/upgrading/">アップグレード</option>
+      <option value="/docs/deployment/">Deployment</option>
+    </optgroup>
+    </select>
+</div>
+<div class="unit four-fifths">
+        <article>
+          <div class="improve right hide-on-mobiles">
+            <a data-proofer-ignore href="https://github.com/jekyll/jekyll/edit/master/docs/_docs/front-matter.md"><i class="fa fa-pencil"></i> &nbsp;Improve this page</a>
+          </div>
+          <h1>Front Matter</h1>
+          <p><a href="https://yaml.org/ target=&quot;_blank&quot;">YAML</a> front matterブロックを含むファイルは全て、Jekyllに特別なファイルとして処理されます。front matterはファイルの最初で3つのダッシュの行に挟まれた有効なYAMLでなければなりません。次は基本的な例です。</p>
+
+<!-- Any file that contains a [YAML](http://yaml.org/) front matter block will be
+processed by Jekyll as a special file. The front matter must be the first thing
+in the file and must take the form of valid YAML set between triple-dashed
+lines. Here is a basic example: -->
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">post</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s">Blogging Like a Hacker</span>
+<span class="nn">---</span>
+</code></pre></div></div>
+
+<p>3つのダッシュの行の間で、定義済みの変数（下記を参照してください）を設定したり、カスタム変数を作ることができます。これらの変数は、そのファイルやそのページやポストのレイアウトで、Liquidタグを使ってアクセスできるようになります。</p>
+
+<!-- Between these triple-dashed lines, you can set predefined variables (see below
+for a reference) or even create custom ones of your own. These variables will
+then be available for you to access using Liquid tags both further down in the
+file and also in any layouts or includes that the page or post in question
+relies on. -->
+
+<div class="note warning">
+  <h5>UTF-8エンコーディング時の警告</h5>
+  <!-- <h5>UTF-8 Character Encoding Warning</h5> -->
+  <p>
+    UTF-8エンコーディングを使用している場合、<code>BOM</code>をヘッダに含めないでください。Jekyllに非常に悪いことが起こります。特に<a href="/docs/installation/windows/">Jekyll on Windows</a>を使用している場合に影響があります。
+  </p>
+  <!-- <p>
+    If you use UTF-8 encoding, make sure that no <code>BOM</code> header
+    characters exist in your files or very, very bad things will happen to
+    Jekyll. This is especially relevant if you’re running
+    <a href="/docs/installation/windows/">Jekyll on Windows</a>.
+  </p> -->
+</div>
+
+<div class="note">
+  <h5>Front Matter変数はオプションです</h5>
+  <!-- <h5>Front Matter Variables Are Optional</h5> -->
+  <p>
+    <a href="/docs/variables/">Liquidタグや変数</a>は使いたいけれどfront matterでは何も必要ない場合、取り除いて空にしましょう。3つのダッシュの行が2行続いていれば、Jekyllはそのファイルで作業をします。（これは、CSSやRSSフィードのファイルで便利です！）
+  </p>
+  <!-- <p>
+    If you want to use <a href="/docs/variables/">Liquid tags and variables</a>
+    but don’t need anything in your front matter, just leave it empty! The set
+    of triple-dashed lines with nothing in between will still get Jekyll to
+    process your file. (This is useful for things like CSS and RSS feeds!)
+  </p> -->
+</div>
+
+<h2 id="定義済みグローバル変数">定義済みグローバル変数</h2>
+<!-- ## Predefined Global Variables -->
+
+<p>ページやポストのfront matterで設定できる、定義済みのグローバル変数です。</p>
+
+<!-- There are a number of predefined global variables that you can set in the
+front matter of a page or post. -->
+
+<div class="mobile-side-scroller">
+<table>
+  <thead>
+    <tr>
+      <th>変数</th>
+      <th>説明</th>
+      <!-- <th>Variable</th>
+      <th>Description</th> -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <p><code>layout</code></p>
+      </td>
+      <td>
+        <p>
+
+          設定したらそのレイアウトファイルを使用します。レイアウトファイルの名前を拡張子無しで使います。レイアウトファイルは、<code>_layouts</code>ディレクトリになければなりません。
+
+        </p>
+        <!-- <p>
+
+          If set, this specifies the layout file to use. Use the layout file
+          name without the file extension. Layout files must be placed in the
+          <code>_layouts</code> directory.
+
+        </p> -->
+        <ul>
+          <li>
+            <code>null</code>を使用するとレイアウトファイルを使用しません。ファイルがpost/documentで<a href="/docs/configuration/front-matter-defaults/">
+            front matterのデフォルト</a>が定義されている場合、上書きします。
+          </li>
+          <!-- <li>
+            Using <code>null</code> will produce a file without using a layout
+            file. This is overridden if the file is a post/document and has a
+            layout defined in the <a href="/docs/configuration/front-matter-defaults/">
+            front matter defaults</a>.
+          </li> -->
+          <li>
+            バージョン3.5.0から始めた場合、post/documentで<code>none</code>を使用すると、front matterのデフォルトに関係なく、レイアウトファイルを使用しません。pageで<code>none</code>を使用すると、Jekyllは"none"というレイアウトを使用しようとします。
+          </li>
+          <!-- <li>
+            Starting from version 3.5.0, using <code>none</code> in a post/document will
+            produce a file without using a layout file regardless of front matter defaults.
+            Using <code>none</code> in a page will cause Jekyll to attempt to
+            use a layout named "none".
+          </li> -->
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><code>permalink</code></p>
+      </td>
+      <td>
+        <p>
+
+          サイト全体のURLのスタイル（デフォルトは<code>/year/month/day/title.html</code>）と異なるURLで作成したい場合この変数を設定します。最終的なURLとして使用されます。
+        </p>
+        <!-- <p>
+
+          If you need your processed blog post URLs to be something other than
+          the site-wide style (default <code>/year/month/day/title.html</code>), then you can set
+          this variable and it will be used as the final URL.
+
+        </p> -->
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><code>published</code></p>
+      </td>
+      <td>
+        <p>
+          サイトを生成するときに、特定のポストを表示したくない場合にfalseを設定します。
+        </p>
+        <!-- <p>
+          Set to false if you don’t want a specific post to show up when the
+          site is generated.
+        </p> -->
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="note">
+  <h5>非公開としてマークされたポストをレンダリングする</h5>
+  <!-- <h5>Render Posts Marked As Unpublished</h5> -->
+  <p>
+    非公開のページをプレビューするには、<code>jekyll serve</code>や<code>jekyll build</code>を実行するときに<code>--unpublished</code>スイッチを使います。 Jekyllには、ブログポスト専用の便利な<a href="/docs/posts/#drafts">ドラフト</a>機能もあります。
+  </p>
+  <!-- <p>
+    To preview unpublished pages, run `jekyll serve` or `jekyll build`
+    with the `--unpublished` switch. Jekyll also has a handy <a href="/docs/posts/#drafts">drafts</a>
+    feature tailored specifically for blog posts.
+  </p> -->
+</div>
+
+<h2 id="カスタム変数">カスタム変数</h2>
+<!-- ## Custom Variables -->
+
+<p>Liquidでアクセスできる、あなた自身のfront matter変数を設定することもできます。例えば、<code class="language-plaintext highlighter-rouge">food</code>という変数を使用したい場合、ページには次のように記載します。</p>
+
+<!-- You can also set your own front matter variables you can access in Liquid. For
+instance, if you set a variable called `food`, you can use that in your page: -->
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+food: Pizza
+---
+
+&lt;h1&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">food</span><span class="w"> </span><span class="p">}}</span>&lt;/h1&gt;
+</code></pre></div></div>
+
+<h2 id="ポストの定義済み変数">ポストの定義済み変数</h2>
+<!-- ## Predefined Variables for Posts -->
+
+<p>ポストのfront matterですぐに使用できます。</p>
+
+<!-- These are available out-of-the-box to be used in the front matter for a post. -->
+
+<div class="mobile-side-scroller">
+<table>
+  <thead>
+    <tr>
+      <th>変数</th>
+      <th>説明</th>
+      <!-- <th>Variable</th>
+      <th>Description</th> -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <p><code>date</code></p>
+      </td>
+      <td>
+        <p>
+          ポストのファイル名からの日付を上書きします。これはポストを正しくソートするために使用できます。日付は特定のフォーマット<code>YYYY-MM-DD HH:MM:SS +/-TTTT</code>で、時刻とタイムゾーンはオプションです。
+        </p>
+        <!-- <p>
+          A date here overrides the date from the name of the post. This can be
+          used to ensure correct sorting of posts. A date is specified in the
+          format <code>YYYY-MM-DD HH:MM:SS +/-TTTT</code>; hours, minutes, seconds, and timezone offset
+          are optional.
+        </p> -->
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><code>category</code></p>
+        <p><code>categories</code></p>
+      </td>
+      <td>
+        <p>
+
+          ポストをフォルダ分けする代わりに、1つ以上のカテゴリを設定できます。サイトにポストを生成するときに、これらのカテゴリが設定されているように振る舞います。Categories（複数キー）では<a href="https://en.wikipedia.org/wiki/YAML#Basic_components" target="_blank">YAML list</a>やスペース区切りの文字列で指定できます。
+
+        </p>
+        <!-- <p>
+
+          Instead of placing posts inside of folders, you can specify one or
+          more categories that the post belongs to. When the site is generated
+          the post will act as though it had been set with these categories
+          normally. Categories (plural key) can be specified as a <a
+          href="https://en.wikipedia.org/wiki/YAML#Basic_components">YAML list</a> or a
+          space-separated string.
+
+        </p> -->
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><code>tags</code></p>
+      </td>
+      <td>
+        <p>
+
+          カテゴリとよく似ており、1つ以上のタグをポストに追加できます。カテゴリと同様tagsも<a href="https://en.wikipedia.org/wiki/YAML#Basic_components" target="_blank">YAML list</a>やスペース区切りの文字列で指定できます。
+
+        </p>
+        <!-- <p>
+
+          Similar to categories, one or multiple tags can be added to a post.
+          Also like categories, tags can be specified as a <a
+          href="https://en.wikipedia.org/wiki/YAML#Basic_components">YAML list</a> or a
+          space-separated string.
+
+        </p> -->
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="note">
+  <h5>繰り返さないで</h5>
+  <!-- <h5>Don't repeat yourself</h5> -->
+  <p>
+    よく使用するfront matter変数を、何度も何度も繰り返し記述したくない場合は、<a href="/docs/configuration/front-matter-defaults/" title="Front Matter defaults">デフォルト</a>を変更し必要に応じて上書きしてください。これは定義済み変数でもカスタム変数でも行えます。
+  </p>
+  <!-- <p>
+    If you don't want to repeat your frequently used front matter variables
+    over and over, define <a href="/docs/configuration/front-matter-defaults/" title="Front Matter defaults">defaults</a>
+    for them and only override them where necessary (or not at all). This works
+    both for predefined and custom variables.
+  </p> -->
+</div>
+
+        </article>
+      </div>
+      <div class="unit one-fifth hide-on-mobiles">
+  <aside>
+    <h4>入門</h4>
+      <ul>
+        <li><a href="/docs/">クイックスタート</a></li>
+        <li><a href="/docs/ruby-101/">Ruby基礎</a></li>
+        <li><a href="/docs/installation/">インストール</a></li>
+        <li><a href="/docs/community/">コミュニティ</a></li>
+        <li><a href="/docs/step-by-step/01-setup/">Step by Stepチュートリアル</a></li>
+      </ul>
+    <h4>ビルド</h4>
+      <ul>
+        <li><a href="/docs/usage/">コマンドラインの使い方</a></li>
+        <li><a href="/docs/configuration/">構成・設定</a></li>
+      </ul>
+    <h4>コンテンツ</h4>
+      <ul>
+        <li><a href="/docs/pages/">Pages（ページ）</a></li>
+        <li><a href="/docs/posts/">Posts（ポスト）</a></li>
+        <li class="current"><a href="/docs/front-matter/">Front Matter</a></li>
+        <li><a href="/docs/collections/">コレクション</a></li>
+        <li><a href="/docs/datafiles/">Dataファイル</a></li>
+        <li><a href="/docs/assets/">Assets</a></li>
+        <li><a href="/docs/static-files/">静的ファイル</a></li>
+      </ul>
+    <h4>サイトの構成</h4>
+      <ul>
+        <li><a href="/docs/structure/">ディレクトリ構成</a></li>
+        <li><a href="/docs/liquid/">Liquid</a></li>
+        <li><a href="/docs/variables/">変数</a></li>
+        <li><a href="/docs/includes/">Includes（インクルード）</a></li>
+        <li><a href="/docs/layouts/">レイアウト</a></li>
+        <li><a href="/docs/permalinks/">パーマリンク</a></li>
+        <li><a href="/docs/themes/">テーマ</a></li>
+        <li><a href="/docs/pagination/">Pagination（ページ分け）</a></li>
+      </ul>
+    <h4>ガイド</h4>
+      <ul>
+        <li><a href="/docs/plugins/">プラグイン</a></li>
+        <li><a href="/docs/migrations/">ブログの移行</a></li>
+        <li><a href="/docs/upgrading/">アップグレード</a></li>
+        <li><a href="/docs/deployment/">Deployment</a></li>
+      </ul>
+    </aside>
+</div>
+<div class="clear"></div>
+    </div>
+  </section>
+<footer>
+  <div class="grid">
+    <div class="unit one-third center-on-mobiles">
+      <p>Jekyllはボランティアの<a href="/team/">コアチーム</a>により愛情を込めて維持されています。</p>
+      <p>このWebサイトのコンテンツは<a href="https://github.com/jekyll/jekyll/blob/master/LICENSE" target="_blank">MIT&nbsp;License</a>に基づきます。&copy;&nbsp;2020</p>
+      <!-- <p>Jekyll is lovingly maintained by the <a href="/team/">core team</a> of volunteers. </p>
+      <p>The contents of this website are <br />&copy;&nbsp;2020 under the terms of the <a href="https://github.com/jekyll/jekyll/blob/master/LICENSE">MIT&nbsp;License</a>.</p> -->
+    </div>
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>
+        Proudly hosted by
+        <a href="https://github.com">
+          <img src="/img/footer-logo.png" width="100" height="30" alt="GitHub • Social coding">
+        </a>
+      </p>
+    </div>
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>
+        Jekyll is funded thanks to its
+        <a href="https://github.com/jekyll/jekyll#sponsors">
+          sponsors!
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
+<script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<span class=\"sr-only\">Permalink</span><i class=\"fa fa-link\"></i>";
+    anchor.title = "Permalink";
+    return anchor;
+  };
+
+  var linkifyAnchors = function (level, containingElement) {
+    var headers = containingElement.getElementsByTagName("h" + level);
+    for (var h = 0; h < headers.length; h++) {
+      var header = headers[h];
+
+      if (typeof header.id !== "undefined" && header.id !== "") {
+        header.appendChild(anchorForId(header.id));
+      }
+    }
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var contentBlock = document.getElementsByClassName("docs")[0] || document.getElementsByClassName("news")[0];
+      if (!contentBlock) {
+        return;
+      }
+      for (var level = 1; level <= 6; level++) {
+        linkifyAnchors(level, contentBlock);
+      }
+    }
+  };
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script type="text/javascript"> docsearch({
+apiKey: '50fe39c839958dfad797000f33e2ec17',
+indexName: 'jekyllrb',
+inputSelector: '#docsearch-input',
+enhancedSearchInput: true,
+debug: false // Set debug to true if you want to inspect the dropdown
+});
+</script>
+</body>
+</html>

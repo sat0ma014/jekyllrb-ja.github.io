@@ -1,0 +1,977 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link type="application/atom+xml" rel="alternate" href="http://jekyllrb-ja.github.io/feed.xml" title="Jekyll • シンプルで、ブログのような、静的サイト" />
+  <link type="application/atom+xml" rel="alternate" href="/feed/release.xml" title="Jekyll releases posts" />
+  <link rel="alternate" type="application/atom+xml" title="Recent commits to Jekyll’s master branch" href="https://github.com/jekyll/jekyll/commits/master.atom">
+  <link rel="preload" href="/fonts/lato-v14-latin-300.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/lato-v14-latin-700.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/css/screen.css" as="style">
+  <link rel="stylesheet" href="/css/screen.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>ナビゲーション | Jekyll • シンプルで、ブログのような、静的サイト</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="ナビゲーション" />
+<meta name="author" content="tomjoht" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="プレーンテキストを静的サイトやブログに変えましょう" />
+<meta property="og:description" content="プレーンテキストを静的サイトやブログに変えましょう" />
+<link rel="canonical" href="http://jekyllrb-ja.github.io/tutorials/navigation/" />
+<meta property="og:url" content="http://jekyllrb-ja.github.io/tutorials/navigation/" />
+<meta property="og:site_name" content="Jekyll • シンプルで、ブログのような、静的サイト" />
+<meta property="og:image" content="http://jekyllrb-ja.github.io/img/jekyll-og.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-01-24T23:38:17+00:00" />
+<script type="application/ld+json">
+{"headline":"ナビゲーション","dateModified":"2017-01-24T23:38:17+00:00","datePublished":"2017-01-24T23:38:17+00:00","image":"http://jekyllrb-ja.github.io/img/jekyll-og.png","author":{"@type":"Person","name":"tomjoht"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://jekyllrb-ja.github.io/tutorials/navigation/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://jekyllrb-ja.github.io/img/logo-2x.png"},"name":"tomjoht"},"url":"http://jekyllrb-ja.github.io/tutorials/navigation/","description":"プレーンテキストを静的サイトやブログに変えましょう","@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <!--[if lt IE 9]>
+  <script src="/js/html5shiv.min.js"></script>
+  <script src="/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body class="wrap"><header>
+  <div class="flexbox">
+    <div class="center-on-mobiles">
+      <h1>
+        <a href="/" class="logo">
+          <span class="sr-only">Jekyll</span>
+          <img src="/img/logo-2x.png" width="140" height="65" alt="Jekyll Logo">
+        </a>
+      </h1>
+    </div>
+    <nav class="main-nav hide-on-mobiles">
+      <ul>
+  <li><a href="/">Home</a></li>
+  <li><a href="/docs/">Docs</a></li>
+  <li><a href="/resources/">Resources</a></li>
+  <li><a href="/showcase/">Showcase</a></li>
+  <li><a href="/news/">News</a></li>
+  </ul>
+</nav>
+    <div class="search hide-on-mobiles">
+      <input type="text" id="docsearch-input" placeholder="Search the docs…">
+</div>
+    <div class="meta hide-on-mobiles">
+      <ul>
+        <li><a href="https://github.com/jekyll/jekyll/releases/tag/v4.1.1">v4.1.1</a></li>
+        <li><a href="https://github.com/jekyll/jekyll">GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+  <nav class="mobile-nav show-on-mobiles">
+    <ul>
+  <li><a href="/">Home</a></li>
+    <li><a href="/docs/">Docs</a></li>
+    <li><a href="/resources/">Resources</a></li>
+    <li><a href="/news/">News</a></li>
+    <li><a href="https://github.com/jekyll/jekyll">GitHub</a></li>
+</ul>
+</nav>
+</header>
+<section class="docs">
+  <div class="grid"><div class="docs-nav-mobile unit whole show-on-mobiles">
+  <select onchange="if (this.value) window.location.href=this.value">
+    <option value="">Navigate the tutorials…</option>
+    <optgroup label="Tutorials">
+      <option value="/tutorials/home/">チュートリアル</option>
+      <option value="/tutorials/video-walkthroughs/">動画での解説</option>
+      <option value="/tutorials/navigation/">ナビゲーション</option>
+      <option value="/tutorials/orderofinterpretation/">解釈の順番</option>
+      <option value="/tutorials/custom-404-page/">カスタム404ページ</option>
+      <option value=""></option>
+      <option value="/tutorials/using-jekyll-with-bundler/">BundlerでJekyllを使う</option>
+      <option value="/tutorials/csv-to-table/">CSVデータをテーブル化</option>
+      </optgroup>
+    </select>
+</div>
+<div class="unit four-fifths">
+      <article>
+        <header class="tutorial-header">
+          <div class="improve right hide-on-mobiles">
+            <a href="https://github.com/jekyll/jekyll/edit/master/docs/_tutorials/navigation.md"><i
+               class="fa fa-pencil"></i> &nbsp;Improve this page</a>
+          </div>
+          <h1 class="tutorial-title">ナビゲーション</h1>
+          
+          
+            <div class="tutorial-meta">
+              <span class="tutorial-date">
+               24 January 2017
+              </span>
+              <a href="https://github.com/tomjoht" class="tutorial-author">
+                <img class="avatar avatar-small" alt="tomjoht" width="24" height="24" data-proofer-ignore="true" src="https://avatars1.githubusercontent.com/tomjoht?v=3&s=24" srcset="https://avatars1.githubusercontent.com/tomjoht?v=3&s=24 1x, https://avatars1.githubusercontent.com/tomjoht?v=3&s=48 2x, https://avatars1.githubusercontent.com/tomjoht?v=3&s=72 3x, https://avatars1.githubusercontent.com/tomjoht?v=3&s=96 4x" />
+                <span class="author-name">tomjoht</span>
+              </a>
+            </div>
+          
+        </header><!-- ---
+title: Navigation
+author: tomjoht
+date: 2017-01-24 15:38:17 -0800
+--- -->
+
+<p>Jekyllサイトに多くのページがあるなら、ページのナビゲーションを作りたくなるでしょう。ナビゲーションリンクをハードコーディングする代わりに、ページのリストをプログラムで取得してサイトのナビゲーションを構築することができます。</p>
+
+<!-- If your Jekyll site has a lot of pages, you might want to create navigation for the pages. Instead of hard-coding navigation links, you can programmatically retrieve a list of pages to build the navigation for your site. -->
+
+<p>Jekyllドキュメンテ—ションには<a href="/docs/datafiles/">dataファイルとのやりとり</a>についての情報がありますが、ここではより堅牢なナビゲーションの構築に挑戦します。</p>
+
+<!-- Although there's already information about [interacting with data files](/docs/datafiles/) in other Jekyll docs, this tutorial dives into building more robust navigation for your site. -->
+
+<p>jekyllサイトのページを取得するには主に2つの方法があります。</p>
+
+<!-- There are two primary ways of retrieving pages on a Jekyll site: -->
+
+<ul>
+  <li><strong>YAMLデータソースにリストされているページの取得</strong>。<code class="language-plaintext highlighter-rouge">_data</code>フォルダのYAML（やJSONやCSV）ファイルにページデータを保管し、YAMLプロパティをル—プさせ、その値をテーマに挿入します。</li>
+  <li><strong>ページのfront matterをループしてページを取得</strong>。front matterを通じページを識別し、ページを返し、そのページのfront matterの値をテーマに挿入します。</li>
+</ul>
+
+<!-- * **Retrieve pages listed in a YAML data source**. Store the page data in a YAML (or JSON or CSV) file in the `_data` folder, loop through the YAML properties, and insert the values into your theme.
+* **Retrieve pages by looping through the page front matter**. Look through the front matter of your pages to identify certain properties, return those pages, and insert the pages' front matter values into your theme. -->
+
+<p>以下では、基本的なナビゲーションのシナリオから始め、ページを返す異なる方法のデモンストレーションに洗練された要素の追加を例示します。どのシナリオでも、3つの要素があります。</p>
+
+<!-- The examples that follow start with a basic navigation scenario and add more sophisticated elements to demonstrate different ways of returning the pages. In every scenario, you'll see 3 elements: -->
+
+<ul>
+  <li>YAML</li>
+  <li>Liquid</li>
+  <li>Result</li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">_data</code>ディレクトリのYAMLファイルは、<code class="language-plaintext highlighter-rouge">samplelist.yml</code>という名前です。</p>
+
+<!-- The YAML file in the `_data` directory is called `samplelist.yml`. -->
+
+<p>シナリオは次の通りです。</p>
+
+<!-- The scenarios are as follows: -->
+
+<ul id="markdown-toc">
+  <li><a href="#シナリオ1基本的なリスト" id="markdown-toc-シナリオ1基本的なリスト">シナリオ1：基本的なリスト</a></li>
+  <li><a href="#シナリオ2リストのソート" id="markdown-toc-シナリオ2リストのソート">シナリオ2：リストのソート</a></li>
+  <li><a href="#シナリオ32レベルのナビゲーションリスト" id="markdown-toc-シナリオ32レベルのナビゲーションリスト">シナリオ3：2レベルのナビゲーションリスト</a></li>
+  <li><a href="#シナリオ43レベルのナビゲーションリスト" id="markdown-toc-シナリオ43レベルのナビゲーションリスト">シナリオ4：3レベルのナビゲーションリスト</a></li>
+  <li><a href="#シナリオ5yamlリストの選択にページ変数を使用する" id="markdown-toc-シナリオ5yamlリストの選択にページ変数を使用する">シナリオ5：YAMLリストの選択にページ変数を使用する</a></li>
+  <li><a href="#シナリオ6現在のページにactiveクラスを適用する" id="markdown-toc-シナリオ6現在のページにactiveクラスを適用する">シナリオ6：現在のページにactiveクラスを適用する</a></li>
+  <li><a href="#シナリオ7条件付きでアイテムを含める" id="markdown-toc-シナリオ7条件付きでアイテムを含める">シナリオ7：条件付きでアイテムを含める</a></li>
+  <li><a href="#シナリオ8front-matterのプロパティに基づくアイテムの取得" id="markdown-toc-シナリオ8front-matterのプロパティに基づくアイテムの取得">シナリオ8：front matterのプロパティに基づくアイテムの取得</a></li>
+  <li><a href="#シナリオ9再帰による入れ子ツリーナビゲーション" id="markdown-toc-シナリオ9再帰による入れ子ツリーナビゲーション">シナリオ9：再帰による入れ子ツリーナビゲーション</a></li>
+</ul>
+
+<h2 id="シナリオ1基本的なリスト">シナリオ1：基本的なリスト</h2>
+<!-- ## Scenario 1: Basic List -->
+
+<p>ページの基本的なリストを返します。</p>
+
+<!-- You want to return a basic list of pages. -->
+
+<p><strong>YAML</strong></p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">docs_list_title</span><span class="pi">:</span> <span class="s">ACME Documentation</span>
+<span class="na">docs</span><span class="pi">:</span>
+
+<span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">Introduction</span>
+  <span class="na">url</span><span class="pi">:</span> <span class="s">introduction.html</span>
+
+<span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">Configuration</span>
+  <span class="na">url</span><span class="pi">:</span> <span class="s">configuration.html</span>
+
+<span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">Deployment</span>
+  <span class="na">url</span><span class="pi">:</span> <span class="s">deployment.html</span>
+</code></pre></div></div>
+
+<p><strong>Liquid</strong></p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;h2&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">data</span><span class="p">.</span><span class="nv">samplelist</span><span class="p">.</span><span class="nv">docs_list_title</span><span class="w"> </span><span class="p">}}</span>&lt;/h2&gt;
+&lt;ul&gt;
+   <span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">item</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">site.data.samplelist.docs</span><span class="w"> </span><span class="p">%}</span>
+      &lt;li&gt;&lt;a href="<span class="p">{{</span><span class="w"> </span><span class="nv">item</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">}}</span>"&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">item</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>&lt;/a&gt;&lt;/li&gt;
+   <span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+&lt;/ul&gt;
+</code></pre></div></div>
+
+<p><strong>Result</strong></p>
+<div class="highlight result" data-proofer-ignore="">
+   <h2>ACME Documentation</h2>
+   <ul>
+      <li><a href="#">Introduction</a></li>
+      <li><a href="#">Configuration</a></li>
+      <li><a href="#">Deployment</a></li>
+   </ul>
+</div>
+
+<p class="note info">この架空のサンプルの結果では、404エラーを回避するために実際のリンク値を<code class="language-plaintext highlighter-rouge">#</code>に手動で置き換えています。</p>
+
+<!-- {: .note .info }
+For the results in these fictitious samples, `#` is manually substituted for the actual link value to avoid 404 errors.) -->
+
+<p><code class="language-plaintext highlighter-rouge">for</code>ループを使用する場合、参照するためのアイテムは選ぶことができます。選択した変数（この場合は<code class="language-plaintext highlighter-rouge">item</code>）はリストの各アイテムのプロパティにアクセスするためのものになります。ドットはアイテムのプロパティを取得するのに使います（例：<code class="language-plaintext highlighter-rouge">item.url</code>）。</p>
+
+<!-- When you use a `for` loop, you choose how you want to refer to the items you're looping through. The variable you choose (in this case, `item`) becomes how you access the properties of each item in the list. Dot notation is used to get a property of the item (for example, `item.url`). -->
+
+<p>YAMLコンテンツには、こちらに関連する2つの主なフォーマットがあります。</p>
+
+<!-- The YAML content has two main types of formats that are relevant here: -->
+
+<ul>
+  <li>マッピング</li>
+  <li>リスト</li>
+</ul>
+
+<!-- * mapping
+* list -->
+
+<p><code class="language-plaintext highlighter-rouge">docs_list_title: ACME Documentation</code>はマッピングです。<code class="language-plaintext highlighter-rouge">site.data.samplelist.docs_list_title</code>変数でアクセスします。</p>
+
+<!-- `docs_list_title: ACME Documentation` is a mapping. You access the value with `site.data.samplelist.docs_list_title`. -->
+
+<p><code class="language-plaintext highlighter-rouge">docs:</code>はリストです。リストの各アイテムはハイフンから始まります。マッピングとは異なり、通常はリストのプロパティに直接アクセスしません。リストの特定のアイテムにアクセスしたい場合、通常の配列表記に従って、リスト内の場所を指定します。例えば、<code class="language-plaintext highlighter-rouge">site.data.samplelist.docs[0]</code>でリストの最初のアイテムにアクセスします。しかし、これは滅多に行いません。</p>
+
+<!-- `docs:` is a list. The list begins each item with a hyphen. Unlike with mappings, you usually don't access list properties directly as you do with mappings. If you want to access a specific item in the list, you must identify the position in the list you want, following typical array notation. For example, `site.data.samplelist.docs[0]` would access the first item in the list. However, this is rarely done. -->
+
+<p>リストでは通常、リストのアイテムを回すために<code class="language-plaintext highlighter-rouge">for</code>ループを用い、各アイテムに操作を行います。ナビゲーションの場合、通常はHTMLテーマのナビゲーションの部分の<code class="language-plaintext highlighter-rouge">li</code>タグに各リストを挿入します。</p>
+
+<!-- With lists, you usually use `for` loops to cycle through the list of items and do something with each item. With navigation menus, you usually insert each list item into `li` tags based on the navigation structure you're using in your HTML theme. -->
+
+<p>各ハイフン（<code class="language-plaintext highlighter-rouge">-</code>）は、リストの他のアイテムであることを示します。この例では、<code class="language-plaintext highlighter-rouge">title</code>と<code class="language-plaintext highlighter-rouge">url</code>の2つのプロパティだけを持っています。各アイテムに望むだけプロパティを追加することができます。リスト内のプロパティの順序は関係ありません。</p>
+
+<!-- Each hyphen (`-`) indicates another item in the list. This example just has two properties with each list item: `title` and `url`. You can include as many properties as you want for each item. The order of properties at each position in the list doesn't matter. -->
+
+<h2 id="シナリオ2リストのソート">シナリオ2：リストのソート</h2>
+<!-- ## Scenario 2: Sorted list -->
+
+<p><code class="language-plaintext highlighter-rouge">title</code>でリストをソートする場合を考えます。行うには、<code class="language-plaintext highlighter-rouge">docs</code>コレクションへの参照を変数に変換する時に、Liquidの<code class="language-plaintext highlighter-rouge">sort</code>フィルタを使用します。</p>
+
+<!-- Suppose you wanted to sort the list by the `title`. To do this, convert the reference to the `docs` collection to a variable, and then apply Liquid's `sort` filter to the variable: -->
+
+<p><strong>Liquid</strong></p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">doclist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">data</span><span class="p">.</span><span class="nv">samplelist</span><span class="p">.</span><span class="nv">docs</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">sort</span><span class="p">:</span><span class="w"> </span><span class="s1">'title'</span><span class="w">  </span><span class="p">%}</span>
+&lt;ol&gt;
+<span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">item</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">doclist</span><span class="w"> </span><span class="p">%}</span>
+    &lt;li&gt;&lt;a href="<span class="p">{{</span><span class="w"> </span><span class="nv">item</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">}}</span>"&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">item</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>&lt;/a&gt;&lt;/li&gt;
+<span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+&lt;/ol&gt;
+</code></pre></div></div>
+
+<p><strong>Result</strong></p>
+
+<div class="highlight result" data-proofer-ignore="">
+   <ol>
+      <li><a href="#">Configuration</a></li>
+      <li><a href="#">Deployment</a></li>
+      <li><a href="#">Introduction</a></li>
+   </ol>
+</div>
+
+<p>アルファベット順になりました。Liquidフィルタの<code class="language-plaintext highlighter-rouge">sort</code>プロパティがリストの実際のプロパティである<code class="language-plaintext highlighter-rouge">title</code>に適用されました。<code class="language-plaintext highlighter-rouge">title</code>がプロパティで無ければ、他のプロパティでソートする必要があります。</p>
+
+<!-- The items now appear in alphabetical order. The `sort` property in the Liquid filter applies to the `title`, which is an actual property in the list. If `title` weren't a property, we would need to sort by another property. -->
+
+<p>フィルタのオプションは<a href="https://help.shopify.com/themes/liquid/filters/array-filters" target="_blank">Liquid array filter</a>を見てください。この構文を以下のようにシンプルにすることはできません。</p>
+
+<!-- See the [Liquid array filter](https://help.shopify.com/themes/liquid/filters/array-filters) for more filter options. Note that you can't simply use this syntax: -->
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">item</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">site.data.samplelist.docs</span><span class="w"> </span>|<span class="w"> </span><span class="na">sort</span><span class="o">:</span><span class="w"> </span><span class="s2">"title"</span><span class="w"> </span><span class="p">%}{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">site.data.samplelist.docs</code>を<code class="language-plaintext highlighter-rouge">assign</code>や<code class="language-plaintext highlighter-rouge">capture</code>タグで変数に変換する必要があります。</p>
+
+<!-- You have to convert `site.data.samplelist.docs` to a variable first using either `assign` or `capture` tags. -->
+
+<h2 id="シナリオ32レベルのナビゲーションリスト">シナリオ3：2レベルのナビゲーションリスト</h2>
+<!-- ## Scenario 3: Two-level navigation list -->
+
+<p>見出しタイトルとサブアイテムの複数のセクションからなるリストが必要な場合を考えます。これを行うには、この情報を保管するために各リストアイテムにレベルを追加します。</p>
+
+<!-- Suppose you want a more robust list that incorporates multiple sections of heading titles and subitems. To do this, add an additional level to each list item to store this information: -->
+
+<p><strong>YAML</strong></p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">toc</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">Group </span><span class="m">1</span>
+    <span class="na">subfolderitems</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">page</span><span class="pi">:</span> <span class="s">Thing </span><span class="m">1</span>
+        <span class="na">url</span><span class="pi">:</span> <span class="s">/thing1.html</span>
+      <span class="pi">-</span> <span class="na">page</span><span class="pi">:</span> <span class="s">Thing </span><span class="m">2</span>
+        <span class="na">url</span><span class="pi">:</span> <span class="s">/thing2.html</span>
+      <span class="pi">-</span> <span class="na">page</span><span class="pi">:</span> <span class="s">Thing </span><span class="m">3</span>
+        <span class="na">url</span><span class="pi">:</span> <span class="s">/thing3.html</span>
+  <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">Group </span><span class="m">2</span>
+    <span class="na">subfolderitems</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">page</span><span class="pi">:</span> <span class="s">Piece </span><span class="m">1</span>
+        <span class="na">url</span><span class="pi">:</span> <span class="s">/piece1.html</span>
+      <span class="pi">-</span> <span class="na">page</span><span class="pi">:</span> <span class="s">Piece </span><span class="m">2</span>
+        <span class="na">url</span><span class="pi">:</span> <span class="s">/piece2.html</span>
+      <span class="pi">-</span> <span class="na">page</span><span class="pi">:</span> <span class="s">Piece </span><span class="m">3</span>
+        <span class="na">url</span><span class="pi">:</span> <span class="s">/piece3.html</span>
+  <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">Group </span><span class="m">3</span>
+    <span class="na">subfolderitems</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">page</span><span class="pi">:</span> <span class="s">Widget </span><span class="m">1</span>
+        <span class="na">url</span><span class="pi">:</span> <span class="s">/widget1.html</span>
+      <span class="pi">-</span> <span class="na">page</span><span class="pi">:</span> <span class="s">Widget </span><span class="m">2</span>
+        <span class="na">url</span><span class="pi">:</span> <span class="s">/widget2.html</span>
+      <span class="pi">-</span> <span class="na">page</span><span class="pi">:</span> <span class="s">Widget </span><span class="m">3</span>
+        <span class="na">url</span><span class="pi">:</span> <span class="s">/widget3.html</span>
+</code></pre></div></div>
+
+<p><strong>Liquid</strong></p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">item</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">site.data.samplelist.toc</span><span class="w"> </span><span class="p">%}</span>
+    &lt;h3&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">item</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>&lt;/h3&gt;
+      &lt;ul&gt;
+        <span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">entry</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">item.subfolderitems</span><span class="w"> </span><span class="p">%}</span>
+          &lt;li&gt;&lt;a href="<span class="p">{{</span><span class="w"> </span><span class="nv">entry</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">}}</span>"&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">entry</span><span class="p">.</span><span class="nv">page</span><span class="w"> </span><span class="p">}}</span>&lt;/a&gt;&lt;/li&gt;
+        <span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+      &lt;/ul&gt;
+  <span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+</code></pre></div></div>
+
+<p><strong>Result</strong></p>
+<div class="highlight result" data-proofer-ignore="">
+    <h3>Group 1</h3>
+      <ul>
+          <li><a href="#">Thing 1</a></li>
+          <li><a href="#">Thing 2</a></li>
+          <li><a href="#">Thing 3</a></li>
+      </ul>
+
+    <h3>Group 2</h3>
+      <ul>
+          <li><a href="#">Piece 1</a></li>
+          <li><a href="#">Piece 2</a></li>
+          <li><a href="#">Piece 3</a></li>
+      </ul>
+
+    <h3>Group 3</h3>
+      <ul>
+          <li><a href="#">Widget 1</a></li>
+          <li><a href="#">Widget 2</a></li>
+          <li><a href="#">Widget 3</a></li>
+      </ul>
+</div>
+
+<p>この例では、<code class="language-plaintext highlighter-rouge">Group 1</code>が最初のリストアイテムです。このリストアイテムのサブページに、そのリスト（<code class="language-plaintext highlighter-rouge">subfolderitems</code>）をプロパティとして含んでいます。</p>
+
+<!-- In this example, `Group 1` is the first list item. Within that list item, its subpages are included as a property that itself contains a list (`subfolderitems`). -->
+
+<p>Liquidコードは<code class="language-plaintext highlighter-rouge">for item in site.data.samplelist.toc</code>でファーストレベルを、<code class="language-plaintext highlighter-rouge">for entry in item.subfolderitems</code>でセカンドレベルを見通しています。<code class="language-plaintext highlighter-rouge">item</code>はアイテムをループするための任意の名前で、<code class="language-plaintext highlighter-rouge">entry</code>も同様です。</p>
+
+<!-- The Liquid code looks through the first level with `for item in site.data.samplelist.toc`, and then looks through the second-level property with `for entry in item.subfolderitems`. Just as `item` is an arbitrary name for the items we're looping through, so is `entry`. -->
+
+<h2 id="シナリオ43レベルのナビゲーションリスト">シナリオ4：3レベルのナビゲーションリスト</h2>
+<!-- ## Scenario 4: Three-level navigation list -->
+
+<p>前のセクションを発展させ、もう1つリストにレベル（<code class="language-plaintext highlighter-rouge">subsubfolderitems</code>）を追加しましょう。フォーマットは複雑になりますが、原則は同じです。</p>
+
+<!-- Building on the previous section, let's add one more level of depth (`subsubfolderitems`) to the list. The formatting will get more complex here, but the principles are the same. -->
+
+<p><strong>YAML</strong></p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">toc2</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">Group </span><span class="m">1</span>
+    <span class="na">subfolderitems</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">page</span><span class="pi">:</span> <span class="s">Thing </span><span class="m">1</span>
+        <span class="na">url</span><span class="pi">:</span> <span class="s">/thing1.html</span>
+      <span class="pi">-</span> <span class="na">page</span><span class="pi">:</span> <span class="s">Thing </span><span class="m">2</span>
+        <span class="na">url</span><span class="pi">:</span> <span class="s">/thing2.html</span>
+        <span class="na">subsubfolderitems</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="na">page</span><span class="pi">:</span> <span class="s">Subthing </span><span class="m">1</span>
+            <span class="na">url</span><span class="pi">:</span> <span class="s">/subthing1.html</span>
+          <span class="pi">-</span> <span class="na">page</span><span class="pi">:</span> <span class="s">Subthing </span><span class="m">2</span>
+            <span class="na">url</span><span class="pi">:</span> <span class="s">/subthing2.html</span>
+      <span class="pi">-</span> <span class="na">page</span><span class="pi">:</span> <span class="s">Thing </span><span class="m">3</span>
+        <span class="na">url</span><span class="pi">:</span> <span class="s">/thing3.html</span>
+  <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">Group </span><span class="m">2</span>
+    <span class="na">subfolderitems</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">page</span><span class="pi">:</span> <span class="s">Piece </span><span class="m">1</span>
+        <span class="na">url</span><span class="pi">:</span> <span class="s">/piece1.html</span>
+      <span class="pi">-</span> <span class="na">page</span><span class="pi">:</span> <span class="s">Piece </span><span class="m">2</span>
+        <span class="na">url</span><span class="pi">:</span> <span class="s">/piece2.html</span>
+      <span class="pi">-</span> <span class="na">page</span><span class="pi">:</span> <span class="s">Piece </span><span class="m">3</span>
+        <span class="na">url</span><span class="pi">:</span> <span class="s">/piece3.html</span>
+        <span class="na">subsubfolderitems</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="na">page</span><span class="pi">:</span> <span class="s">Subpiece </span><span class="m">1</span>
+            <span class="na">url</span><span class="pi">:</span> <span class="s">/subpiece1.html</span>
+          <span class="pi">-</span> <span class="na">page</span><span class="pi">:</span> <span class="s">Subpiece2</span>
+            <span class="na">url</span><span class="pi">:</span> <span class="s">/subpiece2.html</span>
+  <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">Group </span><span class="m">3</span>
+    <span class="na">subfolderitems</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">page</span><span class="pi">:</span> <span class="s">Widget </span><span class="m">1</span>
+        <span class="na">url</span><span class="pi">:</span> <span class="s">/widget1.html</span>
+        <span class="na">subsubfolderitems</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="na">page</span><span class="pi">:</span> <span class="s">Subwidget </span><span class="m">1</span>
+            <span class="na">url</span><span class="pi">:</span> <span class="s">/subwidget1.html</span>
+          <span class="pi">-</span> <span class="na">page</span><span class="pi">:</span> <span class="s">Subwidget </span><span class="m">2</span>
+            <span class="na">url</span><span class="pi">:</span> <span class="s">/subwidget2.html</span>
+      <span class="pi">-</span> <span class="na">page</span><span class="pi">:</span> <span class="s">Widget </span><span class="m">2</span>
+        <span class="na">url</span><span class="pi">:</span> <span class="s">/widget2.html</span>
+      <span class="pi">-</span> <span class="na">page</span><span class="pi">:</span> <span class="s">Widget </span><span class="m">3</span>
+        <span class="na">url</span><span class="pi">:</span> <span class="s">/widget3.html</span>
+</code></pre></div></div>
+
+<p><strong>Liquid</strong></p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div&gt;
+<span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">data</span><span class="p">.</span><span class="nv">samplelist</span><span class="p">.</span><span class="nv">toc2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="p">%}</span>
+  <span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">item</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">site.data.samplelist.toc2</span><span class="w"> </span><span class="p">%}</span>
+    &lt;h3&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">item</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>&lt;/h3&gt;
+      <span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">item</span><span class="p">.</span><span class="nv">subfolderitems</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="p">%}</span>
+        &lt;ul&gt;
+          <span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">entry</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">item.subfolderitems</span><span class="w"> </span><span class="p">%}</span>
+              &lt;li&gt;&lt;a href="<span class="p">{{</span><span class="w"> </span><span class="nv">entry</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">}}</span>"&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">entry</span><span class="p">.</span><span class="nv">page</span><span class="w"> </span><span class="p">}}</span>&lt;/a&gt;
+                <span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">entry</span><span class="p">.</span><span class="nv">subsubfolderitems</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="p">%}</span>
+                  &lt;ul&gt;
+                  <span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">subentry</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">entry.subsubfolderitems</span><span class="w"> </span><span class="p">%}</span>
+                      &lt;li&gt;&lt;a href="<span class="p">{{</span><span class="w"> </span><span class="nv">subentry</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">}}</span>"&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">subentry</span><span class="p">.</span><span class="nv">page</span><span class="w"> </span><span class="p">}}</span>&lt;/a&gt;&lt;/li&gt;
+                  <span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+                  &lt;/ul&gt;
+                <span class="p">{%</span><span class="w"> </span><span class="kr">endif</span><span class="w"> </span><span class="p">%}</span>
+              &lt;/li&gt;
+          <span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+        &lt;/ul&gt;
+      <span class="p">{%</span><span class="w"> </span><span class="kr">endif</span><span class="w"> </span><span class="p">%}</span>
+    <span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+<span class="p">{%</span><span class="w"> </span><span class="kr">endif</span><span class="w"> </span><span class="p">%}</span>
+&lt;/div&gt;
+</code></pre></div></div>
+
+<p><strong>Result</strong></p>
+
+<div class="highlight result" data-proofer-ignore="">
+   <div>
+      <h3>Group 1</h3>
+      <ul>
+         <li><a href="#">Thing 1</a></li>
+         <li><a href="#">Thing 2</a></li>
+         <ul>
+            <li><a href="#">Subthing 1</a></li>
+            <li><a href="#">Subthing 2</a></li>
+         </ul>
+         <li><a href="#">Thing 3</a></li>
+      </ul>
+      <h3>Group 2</h3>
+      <ul>
+         <li><a href="#">Piece 1</a></li>
+         <li><a href="#">Piece 2</a></li>
+         <li><a href="#">Piece 3</a></li>
+         <ul>
+            <li><a href="#">Subpiece 1</a></li>
+            <li><a href="#">Subpiece2</a></li>
+         </ul>
+      </ul>
+      <h3>Group 3</h3>
+      <ul>
+         <li><a href="#">Widget 1</a></li>
+         <ul>
+            <li><a href="#">Subwidget 1</a></li>
+            <li><a href="#">Subwidget 2</a></li>
+         </ul>
+         <li><a href="#">Widget 2</a></li>
+         <li><a href="#">Widget 3</a></li>
+      </ul>
+   </div>
+</div>
+
+<p>この例では、<code class="language-plaintext highlighter-rouge">if site.data.samplelist.toc2[0]</code>でYAMLレベルに本当にアイテムがあるのかを確認しています。ポジション<code class="language-plaintext highlighter-rouge">[0]</code>に何もなければ、そのレベルの処理をスキップします。</p>
+
+<!-- In this example, `if site.data.samplelist.toc2[0]` is used to ensure that the YAML level actually contains items. If there isn't anything at the `[0]` position, we can skip looking in this level. -->
+
+<div class="note">
+  <h5>ProTip: <code>for</code>ループと<code>if</code>文を揃える</h5>
+  <!-- <h5>ProTip: Line up <code>for</code> loops and <code>if</code> statements</h5> -->
+  <p>コードをきれいに保つために、<code>for</code>ループと<code>if</code>文のように、Liquidタグの始まりと終わりを揃えます。この方法で、タグがどこで始まりどこで終わったかが分かりやすくなります。コードがMarkdownページに表示される場合は、Markdownフィルタがコードサンプルとして扱わないように、HTMLタグの開始と終了を左端にあわせてください。 必要に応じて、コードサンプル全体を<code>div</code>タグで囲むことで、コードにコードを補足するHTMLタグを確実に含めることができます。</p>
+  <!-- <p>To keep the code clear, line up the beginning and ending Liquid tags, such as the <code>for</code> loops and <code>if</code> statements. This way you know when the open tags have been closed. If the code will appear in a Markdown page, keep the opening and closing HTML tags flush against the left edge so that the Markdown filter won't treat the content as a code sample. If necessary, you can wrap the entire code sample in a <code>div</code> tag to ensure the code has HTML tags that bookend the code.</p> -->
+</div>
+
+<h2 id="シナリオ5yamlリストの選択にページ変数を使用する">シナリオ5：YAMLリストの選択にページ変数を使用する</h2>
+<!-- ## Scenario 5: Using a page variable to select the YAML list -->
+
+<p>いくつかのドキュメンテーションのセットでサイドバーを変更したい場合を考えます。サイトに3つの異なるプロダクトがあり、それぞれにあわせて3つの異なるサイドバーが必要だとします。</p>
+
+<!-- Suppose your sidebar will differ based on various documentation sets. You might have 3 different products on your site, and so you want 3 different sidebars &mdash; each unique for that product. -->
+
+<p>ページのfront matterにサイドバーのリストの名前を格納し、その値を動的にリストに渡します。</p>
+
+<!-- You can store the name of the sidebar list in your page front matter and then pass that value into the list dynamically. -->
+
+<p><strong>Page front matter</strong></p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s">My page</span>
+<span class="na">sidebar</span><span class="pi">:</span> <span class="s">toc</span>
+<span class="nn">---</span>
+</code></pre></div></div>
+
+<p><strong>Liquid</strong></p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;ul&gt;
+    <span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">item</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">site.data.samplelist[page.sidebar]</span><span class="w"> </span><span class="p">%}</span>
+      &lt;li&gt;&lt;a href="<span class="p">{{</span><span class="w"> </span><span class="nv">item</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">}}</span>"&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">item</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>&lt;/a&gt;&lt;/li&gt;
+    <span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+&lt;/ul&gt;
+</code></pre></div></div>
+
+<p><strong>Result</strong></p>
+
+<div class="highlight result" data-proofer-ignore="">
+   <ul>
+      <li><a href="#">Introduction</a></li>
+      <li><a href="#">Configuration</a></li>
+      <li><a href="#">Deployment</a></li>
+   </ul>
+</div>
+
+<p>このシナリオでは、ページのfront matterからその値を<code class="language-plaintext highlighter-rouge">for</code>ループに渡しました。割り当てられた変数が文字列ではなくデータ参照である場合は、front matterの値を参照するために（中括弧ではなく）大括弧を使用する必要があります。</p>
+
+<!-- In this scenario, we want to pass values from the page's front matter into a `for` loop that contains a variable. When the assigned variable isn't a string but rather a data reference, you must use brackets (instead of curly braces) to refer to the front matter's value. -->
+
+<p>更なる情報は、Liquidのドキュメンテーションの<a href="https://github.com/Shopify/liquid/wiki/Liquid-for-Designers#expressions-and-variables" target="_blank">Expressions and Variables</a>を見てください。ドット表記が使えない場所で大括弧が使用されます。この詳細は<a href="http://stackoverflow.com/questions/4968406/javascript-property-access-dot-notation-vs-brackets/4968448#4968448" target="_blank">Stack Overflow answer</a>で読むことができます。</p>
+
+<!-- For more information, see [Expressions and Variables](https://github.com/Shopify/liquid/wiki/Liquid-for-Designers#expressions-and-variables) in Liquid's documentation. Brackets are used in places where dot notation can't be used. You can also read more details in this [Stack Overflow answer](http://stackoverflow.com/questions/4968406/javascript-property-access-dot-notation-vs-brackets/4968448#4968448). -->
+
+<h2 id="シナリオ6現在のページにactiveクラスを適用する">シナリオ6：現在のページにactiveクラスを適用する</h2>
+<!-- ## Scenario 6: Applying the active class for the current page -->
+
+<p>YAMLデータファイルからリストへアイテムを挿入するとき、現在見ているページへのリンクは強調したいこともあるでしょう。現在のページのURLとアイテムがマッチした場合に<code class="language-plaintext highlighter-rouge">active</code>クラスを挿入することで、実現できます。</p>
+
+<!-- In addition to inserting items from the YAML data file into your list, you also usually want to highlight the current link if the user is viewing that page. You do this by inserting an `active` class for items that match the current page URL. -->
+
+<p><strong>CSS</strong></p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.result</span> <span class="nt">li</span><span class="nc">.active</span> <span class="nt">a</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="n">lightgray</span><span class="p">;</span>
+    <span class="nl">cursor</span><span class="p">:</span> <span class="nb">default</span><span class="p">;</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+<p><strong>Liquid</strong></p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">item</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">site.data.samplelist.docs</span><span class="w"> </span><span class="p">%}</span>
+    &lt;li class="<span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">item</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">%}</span>active<span class="p">{%</span><span class="w"> </span><span class="kr">endif</span><span class="w"> </span><span class="p">%}</span>"&gt;
+      &lt;a href="<span class="p">{{</span><span class="w"> </span><span class="nv">item</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">}}</span>"&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">item</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>&lt;/a&gt;
+    &lt;/li&gt;
+<span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+</code></pre></div></div>
+
+<p><strong>Result</strong></p>
+
+<style>
+.result li.active a {
+    color: lightgray;
+    cursor: default;
+  }
+</style>
+
+<div class="highlight result" data-proofer-ignore="">
+   <ul>
+      <li class=""><a href="#">Introduction</a></li>
+      <li class=""><a href="#">Configuration</a></li>
+      <li class="active"><a href="#">Deployment</a></li>
+   </ul>
+</div>
+
+<p>この例では<code class="language-plaintext highlighter-rouge">Deployment</code>が現在のページとしています。</p>
+
+<!-- In this case, assume `Deployment` is the current page. -->
+
+<p>（YAMLファイルに格納されている）<code class="language-plaintext highlighter-rouge">item.url</code>が<code class="language-plaintext highlighter-rouge">page.url</code>と確実に一致するようにするには、{％raw％} /tutorials/navigation/ {％endraw％}をページに出力すると便利です。</p>
+
+<!-- To make sure the `item.url` (stored in the YAML file) matches the `page.url`, it can be helpful to print the `{{ page.url }}` to the page. -->
+
+<h2 id="シナリオ7条件付きでアイテムを含める">シナリオ7：条件付きでアイテムを含める</h2>
+<!-- ## Scenario 7: Including items conditionally -->
+
+<p>リストに条件付きで項目を含めたい場合を考えます。例えば、複数のサイトを持っていて、特定の項目だけを含むサイドバーが欲しい場合です。リストの各項目にプロパティを追加して、含める内容の条件にそのプロパティを使います。</p>
+
+<!-- You might want to include items conditionally in your list. For example, maybe you have multiple site outputs and only want to include the sidebar item for certain outputs. You can add properties in each list item and then use those properties to conditionally include the content. -->
+
+<p><strong>YAML</strong></p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">docs2_list_title</span><span class="pi">:</span> <span class="s">ACME Documentation</span>
+<span class="na">docs2</span><span class="pi">:</span>
+
+<span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">Introduction</span>
+  <span class="na">url</span><span class="pi">:</span> <span class="s">introduction.html</span>
+  <span class="na">version</span><span class="pi">:</span> <span class="m">1</span>
+
+<span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">Configuration</span>
+  <span class="na">url</span><span class="pi">:</span> <span class="s">configuration.html</span>
+  <span class="na">version</span><span class="pi">:</span> <span class="m">1</span>
+
+<span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">Deployment</span>
+  <span class="na">url</span><span class="pi">:</span> <span class="s">deployment.html</span>
+  <span class="na">version</span><span class="pi">:</span> <span class="m">2</span>
+</code></pre></div></div>
+
+<p><strong>Liquid</strong></p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  &lt;ul&gt;
+    <span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">item</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">site.data.samplelist.docs2</span><span class="w"> </span><span class="p">%}</span>
+      <span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">item</span><span class="p">.</span><span class="nv">version</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">%}</span>
+        &lt;li&gt;&lt;a href="<span class="p">{{</span><span class="w"> </span><span class="nv">item</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">}}</span>"&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">item</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>&lt;/a&gt;&lt;/li&gt;
+      <span class="p">{%</span><span class="w"> </span><span class="kr">endif</span><span class="w"> </span><span class="p">%}</span>
+    <span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+&lt;/ul&gt;
+</code></pre></div></div>
+
+<p><strong>Result</strong></p>
+
+<div class="highlight result" data-proofer-ignore="">
+   <ul>
+      <li><a href="#">Introduction</a></li>
+      <li><a href="#">Configuration</a></li>
+   </ul>
+</div>
+
+<p><code class="language-plaintext highlighter-rouge">Deployment</code>は<code class="language-plaintext highlighter-rouge">version</code>が<code class="language-plaintext highlighter-rouge">2</code>ですので書き出されていません。</p>
+
+<!-- The `Deployment` page is excluded because its `version` is `2`. -->
+
+<h2 id="シナリオ8front-matterのプロパティに基づくアイテムの取得">シナリオ8：front matterのプロパティに基づくアイテムの取得</h2>
+<!-- ## Scenario 8: Retrieving items based on front matter properties -->
+
+<p>ナビゲーションアイテムを<code class="language-plaintext highlighter-rouge">_data</code>フォルダのYAMLファイルに格納したくない場合、各ページやコレクションのfront matterを取得して<code class="language-plaintext highlighter-rouge">for</code>ループを使用し、front matterのプロパティを元にコンテンツを取得します。</p>
+
+<!-- If you don't want to store your navigation items in a YAML file in your `_data` folder, you can use `for` loops to look through the front matter of each page or collection and get the content based on properties in the front matter. -->
+
+<p>このシナリオでは、<code class="language-plaintext highlighter-rouge">_docs</code>というコレクションがあるとします。コレクションは、ループできるリストを持っているため、ページよりよい場合が多いです。（ビルド時間が長くなるため、多数の項目をループ処理するシナリオは避けてください。 <a href="/docs/collections/">コレクション</a>は範囲を狭めるのに役立ちます。）</p>
+
+<!-- In this scenario, suppose we have a collection called `_docs`. Collections are often better than pages because they allow you to narrow the list of what you're looping through. (Try to avoid scenarios where you loop through large numbers of items, since it will increase your build time. [Collections](/docs/collections/) help you narrow the scope.) -->
+
+<p>このシナリオでは、<code class="language-plaintext highlighter-rouge">docs</code>コレクションにSample 1, Sample 2, Topic 1, Topic 2, Widget 1, そしてWidget 2の6つのドキュメントがあるとします。</p>
+
+<!-- In our scenario, there are 6 docs in the `docs` collection: Sample 1, Sample 2, Topic 1, Topic 2, Widget 1, and Widget 2. -->
+
+<p>コレクションの各ドキュメントにはfront matterに最低3つのプロパティを含めます。</p>
+
+<!-- Each doc in the collection contains at least 3 properties in the front matter: -->
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">title</code></li>
+  <li><code class="language-plaintext highlighter-rouge">category</code></li>
+  <li><code class="language-plaintext highlighter-rouge">order</code></li>
+</ul>
+
+<p>各ページのfront matterは以下の通りです。（簡潔にするためここでは統合しています）</p>
+
+<!-- The front matter for each page is as follows (consolidated here for brevity): -->
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">Title</span><span class="pi">:</span> <span class="s">Sample </span><span class="m">1</span>
+<span class="na">category</span><span class="pi">:</span> <span class="s">getting-started</span>
+<span class="na">order</span><span class="pi">:</span> <span class="m">1</span>
+<span class="nn">---</span>
+
+<span class="nn">---</span>
+<span class="na">Title</span><span class="pi">:</span> <span class="s">Sample </span><span class="m">2</span>
+<span class="na">category</span><span class="pi">:</span> <span class="s">getting-started</span>
+<span class="na">order</span><span class="pi">:</span> <span class="m">2</span>
+<span class="nn">---</span>
+
+<span class="nn">---</span>
+<span class="na">Title</span><span class="pi">:</span> <span class="s">Topic </span><span class="m">1</span>
+<span class="na">category</span><span class="pi">:</span> <span class="s">configuration</span>
+<span class="na">order</span><span class="pi">:</span> <span class="m">1</span>
+<span class="nn">---</span>
+
+<span class="nn">---</span>
+<span class="na">Title</span><span class="pi">:</span> <span class="s">Topic </span><span class="m">2</span>
+<span class="na">category</span><span class="pi">:</span> <span class="s">configuration</span>
+<span class="na">order</span><span class="pi">:</span> <span class="m">2</span>
+<span class="nn">---</span>
+
+<span class="nn">---</span>
+<span class="na">Title</span><span class="pi">:</span> <span class="s">Widget </span><span class="m">1</span>
+<span class="na">category</span><span class="pi">:</span> <span class="s">deployment</span>
+<span class="na">order</span><span class="pi">:</span> <span class="m">1</span>
+<span class="nn">---</span>
+
+<span class="nn">---</span>
+<span class="na">Title</span><span class="pi">:</span> <span class="s">Widget </span><span class="m">2</span>
+<span class="na">category</span><span class="pi">:</span> <span class="s">deployment</span>
+<span class="na">order</span><span class="pi">:</span> <span class="m">2</span>
+<span class="nn">---</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">category</code>をドキュメントのfront matterで使用していても、<code class="language-plaintext highlighter-rouge">category</code>はポストの場合の組み込み変数とは異なります。言い換えれば、<code class="language-plaintext highlighter-rouge">site.docs.category</code>で<code class="language-plaintext highlighter-rouge">category</code>の内部を直接見ることはできません。</p>
+
+<!-- Note that even though `category` is used in the doc front matter, `category` is not a built-in variable like it is with posts. In other words, you cannot look directly inside `category` with `site.docs.category`. -->
+
+<p>コレクション内の特定のカテゴリのドキュメントを簡単に取得したい場合、<code class="language-plaintext highlighter-rouge">for</code>ループ内で<code class="language-plaintext highlighter-rouge">if</code>文を使いそのカテゴリかをチェックします。</p>
+
+<!-- If you wanted to simply get all docs in the collection for a specific category, you could use a `for` loop with an `if` condition to check for a specific category: -->
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;h3&gt;Getting Started&lt;/h3&gt;
+&lt;ul&gt;
+    <span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">doc</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">site.docs</span><span class="w"> </span><span class="p">%}</span>
+      <span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">doc</span><span class="p">.</span><span class="nv">category</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"getting-started"</span><span class="w"> </span><span class="p">%}</span>
+        &lt;li&gt;&lt;a href="<span class="p">{{</span><span class="w"> </span><span class="nv">doc</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">}}</span>"&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">doc</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>&lt;/a&gt;&lt;/li&gt;
+      <span class="p">{%</span><span class="w"> </span><span class="kr">endif</span><span class="w"> </span><span class="p">%}</span>
+    <span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+&lt;/ul&gt;
+</code></pre></div></div>
+
+<p>結果は以下のようになります。</p>
+
+<!-- The result would be as follows: -->
+
+<div class="highlight result" data-proofer-ignore="">
+   <h3>Getting Started</h3>
+   <ul>
+      <li><a href="#">Sample1</a></li>
+      <li><a href="#">Sample2</a></li>
+   </ul>
+</div>
+
+<p>これは、ナレッジベースを設定し、各カテゴリに多数のトピックがあり、各カテゴリをそれぞれのページに表示する場合に便利です。</p>
+
+<!-- This might be useful if you're setting up a knowledge base and have dozens of topics in each category, with each category displaying on its own page. -->
+
+<p>カテゴリ名をハードコーディングせずに、カテゴリ別にアイテムをソートし、それらをカテゴリ名の下にグループ化する場合を考えます。2つのフィルタを利用して、実現することができます。</p>
+
+<!-- But let's say you want to sort the items by category and group them under the category name, without hard-coding the category names. To achieve this, you could use two filters: -->
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">group_by</code></li>
+  <li><code class="language-plaintext highlighter-rouge">sort</code></li>
+</ul>
+
+<p>カテゴリヘッダに対応したグループのページのリストを取得するコードを示します。</p>
+
+<!-- Here's the code for getting lists of pages grouped under their corresponding category headers: -->
+
+<p><strong>Liquid</strong></p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">mydocs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">docs</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">group_by</span><span class="p">:</span><span class="w"> </span><span class="s1">'category'</span><span class="w"> </span><span class="p">%}</span>
+<span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">cat</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">mydocs</span><span class="w"> </span><span class="p">%}</span>
+&lt;h2&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">cat</span><span class="p">.</span><span class="nv">name</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">capitalize</span><span class="w"> </span><span class="p">}}</span>&lt;/h2&gt;
+    &lt;ul&gt;
+      <span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">items</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">cat</span><span class="p">.</span><span class="nv">items</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">sort</span><span class="p">:</span><span class="w"> </span><span class="s1">'order'</span><span class="w"> </span><span class="p">%}</span>
+      <span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">item</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">items</span><span class="w"> </span><span class="p">%}</span>
+        &lt;li&gt;&lt;a href="<span class="p">{{</span><span class="w"> </span><span class="nv">item</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">}}</span>"&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">item</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>&lt;/a&gt;&lt;/li&gt;
+      <span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+    &lt;/ul&gt;
+<span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+</code></pre></div></div>
+
+<p><strong>Result</strong></p>
+
+<div class="highlight result" data-proofer-ignore="">
+   <h2>Getting-started</h2>
+   <ul>
+      <li><a href="#">Sample2</a></li>
+      <li><a href="#">Sample1</a></li>
+   </ul>
+   <h2>Configuration</h2>
+   <ul>
+      <li><a href="#">Topic2</a></li>
+      <li><a href="#">Topic1</a></li>
+   </ul>
+   <h2>Deployment</h2>
+   <ul>
+      <li><a href="#">Widget2</a></li>
+      <li><a href="#">Widget1</a></li>
+   </ul>
+</div>
+
+<p>コードを見ていきましょう。まず、コレクションの内容（<code class="language-plaintext highlighter-rouge">site.docs</code>）の為の変数（<code class="language-plaintext highlighter-rouge">mydocs</code>）を設定しています。</p>
+
+<!-- Let's walk through the code. First, we assign a variable (`mydocs`) to the collection content (`site.docs`). -->
+
+<p><code class="language-plaintext highlighter-rouge">group_by</code>フィルタでコレクションを<code class="language-plaintext highlighter-rouge">category</code>でグループ化しています。より正確には、<code class="language-plaintext highlighter-rouge">group_by</code>フィルタは<code class="language-plaintext highlighter-rouge">mydocs</code>を以下のように<code class="language-plaintext highlighter-rouge">name</code>, <code class="language-plaintext highlighter-rouge">items</code>, そして<code class="language-plaintext highlighter-rouge">size</code>の配列に変換しています。</p>
+
+<!-- The `group_by` filter groups the collection content by `category`. More specifically, the `group_by` filter converts `mydocs` into an array with `name`, `items`, and `size` properties, somewhat like this: -->
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">[</span>
+  <span class="pi">{</span><span class="s2">"</span><span class="s">name"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">getting-started"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">items"</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">Sample 1</span><span class="pi">,</span> <span class="nv">Sample 2</span><span class="pi">],</span><span class="s2">"</span><span class="s">size"</span><span class="pi">:</span> <span class="nv">2</span><span class="pi">},</span>
+  <span class="pi">{</span><span class="s2">"</span><span class="s">name"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">configuration"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">items"</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">Topic 1</span><span class="pi">,</span> <span class="nv">Topic 2</span><span class="pi">],</span> <span class="s2">"</span><span class="s">size"</span><span class="pi">:</span> <span class="nv">2</span><span class="pi">},</span>
+  <span class="pi">{</span><span class="s2">"</span><span class="s">name"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">deployment"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">items"</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">Widget 1</span><span class="pi">,</span> <span class="nv">Widget 2</span><span class="pi">,</span> <span class="s2">"</span><span class="s">size"</span><span class="pi">:</span> <span class="nv">2</span><span class="err">}</span>
+<span class="pi">]</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">for cat in mydocs</code>を使用して、<code class="language-plaintext highlighter-rouge">mydocs</code>配列のアイテムを確認し、カテゴリ<code class="language-plaintext highlighter-rouge">name</code>をプリントしています。</p>
+
+<!-- Using `for cat in mydocs`, we look through each item in the `mydocs` array and print the category `name`. -->
+
+<p>カテゴリ名を取得した後、<code class="language-plaintext highlighter-rouge">sort</code>フィルタで<code class="language-plaintext highlighter-rouge">order</code>プロパティ順に並べたドキュメントを変数<code class="language-plaintext highlighter-rouge">items</code>に設定します。コンテンツの<code class="language-plaintext highlighter-rouge">items</code>配列にアクセスするために<code class="language-plaintext highlighter-rouge">cat.items</code>を使用しています。<code class="language-plaintext highlighter-rouge">sort</code>フィルタでアイテムの番号で昇順に並べ替えています。</p>
+
+<!-- After getting the category name, we assign the variable `items` for the docs and use the `sort` filter to arrange the docs by their `order` property. The dot notation `cat.items` is used because we're accessing the content in the `items` array. The `sort` filter orders the items by their numbers in ascending order. -->
+
+<p><code class="language-plaintext highlighter-rouge">for item in items</code>ループは各<code class="language-plaintext highlighter-rouge">item</code>を確認し、リストのアイテムをリンクするために<code class="language-plaintext highlighter-rouge">title</code>と<code class="language-plaintext highlighter-rouge">url</code>を取得しています。</p>
+
+<!-- The `for item in items` loop looks through each `item` and gets the `title` and `url` to form the list item link. -->
+
+<p><code class="language-plaintext highlighter-rouge">group_by</code>フィルタの詳細は<a href="https://jekyllrb.com/docs/templates/" target="_blank">Jekyll’s Templates documentation</a>や<a href="https://www.siteleaf.com/blog/advanced-liquid-group-by/" target="_blank">this Siteleaf tutorial</a>をご覧ください。<code class="language-plaintext highlighter-rouge">sort</code>フィルタの詳細はLiquidドキュメンテーションの<a href="https://shopify.github.io/liquid/filters/sort/" target="_blank">sort</a>をご覧ください。</p>
+
+<!-- For more details on the `group_by` filter, see [Jekyll's Templates documentation](https://jekyllrb.com/docs/templates/) as well as [this Siteleaf tutorial](https://www.siteleaf.com/blog/advanced-liquid-group-by/). For more details on the `sort` filter, see [sort](https://shopify.github.io/liquid/filters/sort/) in Liquid's documentation. -->
+
+<p>ドキュメントのfront matterを使用する場合、YAMLデータファイルを使用する場合のどちらでも、サイトに為のより堅牢なナビゲーションを構築することができるでしょう。</p>
+
+<!-- Whether you use properties in your doc's front matter to retrieve your pages or a YAML data file, in both cases you can programmatically build a more robust navigation for your site. -->
+
+<h2 id="シナリオ9再帰による入れ子ツリーナビゲーション">シナリオ9：再帰による入れ子ツリーナビゲーション</h2>
+<!-- ## Scenario 9: Nested tree navigation with recursion -->
+
+<p>任意の深さの入れ子ツリーナビゲーションを考えます。ナビゲーションリンクのツリーを再帰的にループすることでこれを実現できます。</p>
+
+<!-- Suppose you want a nested tree navigation of any depth. We can achieve this by recursively looping through our tree of navigation links. -->
+
+<p><strong>YAML</strong></p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">nav</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">Deployment</span>
+    <span class="na">url</span><span class="pi">:</span> <span class="s">deployment.html</span>
+    <span class="na">subnav</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">Heroku</span>
+        <span class="na">url</span><span class="pi">:</span> <span class="s">heroku.html</span>
+        <span class="na">subnav</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">Jekyll on Heroku</span>
+            <span class="na">url</span><span class="pi">:</span> <span class="s">jekyll-on-heroku.html</span>
+  <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">Help</span>
+    <span class="na">url</span><span class="pi">:</span> <span class="s">help.html</span>
+</code></pre></div></div>
+
+<p><strong>Liquid</strong></p>
+
+<p>まず、ツリーナビゲーションに使用するインクルードを作成します。このファイルを<code class="language-plaintext highlighter-rouge">_includes/nav.html</code>とします。</p>
+
+<!-- First, we'll create an include that we can use for rendering the navigation tree. This file would be `_includes/nav.html` -->
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;ul&gt;
+  <span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">item</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">include.nav</span><span class="w"> </span><span class="p">%}</span>
+    &lt;li&gt;&lt;a href="<span class="p">{{</span><span class="w"> </span><span class="nv">item</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">}}</span>"&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">item</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>&lt;/a&gt;&lt;/li&gt;
+
+    <span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">item</span><span class="p">.</span><span class="nv">subnav</span><span class="w"> </span><span class="p">%}</span>
+      <span class="p">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span>nav.html<span class="w"> </span><span class="na">nav</span><span class="o">=</span>item.subnav<span class="w"> </span><span class="p">%}</span>
+    <span class="p">{%</span><span class="w"> </span><span class="kr">endif</span><span class="w"> </span><span class="p">%}</span>
+  <span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+&lt;/ul&gt;
+</code></pre></div></div>
+
+<p>レイアウトやページで使用するには、単にテンプレートをincludeし、<code class="language-plaintext highlighter-rouge">nav</code>パラメータを渡します。以下では、YAML front matterを参照するために<code class="language-plaintext highlighter-rouge">page.nav</code>を使用しています。</p>
+
+<!-- To render this in your layout or pages, you would simply include the template and pass in the `nav` parameter. In this case, we'll use the `page.nav` to grab it from the yaml frontmatter. -->
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span>nav.html<span class="w"> </span><span class="na">nav</span><span class="o">=</span>page.nav<span class="w"> </span><span class="p">%}</span>
+</code></pre></div></div>
+
+<p>インクルードではこれをまず使用し、入れ子のリストを再帰的にレンダリングするために<code class="language-plaintext highlighter-rouge">subnav</code>の各項目を確認します。</p>
+
+<!-- Our include will use this first, then look through each item for a `subnav` property to recursively render the nested lists. -->
+
+<p><strong>Result</strong></p>
+<div class="highlight result" data-proofer-ignore="">
+   <ul>
+      <li><a href="#">Deployment</a></li>
+      <ul>
+        <li><a href="#">Heroku</a></li>
+        <ul>
+          <li><a href="#">Jekyll On Heroku</a></li>
+        </ul>
+      </ul>
+      <li><a href="#">Help</a></li>
+   </ul>
+</div>
+<div class="section-nav">
+    <div class="left align-right">
+        <a href="/tutorials/video-walkthroughs/" class="prev">Back</a>
+        </div>
+    <div class="right align-left">
+        <a href="/tutorials/orderofinterpretation/" class="next">Next</a>
+        </div>
+  </div>
+  <div class="clear"></div>
+  </article>
+    </div><div class="unit one-fifth hide-on-mobiles">
+  <aside>
+    <h4>Tutorials</h4>
+      <ul>
+      <li><a href="/tutorials/home/">チュートリアル</a></li>
+      <li><a href="/tutorials/video-walkthroughs/">動画での解説</a></li>
+      <li class="current"><a href="/tutorials/navigation/">ナビゲーション</a></li>
+      <li><a href="/tutorials/orderofinterpretation/">解釈の順番</a></li>
+      <li><a href="/tutorials/custom-404-page/">カスタム404ページ</a></li>
+      <li><a href=""></a></li>
+      <li><a href="/tutorials/using-jekyll-with-bundler/">BundlerでJekyllを使う</a></li>
+      <li><a href="/tutorials/csv-to-table/">CSVデータをテーブル化</a></li>
+      </ul>
+    </aside>
+</div>
+<div class="clear"></div>
+  </div>
+</section>
+<footer>
+  <div class="grid">
+    <div class="unit one-third center-on-mobiles">
+      <p>Jekyllはボランティアの<a href="/team/">コアチーム</a>により愛情を込めて維持されています。</p>
+      <p>このWebサイトのコンテンツは<a href="https://github.com/jekyll/jekyll/blob/master/LICENSE" target="_blank">MIT&nbsp;License</a>に基づきます。&copy;&nbsp;2020</p>
+      <!-- <p>Jekyll is lovingly maintained by the <a href="/team/">core team</a> of volunteers. </p>
+      <p>The contents of this website are <br />&copy;&nbsp;2020 under the terms of the <a href="https://github.com/jekyll/jekyll/blob/master/LICENSE">MIT&nbsp;License</a>.</p> -->
+    </div>
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>
+        Proudly hosted by
+        <a href="https://github.com">
+          <img src="/img/footer-logo.png" width="100" height="30" alt="GitHub • Social coding">
+        </a>
+      </p>
+    </div>
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>
+        Jekyll is funded thanks to its
+        <a href="https://github.com/jekyll/jekyll#sponsors">
+          sponsors!
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
+<script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<span class=\"sr-only\">Permalink</span><i class=\"fa fa-link\"></i>";
+    anchor.title = "Permalink";
+    return anchor;
+  };
+
+  var linkifyAnchors = function (level, containingElement) {
+    var headers = containingElement.getElementsByTagName("h" + level);
+    for (var h = 0; h < headers.length; h++) {
+      var header = headers[h];
+
+      if (typeof header.id !== "undefined" && header.id !== "") {
+        header.appendChild(anchorForId(header.id));
+      }
+    }
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var contentBlock = document.getElementsByClassName("docs")[0] || document.getElementsByClassName("news")[0];
+      if (!contentBlock) {
+        return;
+      }
+      for (var level = 1; level <= 6; level++) {
+        linkifyAnchors(level, contentBlock);
+      }
+    }
+  };
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script type="text/javascript"> docsearch({
+apiKey: '50fe39c839958dfad797000f33e2ec17',
+indexName: 'jekyllrb',
+inputSelector: '#docsearch-input',
+enhancedSearchInput: true,
+debug: false // Set debug to true if you want to inspect the dropdown
+});
+</script>
+</body>
+</html>

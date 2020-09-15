@@ -1,0 +1,526 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link type="application/atom+xml" rel="alternate" href="http://jekyllrb-ja.github.io/feed.xml" title="Jekyll • シンプルで、ブログのような、静的サイト" />
+  <link type="application/atom+xml" rel="alternate" href="/feed/release.xml" title="Jekyll releases posts" />
+  <link rel="alternate" type="application/atom+xml" title="Recent commits to Jekyll’s master branch" href="https://github.com/jekyll/jekyll/commits/master.atom">
+  <link rel="preload" href="/fonts/lato-v14-latin-300.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/lato-v14-latin-700.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/css/screen.css" as="style">
+  <link rel="stylesheet" href="/css/screen.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>変数 | Jekyll • シンプルで、ブログのような、静的サイト</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="変数" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="プレーンテキストを静的サイトやブログに変えましょう" />
+<meta property="og:description" content="プレーンテキストを静的サイトやブログに変えましょう" />
+<link rel="canonical" href="http://jekyllrb-ja.github.io/docs/variables/" />
+<meta property="og:url" content="http://jekyllrb-ja.github.io/docs/variables/" />
+<meta property="og:site_name" content="Jekyll • シンプルで、ブログのような、静的サイト" />
+<meta property="og:image" content="http://jekyllrb-ja.github.io/img/jekyll-og.png" />
+<script type="application/ld+json">
+{"headline":"変数","image":"http://jekyllrb-ja.github.io/img/jekyll-og.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://jekyllrb-ja.github.io/img/logo-2x.png"}},"url":"http://jekyllrb-ja.github.io/docs/variables/","description":"プレーンテキストを静的サイトやブログに変えましょう","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <!--[if lt IE 9]>
+  <script src="/js/html5shiv.min.js"></script>
+  <script src="/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body class="wrap"><header>
+  <div class="flexbox">
+    <div class="center-on-mobiles">
+      <h1>
+        <a href="/" class="logo">
+          <span class="sr-only">Jekyll</span>
+          <img src="/img/logo-2x.png" width="140" height="65" alt="Jekyll Logo">
+        </a>
+      </h1>
+    </div>
+    <nav class="main-nav hide-on-mobiles">
+      <ul>
+  <li><a href="/">Home</a></li>
+  <li class="current"><a href="/docs/">Docs</a></li>
+  <li><a href="/resources/">Resources</a></li>
+  <li><a href="/showcase/">Showcase</a></li>
+  <li><a href="/news/">News</a></li>
+  </ul>
+</nav>
+    <div class="search hide-on-mobiles">
+      <input type="text" id="docsearch-input" placeholder="Search the docs…">
+</div>
+    <div class="meta hide-on-mobiles">
+      <ul>
+        <li><a href="https://github.com/jekyll/jekyll/releases/tag/v4.1.1">v4.1.1</a></li>
+        <li><a href="https://github.com/jekyll/jekyll">GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+  <nav class="mobile-nav show-on-mobiles">
+    <ul>
+  <li><a href="/">Home</a></li>
+    <li class="current" ><a href="/docs/">Docs</a></li>
+    <li><a href="/resources/">Resources</a></li>
+    <li><a href="/news/">News</a></li>
+    <li><a href="https://github.com/jekyll/jekyll">GitHub</a></li>
+</ul>
+</nav>
+</header>
+  <section class="docs">
+    <div class="grid">
+      <div class="docs-nav-mobile unit whole show-on-mobiles">
+  <select onchange="if (this.value) window.location.href=this.value">
+    <option value="">Navigate the docs…</option>
+    <optgroup label="入門">
+      <option value="/docs/">クイックスタート</option>
+      <option value="/docs/ruby-101/">Ruby基礎</option>
+      <option value="/docs/installation/">インストール</option>
+      <option value="/docs/community/">コミュニティ</option>
+      <option value="/docs/step-by-step/01-setup/">Step by Stepチュートリアル</option>
+    </optgroup>
+    <optgroup label="ビルド">
+      <option value="/docs/usage/">コマンドラインの使い方</option>
+      <option value="/docs/configuration/">構成・設定</option>
+    </optgroup>
+    <optgroup label="コンテンツ">
+      <option value="/docs/pages/">Pages（ページ）</option>
+      <option value="/docs/posts/">Posts（ポスト）</option>
+      <option value="/docs/front-matter/">Front Matter</option>
+      <option value="/docs/collections/">コレクション</option>
+      <option value="/docs/datafiles/">Dataファイル</option>
+      <option value="/docs/assets/">Assets</option>
+      <option value="/docs/static-files/">静的ファイル</option>
+    </optgroup>
+    <optgroup label="サイトの構成">
+      <option value="/docs/structure/">ディレクトリ構成</option>
+      <option value="/docs/liquid/">Liquid</option>
+      <option value="/docs/variables/">変数</option>
+      <option value="/docs/includes/">Includes（インクルード）</option>
+      <option value="/docs/layouts/">レイアウト</option>
+      <option value="/docs/permalinks/">パーマリンク</option>
+      <option value="/docs/themes/">テーマ</option>
+      <option value="/docs/pagination/">Pagination（ページ分け）</option>
+    </optgroup>
+    <optgroup label="ガイド">
+      <option value="/docs/plugins/">プラグイン</option>
+      <option value="/docs/migrations/">ブログの移行</option>
+      <option value="/docs/upgrading/">アップグレード</option>
+      <option value="/docs/deployment/">Deployment</option>
+    </optgroup>
+    </select>
+</div>
+<div class="unit four-fifths">
+        <article>
+          <div class="improve right hide-on-mobiles">
+            <a data-proofer-ignore href="https://github.com/jekyll/jekyll/edit/master/docs/_docs/variables.md"><i class="fa fa-pencil"></i> &nbsp;Improve this page</a>
+          </div>
+          <h1>変数</h1>
+          <!-- ---
+title: Variables
+permalink: /docs/variables/
+--- -->
+
+<p>Jekyllは、サイトを横断して処理するファイルを探します。<a href="/docs/front-matter/">front matter</a>があるファイルは全て処理の対象になります。これらのファイルについて、Jekyllは<a href="/docs/liquid/">Liquid</a>から利用可能な様々なデータを作成します。以下は利用できるデータのリファレンスです。</p>
+
+<!-- Jekyll traverses your site looking for files to process. Any files with
+[front matter](/docs/front-matter/) are subject to processing. For each of these
+files, Jekyll makes a variety of data available via [Liquid](/docs/liquid/).
+The following is a reference of the available data. -->
+
+<h2 id="グローバル変数">グローバル変数</h2>
+<!-- ## Global Variables -->
+
+<div class="mobile-side-scroller">
+<table>
+  <thead>
+    <tr>
+      <th>変数</th>
+      <th>説明</th>
+      <!-- <th>Variable</th>
+      <th>Description</th> -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td><p><code>site</code></p></td>
+        <td><p>サイト全体の情報と<code>_config.yml</code>の設定。詳細は下記をご覧ください。</p></td>
+      </tr>
+    <tr>
+        <td><p><code>page</code></p></td>
+        <td><p>ページ固有の情報と<a href="/jekyllrb-ja/docs/front-matter/">front matter</a>の情報。ページのfront matterで設定したカスタム変数はこれで使用できます。詳細は下記をご覧ください。</p></td>
+      </tr>
+    <tr>
+        <td><p><code>layout</code></p></td>
+        <td><p>レイアウト固有の情報と<a href="/jekyllrb-ja/docs/front-matter/">front matter</a>の情報。レイアウトのfront matterで設定したカスタム変数はこれで使用できます。</p></td>
+      </tr>
+    <tr>
+        <td><p><code>content</code></p></td>
+        <td><p>レイアウトファイルで、ポストやページの内容を取り込むために使用します。ポストやページのファイルでは定義されていません。</p></td>
+      </tr>
+    <tr>
+        <td><p><code>paginator</code></p></td>
+        <td><p><code>paginate</code>が設定されているときに、この変数は使用可能です。詳細は<a href="../pagination/">Pagination</a>をご覧ください。</p></td>
+      </tr>
+    </tbody>
+</table>
+</div>
+
+<h2 id="サイト変数">サイト変数</h2>
+<!-- ## Site Variables -->
+
+<div class="mobile-side-scroller">
+<table>
+  <thead>
+    <tr>
+      <th>変数</th>
+      <th>説明</th>
+      <!-- <th>Variable</th>
+      <th>Description</th> -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td><p><code>site.time</code></p></td>
+        <td><p>現在の時刻。（<code>jekyll</code>を実行した時）</p></td>
+      </tr>
+    <tr>
+        <td><p><code>site.pages</code></p></td>
+        <td><p>全てのページのリスト。</p></td>
+      </tr>
+    <tr>
+        <td><p><code>site.posts</code></p></td>
+        <td><p>全てのポストの逆日時順ポスト。</p></td>
+      </tr>
+    <tr>
+        <td><p><code>site.related_posts</code></p></td>
+        <td><p>処理を行っているページがポストの場合、最大10件の関連するポストのリストが含まれます。デフォルトでは、最新の10件のポストです。計算結果が遅いですが高品質のためには、<code>jekyll</code>コマンド実行時に<code>--lsi</code> (<a href="https://en.wikipedia.org/wiki/Latent_semantic_analysis#Latent_semantic_indexing" target="_blank">latent semantic indexing</a>)オプションを追加します。GitHub Pagesではサイト生成時の<code>lsi</code>オプションをサポートしていません。</p></td>
+      </tr>
+    <tr>
+        <td><p><code>site.static_files</code></p></td>
+        <td><p>全ての<a href="/jekyllrb-ja/docs/static-files/">静的ファイル</a> (JekyllやLiquidの処理が行われないファイル)のリスト。各ファイルに5つのプロパティがあります：<code>path</code>, <code>modified_time</code>, <code>name</code>, <code>basename</code> and <code>extname</code>。</p></td>
+      </tr>
+    <tr>
+        <td><p><code>site.html_pages</code></p></td>
+        <td><p><code>site.pages</code>のサブセットで<code>.html</code>で終わるファイルのリスト。</p></td>
+      </tr>
+    <tr>
+        <td><p><code>site.html_files</code></p></td>
+        <td><p><code>site.static_files</code>のサブセットで<code>.html</code>で終わるファイルのリスト。</p></td>
+      </tr>
+    <tr>
+        <td><p><code>site.collections</code></p></td>
+        <td><p>（ポストを含む）コレクションのリスト。</p></td>
+      </tr>
+    <tr>
+        <td><p><code>site.data</code></p></td>
+        <td><p><code>_data</code>ディレクトリのYAMLファイルからロードされたデータのリスト。</p></td>
+      </tr>
+    <tr>
+        <td><p><code>site.documents</code></p></td>
+        <td><p>全てのコレクションのドキュメントのリスト。</p></td>
+      </tr>
+    <tr>
+        <td><p><code>site.categories.CATEGORY</code></p></td>
+        <td><p><code>CATEGORY</code>カテゴリのポストのリスト。</p></td>
+      </tr>
+    <tr>
+        <td><p><code>site.tags.TAG</code></p></td>
+        <td><p><code>TAG</code>タグのポストのリスト。</p></td>
+      </tr>
+    <tr>
+        <td><p><code>site.url</code></p></td>
+        <td><p><code>_config.yml</code>で設定されているサイトのURLです。例えば、設定ファイルで<code>url: http://mysite.com</code>とすると、<code>site.url</code>としてLiquidからアクセスできます。開発環境で<code>jekyll serve</code>を実行した場合は異なり、<code>site.url</code>は<code>host</code>と<code>port</code>とSSL関連オプションで設定されます。デフォルトでは、<code>url: http://localhost:4000</code>です。</p></td>
+      </tr>
+    <tr>
+        <td><p><code>site.[CONFIGURATION_DATA]</code></p></td>
+        <td><p>コマンドラインや<code>_config.yml</code>で<code>site</code>変数として登録した値です。例えば、設定ファイルに<code>foo: bar</code>とあれば、Liquidから<code>site.foo</code>でアクセスできます。Jekyllは<code>watch</code>では<code>_config.yml</code>の変更を反映できません。変数を変更した場合はJekyllをリスタートしてください。</p></td>
+      </tr>
+    </tbody>
+</table>
+</div>
+
+<h2 id="ページ変数">ページ変数</h2>
+<!-- ## Page Variables -->
+
+<div class="mobile-side-scroller">
+<table>
+  <thead>
+    <tr>
+      <th>変数</th>
+      <th>説明</th>
+      <!-- <th>Variable</th>
+      <th>Description</th> -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td><p><code>page.content</code></p></td>
+        <td><p>ページのコンテンツ。Liquidの処理やどんな<code>page</code>なのかに応じてレンダリングされたりされなかったりします。</p></td>
+      </tr>
+    <tr>
+        <td><p><code>page.title</code></p></td>
+        <td><p>ページのタイトル。</p></td>
+      </tr>
+    <tr>
+        <td><p><code>page.excerpt</code></p></td>
+        <td><p>ドキュメントのレンダリングされていない抜粋。</p></td>
+      </tr>
+    <tr>
+        <td><p><code>page.url</code></p></td>
+        <td><p>ドメインを含まないポストのURL。<code>/2008/12/14/my-post.html</code>の様にスラッシュから始まります。</p></td>
+      </tr>
+    <tr>
+        <td><p><code>page.date</code></p></td>
+        <td><p>ポストに割り当てられた日付。ポストのfront matterで日時を上書きできます。フォーマットは<code>YYYY-MM-DD HH:MM:SS</code>（UTC)か<code>YYYY-MM-DD HH:MM:SS +/-TTTT</code>(<code>2008-12-14 10:30:00 +0900</code>などUTCからの差で特定のタイムゾーンを指定)</p></td>
+      </tr>
+    <tr>
+        <td><p><code>page.id</code></p></td>
+        <td><p>（RSSフィードに便利な）コレクションやポストのドキュメントのユニークID。<code>/2008/12/14/my-post</code><code>/my-collection/my-document</code>など。</p></td>
+      </tr>
+    <tr>
+        <td><p><code>page.categories</code></p></td>
+        <td><p>ポストのカテゴリのリスト。カテゴリは<code>_posts</code>の所属するディレクトリで決まります。例えば、<code>/work/code/_posts/2008-12-24-closures.md</code>のカテゴリは<code>['work', 'code']</code>です。<a href="/jekyllrb-ja/docs/front-matter/">front matter</a>でも指定できます。</p></td>
+      </tr>
+    <tr>
+        <td><p><code>page.collection</code></p></td>
+        <td><p>そのドキュメントが属するコレクションのラベル。ポストの<code>posts</code>や、<code>_puppies/rover.md</code>ドキュメントの<code>puppies</code>。コレクションで無ければ、空文字が返されます。</p></td>
+      </tr>
+    <tr>
+        <td><p><code>page.tags</code></p></td>
+        <td><p>そのポストのタグのリスト。<a href="/jekyllrb-ja/docs/front-matter/">front matter</a>で指定できます。</p></td>
+      </tr>
+    <tr>
+        <td><p><code>page.dir</code></p></td>
+        <td><p>ソースディレクトリとポストやページの間のパス。<code>/pages/</code>など。<a href="/jekyllrb-ja/docs/front-matter/">front matter</a>の<code>permalink</code>で上書きできます。</p></td>
+      </tr>
+    <tr>
+        <td><p><code>page.name</code></p></td>
+        <td><p>ポストやページのファイル名。<code>about.md</code>など。</p></td>
+      </tr>
+    <tr>
+        <td><p><code>page.path</code></p></td>
+        <td><p>ページやポストの元ファイルへのパス。使用例：GitHubでページやポストのソースへバックリンクを行う。<a href="/jekyllrb-ja/docs/front-matter/">front matter</a>で無効にできます。</p></td>
+      </tr>
+    <tr>
+        <td><p><code>page.next</code></p></td>
+        <td><p><code>site.posts</code>での現在のポストから相対的に次のポスト。最後の投稿の場合は、<code>nil</code>が返されます。</p></td>
+      </tr>
+    <tr>
+        <td><p><code>page.previous</code></p></td>
+        <td><p><code>site.posts</code>での現在のポストから相対的に前のポスト。最初の投稿の場合は、<code>nil</code>が返されます。</p></td>
+      </tr>
+    </tbody>
+</table>
+</div>
+
+<div class="note">
+  <h5>ProTip™: カスタムFront Matterの使用</h5>
+  <!-- <h5>ProTip™: Use Custom Front Matter</h5> -->
+  <p>
+    カスタムfront matterは<code>page</code>で使用可能です。例えば、ページのfront matterに<code>custom_css: true</code>を記述すると、<code>page.custom_css</code>として使用できます。
+  </p>
+  <!-- <p>
+    Any custom front matter that you specify will be available under
+    <code>page</code>. For example, if you specify <code>custom_css: true</code>
+    in a page’s front matter, that value will be available as <code>page.custom_css</code>.
+  </p> -->
+  <p>
+    レイアウトのfront matterは<code>layout</code>でアクセスできます。例えば、レイアウトのfront matterに<code>class: full_page</code>を記述した場合、そのレイアウトや親のレイアウトで<code>layout.class</code>で使用できます。
+  </p>
+  <!-- <p>
+    If you specify front matter in a layout, access that via <code>layout</code>.
+    For example, if you specify <code>class: full_page</code> in a layout’s front matter,
+    that value will be available as <code>layout.class</code> in the layout and its parents.
+  </p> -->
+</div>
+
+<h2 id="paginatorページ分け">Paginator（ページ分け）</h2>
+<!-- ## Paginator -->
+
+<div class="mobile-side-scroller">
+<table>
+  <thead>
+    <tr>
+      <th>変数</th>
+      <th>説明</th>
+      <!-- <th>Variable</th>
+      <th>Description</th> -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td><p><code>paginator.page</code></p></td>
+        <td><p>現在のページ番号</p></td>
+      </tr>
+    <tr>
+        <td><p><code>paginator.per_page</code></p></td>
+        <td><p>1ページに表示するポストの数</p></td>
+      </tr>
+    <tr>
+        <td><p><code>paginator.posts</code></p></td>
+        <td><p>現在のページに表示されているポスト</p></td>
+      </tr>
+    <tr>
+        <td><p><code>paginator.total_posts</code></p></td>
+        <td><p>ポストの総数</p></td>
+      </tr>
+    <tr>
+        <td><p><code>paginator.total_pages</code></p></td>
+        <td><p>ページの総数</p></td>
+      </tr>
+    <tr>
+        <td><p><code>paginator.previous_page</code></p></td>
+        <td><p>前のページのページ番号。無い場合は<code>nil</code>。</p></td>
+      </tr>
+    <tr>
+        <td><p><code>paginator.previous_page_path</code></p></td>
+        <td><p>前のページへのパス。無い場合は<code>nil</code>。</p></td>
+      </tr>
+    <tr>
+        <td><p><code>paginator.next_page</code></p></td>
+        <td><p>次のページのページ番号。無い場合は<code>nil</code>。</p></td>
+      </tr>
+    <tr>
+        <td><p><code>paginator.next_page_path</code></p></td>
+        <td><p>次のページへのパス。無い場合は<code>nil</code>。</p></td>
+      </tr>
+    </tbody>
+</table>
+</div>
+
+<div class="note info">
+  <h5>Paginator変数の使用範囲</h5>
+  <!-- <h5>Paginator variable availability</h5> -->
+  <p>
+    indexファイルでのみ使用可能ですが、<code>/blog/index.html</code>の様なサブディレクトリ中のindexファイルでも使用できます。
+  </p>
+  <!-- <p>
+    These are only available in index files, however they can be located in a subdirectory,
+    such as <code>/blog/index.html</code>.
+  </p> -->
+</div>
+
+        </article>
+      </div>
+      <div class="unit one-fifth hide-on-mobiles">
+  <aside>
+    <h4>入門</h4>
+      <ul>
+        <li><a href="/docs/">クイックスタート</a></li>
+        <li><a href="/docs/ruby-101/">Ruby基礎</a></li>
+        <li><a href="/docs/installation/">インストール</a></li>
+        <li><a href="/docs/community/">コミュニティ</a></li>
+        <li><a href="/docs/step-by-step/01-setup/">Step by Stepチュートリアル</a></li>
+      </ul>
+    <h4>ビルド</h4>
+      <ul>
+        <li><a href="/docs/usage/">コマンドラインの使い方</a></li>
+        <li><a href="/docs/configuration/">構成・設定</a></li>
+      </ul>
+    <h4>コンテンツ</h4>
+      <ul>
+        <li><a href="/docs/pages/">Pages（ページ）</a></li>
+        <li><a href="/docs/posts/">Posts（ポスト）</a></li>
+        <li><a href="/docs/front-matter/">Front Matter</a></li>
+        <li><a href="/docs/collections/">コレクション</a></li>
+        <li><a href="/docs/datafiles/">Dataファイル</a></li>
+        <li><a href="/docs/assets/">Assets</a></li>
+        <li><a href="/docs/static-files/">静的ファイル</a></li>
+      </ul>
+    <h4>サイトの構成</h4>
+      <ul>
+        <li><a href="/docs/structure/">ディレクトリ構成</a></li>
+        <li><a href="/docs/liquid/">Liquid</a></li>
+        <li class="current"><a href="/docs/variables/">変数</a></li>
+        <li><a href="/docs/includes/">Includes（インクルード）</a></li>
+        <li><a href="/docs/layouts/">レイアウト</a></li>
+        <li><a href="/docs/permalinks/">パーマリンク</a></li>
+        <li><a href="/docs/themes/">テーマ</a></li>
+        <li><a href="/docs/pagination/">Pagination（ページ分け）</a></li>
+      </ul>
+    <h4>ガイド</h4>
+      <ul>
+        <li><a href="/docs/plugins/">プラグイン</a></li>
+        <li><a href="/docs/migrations/">ブログの移行</a></li>
+        <li><a href="/docs/upgrading/">アップグレード</a></li>
+        <li><a href="/docs/deployment/">Deployment</a></li>
+      </ul>
+    </aside>
+</div>
+<div class="clear"></div>
+    </div>
+  </section>
+<footer>
+  <div class="grid">
+    <div class="unit one-third center-on-mobiles">
+      <p>Jekyllはボランティアの<a href="/team/">コアチーム</a>により愛情を込めて維持されています。</p>
+      <p>このWebサイトのコンテンツは<a href="https://github.com/jekyll/jekyll/blob/master/LICENSE" target="_blank">MIT&nbsp;License</a>に基づきます。&copy;&nbsp;2020</p>
+      <!-- <p>Jekyll is lovingly maintained by the <a href="/team/">core team</a> of volunteers. </p>
+      <p>The contents of this website are <br />&copy;&nbsp;2020 under the terms of the <a href="https://github.com/jekyll/jekyll/blob/master/LICENSE">MIT&nbsp;License</a>.</p> -->
+    </div>
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>
+        Proudly hosted by
+        <a href="https://github.com">
+          <img src="/img/footer-logo.png" width="100" height="30" alt="GitHub • Social coding">
+        </a>
+      </p>
+    </div>
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>
+        Jekyll is funded thanks to its
+        <a href="https://github.com/jekyll/jekyll#sponsors">
+          sponsors!
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
+<script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<span class=\"sr-only\">Permalink</span><i class=\"fa fa-link\"></i>";
+    anchor.title = "Permalink";
+    return anchor;
+  };
+
+  var linkifyAnchors = function (level, containingElement) {
+    var headers = containingElement.getElementsByTagName("h" + level);
+    for (var h = 0; h < headers.length; h++) {
+      var header = headers[h];
+
+      if (typeof header.id !== "undefined" && header.id !== "") {
+        header.appendChild(anchorForId(header.id));
+      }
+    }
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var contentBlock = document.getElementsByClassName("docs")[0] || document.getElementsByClassName("news")[0];
+      if (!contentBlock) {
+        return;
+      }
+      for (var level = 1; level <= 6; level++) {
+        linkifyAnchors(level, contentBlock);
+      }
+    }
+  };
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script type="text/javascript"> docsearch({
+apiKey: '50fe39c839958dfad797000f33e2ec17',
+indexName: 'jekyllrb',
+inputSelector: '#docsearch-input',
+enhancedSearchInput: true,
+debug: false // Set debug to true if you want to inspect the dropdown
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,447 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link type="application/atom+xml" rel="alternate" href="http://jekyllrb-ja.github.io/feed.xml" title="Jekyll • シンプルで、ブログのような、静的サイト" />
+  <link type="application/atom+xml" rel="alternate" href="/feed/release.xml" title="Jekyll releases posts" />
+  <link rel="alternate" type="application/atom+xml" title="Recent commits to Jekyll’s master branch" href="https://github.com/jekyll/jekyll/commits/master.atom">
+  <link rel="preload" href="/fonts/lato-v14-latin-300.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/lato-v14-latin-700.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/css/screen.css" as="style">
+  <link rel="stylesheet" href="/css/screen.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Jekyll on Windows | Jekyll • シンプルで、ブログのような、静的サイト</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Jekyll on Windows" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windowsはまだ公式にサポートされたプラットフォームではありません。ですが、適切な調整を行ってJekyllを使用することができます。このページには、Windowsユーザーから掘り起こされた知識や教訓を集めています。" />
+<meta property="og:description" content="Windowsはまだ公式にサポートされたプラットフォームではありません。ですが、適切な調整を行ってJekyllを使用することができます。このページには、Windowsユーザーから掘り起こされた知識や教訓を集めています。" />
+<link rel="canonical" href="http://jekyllrb-ja.github.io/docs/installation/windows/" />
+<meta property="og:url" content="http://jekyllrb-ja.github.io/docs/installation/windows/" />
+<meta property="og:site_name" content="Jekyll • シンプルで、ブログのような、静的サイト" />
+<meta property="og:image" content="http://jekyllrb-ja.github.io/img/jekyll-og.png" />
+<script type="application/ld+json">
+{"headline":"Jekyll on Windows","image":"http://jekyllrb-ja.github.io/img/jekyll-og.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://jekyllrb-ja.github.io/img/logo-2x.png"}},"url":"http://jekyllrb-ja.github.io/docs/installation/windows/","description":"Windowsはまだ公式にサポートされたプラットフォームではありません。ですが、適切な調整を行ってJekyllを使用することができます。このページには、Windowsユーザーから掘り起こされた知識や教訓を集めています。","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <!--[if lt IE 9]>
+  <script src="/js/html5shiv.min.js"></script>
+  <script src="/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body class="wrap"><header>
+  <div class="flexbox">
+    <div class="center-on-mobiles">
+      <h1>
+        <a href="/" class="logo">
+          <span class="sr-only">Jekyll</span>
+          <img src="/img/logo-2x.png" width="140" height="65" alt="Jekyll Logo">
+        </a>
+      </h1>
+    </div>
+    <nav class="main-nav hide-on-mobiles">
+      <ul>
+  <li><a href="/">Home</a></li>
+  <li class="current"><a href="/docs/">Docs</a></li>
+  <li><a href="/resources/">Resources</a></li>
+  <li><a href="/showcase/">Showcase</a></li>
+  <li><a href="/news/">News</a></li>
+  </ul>
+</nav>
+    <div class="search hide-on-mobiles">
+      <input type="text" id="docsearch-input" placeholder="Search the docs…">
+</div>
+    <div class="meta hide-on-mobiles">
+      <ul>
+        <li><a href="https://github.com/jekyll/jekyll/releases/tag/v4.1.1">v4.1.1</a></li>
+        <li><a href="https://github.com/jekyll/jekyll">GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+  <nav class="mobile-nav show-on-mobiles">
+    <ul>
+  <li><a href="/">Home</a></li>
+    <li class="current" ><a href="/docs/">Docs</a></li>
+    <li><a href="/resources/">Resources</a></li>
+    <li><a href="/news/">News</a></li>
+    <li><a href="https://github.com/jekyll/jekyll">GitHub</a></li>
+</ul>
+</nav>
+</header>
+  <section class="docs">
+    <div class="grid">
+      <div class="docs-nav-mobile unit whole show-on-mobiles">
+  <select onchange="if (this.value) window.location.href=this.value">
+    <option value="">Navigate the docs…</option>
+    <optgroup label="入門">
+      <option value="/docs/">クイックスタート</option>
+      <option value="/docs/ruby-101/">Ruby基礎</option>
+      <option value="/docs/installation/">インストール</option>
+      <option value="/docs/community/">コミュニティ</option>
+      <option value="/docs/step-by-step/01-setup/">Step by Stepチュートリアル</option>
+    </optgroup>
+    <optgroup label="ビルド">
+      <option value="/docs/usage/">コマンドラインの使い方</option>
+      <option value="/docs/configuration/">構成・設定</option>
+    </optgroup>
+    <optgroup label="コンテンツ">
+      <option value="/docs/pages/">Pages（ページ）</option>
+      <option value="/docs/posts/">Posts（ポスト）</option>
+      <option value="/docs/front-matter/">Front Matter</option>
+      <option value="/docs/collections/">コレクション</option>
+      <option value="/docs/datafiles/">Dataファイル</option>
+      <option value="/docs/assets/">Assets</option>
+      <option value="/docs/static-files/">静的ファイル</option>
+    </optgroup>
+    <optgroup label="サイトの構成">
+      <option value="/docs/structure/">ディレクトリ構成</option>
+      <option value="/docs/liquid/">Liquid</option>
+      <option value="/docs/variables/">変数</option>
+      <option value="/docs/includes/">Includes（インクルード）</option>
+      <option value="/docs/layouts/">レイアウト</option>
+      <option value="/docs/permalinks/">パーマリンク</option>
+      <option value="/docs/themes/">テーマ</option>
+      <option value="/docs/pagination/">Pagination（ページ分け）</option>
+    </optgroup>
+    <optgroup label="ガイド">
+      <option value="/docs/plugins/">プラグイン</option>
+      <option value="/docs/migrations/">ブログの移行</option>
+      <option value="/docs/upgrading/">アップグレード</option>
+      <option value="/docs/deployment/">Deployment</option>
+    </optgroup>
+    </select>
+</div>
+<div class="unit four-fifths">
+        <article>
+          <div class="improve right hide-on-mobiles">
+            <a data-proofer-ignore href="https://github.com/jekyll/jekyll/edit/master/docs/_docs/installation/windows.md"><i class="fa fa-pencil"></i> &nbsp;Improve this page</a>
+          </div>
+          <h1>Jekyll on Windows</h1>
+          <p>Windowsはまだ公式にサポートされたプラットフォームではありません。ですが、適切な調整を行ってJekyllを使用することができます。このページには、Windowsユーザーから掘り起こされた知識や教訓を集めています。</p>
+
+<!-- While Windows is not an officially-supported platform, it can be used to run Jekyll with the proper tweaks. This page aims to
+collect some of the general knowledge and lessons that have been unearthed by Windows users. -->
+
+<h2 id="jekyllのインストール">Jekyllのインストール</h2>
+<!-- ## Installing Jekyll -->
+
+<h3 id="rubyインストーラでインストール">Rubyインストーラでインストール</h3>
+<!-- ### Installation via RubyInstaller -->
+
+<p>JekyllをWindowsで実行する最も簡単な方法は、<a href="https://rubyinstaller.org/" target="_blank">Rubyインストーラ</a>を使用することです。</p>
+
+<!-- The easiest way to run Jekyll is by using the [RubyInstaller](https://rubyinstaller.org/) for Windows. -->
+
+<p>RubyインストーラはRuby言語、実行環境、重要なドキュメンテーションなどを含むWindowsベースの自己完結型インストーラです。RubyInstaller-2.4以上のみをカバーしています。古いバージョンは手動で<a href="https://github.com/oneclick/rubyinstaller/wiki/Development-Kit" target="_blank">Devkitをインストール</a>する必要があります。</p>
+
+<!-- RubyInstaller is a self-contained Windows-based installer that includes the Ruby language, an execution environment,
+important documentation, and more.
+We only cover RubyInstaller-2.4 and newer here, older versions need to
+[install the Devkit](https://github.com/oneclick/rubyinstaller/wiki/Development-Kit) manually. -->
+
+<ol>
+  <li><a href="https://rubyinstaller.org/downloads/" target="_blank">RubyInstaller Downloads</a>から<strong>Ruby+Devkit</strong>バージョンをダウンロードして、インストールしてください。インストールはデフォルトのオプションを使用してください。</li>
+  <li>インストールウィザードの最後の段階で、<code class="language-plaintext highlighter-rouge">ridk install</code>ステップを実行してください。これはネイティブ環境でgemsをインストールするためです。詳しくは<a href="https://github.com/oneclick/rubyinstaller2#using-the-installer-on-a-target-system" target="_blank">RubyInstaller Documentation</a>を読んでください。</li>
+  <li><code class="language-plaintext highlighter-rouge">PATH</code>環境変数への変更を有効にするため、スタートメニューから新しいコマンドプロンプトを開きます。<code class="language-plaintext highlighter-rouge">gem install jekyll bundler</code>でJekyllとBundlerをインストールします。</li>
+  <li>Jekyllがインストールされたか、<code class="language-plaintext highlighter-rouge">jekyll -v</code>で確認します。</li>
+</ol>
+
+<!-- 1. Download and Install a **Ruby+Devkit** version from [RubyInstaller Downloads](https://rubyinstaller.org/downloads/).
+   Use default options for installation.
+2. Run the `ridk install` step on the last stage of the installation wizard. This is needed for installing gems with native
+   extensions. You can find additional information regarding this in the
+   [RubyInstaller Documentation](https://github.com/oneclick/rubyinstaller2#using-the-installer-on-a-target-system)
+3. Open a new command prompt window from the start menu, so that changes to the `PATH` environment variable becomes effective.
+   Install Jekyll and Bundler via: `gem install jekyll bundler`
+4. Check if Jekyll installed properly: `jekyll -v` -->
+
+<p>以上で、Jekyllを使用する準備ができました！</p>
+
+<!-- That's it, you're ready to use Jekyll! -->
+
+<h3 id="windows-10でのbashによるインストール">Windows 10でのBashによるインストール</h3>
+<!-- ### Installation via Bash on Windows 10 -->
+
+<p>Windows10の1607以降を使用している場合、Linux用のWindowsサブシステムでJekyllを<a href="https://msdn.microsoft.com/en-us/commandline/wsl/install_guide" target="_blank">インストール</a>するオプションがあります。</p>
+
+<!-- If you are using Windows 10 version 1607 or later, another option to run Jekyll is by
+[installing](https://msdn.microsoft.com/en-us/commandline/wsl/install_guide) the Windows Subsystem for Linux. -->
+
+<p class="note info"><a href="https://msdn.microsoft.com/en-us/commandline/wsl/about" target="_blank">Windows Subsystem for Linux</a>を有効にする必要があります。</p>
+
+<!-- {: .note .info}
+You must have [Windows Subsystem for Linux](https://msdn.microsoft.com/en-us/commandline/wsl/about) enabled. -->
+
+<p>まず、全てのパッケージとリポジトリを最新にします。新しいコマンドプロンプトを開き、以下の入力します。</p>
+
+<!-- First let's make sure all our packages / repositories are up to date. Open a new Command Prompt instance, and type the following: -->
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bash
+</code></pre></div></div>
+
+<p>コマンドプロンプトインスタンスはBashインスタンスになります。今度はリポジトリリストとパッケージを更新しなければなりません</p>
+
+<!-- Your Command Prompt instance should now be a Bash instance. Now we must update our repo lists and packages. -->
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get update <span class="nt">-y</span> <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt-get upgrade <span class="nt">-y</span>
+</code></pre></div></div>
+
+<p>Rubyがインストールできます。それを行うために、Ruby for Ubuntuの最適化バージョンをホストする<a href="https://www.brightbox.com/docs/ruby/ubuntu/" target="_blank">BrightBox</a>のリポジトリを使用します。</p>
+
+<!-- Now we can install Ruby. To do this we will use a repository from [BrightBox](https://www.brightbox.com/docs/ruby/ubuntu/),
+which hosts optimized versions of Ruby for Ubuntu. -->
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-add-repository ppa:brightbox/ruby-ng
+<span class="nb">sudo </span>apt-get update
+<span class="nb">sudo </span>apt-get <span class="nb">install </span>ruby2.5 ruby2.5-dev build-essential dh-autoreconf
+</code></pre></div></div>
+
+<p>次はRuby gemsをアップデートしましょう。</p>
+
+<!-- Next let's update our Ruby gems: -->
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem update
+</code></pre></div></div>
+
+<p>後はJekyllのインストールを残すのみです。</p>
+
+<!-- Now all that is left to do is install Jekyll. -->
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem <span class="nb">install </span>jekyll bundler
+</code></pre></div></div>
+
+<p>（<em>注：ここでは<code class="language-plaintext highlighter-rouge">sudo</code>を使いません。</em>）</p>
+
+<!-- (*Note: no `sudo` here.*) -->
+
+<p>次を実行して、Jekyllが正しくインストールされているかを確認します。</p>
+
+<!-- Check if Jekyll installed properly by running: -->
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jekyll <span class="nt">-v</span>
+</code></pre></div></div>
+
+<p><strong>以上です！</strong></p>
+
+<!-- **And that's it!** -->
+
+<p><code class="language-plaintext highlighter-rouge">_posts</code>フォルダを調べることで、時間管理がきちんとできているかを確認することができます。現在の日付けがファイル名のmarkdownファイルがあるはずです。</p>
+
+<!-- You can make sure time management is working properly by inspecting your `_posts` folder. You should see a markdown file
+with the current date in the filename. -->
+
+<div class="note info">
+  <h5>superuserでないアカウントの問題</h5>
+  <!-- <h5>Non-superuser account issues</h5> -->
+  <p>`jekyll new`コマンドで"Your user account isn't allowed to install to the system RubyGems"のエラーが表示されたら、 <a href="/docs/troubleshooting/#no-sudo">トラブルシューティング</a>の"SuperuserでなくJekyllを実行する"の項を見てください。</p>
+  <!-- <p>If the `jekyll new` command prints the error "Your user account isn't allowed to install to the system RubyGems", see
+  the "Running Jekyll as Non-Superuser" instructions in <a href="/docs/troubleshooting/#no-sudo">Troubleshooting</a>.</p> -->
+</div>
+
+<p class="note info"><strong>注：</strong> Bash on Ubuntu on Windowsは、まだ開発中です。実行で問題が発生するかもしれません。</p>
+
+<!-- {: .note .info}
+Bash on Ubuntu on Windows is still under development, so you may run into issues. -->
+
+<h2 id="エンコード">エンコード</h2>
+<!-- ## Encoding -->
+
+<p>UTF-8を使用している場合、必ず<code class="language-plaintext highlighter-rouge">BOM</code>はつけないでください。Jekyllに非常に悪いことが起こります。これは、WindowsでJekyllを実行する場合に顕著です。</p>
+
+<!-- If you use UTF-8 encoding, make sure that no `BOM` header characters exist in your files or very, very bad things will happen to
+Jekyll. This is especially relevant when you're running Jekyll on Windows. -->
+
+<p>さらに、サイト生成プロセス中に<code class="language-plaintext highlighter-rouge">Liquid Exception: Incompatible character encoding</code>エラーが発生した場合は、コンソールウィンドウのコードページをUTF-8に変更する必要があります。これは次のコマンドで実行できます。</p>
+
+<!-- Additionally, you might need to change the code page of the console window to UTF-8 in case you get a
+`Liquid Exception: Incompatible character encoding` error during the site generation process. It can be done with the following
+command: -->
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>chcp 65001
+</code></pre></div></div>
+
+<h2 id="タイムゾーンの管理">タイムゾーンの管理</h2>
+<!-- ## Time-Zone Management -->
+
+<p>Windowsはゾーン情報データのネイティブソースを持っていないので、RubyインタプリタはIANAタイムゾーンを理解しないでしょう。ですので、<code class="language-plaintext highlighter-rouge">TZ</code>環境変数ではデフォルトのUTC/GMT 00:00を使用します。</p>
+
+<!-- Since Windows doesn't have a native source of zoneinfo data, the Ruby Interpreter would not understand IANA Timezones and hence
+using them had the `TZ` environment variable default to UTC/GMT 00:00. -->
+
+<p>Windowsユーザーは、タイムゾーンを定義するPOSIX形式を使用するようにキーを設定してブログのタイムゾーンを定義することもできます。ですが、DSTルールの変更に合わせて時計を変更することになると、それほどユーザーフレンドリーではありませんでした。</p>
+
+<!-- Though Windows users could alternatively define their blog's timezone by setting the key to use POSIX format of defining
+timezones, it wasn't as user-friendly when it came to having the clock altered to changing DST-rules. -->
+
+<p>Jekyllは現在、確立された<a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones" target="_blank">IANAタイムゾーンデータベース</a>に基づいてタイムゾーンを内部で設定するために、Rubygemを使用しています。 Jekyll v3.4以降で作成された「新しい」ブログでは、デフォルトで以下のものが<code class="language-plaintext highlighter-rouge">Gemfile</code>に追加されますが、既存のサイトではWindowsで開発できるように<code class="language-plaintext highlighter-rouge">Gemfile</code>を更新（およびインストール）する必要があります。</p>
+
+<!-- Jekyll now uses a rubygem to internally configure Timezone based on established
+[IANA Timezone Database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
+While 'new' blogs created with Jekyll v3.4 and greater, will have the following added to their `Gemfile` by default, existing
+sites *will* have to update their `Gemfile` (and installed) to enable development on Windows: -->
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Windows does not include zoneinfo files, so bundle the tzinfo-data gem</span>
+<span class="n">gem</span> <span class="s1">'tzinfo-data'</span><span class="p">,</span> <span class="ss">platforms: </span><span class="p">[</span><span class="ss">:mingw</span><span class="p">,</span> <span class="ss">:mswin</span><span class="p">,</span> <span class="ss">:x64_mingw</span><span class="p">,</span> <span class="ss">:jruby</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="note warning">
+  <h5>TZInfo 2.0 不適合</h5>
+  <!-- <h5>TZInfo 2.0 incompatibility</h5> -->
+  <p>
+    TZ情報ライブラリVersion 2.0はタイムゾーンオフセットの計算方法に変更を加えました。サイトがWindows上でJekyll 3.xでビルドされている場合、このことは投稿の日時を不正確にするでしょう。
+  </p>
+  <!-- <p>
+    Version 2.0 of the TZInfo library has introduced a change in how timezone offsets are calculated.
+    This will result in incorrect date and time for your posts when the site is built with Jekyll 3.x on Windows.
+  </p> -->
+  <p>
+    ですので、<code>Gemfile</code>に<code>gem 'tzinfo', '~&gt; 1.2'</code>をリストして、タイムゾーンライブラリをVersion 1.2以上にロックすることをお勧めします。
+  </p>
+  <!-- <p>
+    We therefore recommend that you lock the Timezone library to version 1.2 and above by listing
+    <code>gem 'tzinfo', '~> 1.2'</code> in your <code>Gemfile</code>.
+  </p> -->
+</div>
+
+<h2 id="自動再作成">自動再作成</h2>
+<!-- ## Auto Regeneration -->
+
+<p>Jekyllは構築またはサーブ中に<code class="language-plaintext highlighter-rouge">--watch</code>スイッチが指定された場合、<code class="language-plaintext highlighter-rouge">listen</code> gemを使用して変更を監視します。 <code class="language-plaintext highlighter-rouge">listen</code>はUNIXシステムを組み込みでサポートしていますが、Windowsとの互換性のために追加のgemが必要になるかもしれません。</p>
+
+<!-- Jekyll uses the `listen` gem to watch for changes when the `--watch` switch is specified during a build or serve.
+While `listen` has built-in support for UNIX systems, it may require an extra gem for compatibility with Windows. -->
+
+<p>Windows上で自動再生成に問題があった場合は、サイトの<code class="language-plaintext highlighter-rouge">Gemfile</code>に以下を追加してください。</p>
+
+<!-- Add the following to the `Gemfile` for your site if you have issues with auto-regeneration on Windows alone: -->
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">gem</span> <span class="s1">'wdm'</span><span class="p">,</span> <span class="s1">'~&gt; 0.1.1'</span><span class="p">,</span> <span class="ss">:install_if</span> <span class="o">=&gt;</span> <span class="no">Gem</span><span class="p">.</span><span class="nf">win_platform?</span>
+</code></pre></div></div>
+
+<p>Rubyインストーラのバージョンの<a href="https://rubyinstaller.org/downloads/" target="_blank">Ruby+Devkit</a>を使用しなければなりませんし、<code class="language-plaintext highlighter-rouge">wdm</code>gemのインストールを成功させるためにMSYS2ビルドツールのインストールが必要です。</p>
+
+<!-- You have to use a [Ruby+Devkit](https://rubyinstaller.org/downloads/) version of the RubyInstaller and install
+the MSYS2 build tools to successfully install the `wdm` gem. -->
+
+        </article>
+      </div>
+      <div class="unit one-fifth hide-on-mobiles">
+  <aside>
+    <h4>入門</h4>
+      <ul>
+        <li><a href="/docs/">クイックスタート</a></li>
+        <li><a href="/docs/ruby-101/">Ruby基礎</a></li>
+        <li><a href="/docs/installation/">インストール</a></li>
+        <li><a href="/docs/community/">コミュニティ</a></li>
+        <li><a href="/docs/step-by-step/01-setup/">Step by Stepチュートリアル</a></li>
+      </ul>
+    <h4>ビルド</h4>
+      <ul>
+        <li><a href="/docs/usage/">コマンドラインの使い方</a></li>
+        <li><a href="/docs/configuration/">構成・設定</a></li>
+      </ul>
+    <h4>コンテンツ</h4>
+      <ul>
+        <li><a href="/docs/pages/">Pages（ページ）</a></li>
+        <li><a href="/docs/posts/">Posts（ポスト）</a></li>
+        <li><a href="/docs/front-matter/">Front Matter</a></li>
+        <li><a href="/docs/collections/">コレクション</a></li>
+        <li><a href="/docs/datafiles/">Dataファイル</a></li>
+        <li><a href="/docs/assets/">Assets</a></li>
+        <li><a href="/docs/static-files/">静的ファイル</a></li>
+      </ul>
+    <h4>サイトの構成</h4>
+      <ul>
+        <li><a href="/docs/structure/">ディレクトリ構成</a></li>
+        <li><a href="/docs/liquid/">Liquid</a></li>
+        <li><a href="/docs/variables/">変数</a></li>
+        <li><a href="/docs/includes/">Includes（インクルード）</a></li>
+        <li><a href="/docs/layouts/">レイアウト</a></li>
+        <li><a href="/docs/permalinks/">パーマリンク</a></li>
+        <li><a href="/docs/themes/">テーマ</a></li>
+        <li><a href="/docs/pagination/">Pagination（ページ分け）</a></li>
+      </ul>
+    <h4>ガイド</h4>
+      <ul>
+        <li><a href="/docs/plugins/">プラグイン</a></li>
+        <li><a href="/docs/migrations/">ブログの移行</a></li>
+        <li><a href="/docs/upgrading/">アップグレード</a></li>
+        <li><a href="/docs/deployment/">Deployment</a></li>
+      </ul>
+    </aside>
+</div>
+<div class="clear"></div>
+    </div>
+  </section>
+<footer>
+  <div class="grid">
+    <div class="unit one-third center-on-mobiles">
+      <p>Jekyllはボランティアの<a href="/team/">コアチーム</a>により愛情を込めて維持されています。</p>
+      <p>このWebサイトのコンテンツは<a href="https://github.com/jekyll/jekyll/blob/master/LICENSE" target="_blank">MIT&nbsp;License</a>に基づきます。&copy;&nbsp;2020</p>
+      <!-- <p>Jekyll is lovingly maintained by the <a href="/team/">core team</a> of volunteers. </p>
+      <p>The contents of this website are <br />&copy;&nbsp;2020 under the terms of the <a href="https://github.com/jekyll/jekyll/blob/master/LICENSE">MIT&nbsp;License</a>.</p> -->
+    </div>
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>
+        Proudly hosted by
+        <a href="https://github.com">
+          <img src="/img/footer-logo.png" width="100" height="30" alt="GitHub • Social coding">
+        </a>
+      </p>
+    </div>
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>
+        Jekyll is funded thanks to its
+        <a href="https://github.com/jekyll/jekyll#sponsors">
+          sponsors!
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
+<script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<span class=\"sr-only\">Permalink</span><i class=\"fa fa-link\"></i>";
+    anchor.title = "Permalink";
+    return anchor;
+  };
+
+  var linkifyAnchors = function (level, containingElement) {
+    var headers = containingElement.getElementsByTagName("h" + level);
+    for (var h = 0; h < headers.length; h++) {
+      var header = headers[h];
+
+      if (typeof header.id !== "undefined" && header.id !== "") {
+        header.appendChild(anchorForId(header.id));
+      }
+    }
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var contentBlock = document.getElementsByClassName("docs")[0] || document.getElementsByClassName("news")[0];
+      if (!contentBlock) {
+        return;
+      }
+      for (var level = 1; level <= 6; level++) {
+        linkifyAnchors(level, contentBlock);
+      }
+    }
+  };
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script type="text/javascript"> docsearch({
+apiKey: '50fe39c839958dfad797000f33e2ec17',
+indexName: 'jekyllrb',
+inputSelector: '#docsearch-input',
+enhancedSearchInput: true,
+debug: false // Set debug to true if you want to inspect the dropdown
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,302 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link type="application/atom+xml" rel="alternate" href="http://jekyllrb-ja.github.io/feed.xml" title="Jekyll • シンプルで、ブログのような、静的サイト" />
+  <link type="application/atom+xml" rel="alternate" href="/feed/release.xml" title="Jekyll releases posts" />
+  <link rel="alternate" type="application/atom+xml" title="Recent commits to Jekyll’s master branch" href="https://github.com/jekyll/jekyll/commits/master.atom">
+  <link rel="preload" href="/fonts/lato-v14-latin-300.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/lato-v14-latin-700.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/css/screen.css" as="style">
+  <link rel="stylesheet" href="/css/screen.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Buddy | Jekyll • シンプルで、ブログのような、静的サイト</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Buddy" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="BuddyはDockerベースのCIサーバーで、15〜20分でセットアップしてJekyll Webサイトを構築、テスト、および展開できます。GitHub、Bitbucket、およびGitLabリポジトリをサポートしており、オンプレミスでインストールすることも、クラウドで使用することもできます。以下のガイドでは、Jekyllプロジェクトをビルドしてテストするための無料の環境を設定する方法を説明しています。" />
+<meta property="og:description" content="BuddyはDockerベースのCIサーバーで、15〜20分でセットアップしてJekyll Webサイトを構築、テスト、および展開できます。GitHub、Bitbucket、およびGitLabリポジトリをサポートしており、オンプレミスでインストールすることも、クラウドで使用することもできます。以下のガイドでは、Jekyllプロジェクトをビルドしてテストするための無料の環境を設定する方法を説明しています。" />
+<link rel="canonical" href="http://jekyllrb-ja.github.io/docs/continuous-integration/buddyworks/" />
+<meta property="og:url" content="http://jekyllrb-ja.github.io/docs/continuous-integration/buddyworks/" />
+<meta property="og:site_name" content="Jekyll • シンプルで、ブログのような、静的サイト" />
+<meta property="og:image" content="http://jekyllrb-ja.github.io/img/jekyll-og.png" />
+<script type="application/ld+json">
+{"headline":"Buddy","image":"http://jekyllrb-ja.github.io/img/jekyll-og.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://jekyllrb-ja.github.io/img/logo-2x.png"}},"url":"http://jekyllrb-ja.github.io/docs/continuous-integration/buddyworks/","description":"BuddyはDockerベースのCIサーバーで、15〜20分でセットアップしてJekyll Webサイトを構築、テスト、および展開できます。GitHub、Bitbucket、およびGitLabリポジトリをサポートしており、オンプレミスでインストールすることも、クラウドで使用することもできます。以下のガイドでは、Jekyllプロジェクトをビルドしてテストするための無料の環境を設定する方法を説明しています。","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <!--[if lt IE 9]>
+  <script src="/js/html5shiv.min.js"></script>
+  <script src="/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body class="wrap"><header>
+  <div class="flexbox">
+    <div class="center-on-mobiles">
+      <h1>
+        <a href="/" class="logo">
+          <span class="sr-only">Jekyll</span>
+          <img src="/img/logo-2x.png" width="140" height="65" alt="Jekyll Logo">
+        </a>
+      </h1>
+    </div>
+    <nav class="main-nav hide-on-mobiles">
+      <ul>
+  <li><a href="/">Home</a></li>
+  <li class="current"><a href="/docs/">Docs</a></li>
+  <li><a href="/resources/">Resources</a></li>
+  <li><a href="/showcase/">Showcase</a></li>
+  <li><a href="/news/">News</a></li>
+  </ul>
+</nav>
+    <div class="search hide-on-mobiles">
+      <input type="text" id="docsearch-input" placeholder="Search the docs…">
+</div>
+    <div class="meta hide-on-mobiles">
+      <ul>
+        <li><a href="https://github.com/jekyll/jekyll/releases/tag/v4.1.1">v4.1.1</a></li>
+        <li><a href="https://github.com/jekyll/jekyll">GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+  <nav class="mobile-nav show-on-mobiles">
+    <ul>
+  <li><a href="/">Home</a></li>
+    <li class="current" ><a href="/docs/">Docs</a></li>
+    <li><a href="/resources/">Resources</a></li>
+    <li><a href="/news/">News</a></li>
+    <li><a href="https://github.com/jekyll/jekyll">GitHub</a></li>
+</ul>
+</nav>
+</header>
+  <section class="docs">
+    <div class="grid">
+      <div class="docs-nav-mobile unit whole show-on-mobiles">
+  <select onchange="if (this.value) window.location.href=this.value">
+    <option value="">Navigate the docs…</option>
+    <optgroup label="入門">
+      <option value="/docs/">クイックスタート</option>
+      <option value="/docs/ruby-101/">Ruby基礎</option>
+      <option value="/docs/installation/">インストール</option>
+      <option value="/docs/community/">コミュニティ</option>
+      <option value="/docs/step-by-step/01-setup/">Step by Stepチュートリアル</option>
+    </optgroup>
+    <optgroup label="ビルド">
+      <option value="/docs/usage/">コマンドラインの使い方</option>
+      <option value="/docs/configuration/">構成・設定</option>
+    </optgroup>
+    <optgroup label="コンテンツ">
+      <option value="/docs/pages/">Pages（ページ）</option>
+      <option value="/docs/posts/">Posts（ポスト）</option>
+      <option value="/docs/front-matter/">Front Matter</option>
+      <option value="/docs/collections/">コレクション</option>
+      <option value="/docs/datafiles/">Dataファイル</option>
+      <option value="/docs/assets/">Assets</option>
+      <option value="/docs/static-files/">静的ファイル</option>
+    </optgroup>
+    <optgroup label="サイトの構成">
+      <option value="/docs/structure/">ディレクトリ構成</option>
+      <option value="/docs/liquid/">Liquid</option>
+      <option value="/docs/variables/">変数</option>
+      <option value="/docs/includes/">Includes（インクルード）</option>
+      <option value="/docs/layouts/">レイアウト</option>
+      <option value="/docs/permalinks/">パーマリンク</option>
+      <option value="/docs/themes/">テーマ</option>
+      <option value="/docs/pagination/">Pagination（ページ分け）</option>
+    </optgroup>
+    <optgroup label="ガイド">
+      <option value="/docs/plugins/">プラグイン</option>
+      <option value="/docs/migrations/">ブログの移行</option>
+      <option value="/docs/upgrading/">アップグレード</option>
+      <option value="/docs/deployment/">Deployment</option>
+    </optgroup>
+    </select>
+</div>
+<div class="unit four-fifths">
+        <article>
+          <div class="improve right hide-on-mobiles">
+            <a data-proofer-ignore href="https://github.com/jekyll/jekyll/edit/master/docs/_docs/continuous-integration/buddyworks.md"><i class="fa fa-pencil"></i> &nbsp;Improve this page</a>
+          </div>
+          <h1>Buddy</h1>
+          <p><a href="https://buddy.works">Buddy</a>は<a href="https://www.docker.com/">Docker</a>ベースのCIサーバーで、15〜20分でセットアップしてJekyll Webサイトを構築、テスト、および展開できます。<a href="https://github.com">GitHub</a>、<a href="https://bitbucket.org/">Bitbucket</a>、および<a href="https://gitlab.com">GitLab</a>リポジトリをサポートしており、オンプレミスでインストールすることも、クラウドで使用することもできます。以下のガイドでは、Jekyllプロジェクトをビルドしてテストするための無料の環境を設定する方法を説明しています。</p>
+
+<!-- [Buddy][buddy-homepage] is a [Docker][docker-homepage]-based CI server that you can set up in 15-20 minutes to build, test, and deploy your Jekyll websites. It supports [GitHub][github-homepage], [Bitbucket][bitbucket-homepage], and [GitLab][gitlab-homepage] repositories, and can be installed on-premises or used in cloud. The following guide will show you how to set up a free environment to build and test your Jekyll project. -->
+
+<h2 id="1-始める">1. 始める</h2>
+<!-- ## 1. Getting started -->
+
+<ol>
+  <li><a href="https://buddy.works">https://buddy.works</a>にGitHub/BitbucketアカウントかEメールでログインします。</li>
+  <li>Gitプロバイダーを選び、Jekyllプロジェクトを選択するかプッシュします。</li>
+  <li>新しいパイプラインを作成し、’On every push’にトリガーをセットします。</li>
+  <li>Jekyllアクション設定を追加し、パイプラインを保存します。</li>
+</ol>
+
+<!-- 1. Log in at [https://buddy.works][buddy-homepage] with your GitHub/Bitbucket account or email
+2. Choose your Git provider and select or push your Jekyll Project
+3. Create a new pipeline and set the trigger mode to 'On every push'
+4. Add and configure the Jekyll action and save the pipeline -->
+
+<h2 id="2-働き方">2. 働き方</h2>
+<!-- ## 2. How it works -->
+
+<p>選択したブランチにプッシュするたびに、Jekyllアクションは孤立した<a href="https://hub.docker.com/r/jekyll/jekyll/">Jekyll Dockerイメージ</a>で<code class="language-plaintext highlighter-rouge">jekyll build</code>を実行します。 出力は<code class="language-plaintext highlighter-rouge">/filesystem</code>ディレクトリに生成され、さらにFTP/SFTPおよびIaaSサービスにデプロイできます。あなた自身のコマンドを追加したり、追加のパッケージをインストールしたり、サービスをアタッチしたり、Seleniumテストを実行したり、そして他のアクション（Slack通知やサーバーを再起動するSSHスクリプトなど）をパイプラインの下に追加することができます。</p>
+
+<!-- Whenever you make a push to the selected branch, the Jekyll action runs `jekyll build` in an isolated [Jekyll Docker image][jekyll-docker-image]. The output is generated to the `/filesystem` directory, and can be further deployed to FTP/SFTP and IaaS services. You can add your own commands, install additional packages, attach services, and run Selenium tests, as well as add other actions down the pipeline, eg. a Slack notification or an SSH script that will restart your server. -->
+
+<h2 id="3-設定にyamlを使用する">3. 設定にYAMLを使用する</h2>
+<!-- ## 3. Using YAML for configuration -->
+
+<p>GUIよりもコードとして設定したい場合は、ターゲットブランチにプッシュするとJekyllアクションでパイプラインを作成する<code class="language-plaintext highlighter-rouge">buddy.yml</code>を生成できます。</p>
+
+<!-- If you prefer configuration as code over GUI, you can generate a `buddy.yml` that will create a pipeline with the Jekyll action once you push it to the target branch: -->
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">-</span> <span class="na">pipeline</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Build</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">Deploy</span><span class="nv"> </span><span class="s">Jekyll</span><span class="nv"> </span><span class="s">site"</span>
+  <span class="na">trigger_mode</span><span class="pi">:</span> <span class="s2">"</span><span class="s">ON_EVERY_PUSH"</span>
+  <span class="na">ref_name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">master"</span>
+  <span class="na">actions</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">action</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Execute:</span><span class="nv"> </span><span class="s">jekyll</span><span class="nv"> </span><span class="s">build"</span>
+    <span class="na">type</span><span class="pi">:</span> <span class="s2">"</span><span class="s">BUILD"</span>
+    <span class="na">docker_image_name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">jekyll/jekyll"</span>
+    <span class="na">docker_image_tag</span><span class="pi">:</span> <span class="s2">"</span><span class="s">latest"</span>
+    <span class="na">execute_commands</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s2">"</span><span class="s">chown</span><span class="nv"> </span><span class="s">jekyll:jekyll</span><span class="nv"> </span><span class="s">$WORKING_DIR"</span>
+    <span class="pi">-</span> <span class="s2">"</span><span class="s">jekyll</span><span class="nv"> </span><span class="s">build"</span>
+</code></pre></div></div>
+
+<h2 id="4-オンプレミスサーバーの設定">4. オンプレミスサーバーの設定</h2>
+<!-- ## 4. Setting up on-premises server -->
+
+<p>セルフホスト版のBuddyは、<a href="https://buddy.works/knowledge/standalone/installation-linux">Linux</a>、<a href="https://buddy.works/knowledge/standalone/installation-mac-osx">Mac</a>、 <a href="https://buddy.works/knowledge/standalone/installation-amazon-ec2">AWS EC2</a>、<a href="https://buddy.works/knowledge/standalone/installation-digitalocean">DigitalOcean</a>、<a href="https://buddy.works/knowledge/standalone/installation-azure">Microsoft Azure</a>など、Dockerをサポートするあらゆる種類のサーバーにインストールできます。</p>
+
+<!-- The self-hosted version of Buddy can be installed on any type of server supporting Docker, including [Linux][bw-linux], [Mac][bw-mac], [AWS EC2][bw-aws-ec2], [DigitalOcean][bw-digitalocean], and [Microsoft Azure][bw-azure]. -->
+
+<h2 id="5-疑問がありますか">5. 疑問がありますか？</h2>
+<!-- ## 5. Questions? -->
+
+<p>このガイドはオープンソースです。修正がある場合は<a href="https://github.com/jekyll/jekyll/edit/master/docs/_docs/continuous-integration/buddyworks.md">編集</a>を、トラブルがあり助けが必要な場合は<a href="https://jekyllrb.com/help/">助けを求めて</a>ください。CircleCIには、助けになる<a href="http://forum.buddy.works/">オンラインコミュニティー</a>もあります。</p>
+
+<!-- This entire guide is open-source. Go ahead and [edit it][jekyll-docs-ci-buddy] if you want to expand it or have a fix or [ask for help][jekyll-help] if you run into trouble and need assistance. Buddy also has an [online community][buddy-forum] for help. -->
+
+
+        </article>
+      </div>
+      <div class="unit one-fifth hide-on-mobiles">
+  <aside>
+    <h4>入門</h4>
+      <ul>
+        <li><a href="/docs/">クイックスタート</a></li>
+        <li><a href="/docs/ruby-101/">Ruby基礎</a></li>
+        <li><a href="/docs/installation/">インストール</a></li>
+        <li><a href="/docs/community/">コミュニティ</a></li>
+        <li><a href="/docs/step-by-step/01-setup/">Step by Stepチュートリアル</a></li>
+      </ul>
+    <h4>ビルド</h4>
+      <ul>
+        <li><a href="/docs/usage/">コマンドラインの使い方</a></li>
+        <li><a href="/docs/configuration/">構成・設定</a></li>
+      </ul>
+    <h4>コンテンツ</h4>
+      <ul>
+        <li><a href="/docs/pages/">Pages（ページ）</a></li>
+        <li><a href="/docs/posts/">Posts（ポスト）</a></li>
+        <li><a href="/docs/front-matter/">Front Matter</a></li>
+        <li><a href="/docs/collections/">コレクション</a></li>
+        <li><a href="/docs/datafiles/">Dataファイル</a></li>
+        <li><a href="/docs/assets/">Assets</a></li>
+        <li><a href="/docs/static-files/">静的ファイル</a></li>
+      </ul>
+    <h4>サイトの構成</h4>
+      <ul>
+        <li><a href="/docs/structure/">ディレクトリ構成</a></li>
+        <li><a href="/docs/liquid/">Liquid</a></li>
+        <li><a href="/docs/variables/">変数</a></li>
+        <li><a href="/docs/includes/">Includes（インクルード）</a></li>
+        <li><a href="/docs/layouts/">レイアウト</a></li>
+        <li><a href="/docs/permalinks/">パーマリンク</a></li>
+        <li><a href="/docs/themes/">テーマ</a></li>
+        <li><a href="/docs/pagination/">Pagination（ページ分け）</a></li>
+      </ul>
+    <h4>ガイド</h4>
+      <ul>
+        <li><a href="/docs/plugins/">プラグイン</a></li>
+        <li><a href="/docs/migrations/">ブログの移行</a></li>
+        <li><a href="/docs/upgrading/">アップグレード</a></li>
+        <li><a href="/docs/deployment/">Deployment</a></li>
+      </ul>
+    </aside>
+</div>
+<div class="clear"></div>
+    </div>
+  </section>
+<footer>
+  <div class="grid">
+    <div class="unit one-third center-on-mobiles">
+      <p>Jekyllはボランティアの<a href="/team/">コアチーム</a>により愛情を込めて維持されています。</p>
+      <p>このWebサイトのコンテンツは<a href="https://github.com/jekyll/jekyll/blob/master/LICENSE" target="_blank">MIT&nbsp;License</a>に基づきます。&copy;&nbsp;2020</p>
+      <!-- <p>Jekyll is lovingly maintained by the <a href="/team/">core team</a> of volunteers. </p>
+      <p>The contents of this website are <br />&copy;&nbsp;2020 under the terms of the <a href="https://github.com/jekyll/jekyll/blob/master/LICENSE">MIT&nbsp;License</a>.</p> -->
+    </div>
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>
+        Proudly hosted by
+        <a href="https://github.com">
+          <img src="/img/footer-logo.png" width="100" height="30" alt="GitHub • Social coding">
+        </a>
+      </p>
+    </div>
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>
+        Jekyll is funded thanks to its
+        <a href="https://github.com/jekyll/jekyll#sponsors">
+          sponsors!
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
+<script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<span class=\"sr-only\">Permalink</span><i class=\"fa fa-link\"></i>";
+    anchor.title = "Permalink";
+    return anchor;
+  };
+
+  var linkifyAnchors = function (level, containingElement) {
+    var headers = containingElement.getElementsByTagName("h" + level);
+    for (var h = 0; h < headers.length; h++) {
+      var header = headers[h];
+
+      if (typeof header.id !== "undefined" && header.id !== "") {
+        header.appendChild(anchorForId(header.id));
+      }
+    }
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var contentBlock = document.getElementsByClassName("docs")[0] || document.getElementsByClassName("news")[0];
+      if (!contentBlock) {
+        return;
+      }
+      for (var level = 1; level <= 6; level++) {
+        linkifyAnchors(level, contentBlock);
+      }
+    }
+  };
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script type="text/javascript"> docsearch({
+apiKey: '50fe39c839958dfad797000f33e2ec17',
+indexName: 'jekyllrb',
+inputSelector: '#docsearch-input',
+enhancedSearchInput: true,
+debug: false // Set debug to true if you want to inspect the dropdown
+});
+</script>
+</body>
+</html>

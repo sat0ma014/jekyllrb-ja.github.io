@@ -1,0 +1,431 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link type="application/atom+xml" rel="alternate" href="http://jekyllrb-ja.github.io/feed.xml" title="Jekyll • シンプルで、ブログのような、静的サイト" />
+  <link type="application/atom+xml" rel="alternate" href="/feed/release.xml" title="Jekyll releases posts" />
+  <link rel="alternate" type="application/atom+xml" title="Recent commits to Jekyll’s master branch" href="https://github.com/jekyll/jekyll/commits/master.atom">
+  <link rel="preload" href="/fonts/lato-v14-latin-300.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/lato-v14-latin-700.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/css/screen.css" as="style">
+  <link rel="stylesheet" href="/css/screen.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Front Matterのデフォルト | Jekyll • シンプルで、ブログのような、静的サイト</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Front Matterのデフォルト" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="プレーンテキストを静的サイトやブログに変えましょう" />
+<meta property="og:description" content="プレーンテキストを静的サイトやブログに変えましょう" />
+<link rel="canonical" href="http://jekyllrb-ja.github.io/docs/configuration/front-matter-defaults/" />
+<meta property="og:url" content="http://jekyllrb-ja.github.io/docs/configuration/front-matter-defaults/" />
+<meta property="og:site_name" content="Jekyll • シンプルで、ブログのような、静的サイト" />
+<meta property="og:image" content="http://jekyllrb-ja.github.io/img/jekyll-og.png" />
+<script type="application/ld+json">
+{"headline":"Front Matterのデフォルト","image":"http://jekyllrb-ja.github.io/img/jekyll-og.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://jekyllrb-ja.github.io/img/logo-2x.png"}},"url":"http://jekyllrb-ja.github.io/docs/configuration/front-matter-defaults/","description":"プレーンテキストを静的サイトやブログに変えましょう","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <!--[if lt IE 9]>
+  <script src="/js/html5shiv.min.js"></script>
+  <script src="/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body class="wrap"><header>
+  <div class="flexbox">
+    <div class="center-on-mobiles">
+      <h1>
+        <a href="/" class="logo">
+          <span class="sr-only">Jekyll</span>
+          <img src="/img/logo-2x.png" width="140" height="65" alt="Jekyll Logo">
+        </a>
+      </h1>
+    </div>
+    <nav class="main-nav hide-on-mobiles">
+      <ul>
+  <li><a href="/">Home</a></li>
+  <li class="current"><a href="/docs/">Docs</a></li>
+  <li><a href="/resources/">Resources</a></li>
+  <li><a href="/showcase/">Showcase</a></li>
+  <li><a href="/news/">News</a></li>
+  </ul>
+</nav>
+    <div class="search hide-on-mobiles">
+      <input type="text" id="docsearch-input" placeholder="Search the docs…">
+</div>
+    <div class="meta hide-on-mobiles">
+      <ul>
+        <li><a href="https://github.com/jekyll/jekyll/releases/tag/v4.1.1">v4.1.1</a></li>
+        <li><a href="https://github.com/jekyll/jekyll">GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+  <nav class="mobile-nav show-on-mobiles">
+    <ul>
+  <li><a href="/">Home</a></li>
+    <li class="current" ><a href="/docs/">Docs</a></li>
+    <li><a href="/resources/">Resources</a></li>
+    <li><a href="/news/">News</a></li>
+    <li><a href="https://github.com/jekyll/jekyll">GitHub</a></li>
+</ul>
+</nav>
+</header>
+  <section class="docs">
+    <div class="grid">
+      <div class="docs-nav-mobile unit whole show-on-mobiles">
+  <select onchange="if (this.value) window.location.href=this.value">
+    <option value="">Navigate the docs…</option>
+    <optgroup label="入門">
+      <option value="/docs/">クイックスタート</option>
+      <option value="/docs/ruby-101/">Ruby基礎</option>
+      <option value="/docs/installation/">インストール</option>
+      <option value="/docs/community/">コミュニティ</option>
+      <option value="/docs/step-by-step/01-setup/">Step by Stepチュートリアル</option>
+    </optgroup>
+    <optgroup label="ビルド">
+      <option value="/docs/usage/">コマンドラインの使い方</option>
+      <option value="/docs/configuration/">構成・設定</option>
+    </optgroup>
+    <optgroup label="コンテンツ">
+      <option value="/docs/pages/">Pages（ページ）</option>
+      <option value="/docs/posts/">Posts（ポスト）</option>
+      <option value="/docs/front-matter/">Front Matter</option>
+      <option value="/docs/collections/">コレクション</option>
+      <option value="/docs/datafiles/">Dataファイル</option>
+      <option value="/docs/assets/">Assets</option>
+      <option value="/docs/static-files/">静的ファイル</option>
+    </optgroup>
+    <optgroup label="サイトの構成">
+      <option value="/docs/structure/">ディレクトリ構成</option>
+      <option value="/docs/liquid/">Liquid</option>
+      <option value="/docs/variables/">変数</option>
+      <option value="/docs/includes/">Includes（インクルード）</option>
+      <option value="/docs/layouts/">レイアウト</option>
+      <option value="/docs/permalinks/">パーマリンク</option>
+      <option value="/docs/themes/">テーマ</option>
+      <option value="/docs/pagination/">Pagination（ページ分け）</option>
+    </optgroup>
+    <optgroup label="ガイド">
+      <option value="/docs/plugins/">プラグイン</option>
+      <option value="/docs/migrations/">ブログの移行</option>
+      <option value="/docs/upgrading/">アップグレード</option>
+      <option value="/docs/deployment/">Deployment</option>
+    </optgroup>
+    </select>
+</div>
+<div class="unit four-fifths">
+        <article>
+          <div class="improve right hide-on-mobiles">
+            <a data-proofer-ignore href="https://github.com/jekyll/jekyll/edit/master/docs/_docs/configuration/front-matter-defaults.md"><i class="fa fa-pencil"></i> &nbsp;Improve this page</a>
+          </div>
+          <h1>Front Matterのデフォルト</h1>
+          <!-- ---
+title: Front Matter Defaults
+permalink: "/docs/configuration/front-matter-defaults/"
+--- -->
+
+<p><a href="/docs/front-matter/">front matter</a>の使用は、サイトのページやポストに特別な設定行う方法の一つです。デフォルトのレイアウトやタイトルのカスタマイズ、ポストの正確な日時の指定のような設定は、ページやポストのfront matterで追加することができます。</p>
+
+<!-- Using [front matter](/docs/front-matter/) is one way that you can specify configuration in the pages and posts for your site. Setting things like a default layout, or customizing the title, or specifying a more precise date/time for the post can all be added to your page or post front matter. -->
+
+<p>度々、多くのオプション設定を繰り返す場合が出てくるでしょう。各ファイルへの同じレイアウトの指定、ポストへの同じカテゴリの指定等です。著者名といったカスタム変数の追加も、ブログの多数のポストで同じです。</p>
+
+<!-- Often times, you will find that you are repeating a lot of configuration options. Setting the same layout in each file, adding the same category - or categories - to a post, etc. You can even add custom variables like author names, which might be the same for the majority of posts on your blog. -->
+
+<p>新しいポストやページを作成する度に設定を繰り返す代わりに、Jekyllはサイト設定でこれらのデフォルトを設定する方法を提供しています。これを行うには、プロジェクトのrootディレクトリの<code class="language-plaintext highlighter-rouge">_config.yml</code>に<code class="language-plaintext highlighter-rouge">defaults</code>キーを使用してサイト全体のデフォルトを設定します。</p>
+
+<!-- Instead of repeating this configuration each time you create a new post or page, Jekyll provides a way to set these defaults in the site configuration. To do this, you can specify site-wide defaults using the `defaults` key in the `_config.yml` file in your project's root directory. -->
+
+<p><code class="language-plaintext highlighter-rouge">defaults</code>キーはデフォルトを定義する特定のpathとscopeとvalueのペアの配列で指定します。オプションでパスのファイルの種類を指定することもできます。</p>
+
+<!-- The `defaults` key holds an array of scope/values pairs that define what defaults should be set for a particular file path, and optionally, a file type in that path. -->
+
+<p>サイトの全てのページとポストのデフォルトレイアウトを追加したい場合です。以下を<code class="language-plaintext highlighter-rouge">_config.yml</code>ファイルに追加します。</p>
+
+<!-- Let's say that you want to add a default layout to all pages and posts in your site. You would add this to your `_config.yml` file: -->
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">defaults</span><span class="pi">:</span>
+  <span class="pi">-</span>
+    <span class="na">scope</span><span class="pi">:</span>
+      <span class="na">path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span> <span class="c1"># an empty string here means all files in the project</span>
+    <span class="na">values</span><span class="pi">:</span>
+      <span class="na">layout</span><span class="pi">:</span> <span class="s2">"</span><span class="s">default"</span>
+</code></pre></div></div>
+
+<div class="note info">
+  <!-- <h5>Stop and rerun `jekyll serve` command.</h5> -->
+  <h5>一度止めて`jekyll serve`コマンドを再実行します</h5>
+  <p>
+    グローバル設定と変数定義が含まれているマスター設定ファイルの<code>_config.yml</code>は、実行時に一度だけ読み込まれます。自動再生成をしている時に<code>_config.yml</code>に変更を加えても、次の実行まで読み込まれません。
+  </p>
+  <!-- <p>
+    The <code>_config.yml</code> master configuration file contains global configurations
+    and variable definitions that are read once at execution time. Changes made to <code>_config.yml</code>
+    during automatic regeneration are not loaded until the next execution.
+  </p> -->
+  <p>
+    <a href="/docs/datafiles">Dataファイル</a>は自動再生成時も再読込されます。
+  </p>
+  <!-- <p>
+    Note <a href="/docs/datafiles">Data Files</a> are included and reloaded during automatic regeneration.
+  </p> -->
+</div>
+
+<p>ここでは、<code class="language-plaintext highlighter-rouge">scope</code>パスの中に存在するファイルに<code class="language-plaintext highlighter-rouge">values</code>に当てはめています。pathに空の文字列が指定されているので、プロジェクトの<strong>全ファイル</strong>に適用されます。例えばcssファイルのように、全てのファイルにはレイアウトを設定したくないでしょう。<code class="language-plaintext highlighter-rouge">scope</code>キーに<code class="language-plaintext highlighter-rouge">type</code>を指定することができます。</p>
+
+<!-- Here, we are scoping the `values` to any file that exists in the path `scope`. Since the path is set as an empty string, it will apply to **all files** in your project. You probably don't want to set a layout on every file in your project - like css files, for example - so you can also specify a `type` value under the `scope` key. -->
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">defaults</span><span class="pi">:</span>
+  <span class="pi">-</span>
+    <span class="na">scope</span><span class="pi">:</span>
+      <span class="na">path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span> <span class="c1"># an empty string here means all files in the project</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s2">"</span><span class="s">posts"</span> <span class="c1"># previously `post` in Jekyll 2.2.</span>
+    <span class="na">values</span><span class="pi">:</span>
+      <span class="na">layout</span><span class="pi">:</span> <span class="s2">"</span><span class="s">default"</span>
+</code></pre></div></div>
+
+<p>これで、<code class="language-plaintext highlighter-rouge">posts</code>タイプのファイルにのみレイアウトが設定されます。<code class="language-plaintext highlighter-rouge">pages</code>や<code class="language-plaintext highlighter-rouge">posts</code>、<code class="language-plaintext highlighter-rouge">drafts</code>、サイトのコレクションをtypeで使用することができます。<code class="language-plaintext highlighter-rouge">type</code>はオプションですが、<code class="language-plaintext highlighter-rouge">scope/values</code>ペアを指定するときは<code class="language-plaintext highlighter-rouge">path</code>を指定する必要があります。</p>
+
+<!-- Now, this will only set the layout for files where the type is `posts`.
+The different types that are available to you are `pages`, `posts`, `drafts` or any collection in your site. While `type` is optional, you must specify a value for `path` when creating a `scope/values` pair. -->
+
+<p>前述のように、<code class="language-plaintext highlighter-rouge">defaults</code>には複数のscope/valuesペアを指定することができます。</p>
+
+<!-- As mentioned earlier, you can set multiple scope/values pairs for `defaults`. -->
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">defaults</span><span class="pi">:</span>
+  <span class="pi">-</span>
+    <span class="na">scope</span><span class="pi">:</span>
+      <span class="na">path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s2">"</span><span class="s">pages"</span>
+    <span class="na">values</span><span class="pi">:</span>
+      <span class="na">layout</span><span class="pi">:</span> <span class="s2">"</span><span class="s">my-site"</span>
+  <span class="pi">-</span>
+    <span class="na">scope</span><span class="pi">:</span>
+      <span class="na">path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">projects"</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s2">"</span><span class="s">pages"</span> <span class="c1"># previously `page` in Jekyll 2.2.</span>
+    <span class="na">values</span><span class="pi">:</span>
+      <span class="na">layout</span><span class="pi">:</span> <span class="s2">"</span><span class="s">project"</span> <span class="c1"># overrides previous default layout</span>
+      <span class="na">author</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Mr.</span><span class="nv"> </span><span class="s">Hyde"</span>
+</code></pre></div></div>
+
+<p>このdefaultsで、全てのページは<code class="language-plaintext highlighter-rouge">my-site</code>レイアウトを使用します。<code class="language-plaintext highlighter-rouge">projects/</code>フォルダのhtmlファイルは<code class="language-plaintext highlighter-rouge">project</code>レイアウトを使用し、<code class="language-plaintext highlighter-rouge">page.author</code> <a href="/docs/variables/">liquid変数</a>に<code class="language-plaintext highlighter-rouge">Mr. Hyde</code>を指定します。</p>
+
+<!-- With these defaults, all pages would use the `my-site` layout. Any html files that exist in the `projects/`
+folder will use the `project` layout, if it exists. Those files will also have the `page.author`
+[liquid variable](/docs/variables/) set to `Mr. Hyde`. -->
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">collections</span><span class="pi">:</span>
+  <span class="na">my_collection</span><span class="pi">:</span>
+    <span class="na">output</span><span class="pi">:</span> <span class="no">true</span>
+
+<span class="na">defaults</span><span class="pi">:</span>
+  <span class="pi">-</span>
+    <span class="na">scope</span><span class="pi">:</span>
+      <span class="na">path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s2">"</span><span class="s">my_collection"</span> <span class="c1"># a collection in your site, in plural form</span>
+    <span class="na">values</span><span class="pi">:</span>
+      <span class="na">layout</span><span class="pi">:</span> <span class="s2">"</span><span class="s">default"</span>
+</code></pre></div></div>
+
+<p>この例では、<code class="language-plaintext highlighter-rouge">my_collection</code>という<a href="/docs/collections/">コレクション</a>に<code class="language-plaintext highlighter-rouge">layout</code>は<code class="language-plaintext highlighter-rouge">default</code>だと設定します。</p>
+
+<!-- In this example, the `layout` is set to `default` inside the
+[collection](/docs/collections/) with the name `my_collection`. -->
+
+<h3 id="front-matterデフォルトでのglobパターン">Front MatterデフォルトでのGlobパターン</h3>
+<!-- ### Glob patterns in Front Matter defaults -->
+
+<p>デフォルトをマッチさせるために、Globpパターンを使用することもできます（現在は、<code class="language-plaintext highlighter-rouge">*</code>を含むパター限定です）。例えば、<code class="language-plaintext highlighter-rouge">section</code>フォルダのサブフォルダにある各<code class="language-plaintext highlighter-rouge">special-page.html</code>に特定のレイアウトを設定することができます。<span class="version-badge" title="This feature is available starting version 3.7.0">3.7.0</span>
+<!-- It is also possible to use glob patterns (currently limited to patterns that contain `*`) when matching defaults. For example, it is possible to set specific layout for each `special-page.html` in any subfolder of `section` folder.<span class="version-badge" title="This feature is available starting version 3.7.0">3.7.0</span>
+--></p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">collections</span><span class="pi">:</span>
+  <span class="na">my_collection</span><span class="pi">:</span>
+    <span class="na">output</span><span class="pi">:</span> <span class="no">true</span>
+
+<span class="na">defaults</span><span class="pi">:</span>
+  <span class="pi">-</span>
+    <span class="na">scope</span><span class="pi">:</span>
+      <span class="na">path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">section/*/special-page.html"</span>
+    <span class="na">values</span><span class="pi">:</span>
+      <span class="na">layout</span><span class="pi">:</span> <span class="s2">"</span><span class="s">specific-layout"</span>
+</code></pre></div></div>
+
+<div class="note warning">
+  <h5>Globとパフォーマンス</h5>
+  <!-- <h5>Globbing and Performance</h5> -->
+  <p>
+    パスをGlobで指定するとパフォーマンスへの悪影響があることが知られており、特にWindowsでは最適化されていません。パスをGlobで指定すると、コレクションディレクトリの大きさに応じて構築時間が長くなります。
+  </p>
+  <!-- <p>
+    Please note that globbing a path is known to have a negative effect on
+    performance and is currently not optimized, especially on Windows.
+    Globbing a path will increase your build times in proportion to the size
+    of the associated collection directory.
+  </p> -->
+</div>
+
+<h3 id="優先順位">優先順位</h3>
+<!-- ### Precedence -->
+
+<p>Jekyllは<code class="language-plaintext highlighter-rouge">_config.yml</code>の<code class="language-plaintext highlighter-rouge">defaults</code>セクションで指定された設定を全て適用します。他の特定のパスへのscope/valuesペアを設定することで、上書きすることができます。</p>
+
+<!-- Jekyll will apply all of the configuration settings you specify in the `defaults` section of your `_config.yml` file. You can choose to override settings from other scope/values pair by specifying a more specific path for the scope. -->
+
+<p>上に戻って下から3つ目の例を見てください。まず、<code class="language-plaintext highlighter-rouge">my-site</code>へのデフォルトページレイアウトを設定しています。そして、<code class="language-plaintext highlighter-rouge">project</code>用の<code class="language-plaintext highlighter-rouge">projects/</code>パスのページへのデフォルトを設定しています。ページやポストのfront matterに設定する任意の値で実行可能です。</p>
+
+<!-- You can see that in the second to last example above. First, we set the default page layout to `my-site`. Then, using a more specific path, we set the default layout for pages in the `projects/` path to `project`. This can be done with any value that you would set in the page or post front matter. -->
+
+<p>最後に、<code class="language-plaintext highlighter-rouge">_config.yml</code>ファイルに<code class="language-plaintext highlighter-rouge">defaults</code>セクションを追加してサイト設定のデフォルトを設定した場合、それらの設定はページやポストで上書きできます。ページやポストのfront matterで設定を行うだけです。例えば、</p>
+
+<!-- Finally, if you set defaults in the site configuration by adding a `defaults` section to your `_config.yml` file, you can override those settings in a post or page file. All you need to do is specify the settings in the post or page front matter. For example: -->
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># In _config.yml</span>
+<span class="nn">...</span>
+<span class="na">defaults</span><span class="pi">:</span>
+  <span class="pi">-</span>
+    <span class="na">scope</span><span class="pi">:</span>
+      <span class="na">path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">projects"</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s2">"</span><span class="s">pages"</span>
+    <span class="na">values</span><span class="pi">:</span>
+      <span class="na">layout</span><span class="pi">:</span> <span class="s2">"</span><span class="s">project"</span>
+      <span class="na">author</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Mr.</span><span class="nv"> </span><span class="s">Hyde"</span>
+      <span class="na">category</span><span class="pi">:</span> <span class="s2">"</span><span class="s">project"</span>
+<span class="nn">...</span>
+</code></pre></div></div>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># In projects/foo_project.md</span>
+<span class="nn">---</span>
+<span class="na">author</span><span class="pi">:</span> <span class="s2">"</span><span class="s">John</span><span class="nv"> </span><span class="s">Smith"</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s2">"</span><span class="s">foobar"</span>
+<span class="nn">---</span>
+<span class="s">The post text goes here...</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">projects/foo_project.md</code>は、<code class="language-plaintext highlighter-rouge">layout</code>には<code class="language-plaintext highlighter-rouge">project</code>の代わりに<code class="language-plaintext highlighter-rouge">foobar</code>が、<code class="language-plaintext highlighter-rouge">author</code>には<code class="language-plaintext highlighter-rouge">Mr. Hyde</code>の代わりに<code class="language-plaintext highlighter-rouge">John Smith</code>がサイト構築時に設定されます。</p>
+
+<!-- The `projects/foo_project.md` would have the `layout` set to `foobar` instead
+of `project` and the `author` set to `John Smith` instead of `Mr. Hyde` when
+the site is built. -->
+
+        </article>
+      </div>
+      <div class="unit one-fifth hide-on-mobiles">
+  <aside>
+    <h4>入門</h4>
+      <ul>
+        <li><a href="/docs/">クイックスタート</a></li>
+        <li><a href="/docs/ruby-101/">Ruby基礎</a></li>
+        <li><a href="/docs/installation/">インストール</a></li>
+        <li><a href="/docs/community/">コミュニティ</a></li>
+        <li><a href="/docs/step-by-step/01-setup/">Step by Stepチュートリアル</a></li>
+      </ul>
+    <h4>ビルド</h4>
+      <ul>
+        <li><a href="/docs/usage/">コマンドラインの使い方</a></li>
+        <li><a href="/docs/configuration/">構成・設定</a></li>
+      </ul>
+    <h4>コンテンツ</h4>
+      <ul>
+        <li><a href="/docs/pages/">Pages（ページ）</a></li>
+        <li><a href="/docs/posts/">Posts（ポスト）</a></li>
+        <li><a href="/docs/front-matter/">Front Matter</a></li>
+        <li><a href="/docs/collections/">コレクション</a></li>
+        <li><a href="/docs/datafiles/">Dataファイル</a></li>
+        <li><a href="/docs/assets/">Assets</a></li>
+        <li><a href="/docs/static-files/">静的ファイル</a></li>
+      </ul>
+    <h4>サイトの構成</h4>
+      <ul>
+        <li><a href="/docs/structure/">ディレクトリ構成</a></li>
+        <li><a href="/docs/liquid/">Liquid</a></li>
+        <li><a href="/docs/variables/">変数</a></li>
+        <li><a href="/docs/includes/">Includes（インクルード）</a></li>
+        <li><a href="/docs/layouts/">レイアウト</a></li>
+        <li><a href="/docs/permalinks/">パーマリンク</a></li>
+        <li><a href="/docs/themes/">テーマ</a></li>
+        <li><a href="/docs/pagination/">Pagination（ページ分け）</a></li>
+      </ul>
+    <h4>ガイド</h4>
+      <ul>
+        <li><a href="/docs/plugins/">プラグイン</a></li>
+        <li><a href="/docs/migrations/">ブログの移行</a></li>
+        <li><a href="/docs/upgrading/">アップグレード</a></li>
+        <li><a href="/docs/deployment/">Deployment</a></li>
+      </ul>
+    </aside>
+</div>
+<div class="clear"></div>
+    </div>
+  </section>
+<footer>
+  <div class="grid">
+    <div class="unit one-third center-on-mobiles">
+      <p>Jekyllはボランティアの<a href="/team/">コアチーム</a>により愛情を込めて維持されています。</p>
+      <p>このWebサイトのコンテンツは<a href="https://github.com/jekyll/jekyll/blob/master/LICENSE" target="_blank">MIT&nbsp;License</a>に基づきます。&copy;&nbsp;2020</p>
+      <!-- <p>Jekyll is lovingly maintained by the <a href="/team/">core team</a> of volunteers. </p>
+      <p>The contents of this website are <br />&copy;&nbsp;2020 under the terms of the <a href="https://github.com/jekyll/jekyll/blob/master/LICENSE">MIT&nbsp;License</a>.</p> -->
+    </div>
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>
+        Proudly hosted by
+        <a href="https://github.com">
+          <img src="/img/footer-logo.png" width="100" height="30" alt="GitHub • Social coding">
+        </a>
+      </p>
+    </div>
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>
+        Jekyll is funded thanks to its
+        <a href="https://github.com/jekyll/jekyll#sponsors">
+          sponsors!
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
+<script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<span class=\"sr-only\">Permalink</span><i class=\"fa fa-link\"></i>";
+    anchor.title = "Permalink";
+    return anchor;
+  };
+
+  var linkifyAnchors = function (level, containingElement) {
+    var headers = containingElement.getElementsByTagName("h" + level);
+    for (var h = 0; h < headers.length; h++) {
+      var header = headers[h];
+
+      if (typeof header.id !== "undefined" && header.id !== "") {
+        header.appendChild(anchorForId(header.id));
+      }
+    }
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var contentBlock = document.getElementsByClassName("docs")[0] || document.getElementsByClassName("news")[0];
+      if (!contentBlock) {
+        return;
+      }
+      for (var level = 1; level <= 6; level++) {
+        linkifyAnchors(level, contentBlock);
+      }
+    }
+  };
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script type="text/javascript"> docsearch({
+apiKey: '50fe39c839958dfad797000f33e2ec17',
+indexName: 'jekyllrb',
+inputSelector: '#docsearch-input',
+enhancedSearchInput: true,
+debug: false // Set debug to true if you want to inspect the dropdown
+});
+</script>
+</body>
+</html>

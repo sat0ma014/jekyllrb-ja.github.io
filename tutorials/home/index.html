@@ -1,0 +1,258 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link type="application/atom+xml" rel="alternate" href="http://jekyllrb-ja.github.io/feed.xml" title="Jekyll • シンプルで、ブログのような、静的サイト" />
+  <link type="application/atom+xml" rel="alternate" href="/feed/release.xml" title="Jekyll releases posts" />
+  <link rel="alternate" type="application/atom+xml" title="Recent commits to Jekyll’s master branch" href="https://github.com/jekyll/jekyll/commits/master.atom">
+  <link rel="preload" href="/fonts/lato-v14-latin-300.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/lato-v14-latin-700.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/css/screen.css" as="style">
+  <link rel="stylesheet" href="/css/screen.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>チュートリアル | Jekyll • シンプルで、ブログのような、静的サイト</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="チュートリアル" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="プレーンテキストを静的サイトやブログに変えましょう" />
+<meta property="og:description" content="プレーンテキストを静的サイトやブログに変えましょう" />
+<link rel="canonical" href="http://jekyllrb-ja.github.io/tutorials/home/" />
+<meta property="og:url" content="http://jekyllrb-ja.github.io/tutorials/home/" />
+<meta property="og:site_name" content="Jekyll • シンプルで、ブログのような、静的サイト" />
+<meta property="og:image" content="http://jekyllrb-ja.github.io/img/jekyll-og.png" />
+<script type="application/ld+json">
+{"headline":"チュートリアル","image":"http://jekyllrb-ja.github.io/img/jekyll-og.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://jekyllrb-ja.github.io/img/logo-2x.png"}},"url":"http://jekyllrb-ja.github.io/tutorials/home/","description":"プレーンテキストを静的サイトやブログに変えましょう","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <!--[if lt IE 9]>
+  <script src="/js/html5shiv.min.js"></script>
+  <script src="/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body class="wrap"><header>
+  <div class="flexbox">
+    <div class="center-on-mobiles">
+      <h1>
+        <a href="/" class="logo">
+          <span class="sr-only">Jekyll</span>
+          <img src="/img/logo-2x.png" width="140" height="65" alt="Jekyll Logo">
+        </a>
+      </h1>
+    </div>
+    <nav class="main-nav hide-on-mobiles">
+      <ul>
+  <li><a href="/">Home</a></li>
+  <li><a href="/docs/">Docs</a></li>
+  <li><a href="/resources/">Resources</a></li>
+  <li><a href="/showcase/">Showcase</a></li>
+  <li><a href="/news/">News</a></li>
+  </ul>
+</nav>
+    <div class="search hide-on-mobiles">
+      <input type="text" id="docsearch-input" placeholder="Search the docs…">
+</div>
+    <div class="meta hide-on-mobiles">
+      <ul>
+        <li><a href="https://github.com/jekyll/jekyll/releases/tag/v4.1.1">v4.1.1</a></li>
+        <li><a href="https://github.com/jekyll/jekyll">GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+  <nav class="mobile-nav show-on-mobiles">
+    <ul>
+  <li><a href="/">Home</a></li>
+    <li><a href="/docs/">Docs</a></li>
+    <li><a href="/resources/">Resources</a></li>
+    <li><a href="/news/">News</a></li>
+    <li><a href="https://github.com/jekyll/jekyll">GitHub</a></li>
+</ul>
+</nav>
+</header>
+<section class="docs">
+  <div class="grid"><div class="docs-nav-mobile unit whole show-on-mobiles">
+  <select onchange="if (this.value) window.location.href=this.value">
+    <option value="">Navigate the tutorials…</option>
+    <optgroup label="Tutorials">
+      <option value="/tutorials/home/">チュートリアル</option>
+      <option value="/tutorials/video-walkthroughs/">動画での解説</option>
+      <option value="/tutorials/navigation/">ナビゲーション</option>
+      <option value="/tutorials/orderofinterpretation/">解釈の順番</option>
+      <option value="/tutorials/custom-404-page/">カスタム404ページ</option>
+      <option value=""></option>
+      <option value="/tutorials/using-jekyll-with-bundler/">BundlerでJekyllを使う</option>
+      <option value="/tutorials/csv-to-table/">CSVデータをテーブル化</option>
+      </optgroup>
+    </select>
+</div>
+<div class="unit four-fifths">
+      <article>
+        <header class="tutorial-header">
+          <div class="improve right hide-on-mobiles">
+            <a href="https://github.com/jekyll/jekyll/edit/master/docs/_tutorials/index.md"><i
+               class="fa fa-pencil"></i> &nbsp;Improve this page</a>
+          </div>
+          <h1 class="tutorial-title">チュートリアル</h1>
+          
+          
+        </header><!-- ---
+title: Tutorials
+permalink: /tutorials/home/
+redirect_from: /tutorials/index.html
+--- -->
+
+<p><a href="/docs/home/">Docs</a>とは対照的に、チュートリアルではJekyllの様々なトピックやシナリオをカバーしたより詳細な説明を行います。チュートリアルには以下の内容が含まれています。</p>
+
+<!-- In contrast to [Docs](/docs/home/), Tutorials provide more detailed, narrative instruction that cover a variety of Jekyll topics and scenarios. Tutorials might contain the following: -->
+
+<ul>
+  <li>特定のシナリオや課題のstep-by-stepプロセス。</li>
+  <li>サンプルデータを利用したチュートリアル。サンプルデータの入力と結果。</li>
+  <li>Jekyllの長所と短所の説明。</li>
+  <li>Jekyllサイトの全ての機能を開発するための端から端までの解説。</li>
+  <li>ドキュメンテーションを横断した様々なテクニックの解説。</li>
+</ul>
+
+<!-- * Step-by-step processes through particular scenarios or challenges
+* Full walk-throughs using sample data, showing inputs and results from the sample data
+* Detailed explanation about the pros and cons for different Jekyll strategies
+* End-to-end instruction in developing a complete feature on a Jekyll site
+* Instruction that combines various techniques from across the docs -->
+
+<p>簡単に言うと、チュートリアルはドキュメンテーションの情報の要約ではありません。ユーザーの最初から最後のプロセスを辿るものです。</p>
+
+<!-- In short, tutorials aren't the core reference information in docs. They walk users through processes from beginning to end. -->
+
+<p class="info note"><strong>注：</strong>チュートリアルのセクションは新しく、まだ数は多くありません。作成を助けるために、あなたのチュートリアルを追加することもできます。</p>
+
+<!-- {: .info .note}
+**Note:** The Tutorials section is new, so there aren't many tutorials yet. You can add a tutorial here to help populate this section. -->
+
+<p>いくつかのテクニックは、サポートツールやスクリプトサービス、他のJekyllサイトのハックを通じたガイドの場合もあります。Jekyllを使った外部サービスに関することも、気軽に追加してください。ただし、チュートリアルに紹介されているサードパーティーツールを、Jekyllが推薦することはありません。</p>
+
+<!-- Some of these techniques might even guide you through a supporting tool, script, service, or other hack used with your Jekyll site. Feel free to include tutorials involving external services with Jekyll as well. However, note that Jekyll in no way endorses any third-party tools mentioned in tutorials. -->
+
+<h2 id="チュートリアルへの貢献の仕方">チュートリアルへの貢献の仕方</h2>
+<!-- ## How to contribute a tutorial -->
+
+<p>チュートリアルへの貢献を歓迎します。あなたのチュートリアルを追加するには、</p>
+
+<!-- We welcome your tutorial contributions. To add your tutorial: -->
+
+<ol>
+  <li><a href="https://github.com/jekyll/jekyll/" target="_blank">jekyll/jekyll project Github repo</a>の右上の<strong>Fork</strong>ボタンをクリックして、JekyllプロジェクトをForkします。</li>
+  <li><code class="language-plaintext highlighter-rouge">_tutorials</code>コレクションにあなたのチュートリアルを追加します。</li>
+  <li>他のチュートリアルと同様のfront matterを用意してください。</li>
+  <li><code class="language-plaintext highlighter-rouge">_data/tutorials.yml</code>にあなたのチュートリアルのファイル名を追加してください。これであなたのチュートリアルをチュートリアルのサイドバーに表示します。</li>
+  <li>通常のgitのワークフローに従い、pullリクエストを送信してください。</li>
+</ol>
+
+<!-- 1. Fork the Jekyll project by clicking the **Fork** button in the upper-right corner of the [jekyll/jekyll project Github repo](https://github.com/jekyll/jekyll/).
+2. Add your tutorial in the `_tutorials` collection.
+3. Make sure your tutorial has the same front matter items as other tutorial items.
+5. Add a reference to your tutorial filename in `_data/tutorials.yml`. This allows your tutorial to appear in the Tutorials sidebar.
+6. Follow the regular git workflow to submit the pull request. -->
+
+<p>pullリクエストが送信されると、Jekyllドキュメンテーションチームがレビューを行い、mergeするか編集の提案を行います。</p>
+
+<!-- When you submit your pull request, the Jekyll documentation team will review your contribution and either merge it or suggest edits. -->
+
+<div class="section-nav">
+    <div class="left align-right">
+        <span class="prev disabled">Back</span>
+        </div>
+    <div class="right align-left">
+        <a href="/tutorials/video-walkthroughs/" class="next">Next</a>
+        </div>
+  </div>
+  <div class="clear"></div>
+  </article>
+    </div><div class="unit one-fifth hide-on-mobiles">
+  <aside>
+    <h4>Tutorials</h4>
+      <ul>
+      <li class="current"><a href="/tutorials/home/">チュートリアル</a></li>
+      <li><a href="/tutorials/video-walkthroughs/">動画での解説</a></li>
+      <li><a href="/tutorials/navigation/">ナビゲーション</a></li>
+      <li><a href="/tutorials/orderofinterpretation/">解釈の順番</a></li>
+      <li><a href="/tutorials/custom-404-page/">カスタム404ページ</a></li>
+      <li><a href=""></a></li>
+      <li><a href="/tutorials/using-jekyll-with-bundler/">BundlerでJekyllを使う</a></li>
+      <li><a href="/tutorials/csv-to-table/">CSVデータをテーブル化</a></li>
+      </ul>
+    </aside>
+</div>
+<div class="clear"></div>
+  </div>
+</section>
+<footer>
+  <div class="grid">
+    <div class="unit one-third center-on-mobiles">
+      <p>Jekyllはボランティアの<a href="/team/">コアチーム</a>により愛情を込めて維持されています。</p>
+      <p>このWebサイトのコンテンツは<a href="https://github.com/jekyll/jekyll/blob/master/LICENSE" target="_blank">MIT&nbsp;License</a>に基づきます。&copy;&nbsp;2020</p>
+      <!-- <p>Jekyll is lovingly maintained by the <a href="/team/">core team</a> of volunteers. </p>
+      <p>The contents of this website are <br />&copy;&nbsp;2020 under the terms of the <a href="https://github.com/jekyll/jekyll/blob/master/LICENSE">MIT&nbsp;License</a>.</p> -->
+    </div>
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>
+        Proudly hosted by
+        <a href="https://github.com">
+          <img src="/img/footer-logo.png" width="100" height="30" alt="GitHub • Social coding">
+        </a>
+      </p>
+    </div>
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>
+        Jekyll is funded thanks to its
+        <a href="https://github.com/jekyll/jekyll#sponsors">
+          sponsors!
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
+<script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<span class=\"sr-only\">Permalink</span><i class=\"fa fa-link\"></i>";
+    anchor.title = "Permalink";
+    return anchor;
+  };
+
+  var linkifyAnchors = function (level, containingElement) {
+    var headers = containingElement.getElementsByTagName("h" + level);
+    for (var h = 0; h < headers.length; h++) {
+      var header = headers[h];
+
+      if (typeof header.id !== "undefined" && header.id !== "") {
+        header.appendChild(anchorForId(header.id));
+      }
+    }
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var contentBlock = document.getElementsByClassName("docs")[0] || document.getElementsByClassName("news")[0];
+      if (!contentBlock) {
+        return;
+      }
+      for (var level = 1; level <= 6; level++) {
+        linkifyAnchors(level, contentBlock);
+      }
+    }
+  };
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script type="text/javascript"> docsearch({
+apiKey: '50fe39c839958dfad797000f33e2ec17',
+indexName: 'jekyllrb',
+inputSelector: '#docsearch-input',
+enhancedSearchInput: true,
+debug: false // Set debug to true if you want to inspect the dropdown
+});
+</script>
+</body>
+</html>

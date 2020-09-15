@@ -1,0 +1,452 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link type="application/atom+xml" rel="alternate" href="http://jekyllrb-ja.github.io/feed.xml" title="Jekyll • シンプルで、ブログのような、静的サイト" />
+  <link type="application/atom+xml" rel="alternate" href="/feed/release.xml" title="Jekyll releases posts" />
+  <link rel="alternate" type="application/atom+xml" title="Recent commits to Jekyll’s master branch" href="https://github.com/jekyll/jekyll/commits/master.atom">
+  <link rel="preload" href="/fonts/lato-v14-latin-300.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/lato-v14-latin-700.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/css/screen.css" as="style">
+  <link rel="stylesheet" href="/css/screen.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>2.xから3.xへのアップグレード | Jekyll • シンプルで、ブログのような、静的サイト</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="2.xから3.xへのアップグレード" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="プレーンテキストを静的サイトやブログに変えましょう" />
+<meta property="og:description" content="プレーンテキストを静的サイトやブログに変えましょう" />
+<link rel="canonical" href="http://jekyllrb-ja.github.io/docs/upgrading/2-to-3/" />
+<meta property="og:url" content="http://jekyllrb-ja.github.io/docs/upgrading/2-to-3/" />
+<meta property="og:site_name" content="Jekyll • シンプルで、ブログのような、静的サイト" />
+<meta property="og:image" content="http://jekyllrb-ja.github.io/img/jekyll-og.png" />
+<script type="application/ld+json">
+{"headline":"2.xから3.xへのアップグレード","image":"http://jekyllrb-ja.github.io/img/jekyll-og.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://jekyllrb-ja.github.io/img/logo-2x.png"}},"url":"http://jekyllrb-ja.github.io/docs/upgrading/2-to-3/","description":"プレーンテキストを静的サイトやブログに変えましょう","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <!--[if lt IE 9]>
+  <script src="/js/html5shiv.min.js"></script>
+  <script src="/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body class="wrap"><header>
+  <div class="flexbox">
+    <div class="center-on-mobiles">
+      <h1>
+        <a href="/" class="logo">
+          <span class="sr-only">Jekyll</span>
+          <img src="/img/logo-2x.png" width="140" height="65" alt="Jekyll Logo">
+        </a>
+      </h1>
+    </div>
+    <nav class="main-nav hide-on-mobiles">
+      <ul>
+  <li><a href="/">Home</a></li>
+  <li class="current"><a href="/docs/">Docs</a></li>
+  <li><a href="/resources/">Resources</a></li>
+  <li><a href="/showcase/">Showcase</a></li>
+  <li><a href="/news/">News</a></li>
+  </ul>
+</nav>
+    <div class="search hide-on-mobiles">
+      <input type="text" id="docsearch-input" placeholder="Search the docs…">
+</div>
+    <div class="meta hide-on-mobiles">
+      <ul>
+        <li><a href="https://github.com/jekyll/jekyll/releases/tag/v4.1.1">v4.1.1</a></li>
+        <li><a href="https://github.com/jekyll/jekyll">GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+  <nav class="mobile-nav show-on-mobiles">
+    <ul>
+  <li><a href="/">Home</a></li>
+    <li class="current" ><a href="/docs/">Docs</a></li>
+    <li><a href="/resources/">Resources</a></li>
+    <li><a href="/news/">News</a></li>
+    <li><a href="https://github.com/jekyll/jekyll">GitHub</a></li>
+</ul>
+</nav>
+</header>
+  <section class="docs">
+    <div class="grid">
+      <div class="docs-nav-mobile unit whole show-on-mobiles">
+  <select onchange="if (this.value) window.location.href=this.value">
+    <option value="">Navigate the docs…</option>
+    <optgroup label="入門">
+      <option value="/docs/">クイックスタート</option>
+      <option value="/docs/ruby-101/">Ruby基礎</option>
+      <option value="/docs/installation/">インストール</option>
+      <option value="/docs/community/">コミュニティ</option>
+      <option value="/docs/step-by-step/01-setup/">Step by Stepチュートリアル</option>
+    </optgroup>
+    <optgroup label="ビルド">
+      <option value="/docs/usage/">コマンドラインの使い方</option>
+      <option value="/docs/configuration/">構成・設定</option>
+    </optgroup>
+    <optgroup label="コンテンツ">
+      <option value="/docs/pages/">Pages（ページ）</option>
+      <option value="/docs/posts/">Posts（ポスト）</option>
+      <option value="/docs/front-matter/">Front Matter</option>
+      <option value="/docs/collections/">コレクション</option>
+      <option value="/docs/datafiles/">Dataファイル</option>
+      <option value="/docs/assets/">Assets</option>
+      <option value="/docs/static-files/">静的ファイル</option>
+    </optgroup>
+    <optgroup label="サイトの構成">
+      <option value="/docs/structure/">ディレクトリ構成</option>
+      <option value="/docs/liquid/">Liquid</option>
+      <option value="/docs/variables/">変数</option>
+      <option value="/docs/includes/">Includes（インクルード）</option>
+      <option value="/docs/layouts/">レイアウト</option>
+      <option value="/docs/permalinks/">パーマリンク</option>
+      <option value="/docs/themes/">テーマ</option>
+      <option value="/docs/pagination/">Pagination（ページ分け）</option>
+    </optgroup>
+    <optgroup label="ガイド">
+      <option value="/docs/plugins/">プラグイン</option>
+      <option value="/docs/migrations/">ブログの移行</option>
+      <option value="/docs/upgrading/">アップグレード</option>
+      <option value="/docs/deployment/">Deployment</option>
+    </optgroup>
+    </select>
+</div>
+<div class="unit four-fifths">
+        <article>
+          <div class="improve right hide-on-mobiles">
+            <a data-proofer-ignore href="https://github.com/jekyll/jekyll/edit/master/docs/_docs/upgrading/2-to-3.md"><i class="fa fa-pencil"></i> &nbsp;Improve this page</a>
+          </div>
+          <h1>2.xから3.xへのアップグレード</h1>
+          <!-- ---
+title: Upgrading from 2.x to 3.x
+permalink: /docs/upgrading/2-to-3/
+--- -->
+
+<p>Jekyllの古いバージョンからのアップグレードですか？　知っておいた方がいい変更点がJekyll 3にはいくつかあります。</p>
+
+<!-- Upgrading from an older version of Jekyll? A few things have changed in Jekyll 3
+that you'll want to know about. -->
+
+<p>まずは先に進み、Jekyllの最新版を入手します。</p>
+
+<!-- Before we dive in, go ahead and fetch the latest version of Jekyll: -->
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem update jekyll
+</code></pre></div></div>
+
+<p class="note warning"><span class="version-badge" title="This feature is available starting version 3.2">3.2</span>
+以降JekyllはRuby version &gt;= 2.1が必要です。</p>
+
+<!-- {: .note .warning}
+Since version <span class="version-badge" title="This feature is available starting version 3.2">3.2</span>
+, Jekyll requires Ruby version >= 2.1. -->
+
+<div class="note feature">
+  <h5>飛び込みましょう</h5>
+  <!-- <h5>Diving in</h5> -->
+  <p>早くJekyllサイトを始めたいですか？　<code>jekyll new SITENAME</code>を実行するだけで、Jekyllサイトの骨格が入った新しいフォルダが作成されます。</p>
+   <!-- <p>Want to get a new Jekyll site up and running quickly? Simply
+    run <code>jekyll new SITENAME</code> to create a new folder with a bare bones
+    Jekyll site.</p> -->
+</div>
+
+<h3 id="sitecollectionsの変更">site.collectionsの変更</h3>
+<!-- ### site.collections has changed -->
+
+<p>2.xでは、<code class="language-plaintext highlighter-rouge">site.collections</code>を繰り返し処理することで、コレクションラベルとコレクションオブジェクトをそれぞれ1番目と2番目の項目として持つ配列が生成されました。3.xでは、この複雑さは取り除かれており、繰り返しによってコレクションオブジェクトが生成されるようになりました。テンプレートで簡単な変換が必要です。</p>
+
+<!-- In 2.x, your iterations over `site.collections` yielded an array with the collection
+label and the collection object as the first and second items, respectively. In 3.x,
+this complication has been removed and iterations now yield simply the collection object.
+A simple conversion must be made in your templates: -->
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">collection[0]</code> は <code class="language-plaintext highlighter-rouge">collection.label</code> に</li>
+  <li><code class="language-plaintext highlighter-rouge">collection[1]</code> は <code class="language-plaintext highlighter-rouge">collection</code> に</li>
+</ul>
+
+<!-- - `collection[0]` becomes `collection.label`
+- `collection[1]` becomes `collection` -->
+
+<p><code class="language-plaintext highlighter-rouge">site.collections</code>を反復処理するときは、上記の変更が行われていることを確認してください。</p>
+
+<!-- When iterating over `site.collections`, ensure the above conversions are made. -->
+
+<p>Jekyll 2での<code class="language-plaintext highlighter-rouge">site.collections.myCollection</code>は次のようになります。</p>
+
+<!-- For `site.collections.myCollection` in Jekyll 2, you now do: -->
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">myCollection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">collections</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">where</span><span class="p">:</span><span class="w"> </span><span class="s2">"label"</span><span class="p">,</span><span class="w"> </span><span class="s2">"myCollection"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">first</span><span class="w"> </span><span class="p">%}</span>
+</code></pre></div></div>
+
+<p>これは最初は少し面倒ですが、<code class="language-plaintext highlighter-rouge">for</code>ループよりも簡単です。</p>
+
+<!-- This is a bit cumbersome at first, but is easier than a big `for` loop. -->
+
+<h3 id="textileサポート">Textileサポート</h3>
+<!-- ### Textile support -->
+
+<p>Textileのネイティブサポートは終了しました。これからはTextileファイルを扱うために<a href="https://github.com/jekyll/jekyll-textile-converter" target="_blank">jekyll-textile-converter</a>プラグインをインストールする必要があります。</p>
+
+<!-- We dropped native support for Textile, from now on you have to install our  [jekyll-textile-converter](https://github.com/jekyll/jekyll-textile-converter) plugin to work with Textile files. -->
+
+<h3 id="削除された依存関係">削除された依存関係</h3>
+<!-- ### Dropped dependencies -->
+
+<p>私たちは、コアチームがオプションであると感じた多くの依存関係を取り除きました。そのため、3.0では、これらの機能を使用する場合は明示的にインストールして含める必要があります。</p>
+
+<!-- We dropped a number of dependencies the Core Team felt were optional. As such, in 3.0, they must be explicitly installed and included if you use any of the features. They are: -->
+
+<ul>
+  <li>jekyll-paginate – 過去の日からのJekyllのページ分け</li>
+  <li>jekyll-coffeescript – CoffeeScriptのプロセス</li>
+  <li>jekyll-gist – <code class="language-plaintext highlighter-rouge">gist</code> Liquidタグ</li>
+  <li>pygments.rb – Pygmentsのハイライト表示</li>
+  <li>redcarpet – the Markdown processor</li>
+  <li>toml – 設定ファイル用のYAMLの代替</li>
+  <li>classifier-reborn – <code class="language-plaintext highlighter-rouge">site.related_posts</code>用</li>
+</ul>
+
+<!-- - jekyll-paginate – Jekyll's pagination solution from days past
+- jekyll-coffeescript – processing of CoffeeScript
+- jekyll-gist – the `gist` Liquid tag
+- pygments.rb – the Pygments highlighter
+- redcarpet – the Markdown processor
+- toml – an alternative to YAML for configuration files
+- classifier-reborn – for `site.related_posts` -->
+
+<h3 id="未来のポスト">未来のポスト</h3>
+<!-- ### Future posts -->
+
+<p>2.xでは、機能が低下したように見えますが、<code class="language-plaintext highlighter-rouge">--future</code>フラグは自動的に_有効_でした。futureフラグを使用すると、投稿作成者は投稿に将来の日付を指定して、システム時刻が同じまたは投稿時刻より後になるまでビルドから除外することができます。Jekyll 3では、これは修正されました。 <strong>現在、<code class="language-plaintext highlighter-rouge">--future</code>はデフォルトで無効</strong>になっています。 これは、<code class="language-plaintext highlighter-rouge">jekyll build</code>や<code class="language-plaintext highlighter-rouge">jekyll serve</code>を実行するときに将来の日付の投稿を生成したい場合は<code class="language-plaintext highlighter-rouge">--future</code>を含める必要があることを意味します。</p>
+
+<!-- A seeming feature regression in 2.x, the `--future` flag was automatically _enabled_.
+The future flag allows post authors to give the post a date in the future and to have
+it excluded from the build until the system time is equal or after the post time.
+In Jekyll 3, this has been corrected. **Now, `--future` is disabled by default.**
+This means you will need to include `--future` if you want your future-dated posts to
+generate when running `jekyll build` or `jekyll serve`. -->
+
+<div class="note info">
+  <h5>GitHub Pagesでの未来の投稿</h5>
+  <!-- <h5>Future Posts on GitHub Pages</h5> -->
+  <p>
+    GitHub Pagesのサイトは上記のルールの例外になります。<code>--future</code>フラグはサイトの歴史的な一貫性を維持するためにデフォルトで<em>有効</em>のままです。
+  </p>
+  <!-- <p>
+    An exception to the above rule are GitHub Pages sites, where the <code>--future</code> flag remains <em>enabled</em>
+    by default to maintain historical consistency for those sites.
+  </p> -->
+</div>
+
+<h3 id="レイアウトのmetadata">レイアウトのmetadata</h3>
+<!-- ### Layout metadata -->
+
+<p><code class="language-plaintext highlighter-rouge">layout</code>について。 Jekyll 2以前では、レイアウト内のメタデータはすべてLiquidの<code class="language-plaintext highlighter-rouge">page</code>変数にマージされていました。これにより、データのマージ方法と予期しない動作が混乱することがありました。Jekyll 3では、すべてのレイアウトデータはLiquidの<code class="language-plaintext highlighter-rouge">layout</code>からアクセスできます。例えば、レイアウトのfront matterに<code class="language-plaintext highlighter-rouge">class: my-layout</code>がある場合、レイアウトは<code class="language-plaintext highlighter-rouge">{{ layout.class }}</code>を介してアクセスできます。</p>
+
+<!-- Introducing: `layout`. In Jekyll 2 and below, any metadata in the layout was merged onto
+the `page` variable in Liquid. This caused a lot of confusion in the way the data was
+merged and some unexpected behaviour. In Jekyll 3, all layout data is accessible via `layout`
+in Liquid. For example, if your layout has `class: my-layout` in its front matter,
+then the layout can access that via `{{ layout.class }}`. -->
+
+<h3 id="シンタックスハイライトの変更">シンタックスハイライトの変更</h3>
+<!-- ### Syntax highlighter changed -->
+
+<p>初めて、<code class="language-plaintext highlighter-rouge">highlight</code>タグとバックティック（`）コードブロックのデフォルトのシンタックスハイライトが変更されました。<a href="https://github.com/tmm1/pygments.rb" target="_blank">Pygments.rb</a>ではなく、現在は<a href="http://rouge.jneen.net/" target="_blank">Rouge</a>です。<code class="language-plaintext highlighter-rouge">hl_lines</code>などの特定のオプションで<code class="language-plaintext highlighter-rouge">highlight</code>タグを使用していた場合は、Rougeでは使用できないことがあります。Pygmentsに戻るには、<code class="language-plaintext highlighter-rouge">_config.yml</code>ファイルで<code class="language-plaintext highlighter-rouge">highlighter: pygments</code>を設定し、<code class="language-plaintext highlighter-rouge">gem install pygments.rb</code>を実行するか、プロジェクトの<code class="language-plaintext highlighter-rouge">Gemfile</code>に<code class="language-plaintext highlighter-rouge">gem 'pygments.rb'</code>を追加します。</p>
+
+<!-- For the first time, the default syntax highlighter has changed for the
+`highlight` tag and for backtick code blocks. Instead of [Pygments.rb](https://github.com/tmm1/pygments.rb),
+it's now [Rouge](http://rouge.jneen.net/). If you were using the `highlight` tag with certain
+options, such as `hl_lines`, they may not be available when using Rouge. To
+go back to using Pygments, set `highlighter: pygments` in your
+`_config.yml` file and run `gem install pygments.rb` or add
+`gem 'pygments.rb'` to your project's `Gemfile`. -->
+
+<h3 id="相対パーマリンクのサポートを外した">相対パーマリンクのサポートを外した</h3>
+<!-- ### Relative Permalink support removed -->
+
+<p>Jekyll 3以降では、相対パーマリンクは非推奨になりました。Jekyll 2以前を使用してサイトを作成した場合、<strong>serve</strong>または<strong>build</strong>しようとすると次のエラーが表示されることがあります。</p>
+
+<!-- In Jekyll 3 and above, relative permalinks have been deprecated. If you
+created your site using Jekyll 2 and below, you may receive the following
+error when trying to **serve** or **build**: -->
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Since v3.0, permalinks for pages in subfolders must be relative to the site
+source directory, not the parent directory. Check
+https://jekyllrb.com/docs/upgrading/ for more info.
+</code></pre></div></div>
+
+<p>これは、<code class="language-plaintext highlighter-rouge">_config.yml</code>ファイルから以下の行を取り除くことで修正できます。</p>
+
+<!-- This can be fixed by removing the following line from your `_config.yml` file: -->
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">relative_permalinks</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
+<h3 id="パーマリンクは末尾のスラッシュを自動的に追加しなくなりました">パーマリンクは末尾のスラッシュを自動的に追加しなくなりました</h3>
+<!-- ### Permalinks no longer automatically add a trailing slash -->
+
+<p>Jekyll 2では、<code class="language-plaintext highlighter-rouge">permalink:</code>フィールドから構築されたURLには自動的に末尾のスラッシュ（<code class="language-plaintext highlighter-rouge">/</code>）が追加されていました。Jekyll 3は<code class="language-plaintext highlighter-rouge">permalink:</code>URLの末尾にスラッシュを自動的に追加しなくなりました。これは潜在的に404エラーページへの古いリンクをもたらす可能性があります。例えば、あるページが以前に<code class="language-plaintext highlighter-rouge">permalink: /:year-:month-:day-:title</code>のYAMLを含んだURL<code class="language-plaintext highlighter-rouge">example.com/2016-02-01-test/</code>（末尾のスラッシュに注意してください）を含んでいたと仮定します。内部でJekyllは<code class="language-plaintext highlighter-rouge">2016-02-01-test</code>という名前のフォルダを生成します。Jekyll 3では、同じ<code class="language-plaintext highlighter-rouge">permalink:</code>はファイル<code class="language-plaintext highlighter-rouge">2016-02-01-test.html</code>を生成し、同じページのURLは<code class="language-plaintext highlighter-rouge">example.com/2016-02-01-test</code>になります。その結果、古いURLへのリンクはすべて 404エラーになります。同じURLを維持してこの問題を回避するには、末尾のスラッシュを<code class="language-plaintext highlighter-rouge">permalink:</code>フィールドに追加する必要があります（例：<code class="language-plaintext highlighter-rouge">permalink: /:year-:month-:day-:title/</code>）。</p>
+
+<!-- In Jekyll 2, any URL constructed from the `permalink:` field had a trailing slash (`/`) added to it automatically. Jekyll 3 no longer adds a trailing slash automatically to `permalink:` URLs. This can potentially result in old links to pages returning a 404 error. For example, suppose a page previously contained the YAML `permalink: /:year-:month-:day-:title` that resulted in the URL `example.com/2016-02-01-test/` (notice the trailing slash), Jekyll internally generates a folder named `2016-02-01-test`. In Jekyll 3, the same `permalink:` generate the file `2016-02-01-test.html` and the URL for the same page will be `example.com/2016-02-01-test`, and consequently any links to the old URL will result in a 404 error. In order to maintain the same URLs and avoid this problem, a trailing slash should be added to the `permalink:` field, for example `permalink: /:year-:month-:day-:title/`. -->
+
+<h3 id="私のポストはすべて削除されましたどこに行きましたか">私のポストはすべて削除されました。どこに行きましたか！</h3>
+<!-- ### All my posts are gone! Where'd they go! -->
+
+<p><code class="language-plaintext highlighter-rouge">_config.yml</code>ファイルに<code class="language-plaintext highlighter-rouge">future: true</code>の追加を試してください。ポストは出てきましたか？　そうであれば、あなたはRubyが時間を解析する方法の問題に悩まされました。各ポストは予想と異なるタイムゾーンで読み込まれており、コンピュータの現在時刻と比較した場合、”未来になって”います。これを修正するには、各ポストに<a href="https://en.wikipedia.org/wiki/List_of_UTC_time_offsets" target="_blank">タイムゾーンオフセット</a>を追加します（そして、<code class="language-plaintext highlighter-rouge">_config.yml</code>から<code class="language-plaintext highlighter-rouge">future: true</code>を削除します）。たとえば、日本から書いている場合は、</p>
+
+<!-- Try adding `future: true` to your `_config.yml` file. Are they showing up now? If they are, then you were ensnared by an issue with the way Ruby parses times. Each of your posts is being read in a different timezone than you might expect and, when compared to the computer's current time, is "in the future." The fix for this is to add [a timezone offset](https://en.wikipedia.org/wiki/List_of_UTC_time_offsets) to each post (and make sure you remove `future: true` from your `_config.yml` file). If you're writing from California, for example, you would change this: -->
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">date</span><span class="pi">:</span> <span class="s">2016-02-06 19:32:10</span>
+<span class="nn">---</span>
+</code></pre></div></div>
+
+<p>から</p>
+
+<!-- to this (note the offset): -->
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">date</span><span class="pi">:</span> <span class="s">2016-02-06 19:32:10 +0900</span>
+<span class="nn">---</span>
+</code></pre></div></div>
+<!-- ```yaml
+---
+date: 2016-02-06 19:32:10 -0800
+---
+``` -->
+
+<p>に変更します（オフセットに注意してください）。</p>
+
+<h3 id="カテゴリが働かなくなりました">カテゴリが働かなくなりました！</h3>
+<!-- ### My categories have stopped working! -->
+
+<p>カテゴリを<code class="language-plaintext highlighter-rouge">/_posts/code/2008-12-24-closures.md</code>のように整理していた場合は、<code class="language-plaintext highlighter-rouge">/code/_posts/2008-12-24-closures.md</code>のようにディレクトリを再構成してカテゴリを<code class="language-plaintext highlighter-rouge">_posts</code>ディレクトリの_上_に配置する必要があります</p>
+
+<!-- If you organized your categories as `/_posts/code/2008-12-24-closures.md`, you will need to restructure your directories to put the categories _above_ the `_posts` directories, as follows: `/code/_posts/2008-12-24-closures.md`. -->
+
+<!-- _Did we miss something? Please click "Improve this page" above and add a section. Thanks!_ -->
+
+        </article>
+      </div>
+      <div class="unit one-fifth hide-on-mobiles">
+  <aside>
+    <h4>入門</h4>
+      <ul>
+        <li><a href="/docs/">クイックスタート</a></li>
+        <li><a href="/docs/ruby-101/">Ruby基礎</a></li>
+        <li><a href="/docs/installation/">インストール</a></li>
+        <li><a href="/docs/community/">コミュニティ</a></li>
+        <li><a href="/docs/step-by-step/01-setup/">Step by Stepチュートリアル</a></li>
+      </ul>
+    <h4>ビルド</h4>
+      <ul>
+        <li><a href="/docs/usage/">コマンドラインの使い方</a></li>
+        <li><a href="/docs/configuration/">構成・設定</a></li>
+      </ul>
+    <h4>コンテンツ</h4>
+      <ul>
+        <li><a href="/docs/pages/">Pages（ページ）</a></li>
+        <li><a href="/docs/posts/">Posts（ポスト）</a></li>
+        <li><a href="/docs/front-matter/">Front Matter</a></li>
+        <li><a href="/docs/collections/">コレクション</a></li>
+        <li><a href="/docs/datafiles/">Dataファイル</a></li>
+        <li><a href="/docs/assets/">Assets</a></li>
+        <li><a href="/docs/static-files/">静的ファイル</a></li>
+      </ul>
+    <h4>サイトの構成</h4>
+      <ul>
+        <li><a href="/docs/structure/">ディレクトリ構成</a></li>
+        <li><a href="/docs/liquid/">Liquid</a></li>
+        <li><a href="/docs/variables/">変数</a></li>
+        <li><a href="/docs/includes/">Includes（インクルード）</a></li>
+        <li><a href="/docs/layouts/">レイアウト</a></li>
+        <li><a href="/docs/permalinks/">パーマリンク</a></li>
+        <li><a href="/docs/themes/">テーマ</a></li>
+        <li><a href="/docs/pagination/">Pagination（ページ分け）</a></li>
+      </ul>
+    <h4>ガイド</h4>
+      <ul>
+        <li><a href="/docs/plugins/">プラグイン</a></li>
+        <li><a href="/docs/migrations/">ブログの移行</a></li>
+        <li><a href="/docs/upgrading/">アップグレード</a></li>
+        <li><a href="/docs/deployment/">Deployment</a></li>
+      </ul>
+    </aside>
+</div>
+<div class="clear"></div>
+    </div>
+  </section>
+<footer>
+  <div class="grid">
+    <div class="unit one-third center-on-mobiles">
+      <p>Jekyllはボランティアの<a href="/team/">コアチーム</a>により愛情を込めて維持されています。</p>
+      <p>このWebサイトのコンテンツは<a href="https://github.com/jekyll/jekyll/blob/master/LICENSE" target="_blank">MIT&nbsp;License</a>に基づきます。&copy;&nbsp;2020</p>
+      <!-- <p>Jekyll is lovingly maintained by the <a href="/team/">core team</a> of volunteers. </p>
+      <p>The contents of this website are <br />&copy;&nbsp;2020 under the terms of the <a href="https://github.com/jekyll/jekyll/blob/master/LICENSE">MIT&nbsp;License</a>.</p> -->
+    </div>
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>
+        Proudly hosted by
+        <a href="https://github.com">
+          <img src="/img/footer-logo.png" width="100" height="30" alt="GitHub • Social coding">
+        </a>
+      </p>
+    </div>
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>
+        Jekyll is funded thanks to its
+        <a href="https://github.com/jekyll/jekyll#sponsors">
+          sponsors!
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
+<script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<span class=\"sr-only\">Permalink</span><i class=\"fa fa-link\"></i>";
+    anchor.title = "Permalink";
+    return anchor;
+  };
+
+  var linkifyAnchors = function (level, containingElement) {
+    var headers = containingElement.getElementsByTagName("h" + level);
+    for (var h = 0; h < headers.length; h++) {
+      var header = headers[h];
+
+      if (typeof header.id !== "undefined" && header.id !== "") {
+        header.appendChild(anchorForId(header.id));
+      }
+    }
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var contentBlock = document.getElementsByClassName("docs")[0] || document.getElementsByClassName("news")[0];
+      if (!contentBlock) {
+        return;
+      }
+      for (var level = 1; level <= 6; level++) {
+        linkifyAnchors(level, contentBlock);
+      }
+    }
+  };
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script type="text/javascript"> docsearch({
+apiKey: '50fe39c839958dfad797000f33e2ec17',
+indexName: 'jekyllrb',
+inputSelector: '#docsearch-input',
+enhancedSearchInput: true,
+debug: false // Set debug to true if you want to inspect the dropdown
+});
+</script>
+</body>
+</html>

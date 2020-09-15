@@ -1,0 +1,533 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link type="application/atom+xml" rel="alternate" href="http://jekyllrb-ja.github.io/feed.xml" title="Jekyll • シンプルで、ブログのような、静的サイト" />
+  <link type="application/atom+xml" rel="alternate" href="/feed/release.xml" title="Jekyll releases posts" />
+  <link rel="alternate" type="application/atom+xml" title="Recent commits to Jekyll’s master branch" href="https://github.com/jekyll/jekyll/commits/master.atom">
+  <link rel="preload" href="/fonts/lato-v14-latin-300.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/lato-v14-latin-700.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/css/screen.css" as="style">
+  <link rel="stylesheet" href="/css/screen.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>貢献 | Jekyll • シンプルで、ブログのような、静的サイト</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="貢献" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="プレーンテキストを静的サイトやブログに変えましょう" />
+<meta property="og:description" content="プレーンテキストを静的サイトやブログに変えましょう" />
+<link rel="canonical" href="http://jekyllrb-ja.github.io/docs/contributing/" />
+<meta property="og:url" content="http://jekyllrb-ja.github.io/docs/contributing/" />
+<meta property="og:site_name" content="Jekyll • シンプルで、ブログのような、静的サイト" />
+<meta property="og:image" content="http://jekyllrb-ja.github.io/img/jekyll-og.png" />
+<script type="application/ld+json">
+{"headline":"貢献","image":"http://jekyllrb-ja.github.io/img/jekyll-og.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://jekyllrb-ja.github.io/img/logo-2x.png"}},"url":"http://jekyllrb-ja.github.io/docs/contributing/","description":"プレーンテキストを静的サイトやブログに変えましょう","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <!--[if lt IE 9]>
+  <script src="/js/html5shiv.min.js"></script>
+  <script src="/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body class="wrap"><header>
+  <div class="flexbox">
+    <div class="center-on-mobiles">
+      <h1>
+        <a href="/" class="logo">
+          <span class="sr-only">Jekyll</span>
+          <img src="/img/logo-2x.png" width="140" height="65" alt="Jekyll Logo">
+        </a>
+      </h1>
+    </div>
+    <nav class="main-nav hide-on-mobiles">
+      <ul>
+  <li><a href="/">Home</a></li>
+  <li class="current"><a href="/docs/">Docs</a></li>
+  <li><a href="/resources/">Resources</a></li>
+  <li><a href="/showcase/">Showcase</a></li>
+  <li><a href="/news/">News</a></li>
+  </ul>
+</nav>
+    <div class="search hide-on-mobiles">
+      <input type="text" id="docsearch-input" placeholder="Search the docs…">
+</div>
+    <div class="meta hide-on-mobiles">
+      <ul>
+        <li><a href="https://github.com/jekyll/jekyll/releases/tag/v4.1.1">v4.1.1</a></li>
+        <li><a href="https://github.com/jekyll/jekyll">GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+  <nav class="mobile-nav show-on-mobiles">
+    <ul>
+  <li><a href="/">Home</a></li>
+    <li class="current"><a href="/docs/">Docs</a></li>
+    <li><a href="/resources/">Resources</a></li>
+    <li><a href="/news/">News</a></li>
+    <li><a href="https://github.com/jekyll/jekyll">GitHub</a></li>
+</ul>
+</nav>
+</header>
+  <section class="docs">
+    <div class="grid">
+      <div class="docs-nav-mobile unit whole show-on-mobiles">
+  <select onchange="if (this.value) window.location.href=this.value">
+    <option value="">Navigate the docs…</option>
+    <optgroup label="入門">
+      <option value="/docs/">クイックスタート</option>
+      <option value="/docs/ruby-101/">Ruby基礎</option>
+      <option value="/docs/installation/">インストール</option>
+      <option value="/docs/community/">コミュニティ</option>
+      <option value="/docs/step-by-step/01-setup/">Step by Stepチュートリアル</option>
+    </optgroup>
+    <optgroup label="ビルド">
+      <option value="/docs/usage/">コマンドラインの使い方</option>
+      <option value="/docs/configuration/">構成・設定</option>
+    </optgroup>
+    <optgroup label="コンテンツ">
+      <option value="/docs/pages/">Pages（ページ）</option>
+      <option value="/docs/posts/">Posts（ポスト）</option>
+      <option value="/docs/front-matter/">Front Matter</option>
+      <option value="/docs/collections/">コレクション</option>
+      <option value="/docs/datafiles/">Dataファイル</option>
+      <option value="/docs/assets/">Assets</option>
+      <option value="/docs/static-files/">静的ファイル</option>
+    </optgroup>
+    <optgroup label="サイトの構成">
+      <option value="/docs/structure/">ディレクトリ構成</option>
+      <option value="/docs/liquid/">Liquid</option>
+      <option value="/docs/variables/">変数</option>
+      <option value="/docs/includes/">Includes（インクルード）</option>
+      <option value="/docs/layouts/">レイアウト</option>
+      <option value="/docs/permalinks/">パーマリンク</option>
+      <option value="/docs/themes/">テーマ</option>
+      <option value="/docs/pagination/">Pagination（ページ分け）</option>
+    </optgroup>
+    <optgroup label="ガイド">
+      <option value="/docs/plugins/">プラグイン</option>
+      <option value="/docs/migrations/">ブログの移行</option>
+      <option value="/docs/upgrading/">アップグレード</option>
+      <option value="/docs/deployment/">Deployment</option>
+    </optgroup>
+    </select>
+</div>
+<div class="unit four-fifths">
+        <article>
+          <div class="improve right hide-on-mobiles">
+            <a data-proofer-ignore href="https://github.com/jekyll/jekyll/edit/master/docs/_docs/contributing.md"><i class="fa fa-pencil"></i>  Improve this page</a>
+          </div>
+          <h1>貢献</h1>
+          <!-- ---
+title: Contributing
+permalink: "/docs/contributing/"
+note: This file is autogenerated. Edit /.github/CONTRIBUTING.markdown instead.
+--- -->
+
+<p>こんにちは！ Jekyllへの貢献に興味がありますか？ あなたの助けが大好きです。Jekyllはオープンソースプロジェクトで、あなたのようなユーザーの貢献の積み重ねでできています。</p>
+
+<!-- Hi there! Interested in contributing to Jekyll? We'd love your help. Jekyll is an open source project, built one contribution at a time by users like you. -->
+
+<h2 id="問題の報告や助けを得る場所">問題の報告や助けを得る場所</h2>
+<!-- ## Where to get help or report a problem -->
+
+<p><a href="/docs/support/">サポートガイドライン</a>を見てください。</p>
+
+<!-- See the [support guidelines](/docs/support/) -->
+
+<h2 id="貢献の仕方">貢献の仕方</h2>
+<!-- ## Ways to contribute -->
+
+<p>あなたが開発者でも、デザイナーでも、あるいは単にJekyllの信者でも、貢献する方法はたくさんあります。ここにいくつかのアイデアを示します。</p>
+
+<!-- Whether you're a developer, a designer, or just a Jekyll devotee, there are lots of ways to contribute. Here's a few ideas: -->
+
+<ul>
+  <li>
+<a href="/docs/installation/">コンピュータにJekyllをインストール</a>し、ざっと操作を行ってみてください。動きましたか？　希望通りの動作ですか？　そうでなければ、<a href="https://github.com/jekyll/jekyll/issues/new" target="_blank">issueを開き</a>知らせてください。</li>
+  <li>プロジェクトの<a href="https://github.com/jekyll/jekyll/issues" target="_blank">開いているissue</a>にコメントしてください。同じ問題を経験しましたか？ 回避策を知っていますか？ この機能がどのように優れているかについての提案はありますか？</li>
+  <li>
+<a href="/docs/home/">documentation</a>を読み、”improve this page”をクリックしてください。何かを混乱させているのを見たり、改善することができる何かについての提案をしている時はいつでも。</li>
+  <li>
+<a href="https://talk.jekyllrb.com/" target="_blank">Jekyll discussion forum</a>をブラウズして、質問に手を貸してください。他のユーザーが体験していることを既に経験していれば、いいチャンスです。</li>
+  <li>
+<a href="https://github.com/jekyll/jekyll/issues" target="_blank">未解決のissue</a>（特に<a href="https://github.com/jekyll/jekyll/issues?q=is%3Aopen+is%3Aissue+label%3Ahelp-wanted" target="_blank"><code class="language-plaintext highlighter-rouge">help-wanted</code>のラベル</a>)のもの）を見つけて、修正案を提出してください。それがあなたの最初のプルリクエストであるならば、我々は噛み付かないと約束します、そして、どんな質問にでも答えて喜んでいます。</li>
+  <li>変更をローカルでテストし、提案内容を確認することは、<a href="https://github.com/jekyll/jekyll/pulls" target="_blank">オープンプルリクエスト</a>を評価するのに役立ちます。</li>
+</ul>
+
+<!-- * [Install Jekyll on your computer](https://jekyllrb.com/docs/installation/) and kick the tires. Does it work? Does it do what you'd expect? If not, [open an issue](https://github.com/jekyll/jekyll/issues/new) and let us know.
+* Comment on some of the project's [open issues](https://github.com/jekyll/jekyll/issues). Have you experienced the same problem? Know a work around? Do you have a suggestion for how the feature could be better?
+* Read through the [documentation](https://jekyllrb.com/docs/home/), and click the "improve this page" button, any time you see something confusing, or have a suggestion for something that could be improved.
+* Browse through the [Jekyll discussion forum](https://talk.jekyllrb.com/), and lend a hand answering questions. There's a good chance you've already experienced what another user is experiencing.
+* Find an [open issue](https://github.com/jekyll/jekyll/issues) (especially [those labeled `help-wanted`](https://github.com/jekyll/jekyll/issues?q=is%3Aopen+is%3Aissue+label%3Ahelp-wanted)), and submit a proposed fix. If it's your first pull request, we promise we won't bite, and are glad to answer any questions.
+* Help evaluate [open pull requests](https://github.com/jekyll/jekyll/pulls), by testing the changes locally and reviewing what's proposed. -->
+
+<h2 id="submitting-a-pull-request">プルリクエストの送信</h2>
+<!-- ## Submitting a pull request -->
+
+<h3 id="プルリクエストの基本">プルリクエストの基本</h3>
+<!-- ### Pull requests generally -->
+
+<ul>
+  <li>提案された変更は小さい方が良いです。無関係な変更を2つ提案する場合は、2つのプルリクエストを送信してください。</li>
+  <li>情報が多いほど、優れています。プルリクエストボディをしっかりと使用してください。どのような変更が行われたのか、なぜ変更が行われたのか、およびそれらがユーザーに与える影響について説明します。</li>
+  <li>これがあなたの最初のプルリクエストなら、それは<a href="https://guides.github.com/introduction/flow/" target="_blank">GitHub Flowを理解する</a>のを助けるかもしれません。</li>
+  <li>コードの投稿を送信する場合は、必ず以下の<a href="#code-contributions">コードへの貢献</a>セクションを読んでください。</li>
+</ul>
+
+<!-- * The smaller the proposed change, the better. If you'd like to propose two unrelated changes, submit two pull requests.
+
+* The more information, the better. Make judicious use of the pull request body. Describe what changes were made, why you made them, and what impact they will have for users.
+
+* If this is your first pull request, it may help to [understand GitHub Flow](https://guides.github.com/introduction/flow/).
+
+* If you're submitting a code contribution, be sure to read the [code contributions](#code-contributions) section below. -->
+
+<h3 id="githubcomでのプルリクエストの送信">github.comでのプルリクエストの送信</h3>
+<!-- ### Submitting a pull request via github.com -->
+
+<p>github.comのWebインターフェースを介して、多くの小さな変更を完全に行うことができます。</p>
+
+<!-- Many small changes can be made entirely through the github.com web interface. -->
+
+<ol>
+  <li>編集を行う<a href="https://github.com/jekyll/jekyll" target="_blank"><code class="language-plaintext highlighter-rouge">jekyll/jekyll</code></a>内のファイルに移動します。</li>
+  <li>ファイルを編集するために、右上の鉛筆のアイコンをクリックします。</li>
+  <li>提案する変更を行います。</li>
+  <li>“Propose file change”をクリックします。</li>
+  <li>“Create pull request”をクリックします。</li>
+  <li>提案する変更の説明的なタイトルと詳細な説明を追加します。詳しい方が良いです。</li>
+  <li>“Create pull request”をクリックします。</li>
+</ol>
+
+<!-- 1. Navigate to the file within [`jekyll/jekyll`](https://github.com/jekyll/jekyll) that you'd like to edit.
+2. Click the pencil icon in the top right corner to edit the file
+3. Make your proposed changes
+4. Click "Propose file change"
+5. Click "Create pull request"
+6. Add a descriptive title and detailed description for your proposed change. The more information the better.
+7. Click "Create pull request" -->
+
+<p>以上です。提案した変更を他の人が確認してフィードバックを提供すると、自動的に更新を受け取るように登録されます。</p>
+
+<!-- That's it! You'll be automatically subscribed to receive updates as others review your proposed change and provide feedback. -->
+
+<h3 id="gitコマンドラインでプルリクエストを送信する">Gitコマンドラインでプルリクエストを送信する</h3>
+<!-- ### Submitting a pull request via Git command line -->
+
+<ol>
+  <li>
+<a href="https://github.com/jekyll/jekyll" target="_blank"><code class="language-plaintext highlighter-rouge">jekyll/jekyll</code></a>の右上のコーナーの”Fork”をクリックし、プロジェクトをForkします。</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">git clone https://github.com/&lt;you-username&gt;/jekyll</code>でローカルリポジトリにクローンします。</li>
+  <li>変更を行うための、説明的な名前のブランチを作成します。( <code class="language-plaintext highlighter-rouge">git checkout -b my-awesome-feature</code> )</li>
+  <li>修正とテストを行います。必ずしも必要な手順ではありません。</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">script/cibuild</code>を実行して、また全てが上手くいくことを確認してください。（<a href="#running-tests-locally">テストセクション</a>もご確認ください）</li>
+  <li>ブランチをプッシュします( <code class="language-plaintext highlighter-rouge">git push origin my-awesome-feature</code> )。</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">https://github.com/&lt;your-username&gt;/jekyll</code>に行き、プルリクエストを作成します。そして、画面上部の指示に従ってください。</li>
+</ol>
+
+<!-- 1. Fork the project by clicking "Fork" in the top right corner of [`jekyll/jekyll`](https://github.com/jekyll/jekyll).
+2. Clone the repository locally `git clone https://github.com/<you-username>/jekyll`.
+3. Create a new, descriptively named branch to contain your change ( `git checkout -b my-awesome-feature` ).
+4. Hack away, add tests. Not necessarily in that order.
+5. Make sure everything still passes by running `script/cibuild` (see the [tests section](#running-tests-locally) below)
+6. Push the branch up ( `git push origin my-awesome-feature` ).
+7. Create a pull request by visiting `https://github.com/<your-username>/jekyll` and following the instructions at the top of the screen. -->
+
+<h2 id="ドキュメントの更新を提案する">ドキュメントの更新を提案する</h2>
+<!-- ## Proposing updates to the documentation -->
+
+<p>Jekyllのドキュメンテーションをできるだけベストな状態にしたいと考えています。ドキュメンテーションをオープンソース化しており、かけているところを見つけられた際はプルリクエストを送信してください。</p>
+
+<!-- We want the Jekyll documentation to be the best it can be. We've open-sourced our docs and we welcome any pull requests if you find it lacking. -->
+
+<h3 id="変更の送信の仕方">変更の送信の仕方</h3>
+<!-- ### How to submit changes -->
+
+<p>jekyllrb.comのドキュメンテーションは<a href="https://github.com/jekyll/jekyll/tree/master/docs" target="_blank">docs</a>ディレクトリにあります。上のセクションを見て、変更の情報を<a href="#submitting-a-pull-request">プルリクエストで送信</a>してください。</p>
+
+<!-- You can find the documentation for jekyllrb.com in the [docs](https://github.com/jekyll/jekyll/tree/master/docs) directory. See the section above, [submitting a pull request](#submitting-a-pull-request) for information on how to propose a change. -->
+
+<p>注意点を一つ。すべてのpullリクエストは<code class="language-plaintext highlighter-rouge">master</code>ブランチ（デフォルトのブランチ）に向けてください。</p>
+
+<!-- One gotcha, all pull requests should be directed at the `master` branch (the default branch). -->
+
+<h3 id="jekyllrbcomのfontawesome-iconsetを更新">jekyllrb.comのFontAwesome iconsetを更新</h3>
+<!-- ### Updating FontAwesome iconset for jekyllrb.com -->
+
+<p>使用しているアイコンだけを含む、カスタムバージョンのFontAwesomeを使用しています。</p>
+
+<!-- We use a custom version of FontAwesome which contains just the icons we use. -->
+
+<p>カスタムアイコンセットでまだ使用できないアイコンを使用してドキュメンテーションを更新する必要がある場合、Icomoon’s Generatorを使用してアイコンをレンダリングし直す必要があります。</p>
+
+<!-- If you ever need to update our documentation with an icon that is not already available in our custom iconset, you'll have to regenerate the iconset using Icomoon's Generator: -->
+
+<ol>
+  <li>
+<a href="https://icomoon.io/app/">https://icomoon.io/app/</a>に行きます。</li>
+  <li>上部のバーの<code class="language-plaintext highlighter-rouge">Import Icons</code>をクリックし、<code class="language-plaintext highlighter-rouge">&lt;jekyll&gt;/docs/icomoon-selection.json</code>を実行してアップロードします。</li>
+  <li>ページの下の<code class="language-plaintext highlighter-rouge">Add Icons from Library..</code>をクリックし、’Font Awesome’を追加します。</li>
+  <li>ライブラリから必要なアイコンを選択します（’IcoMoon-Free’ライブラリの代わりに’FontAwesome’ライブラリを使用してください）。</li>
+  <li>ボタンのバーの<code class="language-plaintext highlighter-rouge">Generate Font</code>をクリックします。</li>
+  <li>含まれるアイコンを確認して、<code class="language-plaintext highlighter-rouge">Download</code>をクリックして次に進みます。</li>
+  <li>フォントファイルを抽出し、CSSをJekyllで使用しているパスに適応させます。
+    <ul>
+      <li>
+<code class="language-plaintext highlighter-rouge">fonts</code>ディレクトリ全体をコピーし、<code class="language-plaintext highlighter-rouge">&lt;jekyll&gt;/docs/</code>のそれを上書きします。</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">selection.json</code>の内容をコピーし、<code class="language-plaintext highlighter-rouge">&lt;jekyll&gt;/docs/icomoon-selection.json</code>の内容を上書きします。</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">@font-face {}</code>の宣言をコピーし、<strong>新しいアイコンのcss宣言</strong>だけを<code class="language-plaintext highlighter-rouge">&lt;jekyll&gt;/docs/_sass/_font-awesome.scss</code>のsass部分を更新します。</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">@font-face {}</code>宣言のパスの<code class="language-plaintext highlighter-rouge">fonts/FontAwesome.*</code>の前に<code class="language-plaintext highlighter-rouge">../</code>を追加してパスを修正します。<code class="language-plaintext highlighter-rouge">('../fonts/Fontawesome.woff?9h6hxj')</code>の様にします。</li>
+    </ul>
+  </li>
+</ol>
+
+<!-- 1. Go to <https://icomoon.io/app/>.
+2. Click `Import Icons` on the top-horizontal-bar and upload the existing `<jekyll>/docs/icomoon-selection.json`.
+3. Click `Add Icons from Library..` further down on the page, and add 'Font Awesome'.
+4. Select the required icon(s) from the Library (make sure its the 'FontAwesome' library instead of 'IcoMoon-Free' library).
+5. Click `Generate Font` on the bottom-horizontal-bar.
+6. Inspect the included icons and proceed by clicking `Download`.
+7. Extract the font files and adapt the CSS to the paths we use in Jekyll:
+  - Copy the entire `fonts` directory over and overwrite existing ones at `<jekyll>/docs/`.
+  - Copy the contents of `selection.json` and overwrite existing content inside `<jekyll>/docs/icomoon-selection.json`.
+  - Copy the entire `@font-face {}` declaration and only the **new-icon(s)' css declarations** further below, to update the
+  `<jekyll>/docs/_sass/_font-awesome.scss` sass partial.
+  - Fix paths in the `@font-face {}` declaration by adding `../` before `fonts/FontAwesome.*` like so:
+  `('../fonts/Fontawesome.woff?9h6hxj')`. -->
+
+<!-- プラグインのリストがなくなっているため、日本語版からは削除
+### Adding plugins
+
+If you want to add your plugin to the [list of plugins](https://jekyllrb.com/docs/plugins/#available-plugins), please submit a pull request modifying the [plugins page source file](https://github.com/jekyll/jekyll/blob/master/docs/_docs/plugins.md) by adding a link to your plugin under the proper subheading depending upon its type. -->
+
+<h2 id="code-contributions">コードへの貢献</h2>
+<!-- ## Code Contributions -->
+
+<p>プルリクエストの送信に興味がありますか？　あなたが落とし穴にはまるのを避けられるように、いくつかの共通の注意事項を示します。</p>
+
+<!-- Interested in submitting a pull request? Awesome. Read on. There's a few common gotchas that we'd love to help you avoid. -->
+
+<h3 id="テストとドキュメンテーション">テストとドキュメンテーション</h3>
+<!-- ### Tests and documentation -->
+
+<p>コードの変更を提案するときはいつでも、ドキュメンテーションとテストの更新を同じプルリクエストに含めてください。</p>
+
+<!-- Any time you propose a code change, you should also include updates to the documentation and tests within the same pull request. -->
+
+<h4 id="ドキュメンテーション">ドキュメンテーション</h4>
+<!-- #### Documentation -->
+
+<p>あなたの貢献がJekyllの振る舞いを変えるなら、ドキュメンテーションを必ず更新してください。ドキュメンテーションは<code class="language-plaintext highlighter-rouge">docs/_docs</code>フォルダにあります（警報：それはJekyllサイトです！）。ドキュメントに情報が欠けている場合は、気軽に追加してください。優れたドキュメントは、プロジェクトを素晴らしいものにします。プルリクエストにドキュメントの変更を含めると、マージ時に<code class="language-plaintext highlighter-rouge">jekyllrb.com</code>が更新されます。</p>
+
+<!-- If your contribution changes any Jekyll behavior, make sure to update the documentation. Documentation lives in the `docs/_docs` folder (spoiler alert: it's a Jekyll site!). If the docs are missing information, please feel free to add it in. Great docs make a great project. Include changes to the documentation within your pull request, and once merged, `jekyllrb.com` will be updated. -->
+
+<h4 id="テスト">テスト</h4>
+<!-- #### Tests -->
+
+<ul>
+  <li>既存の機能に対して小さな修正やパッチを作成する場合は、簡単なテストで十分です。通常、<code class="language-plaintext highlighter-rouge">tests</code>フォルダの既存の例からコピー&amp;ペーストすることができますが、必要に応じて私たちのテストsuiteの<a href="https://github.com/thoughtbot/shoulda/tree/master" target="_blank">Shoulda</a>と<a href="https://github.com/rspec/rspec-mocks" target="_blank">RSpec-Mocks</a>について調べてください。</li>
+  <li>全く新しい機能なら、新しい<a href="https://github.com/cucumber/cucumber/" target="_blank">Cucumber</a>を作成し、必要に応じて既存の手順を再利用してください。</li>
+</ul>
+
+<!-- * If you're creating a small fix or patch to an existing feature, a simple test is more than enough. You can usually copy/paste from an existing example in the `tests` folder, but if you need you can find out about our tests suites [Shoulda](https://github.com/thoughtbot/shoulda/tree/master) and [RSpec-Mocks](https://github.com/rspec/rspec-mocks).
+
+* If it's a brand new feature, create a new [Cucumber](https://github.com/cucumber/cucumber/) feature, reusing existing steps where appropriate. -->
+
+<h3 id="コード貢献の基本">コード貢献の基本</h3>
+<!-- ### Code contributions generally -->
+
+<ul>
+  <li>Jekyllは<a href="https://github.com/bbatsov/rubocop" target="_blank">Rubocop</a>静的アナライザーを使って、貢献が<a href="https://github.com/styleguide/ruby" target="_blank">GitHub Ruby Styleguide</a>に従っていることを確認してます。あなたのブランチをプッシュする前に、<code class="language-plaintext highlighter-rouge">script/fmt</code>を使ってあなたのコードをチェックし、エラーを解決してください。</li>
+  <li>プルリクエストでGemバージョンをbumpしないでください（意味がわからない場合は、おそらくしなかったでしょう）。</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">script/console</code>のコマンドを使ってREPLを起動し、Jekyllのメソッドの結果を調べることができます。また、サイトや設定をすばやく作成するのに役立つ方法もあります。<a href="https://github.com/jekyll/jekyll/blob/master/script/console" target="_blank">ぜひお試しください！</a>
+</li>
+</ul>
+
+<!-- * Jekyll uses the [Rubocop](https://github.com/bbatsov/rubocop) static analyzer to ensure that contributions follow the [GitHub Ruby Styleguide](https://github.com/styleguide/ruby). Please check your code using `script/fmt` and resolve any errors before pushing your branch.
+
+* Don't bump the Gem version in your pull request (if you don't know what that means, you probably didn't).
+
+* You can use the command `script/console` to start a REPL to explore the result of
+Jekyll's methods. It also provides you with helpful methods to quickly create a
+site or configuration. [Feel free to check it out!](https://github.com/jekyll/jekyll/blob/master/script/console) -->
+
+<h2 id="running-tests-locally">ローカルでのテスト実行</h2>
+<!-- ## Running tests locally -->
+
+<h3 id="依存関係をテスト">依存関係をテスト</h3>
+<!-- ### Test Dependencies -->
+
+<p>テストsuiteを実行し、Jekyllの依存関係に必要なgemを構築するために、以下のコマンドを実行します。</p>
+
+<!-- To run the test suite and build the gem you'll need to install Jekyll's dependencies by running the following command: -->
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>script/bootstrap
+</code></pre></div></div>
+
+<p>変更を行う前に、テストを実行しパスすることを確認します（環境が正しく設定されていることを確認します）。</p>
+
+<!-- Before you make any changes, run the tests and make sure that they pass (to confirm your environment is configured properly): -->
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>script/cibuild
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">test/</code>内のファイルだけを更新した場合は、次のコマンドを使います。</p>
+
+<!-- If you are only updating a file in `test/`, you can use the command: -->
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>script/test <span class="nb">test</span>/blah_test.rb
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">.feature</code>ファイルだけを更新した場合は、次のコマンドを使用します。</p>
+
+<!-- If you are only updating a `.feature` file, you can use the command: -->
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>script/cucumber features/blah.feature
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">script/test</code>と<code class="language-plaintext highlighter-rouge">script/cucumber</code>はどちらも引数なしで実行することができ、その場合はそれぞれのsuite全体を実行します。</p>
+
+<!-- Both `script/test` and `script/cucumber` can be run without arguments to
+run its entire respective suite. -->
+
+<h2 id="visual-studio-code-development-container">Visual Studio Code Development Container</h2>
+
+<p><a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a>を<a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack" target="_blank">Remote Development Extension Pack</a>とともにインストール済みであれば、Visual Studio Codeでこのリポジトリを簡単に開き、”Re-open In A Development Container”のプロンプトに従うと、セットアップが完了し、すべての要件がインストールされた新しい環境で使用できるようになります。</p>
+
+<!-- If you've got [Visual Studio Code](https://code.visualstudio.com/) with the [Remote Development Extension Pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack) installed then simply opening this repository in Visual Studio Code and following the prompts to "Re-open In A Development Container" will get you setup and ready to go with a fresh environment with all the requirements installed. -->
+
+<h2 id="a-thank-you">A thank you</h2>
+
+<p>ありがとうございます。Jekyllをハッキングするのは楽しいはずです。もしあなたがこれを理解するのが難しいと思うなら、私たちが私たちのプロセスやドキュメンテーションを改善できるように知らせてください！</p>
+
+<!-- Thanks! Hacking on Jekyll should be fun. If you find any of this hard to figure out, let us know so we can improve our process or documentation! -->
+
+        </article>
+      </div>
+      <div class="unit one-fifth hide-on-mobiles">
+  <aside>
+    <h4>入門</h4>
+      <ul>
+        <li><a href="/docs/">クイックスタート</a></li>
+        <li><a href="/docs/ruby-101/">Ruby基礎</a></li>
+        <li><a href="/docs/installation/">インストール</a></li>
+        <li><a href="/docs/community/">コミュニティ</a></li>
+        <li><a href="/docs/step-by-step/01-setup/">Step by Stepチュートリアル</a></li>
+      </ul>
+    <h4>ビルド</h4>
+      <ul>
+        <li><a href="/docs/usage/">コマンドラインの使い方</a></li>
+        <li><a href="/docs/configuration/">構成・設定</a></li>
+      </ul>
+    <h4>コンテンツ</h4>
+      <ul>
+        <li><a href="/docs/pages/">Pages（ページ）</a></li>
+        <li><a href="/docs/posts/">Posts（ポスト）</a></li>
+        <li><a href="/docs/front-matter/">Front Matter</a></li>
+        <li><a href="/docs/collections/">コレクション</a></li>
+        <li><a href="/docs/datafiles/">Dataファイル</a></li>
+        <li><a href="/docs/assets/">Assets</a></li>
+        <li><a href="/docs/static-files/">静的ファイル</a></li>
+      </ul>
+    <h4>サイトの構成</h4>
+      <ul>
+        <li><a href="/docs/structure/">ディレクトリ構成</a></li>
+        <li><a href="/docs/liquid/">Liquid</a></li>
+        <li><a href="/docs/variables/">変数</a></li>
+        <li><a href="/docs/includes/">Includes（インクルード）</a></li>
+        <li><a href="/docs/layouts/">レイアウト</a></li>
+        <li><a href="/docs/permalinks/">パーマリンク</a></li>
+        <li><a href="/docs/themes/">テーマ</a></li>
+        <li><a href="/docs/pagination/">Pagination（ページ分け）</a></li>
+      </ul>
+    <h4>ガイド</h4>
+      <ul>
+        <li><a href="/docs/plugins/">プラグイン</a></li>
+        <li><a href="/docs/migrations/">ブログの移行</a></li>
+        <li><a href="/docs/upgrading/">アップグレード</a></li>
+        <li><a href="/docs/deployment/">Deployment</a></li>
+      </ul>
+    </aside>
+</div>
+<div class="clear"></div>
+    </div>
+  </section>
+<footer>
+  <div class="grid">
+    <div class="unit one-third center-on-mobiles">
+      <p>Jekyllはボランティアの<a href="/team/">コアチーム</a>により愛情を込めて維持されています。</p>
+      <p>このWebサイトのコンテンツは<a href="https://github.com/jekyll/jekyll/blob/master/LICENSE" target="_blank">MIT License</a>に基づきます。© 2020</p>
+      <!-- <p>Jekyll is lovingly maintained by the <a href="/team/">core team</a> of volunteers. </p>
+      <p>The contents of this website are <br />&copy;&nbsp;2020 under the terms of the <a href="https://github.com/jekyll/jekyll/blob/master/LICENSE">MIT&nbsp;License</a>.</p> -->
+    </div>
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>
+        Proudly hosted by
+        <a href="https://github.com">
+          <img src="/img/footer-logo.png" width="100" height="30" alt="GitHub • Social coding">
+        </a>
+      </p>
+    </div>
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>
+        Jekyll is funded thanks to its
+        <a href="https://github.com/jekyll/jekyll#sponsors">
+          sponsors!
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
+<script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<span class=\"sr-only\">Permalink</span><i class=\"fa fa-link\"></i>";
+    anchor.title = "Permalink";
+    return anchor;
+  };
+
+  var linkifyAnchors = function (level, containingElement) {
+    var headers = containingElement.getElementsByTagName("h" + level);
+    for (var h = 0; h < headers.length; h++) {
+      var header = headers[h];
+
+      if (typeof header.id !== "undefined" && header.id !== "") {
+        header.appendChild(anchorForId(header.id));
+      }
+    }
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var contentBlock = document.getElementsByClassName("docs")[0] || document.getElementsByClassName("news")[0];
+      if (!contentBlock) {
+        return;
+      }
+      for (var level = 1; level <= 6; level++) {
+        linkifyAnchors(level, contentBlock);
+      }
+    }
+  };
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script type="text/javascript"> docsearch({
+apiKey: '50fe39c839958dfad797000f33e2ec17',
+indexName: 'jekyllrb',
+inputSelector: '#docsearch-input',
+enhancedSearchInput: true,
+debug: false // Set debug to true if you want to inspect the dropdown
+});
+</script>
+</body>
+</html>
